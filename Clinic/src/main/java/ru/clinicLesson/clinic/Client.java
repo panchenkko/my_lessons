@@ -1,3 +1,4 @@
+package ru.clinicLesson.clinic;
 
 public class Client {
 

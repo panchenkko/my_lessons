@@ -1,8 +1,12 @@
+package main.java.ru.lesson.lessons;
+
 import java.util.Objects;
 import java.util.Scanner;
 
 public class InteractRunner {
+
     public static void main(String[] args) {
+
         try (Scanner sc = new Scanner(System.in)) {
             Calculator calc = new Calculator();
             String exit = "n";
