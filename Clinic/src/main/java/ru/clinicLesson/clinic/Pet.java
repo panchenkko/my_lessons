@@ -3,9 +3,9 @@ package ru.clinicLesson.clinic;
 public class Pet {
 
     private String name;
-    private int age;
+    private String age;
 
-    public Pet(String petName, int petAge) {
+    public Pet(String petName, String petAge) {
         this.name = petName;
         this.age = petAge;
     }
@@ -14,7 +14,7 @@ public class Pet {
         return name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
@@ -22,7 +22,7 @@ public class Pet {
         this.name = name;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }
