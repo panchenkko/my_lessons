@@ -2,23 +2,23 @@ package ru.clinicLesson.clinic;
 
 public class Client {
 
-    private String id;
+    private String name;
     private Pet pet;
 
-    public Client(String id, Pet pet) {
-        this.id = id;
+    public Client(String name, Pet pet) {
+        this.name = name;
         this.pet = pet;
     }
 
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
     }
 
     public Pet getPet() {
         return pet;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

@@ -18,11 +18,11 @@ public class Pet {
         return age;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String newName) {
+        this.name = newName;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setAge(String newAge) {
+        this.age = newAge;
     }
 }

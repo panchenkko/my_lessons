@@ -10,16 +10,7 @@ public class Clinic {
         this.clients = new ArrayList<>();
     }
 
-    public void output(Client client) {
-        System.out.println(
-                "Хозяин: " + client.getId() +
-                        ", Питомец: " + client.getPet().getName() +
-                        ", Полных лет питомцу: " + client.getPet().getAge()
-        );
-    }
-
     public void menu(Scanner sc) {
-        String answer;
         System.out.println(
                 "\n1. Внести данные"
               + "\n2. Поиск"
@@ -29,75 +20,38 @@ public class Clinic {
               + "\n6. Выйти"
         );
         System.out.print("\nОтвет: ");
-        answer = sc.next();
+        String answer = sc.next();
         System.out.println();
         switch (answer) {
-            case "1":
-                addClient(sc);
-                menu(sc);
-                break;
-            case "2":
-                if (!clients.isEmpty()) {
-                    findClientByPetName(sc);
-                    menu(sc);
-                }
-                else {
-                    System.out.println("\nВнесите данные!");
-                    menu(sc);
-                }
-                break;
-            case "3":
-                if (!clients.isEmpty()) {
-                    editing(sc);
-                    menu(sc);
-                }
-                else {
-                    System.out.println("\nВнесите данные!");
-                    menu(sc);
-                }
-                break;
-            case "4":
-                if (!clients.isEmpty()) {
-                    removeClient(sc);
-                    menu(sc);
-                }
-                else {
-                    System.out.println("\nВнесите данные!");
-                    menu(sc);
-                }
-                break;
-            case "5":
-                if (!clients.isEmpty()) {
-                    showClients();
-                    menu(sc);
-                }
-                else {
-                    System.out.println("\nДанные отсутствуют!");
-                    menu(sc);
-                }
-                break;
-            case "6": break;
-            default:
-                System.out.println();
-                menu(sc);
+            case "1": addClient(sc);
+                      break;
+            case "2": findClientByPetName(sc);
+                      break;
+            case "3": editing(sc);
+                      break;
+            case "4": removeClient(sc);
+                      break;
+            case "5": showClients();
+                      break;
+            case "6": return;
         }
+        menu(sc);
     }
 
     public void addClient(Scanner sc) {
         String answer;
         do {
-            System.out.print("Имя хозяина: ");
+            System.out.print("\nИмя хозяина: ");
             String clientName = sc.next();
             System.out.print("Имя питомца: ");
             String petName = sc.next();
             System.out.print("Полных лет питомцу: ");
             String age = sc.next();
 
-            clients.add(new Client(clientName, new Pet(petName, age)));
+            this.clients.add(new Client(clientName, new Pet(petName, age)));
 
             System.out.print("\nПродолжить (да/нет)? ");
             answer = sc.next();
-            System.out.println();
         } while (!Objects.equals(answer, "нет"));
     }
 
@@ -105,8 +59,8 @@ public class Clinic {
         System.out.print("Поиск хозяина или питомца: ");
         String name = sc.next();
         System.out.println();
-        for (Client client : clients) {
-            if (Objects.equals(name, client.getId()) || Objects.equals(name, client.getPet().getName())) {
+        for (Client client : this.clients) {
+            if (Objects.equals(name, client.getName()) || Objects.equals(name, client.getPet().getName())) {
                 output(client);
             }
         }
@@ -118,15 +72,15 @@ public class Clinic {
         System.out.print("Введите имя хозяина или питомца: ");
         String name = sc.next();
         System.out.println();
-        for (Client client : clients) {
-            if (Objects.equals(name, client.getId()) || Objects.equals(name, client.getPet().getName())) {
+        for (Client client : this.clients) {
+            if (Objects.equals(name, client.getName()) || Objects.equals(name, client.getPet().getName())) {
                 output(client);
 
                 System.out.print("\nРедактировать (да/нет)? ");
                 String answer = sc.next();
                 if (Objects.equals(answer, "да")) {
                     System.out.println(
-                            "Редактировать: " +
+                            "\nРедактировать: " +
                                     "\n    1. Имя хозяина" +
                                     "\n    2. Имя питомца" +
                                     "\n    3. Полные года питомца"
@@ -137,7 +91,7 @@ public class Clinic {
                         case "1":
                             System.out.print("\nВведите имя хозяина: ");
                             String clientName = sc.next();
-                            client.setId(clientName);
+                            client.setName(clientName);
                             break;
                         case "2":
                             System.out.print("\nВведите имя питомца: ");
@@ -163,13 +117,13 @@ public class Clinic {
         System.out.print("Введите имя клиента или питомца: ");
         String name = sc.next();
         System.out.println();
-        for (Client client : clients) {
-            if (Objects.equals(name, client.getId()) || Objects.equals(name, client.getPet().getName())) {
+        for (Client client : this.clients) {
+            if (Objects.equals(name, client.getName()) || Objects.equals(name, client.getPet().getName())) {
                 output(client);
                 System.out.print("\nУдалить (да/нет)? ");
                 String answer = sc.next();
                 if (Objects.equals(answer, "да")) {
-                    clients.remove(client);
+                    this.clients.remove(client);
                     menu(sc);
                     return;
                 }
@@ -178,8 +132,16 @@ public class Clinic {
     }
 
     public void showClients() {
-        for (Client client : clients) {
+        for (Client client : this.clients) {
                 output(client);
         }
+    }
+
+    public void output(Client client) {
+        System.out.println(
+                "Хозяин: \033[4m" + client.getName() +
+                        "\033[0m, Питомец: \033[4m" + client.getPet().getName() +
+                        "\033[0m, Полных лет питомцу: \033[4m" + client.getPet().getAge() + "\033[0m"
+        );
     }
 }
