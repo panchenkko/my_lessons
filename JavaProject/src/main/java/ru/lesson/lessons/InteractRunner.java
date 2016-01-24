@@ -1,53 +1,68 @@
-package main.java.ru.lesson.lessons;
+package ru.lesson.lessons;
 
 import java.util.Objects;
 import java.util.Scanner;
 
 public class InteractRunner {
 
-    public static void main(String[] args) {
+    public void doCalculation(Scanner sc, Calculator calc, boolean usePrevResult) throws UserException {
+
+        double first;
+
+        if (!usePrevResult) {
+            System.out.print("Введите первый аргумент: ");
+            first = sc.nextDouble();
+        } else {
+            first = calc.getResult();
+        }
+
+        System.out.print("Введите операцию: ");
+        String operation = sc.next();
+
+        System.out.print("Введите второй аргумент: ");
+        double second = sc.nextDouble();
+
+        switch (operation) {
+            case "+": calc.addition(first, second);
+                      break;
+            case "-": calc.subtraction(first, second);
+                      break;
+            case "*": calc.multiplication(first, second);
+                      break;
+            case "/": calc.division(first, second);
+                      break;
+            case "pow": calc.pow(first, second);
+                        break;
+        }
+    }
+
+    public static void main(String[] args) throws UserException {
+
+        boolean usePrevResult = false;
 
         try (Scanner sc = new Scanner(System.in)) {
             Calculator calc = new Calculator();
-            String exit = "n";
-            while (!Objects.equals(exit, "3")) {
-                System.out.println("Введите через пробел простое выражение: ");
-                if (calc.getResult() != 0)
-                    System.out.print(calc.getResult() + " ");
-                int a = sc.nextInt();
-                String b = sc.next();
-                int c = sc.nextInt();
+            InteractRunner runner = new InteractRunner();
+            String exit = "нет";
+            while (!exit.equals("да")) {
+                if (usePrevResult)
+                    System.out.println("Результат: " + calc.getResult());
+                runner.doCalculation(sc, calc,usePrevResult);
 
-                switch (b) {
-                    case "+":
-                        calc.addition(a, c);
-                        break;
+                System.out.println("Результат: " + calc.getResult());
+                System.out.println("Выйти: (да/нет)? ");
+                exit = sc.next();
 
-                    case "-":
-                        calc.subtraction(a, c);
-                        break;
-
-                    case "/":
-                        calc.division(a, c);
-                        break;
-
-                    case "*":
-                        calc.multiplication(a, c);
-                        break;
-                    default:
-                        System.out.println("Такой операции нет!");
+                if (Objects.equals(exit, "нет")) {
+                    System.out.print("\nПродолжить операции с предыдущим результатом (да/нет)? ");
+                    String answer = sc.next();
+                    if (Objects.equals(answer, "да"))
+                        usePrevResult = true;
+                    else
+                        calc.cleanResult();
                 }
 
-                System.out.println("Ответ: " + calc.getResult());
-
-                System.out.print(
-                        "\n1. Продолжить вычислять " +
-                                "\n2. Обнулнить и продолжить вычислять" +
-                                "\n3. Выйти");
                 System.out.println();
-                exit = sc.next();
-                if (Objects.equals(exit, "2"))
-                    calc.cleanResult();
             }
         }
     }
