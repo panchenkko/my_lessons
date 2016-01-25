@@ -14,8 +14,8 @@ public class Client {
         return name;
     }
 
-    public void setName(String newName) {
-        this.name = newName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Pet getPet() {

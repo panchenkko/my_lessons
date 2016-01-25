@@ -1,4 +1,4 @@
-package ru.clinicLesson.clinic;
+package ru.clinicLesson.clinic._not_used_;
 
 public class InputUserException extends Exception {
 
