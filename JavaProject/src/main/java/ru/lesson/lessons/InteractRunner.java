@@ -61,7 +61,6 @@ public class InteractRunner {
                     else
                         calc.cleanResult();
                 }
-
                 System.out.println();
             }
         }
