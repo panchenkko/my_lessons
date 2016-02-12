@@ -69,7 +69,9 @@ public class Runner {
         Runner runner = new Runner();
         LevelSelection level = new LevelSelection();
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.println("Выберите уровень: "
+            System.out.println(
+                    "\n<-- ВВЕДИТЕ ЦИФРУ -->\n\n"
+                    + "Выберите уровень: "
                     + "\n   1. Легкий (9x9)"
                     + "\n   2. Средний (16x16)"
                     + "\n   3. Эксперт (30x16)");

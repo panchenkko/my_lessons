@@ -2,6 +2,7 @@ package ru.minesweeperLesson.minesweeper.gui;
 
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class GUICell implements ICell<Graphics> {

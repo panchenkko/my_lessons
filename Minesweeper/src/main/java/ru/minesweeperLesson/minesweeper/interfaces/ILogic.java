@@ -68,8 +68,11 @@ public interface ILogic {
 
 	/**
 	 * Возвращаем количество бомб вокруг ячейки
-     */
+	 */
 	int checkingAroundCell(int x, int y);
 
+	/**
+	 * Проверка и открытие пустых ячеек
+	 */
 	void openEmptyCells(int x, int y);
 }

@@ -25,11 +25,16 @@ public class Main {
 				board.setBorder(new EmptyBorder(10, 10, 10, 10));
 				frame.add(controlPanel, BorderLayout.PAGE_END);
 				controlPanel.setLayout(new FlowLayout());
+
+				JLabel statusbar = new JLabel("");
+				frame.add(statusbar, BorderLayout.SOUTH);
+
 				final JButton generate = new JButton("Начать");
 				Easy easy = new Easy();
 				generate.addActionListener(new GUIAction(easy, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {
+						statusbar.setText(String.valueOf(easy.sumBombs()));
 						ICell[][] cells = easy.sizeField();
 						for (int i = 0; i < easy.sumRow(); i++) {
 							for (int j = 0; j < easy.sumColumn(); j++) {

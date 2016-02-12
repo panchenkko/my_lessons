@@ -27,11 +27,12 @@ public class BaseAction implements IUserAction {
 	@Override
 	public void select(int x, int y, boolean bomb) {
 		this.logic.suggest(x, y, bomb);
-		if (this.logic.checkTheFirstMove()) {
+		if (this.logic.checkTheFirstMove() && !bomb) {
 			this.logic.clearAroundCell(x, y);
 			this.logic.bombsGeneration();
 		}
-		this.logic.openEmptyCells(x, y);
+		if (!bomb)
+			this.logic.openEmptyCells(x, y);
 		this.board.drawCell(x, y);
 		if (this.logic.shouldBang(x, y)) {
 			this.board.drawBang();
