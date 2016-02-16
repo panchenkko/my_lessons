@@ -3,40 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="37783181-1e02-4ce1-bf73-cd17ee833102" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/../README.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Clinic/target/classes/ru/clinicLesson/clinic/Clinic.class" afterPath="$PROJECT_DIR$/../Clinic/target/classes/ru/clinicLesson/clinic/Clinic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Clinic/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Clinic/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Clinic/src/main/java/ru/clinicLesson/clinic/Clinic.java" afterPath="$PROJECT_DIR$/../Clinic/src/main/java/ru/clinicLesson/clinic/Clinic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.java" afterPath="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ICell.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ICell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" />
     </list>
     <ignored path="clinicWebPackage.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,10 +43,11 @@
       <file leaf-file-name="ClinicServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.147513">
-              <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.80102915">
+              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#550#558#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,8 +174,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -358,6 +326,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -847,7 +817,7 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
@@ -903,6 +873,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -938,6 +909,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,6 +945,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -999,6 +972,7 @@
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1033,6 +1007,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1067,6 +1042,7 @@
           <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1101,6 +1077,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1135,6 +1112,7 @@
           <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1168,6 +1146,7 @@
           <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1201,6 +1180,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1331,10 +1311,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.147513">
-          <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.80102915">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#550#558#0" expanded="true" />
           </folding>
         </state>
       </provider>

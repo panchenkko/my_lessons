@@ -2,40 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1eae12b-e635-4f96-aa3c-c6b9c0891096" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Clinic/target/classes/ru/clinicLesson/clinic/Clinic.class" afterPath="$PROJECT_DIR$/../Clinic/target/classes/ru/clinicLesson/clinic/Clinic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Clinic/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Clinic/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Clinic/src/main/java/ru/clinicLesson/clinic/Clinic.java" afterPath="$PROJECT_DIR$/../Clinic/src/main/java/ru/clinicLesson/clinic/Clinic.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/fbsfd.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/fbsfd.jfd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../README.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ICell.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ICell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" />
     </list>
     <ignored path="minesweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,7 +28,18 @@
     <favorites_list name="minesweeper" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.34931508">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -205,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,10 +259,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="minesweeper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Minesweeper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="minesweeper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="console" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -636,29 +648,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39443535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JFormDesigner Bindings" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39443535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -875,13 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79588336">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -893,14 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,13 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/fbsfd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -968,7 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/fbsfd.jfd" />
     <entry file="file://$PROJECT_DIR$/src/11.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -988,11 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#702#703#0" expanded="false" />
-            <element signature="e#724#725#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,9 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,7 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.0222986">
           <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,9 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02915952">
           <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,6 +1005,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02915952">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7962329">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34931508">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding />
         </state>
       </provider>

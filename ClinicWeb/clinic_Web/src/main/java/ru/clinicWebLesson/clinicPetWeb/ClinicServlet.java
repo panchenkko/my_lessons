@@ -35,11 +35,11 @@ public class ClinicServlet extends HttpServlet {
                         "         Age: </br><input type='text' name='age' style='margin-bottom: 5px;'></br>" +
                         "         <input type='submit' value='Submit'>" +
                         "     <form>" +
-                        this.viewPets() +
+                        this.viewClients() +
                         "<h3><b>Search Clients</b></h3>" +
                         "     <form action='" + req.getContextPath() + "/' method='post'>" +
                         "         Enter the name client or pet: " +
-                        "    </br><input type='text' name='search' style='margin-bottom: 15px;'></br>" +
+                        "    </br><input type='text' name='search' style='margin-bottom: 5px;'></br>" +
                         "         <input type='submit' value='Submit'>" +
                         "     <form>" +
                         this.viewSearch(req) +
@@ -59,17 +59,12 @@ public class ClinicServlet extends HttpServlet {
         doGet(req, resp);
     }
 
-    private String viewPets() {
+    private String viewClients() {
         StringBuilder sb = new StringBuilder();
         sb.append("<h3><b>Clients</b></h3>");
         sb.append("<table style='border: 1px solid black'>");
-        for (Client client : this.clients) {
-            sb.append("<tr><td style='border: 1px solid black'>")
-                    .append("<b>Name Client:</b> " + client.getName() + ", <b>" +
-                            client.getPet().getPetType() + ":</b> " +
-                            client.getPet().getName() + ", <b>age:</b> " +
-                            client.getPet().getAge()).append("</td></tr>");
-        }
+        for (Client client : this.clients)
+            view(sb, client);
         sb.append("</table>");
         return sb.toString();
     }
@@ -82,15 +77,19 @@ public class ClinicServlet extends HttpServlet {
                 if (Objects.equals(req.getParameter("search"), client.getName()) ||
                     Objects.equals(req.getParameter("search"), client.getPet().getName())) {
                     sb.append("<h3><b>Your Client: </b></h3>");
-                    sb.append("<tr><td style='border: 1px solid black'>")
-                            .append("<b>Name Client:</b> " + client.getName() + ", <b>" +
-                                    client.getPet().getPetType() + ":</b> " +
-                                    client.getPet().getName() + ", <b>age:</b> " +
-                                    client.getPet().getAge()).append("</td></tr>");
+                    view(sb, client);
                 }
             }
-                sb.append("</table>");
+            sb.append("</table>");
         }
         return sb.toString();
+    }
+
+    private void view(StringBuilder sb, Client client) {
+        sb.append("<tr><td style='border: 1px solid black'>")
+                .append("<b>Name Client:</b> " + client.getName() + ", <b>" +
+                        client.getPet().getPetType() + ":</b> " +
+                        client.getPet().getName() + ", <b>age:</b> " +
+                        client.getPet().getAge()).append("</td></tr>");
     }
 }
