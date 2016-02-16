@@ -33,13 +33,12 @@ public class BaseAction implements IUserAction {
 		}
 		if (!bomb)
 			this.logic.openEmptyCells(x, y);
-		this.board.drawCell(x, y);
 		if (this.logic.shouldBang(x, y)) {
 			this.board.drawBang();
 			this.board.drawLosing();
-		}
-		if (this.logic.finish()) {
+		} else
+			this.board.drawCell(x, y);
+		if (this.logic.finish())
 			this.board.drawCongratulate();
-		}
 	}
 }

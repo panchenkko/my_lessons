@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class Runner {
 
+    // Генерация поля
     public void generateField(Scanner sc, LevelSelection level, ICell[][] cells) {
         final BaseAction action = new BaseAction(level, new ConsoleBoard(), new IGeneratorBoard() {
             @Override
@@ -28,14 +29,14 @@ public class Runner {
         cycleInput(sc, action, level);
     }
 
+    // При первом ходе делаем все клетки пустыми
     public void generateEmptyCells(LevelSelection level, ICell[][] cells) {
-        for (int i = 0; i < level.sumRow(); i++) {
-            for (int j = 0; j < level.sumColumn(); j++) {
+        for (int i = 0; i < level.sumRow(); i++)
+            for (int j = 0; j < level.sumColumn(); j++)
                 cells[i][j] = new ConsoleCell(false);
-            }
-        }
     }
 
+    // Вводим ряд и столбец. Работает до тех пор, пока пользователь не выиграет или не проиграет
     public void cycleInput(Scanner sc, BaseAction action, LevelSelection level) {
         int row = 0, column = 0;
         try {
@@ -52,9 +53,8 @@ public class Runner {
                 if (row - 1 < level.sumRow() && column - 1 < level.sumColumn() && row - 1 >= 0 && column - 1 >= 0) {
                     if (Objects.equals(answer, "да"))
                         action.select(row - 1, column - 1, true);
-                    else if (Objects.equals(answer, "нет")) {
+                    else if (Objects.equals(answer, "нет"))
                         action.select(row - 1, column - 1, false);
-                    }
                 // Создаем исключение, если пользователь ввел некорректные данные
                 } else throw new ArrayIndexOutOfBoundsException("Такого ряда или столбца не существует!\n");
             } while (!level.finish() && !level.shouldBang(row - 1, column - 1));
@@ -65,6 +65,9 @@ public class Runner {
         }
     }
 
+    /**
+     * Выбираем уровень и запускаем генерацию поля
+     */
     public static void main(String[] args) {
         Runner runner = new Runner();
         LevelSelection level = new LevelSelection();

@@ -11,8 +11,27 @@ public class GUICell implements ICell<Graphics> {
 	private boolean suggestBomb = false;
 	private boolean suggestEmpty = false;
 
+	private boolean checked = false;
+
+	private boolean suggest1 = false;
+	private boolean suggest2 = false;
+	private boolean suggest3 = false;
+	private boolean suggest4 = false;
+	private boolean suggest5 = false;
+	private boolean suggest6 = false;
+	private boolean suggest7 = false;
+	private boolean suggest8 = false;
+
+	private Image[] img;
+
 	public GUICell(boolean bomb) {
 		this.bomb = bomb;
+
+		img = new Image[13];
+
+		for (int i = 0; i < 13; i++) {
+			img[i] = (new ImageIcon(i + ".png")).getImage();
+		}
 	}
 
 	@Override
@@ -42,108 +61,117 @@ public class GUICell implements ICell<Graphics> {
 
 	@Override
 	public boolean isChecked() {
-		return false;
+		return this.checked;
 	}
 
 	@Override
 	public void checked() {
-
+		this.checked = true;
 	}
 
 	@Override
 	public boolean isSuggest1() {
-		return false;
+		return this.suggest1;
 	}
 
 	@Override
 	public boolean isSuggest2() {
-		return false;
+		return this.suggest2;
 	}
 
 	@Override
 	public boolean isSuggest3() {
-		return false;
+		return this.suggest3;
 	}
 
 	@Override
 	public boolean isSuggest4() {
-		return false;
+		return this.suggest4;
 	}
 
 	@Override
 	public boolean isSuggest5() {
-		return false;
+		return this.suggest5;
 	}
 
 	@Override
 	public boolean isSuggest6() {
-		return false;
+		return this.suggest6;
 	}
 
 	@Override
 	public boolean isSuggest7() {
-		return false;
+		return this.suggest7;
 	}
 
 	@Override
 	public boolean isSuggest8() {
-		return false;
+		return this.suggest8;
 	}
 
 	@Override
 	public void suggest1() {
-
+		this.suggest1 = true;
 	}
 
 	@Override
 	public void suggest2() {
-
+		this.suggest2 = true;
 	}
 
 	@Override
 	public void suggest3() {
-
+		this.suggest3 = true;
 	}
 
 	@Override
 	public void suggest4() {
-
+		this.suggest4 = true;
 	}
 
 	@Override
 	public void suggest5() {
-
+		this.suggest5 = true;
 	}
 
 	@Override
 	public void suggest6() {
-
+		this.suggest6 = true;
 	}
 
 	@Override
 	public void suggest7() {
-
+		this.suggest7 = true;
 	}
 
 	@Override
 	public void suggest8() {
+		this.suggest8 = true;
+	}
+
+	@Override
+	public void draw(Graphics paint, boolean real) {
 
 	}
 
-	public void draw(Graphics paint, boolean real) {
+	@Override
+	public void draw(Graphics paint, int x, int y, boolean real) {
+		x = x < 1 ? 17 : 58;
+		y = y < 1 ? 25 : 66;
 		if (real) {
 			if (this.isBomb()) {
-				paint.setColor(Color.red);
+//				paint.drawString("*", x, y);
+				paint.drawImage(img[9], x * 40, y * 40, new GUIBoard());
 			} else {
-				paint.setColor(Color.green);
+				paint.drawString("-", x, y);
 			}
 		} else {
 			if (this.suggestBomb) {
-				paint.setColor(Color.yellow);
+				paint.drawString("?", x, y);
 			} else if (this.suggestEmpty) {
-				paint.setColor(Color.green);
+				paint.drawString("-", x, y);
 			} else {
-				paint.setColor(Color.gray);
+				paint.drawString("X", x, y);
 			}
 		}
 	}

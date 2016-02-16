@@ -23,17 +23,14 @@
     <favorites_list name="ClassUser" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TestCollection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2246999">
+            <state vertical-scroll-proportion="0.9811321">
               <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#243#258#0" expanded="true" />
-                <element signature="e#310#325#0" expanded="true" />
-                <element signature="e#386#410#0" expanded="true" />
                 <element signature="method#setupUser#0;class#TestCollection#0" expanded="false" />
                 <element signature="method#setupUserOverrideEquals#0;class#TestCollection#0" expanded="false" />
                 <element signature="method#setupUserOverrideHashCode#0;class#TestCollection#0" expanded="false" />
@@ -124,8 +121,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -190,7 +187,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,10 +459,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21482602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21482602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -564,9 +561,26 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#243#258#0" expanded="true" />
-            <element signature="e#310#325#0" expanded="true" />
-            <element signature="e#386#410#0" expanded="true" />
+            <element signature="method#setupUser#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#setupUserOverrideEquals#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#setupUserOverrideHashCode#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#addToHashMap#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#addToHashSet#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#addToArrayList#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#u1equalsU1Copy#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#u1HashcodeU2#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#testCollection#0;class#TestCollection#0" expanded="false" />
+            <element signature="method#main#0;class#TestCollection#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#setupUser#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideEquals#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideHashCode#0;class#TestCollection#0" expanded="false" />
@@ -617,9 +631,6 @@
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#243#258#0" expanded="true" />
-            <element signature="e#310#325#0" expanded="true" />
-            <element signature="e#386#410#0" expanded="true" />
             <element signature="method#setupUser#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideEquals#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideHashCode#0;class#TestCollection#0" expanded="false" />
@@ -650,9 +661,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#243#258#0" expanded="true" />
-            <element signature="e#310#325#0" expanded="true" />
-            <element signature="e#386#410#0" expanded="true" />
             <element signature="method#setupUser#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideEquals#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideHashCode#0;class#TestCollection#0" expanded="false" />
@@ -797,13 +805,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2246999">
+        <state vertical-scroll-proportion="0.9811321">
           <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#243#258#0" expanded="true" />
-            <element signature="e#310#325#0" expanded="true" />
-            <element signature="e#386#410#0" expanded="true" />
             <element signature="method#setupUser#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideEquals#0;class#TestCollection#0" expanded="false" />
             <element signature="method#setupUserOverrideHashCode#0;class#TestCollection#0" expanded="false" />

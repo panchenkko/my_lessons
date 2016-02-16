@@ -50,16 +50,14 @@ public class Medium implements ILogic {
     public boolean finish() {
         boolean finish = false;
         int check = 0;
-        for (ICell[] row : this.cells) {
-            for (ICell cell : row) {
+        for (ICell[] row : this.cells)
+            for (ICell cell : row)
                 if ((cell.isSuggestBomb() && cell.isBomb()) ||
                         (cell.isSuggestEmpty() && !cell.isBomb()) || (!cell.isSuggestBomb() && cell.isBomb())
                         || cell.isSuggest1() || cell.isSuggest2() || cell.isSuggest3() || cell.isSuggest4()
                         || cell.isSuggest5() || cell.isSuggest6() || cell.isSuggest7() || cell.isSuggest8()) {
                     check++;
                 }
-            }
-        }
         if (check == (sumRow() * sumColumn()))
             finish = true;
         return finish;
@@ -68,11 +66,12 @@ public class Medium implements ILogic {
     // Предположения пользователя (Бомба или пустая клетка)
     @Override
     public void suggest(int x, int y, boolean bomb) {
-        if (bomb) {
-            this.cells[x][y].suggestBomb();
-        } else {
+        if (!bomb)
             this.cells[x][y].suggestEmpty();
-        }
+        if (bomb && !this.cells[x][y].isSuggestEmpty())
+            this.cells[x][y].suggestBomb();
+        else if (bomb && this.cells[x][y].isSuggestEmpty())
+            System.out.println("Вы уже открыли эту клетку!\n");
     }
 
     // Проверка первого хода. Если на поле нет бомб, возвращаем истину
@@ -89,6 +88,7 @@ public class Medium implements ILogic {
     }
 
     // Очистка вокруг ячейки при первом ходе
+    // Для того, чтобы у пользователя не открылась в начале игры только одна ячейка
     @Override
     public void clearAroundCell(int x, int y) {
         if (cells.length > 3) {

@@ -2,27 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0302455-a960-43ab-b130-edcfb54e792e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/intellij_forms_rt.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/intellij_forms_rt_src.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/jgoodies-common-javadoc.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/jgoodies-common-sources.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/jgoodies-common.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/jgoodies-forms-javadoc.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/jgoodies-forms-sources.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/lib/jgoodies-forms.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/Exception/ArrayIndexOutOfBoundsException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/SelectLevelInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/logics/SelectLevel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/logics/expert.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/logics/medium.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Minesweeper/src/test/java/ru/minesweeperLesson/minesweeper/BaseActionTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Calculate.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/clinic-1.0.jar" afterPath="$PROJECT_DIR$/target/clinic-1.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/clinicLesson/clinic/Clinic.class" afterPath="$PROJECT_DIR$/target/classes/ru/clinicLesson/clinic/Clinic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaProject/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JavaProject/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaProject/src/main/java/ru/lesson/lessons/InteractRunner.java" afterPath="$PROJECT_DIR$/../JavaProject/src/main/java/ru/lesson/lessons/InteractRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/Console/Runner.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/Console/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java" afterPath="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ICell.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ICell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" />
     </list>
     <ignored path="Clinic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,15 +81,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Clinic.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Clinic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.52397263">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
                 <element signature="method#menu#0;class#Clinic#0" expanded="false" />
                 <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
                 <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+                <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
                 <element signature="method#editing#0;class#Clinic#0" expanded="false" />
                 <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
                 <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -88,21 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputUserException.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/_not_used_/InputUserException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05831904">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ClinicRunner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/ClinicRunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Animals/Pet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/ClinicRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Pet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java" />
       </list>
     </option>
   </component>
@@ -211,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -242,10 +246,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -270,42 +270,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="clinic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Clinic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Clinic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clinic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_not_used_" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
@@ -588,10 +557,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.4902439" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.4902439" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
@@ -604,7 +573,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43698853" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66939443" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -624,7 +593,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -647,6 +616,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -689,6 +659,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -731,6 +702,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -773,6 +745,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -815,6 +788,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -857,6 +831,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -899,6 +874,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -941,6 +917,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -983,6 +960,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -1025,6 +1003,7 @@
             <element signature="method#menu#0;class#Clinic#0" expanded="false" />
             <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
             <element signature="method#editing#0;class#Clinic#0" expanded="false" />
             <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
             <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
@@ -1049,21 +1028,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30520648">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/_not_used_/Cat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#198#199#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1095,19 +1063,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/_not_used_/InputUserException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05821918">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Pet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
-            <element signature="method#menu#0;class#Clinic#0" expanded="false" />
-            <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
-            <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
-            <element signature="method#editing#0;class#Clinic#0" expanded="false" />
-            <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
-            <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
-            <element signature="method#directory#0;class#Clinic#0" expanded="false" />
-            <element signature="method#output#0;class#Clinic#0" expanded="false" />
+            <element signature="method#Pet#0;class#Pet#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1122,29 +1090,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Pet.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="method#Pet#0;class#Pet#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.30520648">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/ClinicRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/_not_used_/InputUserException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicLesson/clinic/Clinic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05831904">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.52397263">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding>
+            <element signature="method#menu#0;class#Clinic#0" expanded="false" />
+            <element signature="method#addClient#0;class#Clinic#0" expanded="false" />
+            <element signature="method#findClientByPetName#0;class#Clinic#0" expanded="false" />
+            <element signature="method#inputEditing#0;class#Clinic#0" expanded="false" />
+            <element signature="method#editing#0;class#Clinic#0" expanded="false" />
+            <element signature="method#removeClient#0;class#Clinic#0" expanded="false" />
+            <element signature="method#showClients#0;class#Clinic#0" expanded="false" />
+            <element signature="method#directory#0;class#Clinic#0" expanded="false" />
+            <element signature="method#output#0;class#Clinic#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

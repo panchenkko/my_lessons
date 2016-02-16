@@ -24,6 +24,7 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
 	}
 
 	public void mouseClicked(MouseEvent e) {
+		select(e.getX() < 40 ? 0 : 1, e.getY() < 40 ? 0 : 1, e.getButton() != 1);
 		board.repaint();
 	}
 

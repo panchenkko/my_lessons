@@ -2,7 +2,7 @@ package ru.minesweeperLesson.minesweeper.gui;
 
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
-import ru.minesweeperLesson.minesweeper.levels.Easy;
+import ru.minesweeperLesson.minesweeper.levelsGUI.EasyGUI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 
 public class Main {
 	private static final JPanel controlPanel = new JPanel();
+	private static JLabel label = new JLabel("");
 	private static final GUIBoard board = new GUIBoard();
 
 	public static void main(String[] arg) {
@@ -24,18 +25,18 @@ public class Main {
 				frame.add(board, BorderLayout.CENTER);
 				board.setBorder(new EmptyBorder(10, 10, 10, 10));
 				frame.add(controlPanel, BorderLayout.PAGE_END);
+
+				label.setVerticalAlignment(SwingConstants.TOP);
+				frame.add(label, BorderLayout.EAST);
+
 				controlPanel.setLayout(new FlowLayout());
-
-				JLabel statusbar = new JLabel("");
-				frame.add(statusbar, BorderLayout.SOUTH);
-
 				final JButton generate = new JButton("Начать");
-				Easy easy = new Easy();
-				generate.addActionListener(new GUIAction(easy, board, new IGeneratorBoard() {
+				EasyGUI easy = new EasyGUI();
+				generate.addActionListener(new GUIAction (easy, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {
-						statusbar.setText(String.valueOf(easy.sumBombs()));
 						ICell[][] cells = easy.sizeField();
+						label.setText(easy.sumBombs() + " ");
 						for (int i = 0; i < easy.sumRow(); i++) {
 							for (int j = 0; j < easy.sumColumn(); j++) {
 								cells[i][j] = new GUICell(false);
@@ -71,5 +72,10 @@ public class Main {
 		frame.setVisible(false);
 		frame.dispose();
 		System.exit(0);
+	}
+
+	public static void setLabel(String textOnLabel) {
+		label.setText(textOnLabel);
+		label.repaint();
 	}
 }

@@ -1,6 +1,6 @@
 package ru.minesweeperLesson.minesweeper.levelsGUI;
 
-import ru.minesweeperLesson.minesweeper.console.ConsoleCell;
+import ru.minesweeperLesson.minesweeper.gui.GUICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ILogic;
 
@@ -112,7 +112,7 @@ public class MediumGUI implements ILogic {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBomb() && !this.cells[row][column].isSuggestEmpty()) {
-                this.cells[row][column] = new ConsoleCell(true);
+                this.cells[row][column] = new GUICell(true);
                 sumBombs--;
             }
         }
