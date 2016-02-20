@@ -32,7 +32,7 @@ public class BaseAction implements IUserAction {
 			this.logic.bombsGeneration();
 		}
 		if (!bomb)
-			this.logic.openEmptyCells(x, y);
+			this.logic.openEmptyCells();
 		if (this.logic.shouldBang(x, y)) {
 			this.board.drawBang();
 			this.board.drawLosing();
