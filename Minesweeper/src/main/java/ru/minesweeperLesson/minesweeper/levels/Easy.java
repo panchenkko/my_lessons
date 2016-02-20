@@ -9,16 +9,16 @@ public class Easy implements TheNumOfTheField {
 
 	@Override
 	public int sumBombs() {
-		return 3;
+		return 10;
 	}
 
 	@Override
 	public int sumRow() {
-		return 5;
+		return 9;
 	}
 
 	@Override
 	public int sumColumn() {
-		return 5;
+		return 9;
 	}
 }
