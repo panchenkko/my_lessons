@@ -11,21 +11,6 @@ public interface ILogic {
 	void loadBoard(ICell[][] cells);
 
 	/**
-	 * Количество бомб
-     */
-	int sumBombs();
-
-	/**
-	 * Количество рядов
-     */
-	int sumRow();
-
-	/**
-	 * Количество столбцов
-     */
-	int sumColumn();
-
-	/**
 	 * Размер всего поля
      */
 	ICell[][] sizeField();
@@ -74,5 +59,5 @@ public interface ILogic {
 	/**
 	 * Проверка и открытие пустых ячеек
 	 */
-	void openEmptyCells(int x, int y);
+	void openEmptyCells();
 }
