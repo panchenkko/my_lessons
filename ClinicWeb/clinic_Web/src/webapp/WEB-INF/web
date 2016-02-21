@@ -6,18 +6,13 @@
 
     <display-name>ClinicPet</display-name>
 
-    <description>
-        Bla Bla Bla
-    </description>
-
     <servlet>
         <servlet-name>ClinicServlet</servlet-name>
-        <servlet-class>ru.clinicWebLesson.clinicPetWeb.ClinicServlet</servlet-class>
+        <servlet-class>ru.clinicWebServlet.clinicPetWeb.ClinicServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>ClinicServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
 </web-app>

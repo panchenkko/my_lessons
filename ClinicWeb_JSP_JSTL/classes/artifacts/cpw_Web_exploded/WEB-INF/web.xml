@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+	<display-name>ClinicPet</display-name>
+
+	<servlet>
+		<servlet-name>ClinicServlet</servlet-name>
+		<servlet-class>ru.parsentev.servlets.ClinicServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ClinicServlet</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserViewServlet</servlet-name>
+		<servlet-class>ru.parsentev.servlets.UserViewServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserViewServlet</servlet-name>
+		<url-pattern>/user/view</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserCreateServlet</servlet-name>
+		<servlet-class>ru.parsentev.servlets.UserCreateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserCreateServlet</servlet-name>
+		<url-pattern>/user/create</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserEditServlet</servlet-name>
+		<servlet-class>ru.parsentev.servlets.UserEditServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserEditServlet</servlet-name>
+		<url-pattern>/user/edit</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserDeleteServlet</servlet-name>
+		<servlet-class>ru.parsentev.servlets.UserDeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserDeleteServlet</servlet-name>
+		<url-pattern>/user/delete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateUserJsonServlet</servlet-name>
+		<servlet-class>ru.parsentev.servlets.CreateUserJsonServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CreateUserJsonServlet</servlet-name>
+		<url-pattern>/user/json</url-pattern>
+	</servlet-mapping>
+</web-app>     
