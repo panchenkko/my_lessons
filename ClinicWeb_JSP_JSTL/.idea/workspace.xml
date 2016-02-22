@@ -2,100 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98723898-f60d-4be5-8f4d-612442c7f735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clinic-pet-web/src/main/java/Screenshots/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/artifacts/clinicPetWeb_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/Cat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/Dog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/InputUserException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/Pets.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/target/classes/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/Clinic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/ClinicRunner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/Pet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/Cat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/Dog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/InputUserException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/Pets.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/lib/commons-lang-2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/lib/plexus-utils-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/web" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ClinicWeb/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/StandardLogic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/test/java/ru/minesweeperLesson/minesweeper/BaseActionMyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/test/java/ru/minesweeperLesson/minesweeper/BaseActionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/LevelSelection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/fbsfd.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/IBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/IGeneratorBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ILogic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ISelectLevel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/IUserAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionMyTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionMyTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionTest.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/README.md" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../README.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/artifacts/clinicPetWeb_war_exploded.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/artifacts/clinicPetWeb_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/misc.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/clinicPetWeb.iml" afterPath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/clinicPetWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/pom.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/src/webapp/WEB-INF/web" afterPath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/src/webapp/WEB-INF/web" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/pom.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ILogic.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ILogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/console/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ISelectLevel.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ISelectLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MultithreadingExample/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MultithreadingExample/.idea/workspace.xml" />
     </list>
     <ignored path="jlessons.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -893,12 +807,12 @@
       <updated>1456065858548</updated>
       <workItem from="1456065862500" duration="1060000" />
       <workItem from="1456072979546" duration="20000" />
-      <workItem from="1456080360732" duration="14542000" />
+      <workItem from="1456080360732" duration="15130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15622000" />
+    <option name="totallyTimeSpent" value="16210000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -910,7 +824,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
