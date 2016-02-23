@@ -24,3 +24,4 @@ ___________________________________
 ------------------------------------
 ___________________________________
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicWeb_JSP_JSTL/clinic-pet-web/src/main/java/Screenshots/delete.png)
+
