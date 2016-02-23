@@ -2,11 +2,11 @@ package ru.clinicWeb_jsp_jstl.models;
 
 public class Pet {
 
-    private String petType;
-    private String name;
-    private String age;
+    private final String petType;
+    private final String name;
+    private final String age;
 
-    public Pet(String petType, String name, String age) {
+    public Pet(final String petType, final String name, final String age) {
         this.petType = petType;
         this.name = name;
         this.age = age;
@@ -22,17 +22,5 @@ public class Pet {
 
     public String getAge() {
         return this.age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public void setPetType(String petType) {
-        this.petType = petType;
     }
 }

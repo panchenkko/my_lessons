@@ -19,6 +19,7 @@ public class ClientCreateServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		this.CLIENT_CACHE.add(
 				new Client(this.ids.incrementAndGet(), req.getParameter("nameClient"),
 				new Pet(req.getParameter("petType"), req.getParameter("name"), req.getParameter("age"))));

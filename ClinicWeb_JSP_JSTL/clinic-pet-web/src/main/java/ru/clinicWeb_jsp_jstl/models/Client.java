@@ -2,11 +2,11 @@ package ru.clinicWeb_jsp_jstl.models;
 
 public class Client {
 
-    private int id;
-    private String name;
-    private Pet pet;
+    private final int id;
+    private final String name;
+    private final Pet pet;
 
-    public Client(int id, String name, Pet pet) {
+    public Client(final int id, final String name, final Pet pet) {
         this.id = id;
         this.name = name;
         this.pet = pet;
@@ -18,10 +18,6 @@ public class Client {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Pet getPet() {

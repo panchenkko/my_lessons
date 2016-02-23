@@ -17,9 +17,9 @@
 	<c:forEach items="${clients}" var="client" varStatus="status">
 		<tr valign="top">
 			<td style="padding: 10px;">
-				<b>Name Client: </b>${client.name},
+				<b>Имя клиента: </b>${client.name},
 				<b>${client.pet.petType}: </b>${client.pet.name},
-				<b>age: </b>${client.pet.age}
+				<b>возраст: </b>${client.pet.age}
 			</td>
 			<td style="padding: 10px;">
 				<a style="padding: 10px;"

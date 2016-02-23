@@ -5,12 +5,19 @@ import ru.clinicWeb_jsp_jstl.models.Client;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Шаблон проектирования "Singleton".
+ * Создание объекта этого класса, происходит только в этом классе
+ * СОздать можно только один объект этого класса
+ */
 public class ClientCache {
 
 	private static final ClientCache INSTANCE = new ClientCache();
 
+	// Карта для многопоточности
 	private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<Integer, Client>();
 
+	// Возвращаем объект класса
 	public static ClientCache getInstance() {
 		return INSTANCE;
 	}

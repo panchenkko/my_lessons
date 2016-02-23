@@ -10,16 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClientEditServlet extends HttpServlet {
-
-	final AtomicInteger ids = new AtomicInteger();
 
 	private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		req.setAttribute("client", this.CLIENT_CACHE.get(Integer.valueOf(req.getParameter("id"))));
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/views/client/EditClient.jsp");
 		dispatcher.forward(req, resp);
@@ -27,8 +25,9 @@ public class ClientEditServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		this.CLIENT_CACHE.edit(
-				new Client(this.ids.incrementAndGet(), req.getParameter("nameClient"),
+				new Client(Integer.valueOf(req.getParameter("id")), req.getParameter("nameClient"),
 				new Pet(req.getParameter("petType"), req.getParameter("name"), req.getParameter("age"))));
 		resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/view"));
 	}

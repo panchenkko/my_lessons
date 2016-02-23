@@ -10,25 +10,25 @@
 	<input type="hidden" name="id" value="${client.id}">
 	<table>
 		<tr>
-			<td align="right" >Name Client : </td>
+			<td align="right" >Имя клиента : </td>
 			<td>
 				<input type="text" name="nameClient" value="${client.name}">
 			</td>
 		</tr>
 		<tr>
-			<td align="right" >Pet type : </td>
+			<td align="right" >Тип питомца : </td>
 			<td>
 				<input type="text" name="petType" value="${client.pet.petType}">
 			</td>
 		</tr>
 		<tr>
-			<td align="right" >Pet name : </td>
+			<td align="right" >Имя питомца : </td>
 			<td>
 				<input type="text" name="name" value="${client.pet.name}">
 			</td>
 		</tr>
 		<tr>
-			<td align="right" >Pet age : </td>
+			<td align="right" >Возраст питомца : </td>
 			<td>
 				<input type="text" name="age" value="${client.pet.age}">
 			</td>
