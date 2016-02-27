@@ -34,6 +34,15 @@ public class ClientCache {
 		this.clients.replace(client.getId(), client);
 	}
 
+	public Client findByName(final String name) {
+		for (final Client client : clients.values()) {
+			if (client.getName().equals(name) || client.getPet().getName().equals(name)) {
+				return client;
+			}
+		}
+		throw new IllegalStateException(String.format("Login %s not found", name));
+	}
+
 	public void delete(final int id) {
 		this.clients.remove(id);
 	}

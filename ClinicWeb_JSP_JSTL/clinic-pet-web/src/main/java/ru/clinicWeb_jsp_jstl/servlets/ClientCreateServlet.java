@@ -18,7 +18,7 @@ public class ClientCreateServlet extends HttpServlet {
 	private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		this.CLIENT_CACHE.add(
 				new Client(this.ids.incrementAndGet(), req.getParameter("nameClient"),

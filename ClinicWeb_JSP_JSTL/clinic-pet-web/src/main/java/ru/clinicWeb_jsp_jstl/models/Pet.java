@@ -13,7 +13,7 @@ public class Pet {
     }
 
     public String getPetType() {
-        return petType;
+        return this.petType;
     }
 
     public String getName() {

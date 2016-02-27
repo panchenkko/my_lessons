@@ -5,18 +5,7 @@
 	<groupId>ru.clinicWeb_jsp_jstl</groupId>
 	<artifactId>clinic_jsp_jstl</artifactId>
 	<version>1.0</version>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+
 	<packaging>war</packaging>
 
 	<name>Clinic Pet Web</name>
@@ -85,10 +74,10 @@
 		</dependency>
 	</dependencies>
 
-	<!-- Для проверки реализации тестов -->
 	<build>
 		<finalName>ClinicPetWeb</finalName>
 		<plugins>
+			<!-- Maven -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -98,6 +87,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+			<!-- Для проверки реализации тестов -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
