@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-language" content="ru">
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+<title>Справочник</title>
+
+</head>
+<body>
+<h1><strong><em>HTML</em></strong></h1>
+<hr />
+<hr />
+
+<p>Абзац. На котором обычный текст</p>
+
+<hr />
+
+<big>Увеличенный текст</big>
+
+<hr />
+
+<small>Уменьшенный текст</small>
+
+<hr />
+
+<em>Важный текст</em>
+
+<hr />
+
+<strong>Очень важный текст</strong>
+
+<hr />
+
+<p>Абзац. На котором <sup>текст в верхнем регистре</sup> и <sub>текст в нижнем регистре</sub></p>
+
+<hr />
+<!-- target="_blank" - открытие в новом окне -->
+<a href="Тест.html" target="_top" title="Текущая страница" accesskey="s">Ссылка на эту же страницу (Alt + S)</a>
+
+<hr />
+
+<img src="img/1.jpg" alt="Тут должна быть картинка" width="400px" height="300px" />
+
+<hr />
+
+<table border="1">
+<tr>
+<th>Заголовок 1</th>
+<th>Заголовок 2</th>
+<th>Заголовок 3</th>
+</tr>
+<tr>
+<td rowspan="2">Ячейка 1 растянута на два ряда</td>
+<td>Ячейка 2</td>
+<td>Ячейка 3</td>
+</tr>
+<tr>
+<td colspan="2">Ячейка 5 растянута на два столбца</td>
+</tr>
+</table>
+
+<hr />
+
+<em>Неупорядоченный список</em>
+<ul>
+<li>Элемент 1</li>
+<li>Элемент 2</li>
+<li>Элемент 3</li>
+</ul>
+
+<em>Упорядоченный список</em>
+<ol>
+<li>Элемент 1</li>
+<li>Элемент 2</li>
+<li>Элемент 3</li>
+</ol>
+
+<hr />
+
+<form name="input" action="Тест.html" method="get">
+<p>Введите имя: </p>
+<input type="text" name="name" />
+<p>Введите пароль: </p>
+<input type="text" name="password" />
+
+<p>Как вы относитесь к полетам в космос? <strong>CHECKBOX</strong></p>
+<input type="checkbox" name="space" value="1" />Положительно, всегда хотел полететь в космос
+<br />
+<input type="checkbox" name="space" value="2" />Безразлично, никогда не думал об этом серьезно
+<br />
+<input type="checkbox" name="space" value="3" />Отрицательно, меня с детства отталкивают мысли о космосе
+<br />
+
+<p>Как вы относитесь к полетам в космос? <strong>RADIO</strong></p>
+<input type="radio" name="space" value="a" />Положительно, всегда хотел полететь в космос
+<br />
+<input type="radio" name="space" value="b" />Безразлично, никогда не думал об этом серьезно
+<br />
+<input type="radio" name="space" value="c" />Отрицательно, меня с детства отталкивают мысли о космосе
+<br />
+<br />
+
+<select name="sex">
+<option value="male">Парень</option>
+<option value="female">Девушка</option>
+</select>
+<br /><br />
+
+<input type="submit" name="submit" value="Отправить" />
+</form>
+
+<hr />
+
+<frameset cols="400px" rows="300px">
+<frame src="Тест.html" />
+</frameset>
+
+<noframes>
+<body>
+<em>Фрейм не поддерживается!</em>
+</body>
+</noframes>
+
+<hr />
+
+<em>Встроенный html-документ</em>
+<br />
+<!-- Обычно впихивают рекламу -->
+<iframe src="Тест.html" width="400px" height="300px"></iframe>
+
+<hr />
+
+<h1><strong><em>CSS</em></strong></h1>
+<hr />
+<hr />
+
+<h4>Семейства шрифтов</h4>
+<p id="fontFamilySerif">Тестирование шрифта</p>
+<p id="fontFamilySans-Serif">Тестирование шрифта</p>
+<p id="fontFamilyMonospace">Тестирование шрифта</p>
+<p id="fontFamilyFantasy">Тестирование шрифта</p>
+<p id="fontFamilyCursive">Тестирование шрифта</p>
+
+<hr />
+
+<h4>Задний фон</h4>
+
+<div id="backgroundColor"></div>
+<div id="backgroundImage"></div>
+
+<hr />
+
+<a href="Тест.html" target="_top" title="Текущая страница" id="link">Ссылка использующая стили</a>
+
+<hr />
+
+<em>Неупорядоченный список (Свойство list-style-type)</em>
+<ul>
+<li style="list-style-type: none">Без обозначения</li>
+<li style="list-style-type: disc">Закрашенный круг</li>
+<li style="list-style-type: circle">Не закрашенный круг</li>
+<li style="list-style-type: square">Закрашенный квадрат</li>
+</ul>
+
+<em>Упорядоченный список</em>
+<ol>
+<li style="list-style-type: decimal">Арабские числа</li>
+<li style="list-style-type: decimal-leading-zero">Арабские числа, начинающиеся с нуля</li>
+<li style="list-style-type: lower-greek">Греческая нумерация</li>
+<li style="list-style-type: lower-latin">Маленькие буквы латиницы</li>
+<li style="list-style-type: lower-roman">Маленькие римские</li>
+<li style="list-style-type: upper-latin">Большие латинские</li>
+<li style="list-style-type: upper-roman">Большие римские</li>
+<li style="list-style-image: url('img/icon.png');">С картинкой</li>
+</ol>
+
+<hr />
+
+<table border="1" id="tableStyle">
+<caption><em>Таблица со стилями</em></caption>
+<tr>
+<th>Заголовок 1</th>
+<th>Заголовок 2</th>
+<th>Заголовок 3</th>
+</tr>
+<tr>
+<td>Ячейка 1</td>
+<td>Ячейка 2</td>
+<td>Ячейка 3</td>
+</tr>
+<tr>
+<td>Ячейка 4</td>
+<td>Ячейка 5</td>
+<td>Ячейка 6</td>
+</tr>
+<tr>
+<td>Ячейка 7</td>
+<td>Ячейка 8</td>
+<td>Ячейка 9</td>
+</tr>
+</table>
+
+<hr />
+
+<em>Стиль границ</em>
+<ul id="borderStyle">
+<li style="border: 1px solid black;">Элемент 1</li>
+<li style="border: 1px dashed black;">Элемент 2</li>
+<li style="border: 1px dotted black;">Элемент 3</li>
+<li style="border: 1px double black;">Элемент 4</li>
+</ul>
+
+</body>
+</html>

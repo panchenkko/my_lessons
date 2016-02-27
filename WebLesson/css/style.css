@@ -1,0 +1,117 @@
+body { 
+min-width: 1280px; 
+max-width: 1920px; 
+margin: 10px; 
+padding: 0px; 
+height: auto;
+font-family: Trebuchet MS, Verdana, Arial, Arial Black;
+
+/*: url("../img/1.jpg");
+background-repeat: no-repeat;
+background-position: 50% 0;*/
+}
+
+h1, h2, h3, h4, h5, h6 { 
+font-family: Verdana, Geneva,sans-serif; 
+}
+
+#fontFamilySerif {
+	font-family: Serif, Times New Roman, Georgia;
+	font-size: 1em;
+	font-style: /* italic */ ;
+	font-weight: /* bold */ ;
+}
+
+#fontFamilySans-Serif {
+	font-family: Trebuchet MS, Verdana, Arial, Arial Black;
+	font-size: 1em;
+}
+
+#fontFamilyMonospace {
+	font-family: Monospace, Courier New;
+	font-size: 1em;
+}
+
+#fontFamilyFantasy {
+	font-family: Fantasy, Impact;
+	font-size: 1em;
+}
+
+#fontFamilyCursive {
+	font-family: Cursive, Comic Sans MS;
+	font-size: 1em;
+}
+
+#backgroundColor {
+	height: 50px;
+	background-color: green;
+}
+
+#backgroundImage {
+	height: 50px;
+	background-image: url("../img/3.png");
+/* background-repeat: repeat-x;
+	background-repeat: repeat-y;
+	background-repeat: no-repeat;
+    background-position: 50px (горизонталь) 30px (вертикаль);
+    background-attachment: fixed; прикрепление картинки 
+	укороченная форма: background: url("../img/3.png") no-repeat fixed 50xp 30px; */
+}
+
+#link:link {
+	text-decoration: none;
+	color: green;	
+}
+
+#link:visited {
+	text-decoration: none;
+	color: green;
+}
+
+#link:hover {
+	text-decoration: underline;
+	color: red;
+	font-size: 1.02em;
+}
+
+#link:active {
+	/* Убирает подчеркивание (как обычно под ссылкой) */
+	text-decoration: none;
+	color: red;
+	font-size: 1.02em;
+}
+
+#tableStyle {
+	border-color: black;
+	/* Соединяет границы каждой ячейки */
+	border-collapse: collapse;
+}
+
+#tableStyle th, td {
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px;
+}
+
+#tableStyle th {
+	padding: 10px;
+	background-color: #FF7755;
+	color: white;
+	border-color: black;
+}
+
+#tableStyle td {
+	background-color: #FFC39B;
+	text-align: center;
+	/*vertical-align: top or middle or bottom; - выравнивание текста по вертикали */
+}
+
+#borderStyle li {
+	list-style-type: none;
+	width: 100px;
+	margin: 5px;
+	padding: 10px;
+	
+/* visibity: hidden; - сделать объект невидимым
+	display: none; - прикрыть объект полностью */
+}
