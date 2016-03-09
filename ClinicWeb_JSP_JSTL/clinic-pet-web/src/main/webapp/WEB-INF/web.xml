@@ -13,7 +13,7 @@
 
 	<servlet-mapping>
 		<servlet-name>UserViewServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/client/view</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

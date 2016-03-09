@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Шаблон проектирования "Singleton".
  * Создание объекта этого класса, происходит только в этом классе
- * СОздать можно только один объект этого класса
+ * Создать можно только один объект этого класса
  */
 public class ClientCache {
 
@@ -22,6 +22,10 @@ public class ClientCache {
 		return INSTANCE;
 	}
 
+	public int size() {
+		return this.clients.size();
+	}
+
 	public Collection<Client> values() {
 		return this.clients.values();
 	}
@@ -32,15 +36,6 @@ public class ClientCache {
 
 	public void edit(final Client client) {
 		this.clients.replace(client.getId(), client);
-	}
-
-	public Client findByName(final String name) {
-		for (final Client client : clients.values()) {
-			if (client.getName().equals(name) || client.getPet().getName().equals(name)) {
-				return client;
-			}
-		}
-		throw new IllegalStateException(String.format("Login %s not found", name));
 	}
 
 	public void delete(final int id) {

@@ -29,15 +29,15 @@
     // Наведение на элемент
 	$(document).ready(function() {
 		$("#jQueryOpacity").mouseover(function(event) {
-			// animate создает анимацию, 300 - это скорость анимации (в миллисекундах)
-			$("#jQueryOpacity").animate({opacity: 1}, 300);
+			// animate создает анимацию, 100 - это скорость анимации (в миллисекундах)
+			$("#jQueryOpacity").animate({opacity: 1}, 100);
 		});
 	});
 
     // Вывод с элемента
 	$(document).ready(function() {
 		$("#jQueryOpacity").mouseout(function() {
-			$("#jQueryOpacity").animate({opacity: 0.5}, 300);
+			$("#jQueryOpacity").animate({opacity: 0.5}, 400);
 		});
 	});
 

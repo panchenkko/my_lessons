@@ -2,99 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37783181-1e02-4ce1-bf73-cd17ee833102" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/clinicPetWeb_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/Cat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/Dog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/InputUserException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic/src/main/java/ru/clinicLesson/clinic/_not_used_/Pets.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic_Web/target/classes/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/Clinic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/ClinicRunner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/Pet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/Cat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/Dog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/InputUserException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicLesson/clinic/_not_used_/Pets.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/classes/ru/clinicWebLesson/clinicPetWeb/ClinicServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/lib/commons-lang-2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/lib/plexus-utils-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/web" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/clinicPetWeb_war_exploded/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/StandardLogic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/test/java/ru/minesweeperLesson/minesweeper/BaseActionMyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/src/test/java/ru/minesweeperLesson/minesweeper/BaseActionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/BaseAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/LevelSelection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleCell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/Runner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/fbsfd.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/IBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ICell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/IGeneratorBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ILogic.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/ISelectLevel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/interfaces/IUserAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Easy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Expert.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levels/Medium.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levelsGUI/EasyGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levelsGUI/ExpertGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/levelsGUI/MediumGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionMyTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionMyTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Minesweeper/target/test-classes/ru/minesweeperLesson/minesweeper/BaseActionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../README.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClassUser-_hashcode_equals/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/clinicPetWeb_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/clinicPetWeb_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic_Web/clinicPetWeb.iml" afterPath="$PROJECT_DIR$/clinic_Web/clinicPetWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic_Web/pom.xml" afterPath="$PROJECT_DIR$/clinic_Web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic_Web/src/webapp/WEB-INF/web" afterPath="$PROJECT_DIR$/clinic_Web/src/webapp/WEB-INF/web" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java" afterPath="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/clinic-pet-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/clinic-pet-web/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ILogic.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/ILogic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MultithreadingExample/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MultithreadingExample/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebLesson/index.html" afterPath="$PROJECT_DIR$/../WebLesson/index.html" />
     </list>
     <ignored path="clinicWebPackage.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clinic_Web/src/webapp/WEB-INF/web">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.36624774">
               <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
@@ -133,16 +50,9 @@
         <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+              <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Screenshot.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ScreenShots/Screenshot.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -200,8 +110,8 @@
         <option value="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/store/UserCache.java" />
         <option value="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebLesson/clinicPetWeb/ClientViewServlet.java" />
         <option value="$PROJECT_DIR$/clinic_Web/pom.xml" />
-        <option value="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java" />
         <option value="$PROJECT_DIR$/clinic_Web/src/webapp/WEB-INF/web" />
+        <option value="$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java" />
       </list>
     </option>
   </component>
@@ -279,7 +189,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -466,14 +378,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20574713" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
@@ -482,7 +392,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Downloads/13-ServletParam/14-ServletParam" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -919,6 +829,21 @@
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="62936" />
       </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -949,12 +874,7 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method>
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="clinicPetWeb:war exploded" />
-        </option>
-      </method>
+      <method />
     </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
@@ -984,11 +904,13 @@
       <workItem from="1456085821696" duration="30000" />
       <workItem from="1456094149732" duration="1300000" />
       <workItem from="1456098059769" duration="157000" />
+      <workItem from="1457462965945" duration="3227000" />
+      <workItem from="1457538995343" duration="64000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3612000" />
+    <option name="totallyTimeSpent" value="6903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1386,19 +1308,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinic_Web/src/webapp/WEB-INF/web">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clinic/src/main/java/ru/clinicLesson/clinic/ClinicRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14554794">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,17 +1333,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ScreenShots/Screenshot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ScreenShots/Screenshot.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/clinic_Web/src/webapp/WEB-INF/web">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36624774">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
@@ -1498,7 +1419,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|clinicPetWeb</last-edited>
+          <last-edited>clinicPetWeb</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

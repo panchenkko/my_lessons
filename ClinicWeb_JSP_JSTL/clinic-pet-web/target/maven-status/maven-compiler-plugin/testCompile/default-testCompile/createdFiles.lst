@@ -1,1 +1,4 @@
-ru\clinicWeb_jsp_jstl\UserCRUDServletTest.class
+ru\clinicWeb_jsp_jstl\servlets\ClientDeleteServletTest.class
+ru\clinicWeb_jsp_jstl\servlets\ClientCreateServletTest.class
+ru\clinicWeb_jsp_jstl\servlets\ClientEditServletTest.class
+ru\clinicWeb_jsp_jstl\servlets\ClientViewServletTest.class

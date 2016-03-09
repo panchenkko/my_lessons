@@ -20,6 +20,7 @@ public class ClinicServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
+        resp.setCharacterEncoding("UTF-8");
         PrintWriter writer = resp.getWriter();
         writer.append(
                 "<!DOCTYPE html>" +
@@ -51,6 +52,7 @@ public class ClinicServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("UTF-8");
         if (!req.getParameter("nameClient").equals("") && !req.getParameter("petType").equals("") &&
             !req.getParameter("name").equals("") && !req.getParameter("age").equals(""))
             this.clients.add(
