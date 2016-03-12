@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98723898-f60d-4be5-8f4d-612442c7f735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientCreateServletTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientDeleteServletTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientViewServletTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/UserCRUDServletTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic-pet-web/target/surefire-reports/TEST-ru.clinicWeb_jsp_jstl.UserCRUDServletTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic-pet-web/target/surefire-reports/ru.clinicWeb_jsp_jstl.UserCRUDServletTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/clinic-pet-web/target/test-classes/ru/clinicWeb_jsp_jstl/UserCRUDServletTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/target/classes/ru/clinicWeb_jsp_jstl/store/ClientCache.class" afterPath="$PROJECT_DIR$/clinic-pet-web/target/classes/ru/clinicWeb_jsp_jstl/store/ClientCache.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/target/coverage-reports/jacoco-unit.exec" afterPath="$PROJECT_DIR$/clinic-pet-web/target/coverage-reports/jacoco-unit.exec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java" afterPath="$PROJECT_DIR$/../ClinicWeb/clinic_Web/src/main/java/ru/clinicWebServlet/clinicPetWeb/ClinicServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/store/ClientCache.java" afterPath="$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/store/ClientCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/clinic-pet-web/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/clinic-pet-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/clinic-pet-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java" afterPath="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebLesson/css/style.css" afterPath="$PROJECT_DIR$/../WebLesson/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebLesson/index.html" afterPath="$PROJECT_DIR$/../WebLesson/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/clinic-pet-web/src/main/java/Screenshots/mockito.png" afterPath="$PROJECT_DIR$/clinic-pet-web/src/main/java/Screenshots/mockito1.png" />
     </list>
     <ignored path="jlessons.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,12 +39,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/webapp/WEB-INF/web.xml">
+      <file leaf-file-name="ClientView.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/webapp/views/client/ClientView.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.2513465">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientCache.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/store/ClientCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+              <folding>
+                <element signature="e#898#899#0" expanded="true" />
+                <element signature="e#949#950#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientEditServletTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35849056">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,9 +134,9 @@
         <option value="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientDeleteServletTest.java" />
         <option value="$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/servlets/ClientViewServlet.java" />
         <option value="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientViewServletTest.java" />
-        <option value="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java" />
         <option value="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientCreateServletTest.java" />
         <option value="$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/store/ClientCache.java" />
+        <option value="$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java" />
       </list>
     </option>
   </component>
@@ -223,9 +231,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,6 +350,14 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -367,6 +382,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Screenshots" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -474,6 +493,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1137,17 +1157,13 @@
       <workItem from="1457437532677" duration="382000" />
       <workItem from="1457438469190" duration="454000" />
       <workItem from="1457463003772" duration="54000" />
-      <workItem from="1457540499299" duration="8874000" />
+      <workItem from="1457540499299" duration="9789000" />
+      <workItem from="1457741113516" duration="1125000" />
+      <workItem from="1457774560860" duration="706000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClientCreateServletTest - 2016.03.09 at 20h 03m 50s.xml">
-      <configuration name="ClientCreateServletTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientDeleteServletTest - 2016.03.09 at 19h 45m 41s.xml">
-      <configuration name="ClientDeleteServletTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ClientEditServletTest - 2016.03.09 at 20h 02m 04s.xml">
       <configuration name="ClientEditServletTest" configurationId="JUnit" />
     </history-entry>
@@ -1155,6 +1171,12 @@
       <configuration name="ClientEditServletTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ClientEditServletTest - 2016.03.09 at 20h 21m 27s.xml">
+      <configuration name="ClientEditServletTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientEditServletTest - 2016.03.12 at 11h 29m 02s.xml">
+      <configuration name="ClientEditServletTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientEditServletTest - 2016.03.12 at 11h 30m 00s.xml">
       <configuration name="ClientEditServletTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ClientViewServletTest - 2016.03.09 at 19h 52m 05s.xml">
@@ -1174,7 +1196,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65748000" />
+    <option name="totallyTimeSpent" value="68494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1186,7 +1208,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1200,7 +1222,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.48772505" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.48772505" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.512275" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1254,9 +1276,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#639#640#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="false" />
-            <element signature="e#694#695#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1309,9 +1330,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#639#640#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="false" />
-            <element signature="e#694#695#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1507,19 +1527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/webapp/views/client/ClientView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3297491">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/models/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1535,7 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,16 +1583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientCreateServletTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1590,14 +1590,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/store/ClientCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65008575">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1619,9 +1611,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2513465">
+        <state vertical-scroll-proportion="0.36624774">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/webapp/views/client/ClientView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/main/java/ru/clinicWeb_jsp_jstl/store/ClientCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+          <folding>
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinic-pet-web/src/test/java/ru/clinicWeb_jsp_jstl/servlets/ClientEditServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35849056">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

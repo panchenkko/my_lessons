@@ -47,5 +47,13 @@ public class ClientEditServletTest extends Mockito {
         assertEquals("newPetType", clientCache.get(1).getPet().getPetType());
         assertEquals("newName", clientCache.get(1).getPet().getName());
         assertEquals("newAge", clientCache.get(1).getPet().getAge());
+
+        try {
+            clientCache.delete(clientCache.findByLogin("Testing Exception").getId());
+        } catch (IllegalStateException ise) {
+            System.out.println("Not found!");
+        }
+
+        clientCache.delete(clientCache.findByLogin("newClientName").getId());
     }
 }

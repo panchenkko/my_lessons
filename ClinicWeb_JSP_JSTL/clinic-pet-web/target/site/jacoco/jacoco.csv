@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.store,ClientCache,0,87,0,4,0,18,0,12,0,10
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.servlets,ClientEditServlet,0,74,0,0,0,13,0,3,0,3
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.servlets,ClientViewServlet,0,24,0,0,0,7,0,2,0,2
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.servlets,ClientDeleteServlet,0,29,0,0,0,5,0,3,0,3
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.servlets,ClientCreateServlet,0,54,0,0,0,9,0,2,0,2
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.models,Pet,0,21,0,0,0,8,0,4,0,4
+Clinic Pet Web,ru.clinicWeb_jsp_jstl.models,Client,0,21,0,0,0,8,0,4,0,4
