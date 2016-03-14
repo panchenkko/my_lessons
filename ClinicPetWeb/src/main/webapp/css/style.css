@@ -1,0 +1,132 @@
+body {
+	background: url("../img/fons/jpg2.jpg");
+}
+
+.container {
+	background-color: #fff;
+	padding: 10px;
+	min-width: 730px;
+	margin-top: 5%;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	-webkit-box-shadow: -6px 12px 50px black;
+	-moz-box-shadow: -6px 12px 50px black;
+	box-shadow: -6px 12px 50px black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Cursive, Comic Sans MS;
+	font-weight: bold;
+}
+
+hr {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 3px solid black;
+}
+
+header {
+	height: 250px;
+	background-image: url(../img/jpg16.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	font-family: Cursive, Comic Sans MS;
+}
+
+header div>h1, p {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+header div>p {
+	margin-top: 20px;
+}
+
+form {
+	width: auto;
+	clear: both;
+}
+
+form input {
+	padding: 5px;
+}
+
+.input-control {
+	display: initial;
+	width: 140px;
+	clear: both;
+}
+
+form input:first-child {
+	margin: 15px 0px 11px 16px;
+}
+
+form input[placeholder="Тип питомца"] {
+	margin-left: 16px;
+}
+
+form select {
+	padding: 5px;
+}
+
+form input[type="submit"], input[type="button"] {
+	width: 105px;
+	margin-left: 5px;
+} 
+
+.body {
+	height: auto;
+}
+
+.body h1, td[colspan="5"] {
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.table {
+	max-width: 700px;
+	margin: auto;
+	border-color: black;
+}
+
+.table caption {
+	text-align: center;
+	font-family: Cursive, Comic Sans MS;
+	font-weight: bold;
+	font-size: 23px;
+	color: #286090;
+}
+
+.table th:first-child, td:first-child {
+	font-weight: bold;
+	border-right: 2px solid black;
+	width: 200px;
+}
+
+.table th {
+	border-bottom: 2px solid black;
+	text-align: center;
+	font-weight: normal;
+	font-style: italic;
+	color: white;
+    background-color: #286090;
+}
+
+.table td {
+	text-align: center;
+	/*font-style: italic;*/
+}
+
+@media (max-width: 1200px) {
+	header {
+		background-size: auto 195px;
+		background-position: 100% -12%;
+	}
+
+	.lead {
+		font-size: 21px;
+	}
+}

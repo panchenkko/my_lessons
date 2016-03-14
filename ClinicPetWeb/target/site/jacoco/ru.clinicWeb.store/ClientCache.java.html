@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ClientCache.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Clinic Pet Web</a> &gt; <a href="index.source.html" class="el_package">ru.clinicWeb.store</a> &gt; <span class="el_source">ClientCache.java</span></div><h1>ClientCache.java</h1><pre class="source lang-java linenums">package ru.clinicWeb.store;
+
+import ru.clinicWeb.models.Client;
+
+import java.util.Collection;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ * Шаблон проектирования &quot;Singleton&quot;.
+ * Создание объекта этого класса, происходит только в этом классе
+ * Создать можно только один объект этого класса
+ */
+<span class="fc" id="L14">public class ClientCache {</span>
+
+<span class="fc" id="L16">	private final AtomicInteger ids = new AtomicInteger();</span>
+
+<span class="fc" id="L18">	private static final ClientCache INSTANCE = new ClientCache();</span>
+
+	// Карта для многопоточности
+<span class="fc" id="L21">	private final ConcurrentHashMap&lt;Integer, Client&gt; clients = new ConcurrentHashMap&lt;Integer, Client&gt;();</span>
+
+	// Возвращаем объект класса
+	public static ClientCache getInstance() {
+<span class="fc" id="L25">		return INSTANCE;</span>
+	}
+
+	public int size() {
+<span class="fc" id="L29">		return this.clients.size();</span>
+	}
+
+	public Collection&lt;Client&gt; values() {
+<span class="fc" id="L33">		return this.clients.values();</span>
+	}
+
+	public void add(final Client client) {
+<span class="fc" id="L37">		this.clients.put(client.getId(), client);</span>
+<span class="fc" id="L38">	}</span>
+
+	public void edit(final Client client) {
+<span class="fc" id="L41">		this.clients.replace(client.getId(), client);</span>
+<span class="fc" id="L42">	}</span>
+
+	public Client findByLogin(final String searchName) {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">		for (final Client client : clients.values()) {</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">			if (client.getName().equals(searchName)) {</span>
+<span class="fc" id="L47">				return client;</span>
+			}
+<span class="fc" id="L49">		}</span>
+<span class="fc" id="L50">		throw new IllegalStateException(String.format(&quot;Login %s not found&quot;, searchName));</span>
+	}
+
+	public int generateId() {
+<span class="nc" id="L54">		return this.ids.incrementAndGet();</span>
+	}
+
+	public void delete(final int id) {
+<span class="fc" id="L58">		this.clients.remove(id);</span>
+<span class="fc" id="L59">	}</span>
+
+	public Client get(final int id) {
+<span class="fc" id="L62">		return this.clients.get(id);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

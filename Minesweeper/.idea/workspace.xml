@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1eae12b-e635-4f96-aa3c-c6b9c0891096" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/clinic-pet-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/clinic-pet-web/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/TheNumOfTheField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebLesson/index.html" afterPath="$PROJECT_DIR$/../WebLesson/index.html" />
     </list>
     <ignored path="minesweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +30,7 @@
       <file leaf-file-name="LevelSelection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8404803">
+            <state vertical-scroll-proportion="-5.0651803">
               <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -227,6 +222,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,9 +373,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -782,6 +777,7 @@
       <workItem from="1456074506911" duration="82000" />
       <workItem from="1456074663723" duration="14000" />
       <workItem from="1457387917067" duration="1283000" />
+      <workItem from="1457959741927" duration="193000" />
     </task>
     <servers />
   </component>
@@ -818,7 +814,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2606000" />
+    <option name="totallyTimeSpent" value="2799000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -878,6 +874,40 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1149,7 +1179,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8404803">
+        <state vertical-scroll-proportion="-5.0651803">
           <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />

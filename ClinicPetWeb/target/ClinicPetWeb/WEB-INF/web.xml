@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+	<display-name>ClinicPet</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>ClientViewServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.ClientViewServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ClientViewServlet</servlet-name>
+		<url-pattern>/client/view</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ClientCreateServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.ClientCreateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ClientCreateServlet</servlet-name>
+		<url-pattern>/client/create</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ClientEditServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.ClientEditServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ClientEditServlet</servlet-name>
+		<url-pattern>/client/edit</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ClientDeleteServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.ClientDeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ClientDeleteServlet</servlet-name>
+		<url-pattern>/client/delete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateClientJSONServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.CreateClientJSONServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CreateClientJSONServlet</servlet-name>
+		<url-pattern>/user/json</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.IndexServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/client/index</url-pattern>
+	</servlet-mapping>
+</web-app>     

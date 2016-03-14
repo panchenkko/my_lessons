@@ -1,0 +1,8 @@
+ru\clinicWeb\models\Pet.class
+ru\clinicWeb\servlets\ClientCreateServlet.class
+ru\clinicWeb\servlets\CreateClientJSONServlet.class
+ru\clinicWeb\servlets\ClientEditServlet.class
+ru\clinicWeb\servlets\ClientDeleteServlet.class
+ru\clinicWeb\store\ClientCache.class
+ru\clinicWeb\models\Client.class
+ru\clinicWeb\servlets\ClientViewServlet.class

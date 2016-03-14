@@ -1,0 +1,4 @@
+ru\clinicWeb\servlets\ClientCreateServletTest.class
+ru\clinicWeb\servlets\ClientEditServletTest.class
+ru\clinicWeb\servlets\ClientDeleteServletTest.class
+ru\clinicWeb\servlets\ClientViewServletTest.class
