@@ -26,24 +26,12 @@ public class IndexServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/plain");
-        String clientName = req.getParameter("nameClient");
-        String petType = req.getParameter("petType");
-        String petName = req.getParameter("petName");
-        String petSex = req.getParameter("petSex");
-        String petAge = req.getParameter("petAge");
-        this.CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), clientName,
-                              new Pet(petType, petName, petSex, petAge))
+        this.CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), req.getParameter("clientName"),
+                              new Pet(req.getParameter("petType"),
+                                      req.getParameter("petName"),
+                                      req.getParameter("petSex"),
+                                      req.getParameter("petAge")))
         );
-//        PrintWriter out = resp.getWriter();
-//        out.print(
-//                "<tr>" +
-//                        "<td>" + clientName + "</td>" +
-//                        "<td>" + petType + "</td>" +
-//                        "<td>" + petName + "</td>" +
-//                        "<td>" + petSex  + "</td>" +
-//                        "<td>" + petAge  + "</td>" +
-//                "</tr>"
-//        );
+        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/index"));
     }
 }

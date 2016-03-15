@@ -25,135 +25,20 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#button').click(function() {
-                var clientName = $('#clientName').val();
-                var petType = $('#petType').val();
-                var petName = $('#petName').val();
-                var petSex = $('#petSex').val();
-                var petAge = $('#petAge').val();
-                $.ajax({
-                    type: 'POST',
-                    data: {
-                        nameClient : clientName,
-                        petType : petType,
-                        petName : petName,
-                        petSex : petSex,
-                        petAge : petAge
-                    },
-                    url: 'client/index',
-                    success: function(result) {
-//                        $('#createClient').html(result);
-                        loadClients();
+                if ($('#clientName').val() == '' || $('#petName').val() == '') {
+                    if ($('#clientName').val() == '') {
+                        $('#petName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
+
+                        $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
                     }
-                });
-            });
-        });
-        function loadClients() {
-            $.ajax({
-                method: 'GET',
-                success: function(result) {
-                    <c:if test="${!clients.isEmpty()}">
-                    var table = '<hr /> ' +
-                                '<div class="body">' +
-                                '<table border="2" class="table">';
-                    table +=        "<caption>База данных клиентов</caption>" +
-                                    "<tbody> " +
-                                        "<tr> " +
-                                           "<th>Имя клиента</th> " +
-                                           "<th>Тип питомца</th> " +
-                                           "<th>Имя питомца</th> " +
-                                           "<th>Пол питомца</th> " +
-                                           "<th>Возраст питомца</th> " +
-                                        "</tr>";
-                    <c:forEach items="${clients}" var="client" varStatus="status">
-                    table +=            "<tr>" +
-                                            "<td>" + ${client.name} + "</td>" +
-                                            "<td>" + ${client.pet.petType} + "</td>" +
-                                            "<td>" + ${client.pet.name} + "</td>" +
-                                            "<td>" + ${client.pet.petSex} + "</td>" +
-                                            "<td>" + ${client.pet.age} + "</td>" +
-                                        "</tr>";
-                    </c:forEach>
-                    table +=        "</tbody>" +
-                                 "</table>" +
-                                 "</div> ";
-                    $('.createClient').html(table);
-                    </c:if>
+                    else {
+                        $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
+
+                        $('#petName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
+                    }
                 }
             });
-        }
-//        function loadUsers() {
-//            $.ajax('client/index', {
-//                method : 'get',
-//                success: function(data) {
-//                    var table;
-//                    var size = data.length;
-//                    for (var i = 0; i != size; i++) {
-//                        table = "<tr>" +
-//                                    "<td>" + data[i].clientName + "</td>" +
-//                                    "<td>" + data[i].petType + "</td>" +
-//                                    "<td>" + data[i].petName + "</td>" +
-//                                    "<td>" + data[i].petSex + "</td>" +
-//                                    "<td>" + data[i].petAge + "</td>" +
-//                                "</tr>"
-//                    }
-//                    $('#createClient').html(table);
-//                }
-//            });
-//        }
-//        function createClient() {
-//            if (validate()) {
-//                $.ajax('client/index', {
-//                    method : 'post',
-//                    data: JSON.stringify({
-//                        clientName : $('#clientName').val(),
-//                        petType : $('#petType').val(),
-//                        petName : $('#petName').val(),
-//                        petSex : $('#petSex').val(),
-//                        petAge : $('#petAge').val()}),
-//                    complete: function(data) {
-//                        loadUsers();
-//                    }
-//                });
-//            }
-//        }
-//
-//        function validate() {
-//            var result = true;
-//            if ($('#clientName').val() == '' || $('#petName').val() == '') {
-//                if ($('#clientName').val() == '') {
-//                    $('#petName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
-//
-//                    $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
-//                }
-//                else {
-//                    $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
-//
-//                    $('#petName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
-//                }
-//                result = false;
-//            }
-//            return result;
-//        }
-//
-//        function loadUsers() {
-//            $.ajax('client/index', {
-//                method : 'get',
-//                success: function(data) {
-//                    var table;
-//                    var size = data.length;
-//                    for (var i = 0; i != size; i++) {
-//                        table = "<tr>" +
-//                                    "<td>" + data[i].clientName + "</td>" +
-//                                    "<td>" + data[i].petType + "</td>" +
-//                                    "<td>" + data[i].petName + "</td>" +
-//                                    "<td>" + data[i].petSex + "</td>" +
-//                                    "<td>" + data[i].petAge + "</td>" +
-//                                 "</tr>"
-//                    }
-//                    $('#createClient').html(table);
-//                }
-//            });
-//        }
+        });
     </script>
 </head>
 <body>
@@ -163,62 +48,50 @@
                 <h1>Клиника домашних <br>животных</h1>
                 <p class="lead">Внесите требуемые данные:</p>
             </div>
-            <form action="" method="post">
+            <form action="${pageContext.servletContext.contextPath}/client/index" method="POST">
                 <div class="form-group">
-                    <input type="text" id="clientName" class="form-control input-control" placeholder="Имя клиента" required>
+                    <input type="text" name="clientName" id="clientName" class="form-control input-control" placeholder="Имя клиента" required>
                     <br>
-                    <input type="text" id="petType" class="form-control input-control" placeholder="Тип питомца">
-                    <input type="text" id="petName" class="form-control input-control" placeholder="Имя питомца" required>
-                    <%--<select id="petSex" class="form-control input-control">--%>
-                        <%--<option selected="selected" disabled>Пол питомца</option>--%>
-                        <%--<option value="male">Мужской</option>--%>
-                        <%--<option value="female">Женский</option>--%>
-                    <%--</select>--%>
-                    <%--<input type="number" id="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">--%>
-                    <input type="text" id="petSex" class="form-control input-control" placeholder="Пол питомца">
-                    <input type="text" id="petAge" class="form-control input-control" placeholder="Возраст питомца">
-                    <input type="button" id="button" class="btn btn-primary input-control" value="Создать">
+                    <input type="text" name="petType" class="form-control input-control" placeholder="Тип питомца">
+                    <input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца" required>
+                    <select name="petSex" class="form-control input-control">
+                        <option selected="selected" disabled>Пол питомца</option>
+                        <option value="Мужской">Мужской</option>
+                        <option value="Женский">Женский</option>
+                    </select>
+                    <input type="number" name="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
+                    <input type="submit" id="button" class="btn btn-primary input-control" value="Создать">
                 </div>
             </form>
         </header>
-        <div class="createClient"></div>
-        <%--<hr />--%>
-        <%--<div class="body">--%>
-            <!-- <h1>Список пуст!</h1> -->
-            <%--<table border="2" class="table">--%>
-                <%--<caption>База данных клиентов</caption>--%>
-                <%--<tbody>--%>
-                <%--<tr>--%>
-                    <%--<th>Имя клиента</th>--%>
-                    <%--<th>Тип питомца</th>--%>
-                    <%--<th>Имя питомца</th>--%>
-                    <%--<th>Пол питомца</th>--%>
-                    <%--<th>Возраст питомца</th>--%>
-                <%--</tr>--%>
-                <%--<div id="createClient"></div>--%>
-                <%--<c:if test="${clients.isEmpty()}">--%>
-                    <%--<tr>--%>
-                        <%--<td colspan="5" >Список пуст!</td>--%>
-                    <%--</tr>--%>
-                <%--</c:if>--%>
-                <%--<c:if test="${!clients.isEmpty()}">--%>
-                    <%--<div class="createClient">--%>
-                        <%--<c:forEach items="${clients}" var="client" varStatus="status">--%>
-                            <%--<tr valign="top">--%>
-                                <%--<td style="padding: 10px;">--%>
-                                    <%--${client.name},--%>
-                                    <%--${client.pet.petType},--%>
-                                    <%--${client.pet.name},--%>
-                                    <%--${client.pet.petSex},--%>
-                                    <%--${client.pet.age}--%>
-                                <%--</td>--%>
-                            <%--</tr>--%>
-                        <%--</c:forEach>--%>
-                    <%--</div>--%>
-                <%--</c:if>--%>
-                <%--</tbody>--%>
-            <%--</table>--%>
-        <%--</div>--%>
+        <c:if test="${!clients.isEmpty()}">
+        <hr />
+        <div class="body">
+            <table border="2" class="table">
+                <caption>База данных клиентов</caption>
+                <tbody>
+                <tr>
+                    <th>Имя клиента</th>
+                    <th>Тип питомца</th>
+                    <th>Имя питомца</th>
+                    <th>Пол питомца</th>
+                    <th>Возраст питомца</th>
+                </tr>
+                <div class="createClient">
+                    <c:forEach items="${clients}" var="client" varStatus="status">
+                        <tr valign="top">
+                            <td>${client.name}</td>
+                            <td>${client.pet.petType}</td>
+                            <td>${client.pet.name}</td>
+                            <td>${client.pet.petSex}</td>
+                            <td>${client.pet.age}</td>
+                        </tr>
+                    </c:forEach>
+                </div>
+                </tbody>
+            </table>
+        </div>
+        </c:if>
     </div>
     <script src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
 </body>

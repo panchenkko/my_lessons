@@ -1,12 +1,14 @@
 body {
 	background: url("../img/fons/jpg2.jpg");
+	background-attachment: fixed;
 }
 
 .container {
 	background-color: #fff;
-	padding: 10px;
+	padding: 10px 10px 20px 10px;
 	min-width: 730px;
 	margin-top: 5%;
+	margin-bottom: 5%;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
 	border-radius: 25px;
@@ -117,6 +119,7 @@ form input[type="submit"], input[type="button"] {
 
 .table td {
 	text-align: center;
+	color: black;
 	/*font-style: italic;*/
 }
 
