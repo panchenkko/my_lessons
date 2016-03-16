@@ -28,12 +28,10 @@
                 if ($('#clientName').val() == '' || $('#petName').val() == '') {
                     if ($('#clientName').val() == '') {
                         $('#petName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
-
                         $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
                     }
                     else {
                         $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
-
                         $('#petName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
                     }
                 }
@@ -85,6 +83,12 @@
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
                             <td>${client.pet.age}</td>
+                            <%--<td>--%>
+                                <%--<a href="${pageContext.servletContext.contextPath}/client/edit?id=${client.id}">Редактировать</a>--%>
+                            <%--</td>--%>
+                            <td style="border: 1px solid #333">
+                                <a href="${pageContext.servletContext.contextPath}/client/delete?id=${client.id}">Удалить</a>
+                            </td>
                         </tr>
                     </c:forEach>
                 </div>

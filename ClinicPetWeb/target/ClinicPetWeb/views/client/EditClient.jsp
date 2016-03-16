@@ -12,7 +12,7 @@
 		<tr>
 			<td align="right" >Имя клиента : </td>
 			<td>
-				<input type="text" name="nameClient" value="${client.name}">
+				<input type="text" name="clientName" value="${client.name}">
 			</td>
 		</tr>
 		<tr>
@@ -24,13 +24,23 @@
 		<tr>
 			<td align="right" >Имя питомца : </td>
 			<td>
-				<input type="text" name="name" value="${client.pet.name}">
+				<input type="text" name="petName" value="${client.pet.name}">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" >Пол питомца : </td>
+			<td>
+				<select name="petSex">
+					<option selected="selected" disabled>Пол питомца</option>
+					<option value="Мужской">Мужской</option>
+					<option value="Женский">Женский</option>
+				</select>
 			</td>
 		</tr>
 		<tr>
 			<td align="right" >Возраст питомца : </td>
 			<td>
-				<input type="text" name="age" value="${client.pet.age}">
+				<input type="number" name="petAge" value="${client.pet.age}" min="0" max="300">
 			</td>
 		</tr>
 		<tr>

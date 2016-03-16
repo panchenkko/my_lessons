@@ -83,6 +83,12 @@
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
                             <td>${client.pet.age}</td>
+                            <%--<td>--%>
+                                <%--<a href="${pageContext.servletContext.contextPath}/client/edit?id=${client.id}">Редактировать</a>--%>
+                            <%--</td>--%>
+                            <td style="border: 1px solid #333">
+                                <a href="${pageContext.servletContext.contextPath}/client/delete?id=${client.id}">Удалить</a>
+                            </td>
                         </tr>
                     </c:forEach>
                 </div>

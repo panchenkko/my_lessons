@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="clinicPetWeb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ClinicPetWeb.war">
+      <element id="artifact" artifact-name="clinicPetWeb:war exploded" />
+    </root>
+  </artifact>
+</component>

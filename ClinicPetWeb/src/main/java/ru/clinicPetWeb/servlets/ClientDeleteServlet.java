@@ -15,6 +15,6 @@ public class ClientDeleteServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		CLIENT_CACHE.delete(Integer.valueOf(req.getParameter("id")));
-		resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/view"));
+		resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/index"));
 	}
 }

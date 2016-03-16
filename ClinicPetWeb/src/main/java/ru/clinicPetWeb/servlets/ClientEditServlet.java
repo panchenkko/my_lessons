@@ -27,8 +27,12 @@ public class ClientEditServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		this.CLIENT_CACHE.edit(
-				new Client(Integer.valueOf(request.getParameter("id")), request.getParameter("nameClient"),
-				new Pet(request.getParameter("petType"), request.getParameter("name"), request.getParameter("petSex"), request.getParameter("age"))));
-		response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/view"));
+				new Client(Integer.valueOf(request.getParameter("id")), request.getParameter("clientName"),
+				new Pet(request.getParameter("petType"),
+						request.getParameter("petName"),
+						request.getParameter("petSex"),
+						request.getParameter("petAge")))
+		);
+		response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
 	}
 }

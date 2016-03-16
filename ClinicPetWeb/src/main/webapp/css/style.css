@@ -1,6 +1,5 @@
 body {
-	background: url("../img/fons/jpg2.jpg");
-	background-attachment: fixed;
+	background: url("../img/fons/jpg2.jpg") fixed;
 }
 
 .container {
@@ -18,13 +17,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Cursive, Comic Sans MS;
+	font-family: Cursive, Comic Sans MS, sans-serif;
 	font-weight: bold;
 }
 
 hr {
-	margin-top: 15px;
-	margin-bottom: 10px;
+	margin: 15px 15px 10px 15px;
 	border: 0;
 	border-top: 3px solid black;
 }
@@ -35,7 +33,7 @@ header {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
-	font-family: Cursive, Comic Sans MS;
+	font-family: Cursive, Comic Sans MS, sans-serif;
 }
 
 header div>h1, p {
@@ -63,7 +61,7 @@ form input {
 }
 
 form input:first-child {
-	margin: 15px 0px 11px 16px;
+	margin: 15px 0 11px 16px;
 }
 
 form input[placeholder="Тип питомца"] {
@@ -96,7 +94,7 @@ form input[type="submit"], input[type="button"] {
 
 .table caption {
 	text-align: center;
-	font-family: Cursive, Comic Sans MS;
+	font-family: Cursive, Comic Sans MS, sans-serif;
 	font-weight: bold;
 	font-size: 23px;
 	color: #286090;
@@ -105,11 +103,12 @@ form input[type="submit"], input[type="button"] {
 .table th:first-child, td:first-child {
 	font-weight: bold;
 	border-right: 2px solid black;
-	width: 200px;
+	min-width: 150px;
 }
 
 .table th {
 	border-bottom: 2px solid black;
+	min-width: 100px;
 	text-align: center;
 	font-weight: normal;
 	font-style: italic;
@@ -120,7 +119,10 @@ form input[type="submit"], input[type="button"] {
 .table td {
 	text-align: center;
 	color: black;
-	/*font-style: italic;*/
+}
+
+.table tr>td>a {
+	padding: 10px;
 }
 
 @media (max-width: 1200px) {

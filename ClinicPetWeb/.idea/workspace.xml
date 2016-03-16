@@ -1,7 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2c93b2d-7c19-40e5-80b5-4cc2de3fc6ad" name="Default" comment="" />
+    <list default="true" id="b2c93b2d-7c19-40e5-80b5-4cc2de3fc6ad" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/clinicPetWeb_war.xml" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\CreateClientJSONServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\webapp\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\webapp\js\ajax\libs\jquery\1.11.3\jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\ClinicPetWeb.war" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\CreateClientJSONServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\servlets\CreateClientJSONServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\coverage-reports\jacoco-unit.exec" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\maven-archiver\pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\branchfc.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\branchnc.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\branchpc.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\bundle.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\class.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\down.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\greenbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\group.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\method.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\package.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\redbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\report.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\report.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\session.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\sort.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\sort.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\source.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\up.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\.sessions.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\jacoco.csv" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\jacoco.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.models\Client.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.models\Client.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.models\Pet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.models\Pet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.models\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.models\index.source.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientCreateServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientCreateServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientDeleteServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientDeleteServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientEditServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientEditServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientViewServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\ClientViewServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\CreateClientJSONServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\CreateClientJSONServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.servlets\index.source.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.store\ClientCache.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.store\ClientCache.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.store\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicWeb.store\index.source.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\TEST-ru.clinicWeb.servlets.ClientCreateServletTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\TEST-ru.clinicWeb.servlets.ClientDeleteServletTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\TEST-ru.clinicWeb.servlets.ClientEditServletTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\TEST-ru.clinicWeb.servlets.ClientViewServletTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\ru.clinicWeb.servlets.ClientCreateServletTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\ru.clinicWeb.servlets.ClientDeleteServletTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\ru.clinicWeb.servlets.ClientEditServletTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\target\surefire-reports\ru.clinicWeb.servlets.ClientViewServletTest.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientDeleteServlet.class" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientDeleteServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/clinicPetWeb/servlets/ClientDeleteServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/clinicPetWeb/servlets/ClientDeleteServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientEditServlet.class" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientEditServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/clinicPetWeb/servlets/ClientEditServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/clinicPetWeb/servlets/ClientEditServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/IndexServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/clinicPetWeb/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/clinicPetWeb/servlets/IndexServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/client/EditClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/client/EditClient.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/views/client/EditClient.jsp" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/views/client/EditClient.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/index.jsp" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/css/style.css" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" />
+    </list>
     <ignored path="clinicPetWeb.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,50 +106,43 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="clinicPetWeb" />
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="ClientEditServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditClient.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/client/EditClient.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.26923">
+              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IndexServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9731183">
-              <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientCache.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/store/ClientCache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="e#904#905#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateClientJSONServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/CreateClientJSONServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,7 +154,29 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <caret line="120" column="17" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientDeleteServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.46023688">
+              <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -87,6 +191,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -98,19 +205,20 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/models/Client.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientCreateServletTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/store/ClientCache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/Index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientViewServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/models/Pet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientDeleteServletTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientEditServletTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientViewServletTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientCreateServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/CreateClientJSONServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/client/EditClient.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
@@ -169,10 +277,10 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -195,6 +303,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,6 +334,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servlets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,6 +394,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clinicPetWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClinicPetWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clinicPetWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClinicPetWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -393,9 +571,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,6 +585,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../java-courses-master" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -422,45 +600,10 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -554,22 +697,6 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -643,6 +770,34 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -735,15 +890,6 @@
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
     </list>
-    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
@@ -755,37 +901,39 @@
       <workItem from="1457904028176" duration="1088000" />
       <workItem from="1457905143906" duration="11316000" />
       <workItem from="1457948980559" duration="12930000" />
+      <workItem from="1458082693881" duration="144000" />
+      <workItem from="1458123758031" duration="11472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25334000" />
+    <option name="totallyTimeSpent" value="36950000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2473525" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961832" sideWeight="0.5057283" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713178" sideWeight="0.5030257" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713178" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24676375" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961832" sideWeight="0.5057283" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -809,7 +957,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -817,11 +965,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/store/ClientCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,16 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/CreateClientJSONServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -866,7 +1050,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -875,16 +1061,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/CreateClientJSONServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,21 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12208258">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientCreateServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11663808">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05831904">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -932,50 +1093,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2064632">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="75" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientViewServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5540309">
           <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientViewServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46596858">
-          <caret line="26" column="94" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
-          <caret line="27" column="94" selection-start-line="27" selection-start-column="94" selection-end-line="27" selection-end-column="94" />
-          <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientEditServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33246073">
-          <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientDeleteServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85863876">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -986,21 +1107,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50428814">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.9606164">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,24 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/CreateClientJSONServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/store/ClientCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1052,18 +1144,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientCreateServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientEditServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientViewServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="94" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
+          <caret line="27" column="94" selection-start-line="27" selection-start-column="94" selection-end-line="27" selection-end-column="94" />
+          <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientDeleteServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37192118">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/client/EditClient.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.26923">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="120" column="17" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientEditServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9731183">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.46023688">
+          <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
           <folding />
         </state>
       </provider>

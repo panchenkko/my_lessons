@@ -1,8 +1,8 @@
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\store\ClientCache.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\models\Client.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientEditServlet.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\CreateClientJSONServlet.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientDeleteServlet.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\models\Pet.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientCreateServlet.java
-D:\Installation\GitJavaProjects\java-courses\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientViewServlet.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\store\ClientCache.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientViewServlet.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientDeleteServlet.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\models\Client.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\IndexServlet.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientCreateServlet.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientEditServlet.java
+D:\Vlad\GitProjects\java-lessons\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\models\Pet.java
