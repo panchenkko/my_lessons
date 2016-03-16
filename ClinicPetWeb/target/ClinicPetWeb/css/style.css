@@ -75,7 +75,7 @@ form select {
 form input[type="submit"], input[type="button"] {
 	width: 105px;
 	margin-left: 5px;
-} 
+}
 
 .body {
 	height: auto;
@@ -106,23 +106,57 @@ form input[type="submit"], input[type="button"] {
 	min-width: 150px;
 }
 
+.table td:last-child {
+	width: 100px;
+}
+
 .table th {
+	background-color: #286090;
 	border-bottom: 2px solid black;
 	min-width: 100px;
 	text-align: center;
 	font-weight: normal;
 	font-style: italic;
 	color: white;
-    background-color: #286090;
 }
 
 .table td {
+	height: 20px;
+}
+
+.table tbody>tr>td {
 	text-align: center;
+	vertical-align: middle;
 	color: black;
 }
 
+.table>tbody>tr>td:last-child {
+	padding: 4px 0 2px 0;
+}
+
+.table>tbody>tr>th {
+	vertical-align: middle;
+}
+
+.table>tbody>tr>th:last-child {
+	width: 110px;
+}
+
 .table tr>td>a {
-	padding: 10px;
+	font-size: 0.9em;
+	vertical-align: top;
+}
+
+.table tr>td>a:hover {
+	cursor: pointer;
+}
+
+.table tr>td>a:last-child:hover {
+	color: red;
+}
+
+#Age {
+	width: 55px;
 }
 
 @media (max-width: 1200px) {

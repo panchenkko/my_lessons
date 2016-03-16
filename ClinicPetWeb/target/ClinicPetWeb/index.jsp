@@ -73,20 +73,24 @@
                     <th>Тип питомца</th>
                     <th>Имя питомца</th>
                     <th>Пол питомца</th>
-                    <th>Возраст питомца</th>
+                    <th id="Age">Возраст питомца</th>
+                    <th>Доп. действия</th>
                 </tr>
                 <div class="createClient">
                     <c:forEach items="${clients}" var="client" varStatus="status">
-                        <tr valign="top">
+                        <tr>
                             <td>${client.name}</td>
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
-                            <td>${client.pet.age}</td>
-                            <%--<td>--%>
-                                <%--<a href="${pageContext.servletContext.contextPath}/client/edit?id=${client.id}">Редактировать</a>--%>
-                            <%--</td>--%>
-                            <td style="border: 1px solid #333">
+                            <c:if test="${client.pet.age == 1 || client.pet.age == 21}">
+                                <td>${client.pet.age} год</td>
+                            </c:if>
+                            <c:if test="${client.pet.age != 1 && client.pet.age != 21}">
+                                <td>${client.pet.age} лет</td>
+                            </c:if>
+                            <td id="linkAction">
+                                <a href="${pageContext.servletContext.contextPath}/client/edit?id=${client.id}">Редактировать</a>
                                 <a href="${pageContext.servletContext.contextPath}/client/delete?id=${client.id}">Удалить</a>
                             </td>
                         </tr>
