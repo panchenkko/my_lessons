@@ -51,14 +51,15 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>CreateClientJSONServlet</servlet-name>
-		<servlet-class>ru.clinicPetWeb.servlets.CreateClientJSONServlet</servlet-class>
+		<servlet-name>ClientSearchServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.ClientSearchServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>CreateClientJSONServlet</servlet-name>
-		<url-pattern>/user/json</url-pattern>
+		<servlet-name>ClientSearchServlet</servlet-name>
+		<url-pattern>/client/search</url-pattern>
 	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>IndexServlet</servlet-name>

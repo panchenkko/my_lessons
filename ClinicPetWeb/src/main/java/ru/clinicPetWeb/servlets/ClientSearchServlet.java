@@ -16,7 +16,7 @@ public class ClientSearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         request.setAttribute("clients", this.CLIENT_CACHE.values());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/client/ClientView.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/client/SearchClient.jsp");
         dispatcher.forward(request, response);
     }
 

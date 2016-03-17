@@ -65,6 +65,9 @@
         <c:if test="${!clients.isEmpty()}">
         <hr />
         <div class="body">
+            <button id="searchBtn" class="btn btn-primary">
+                <a href="${pageContext.servletContext.contextPath}/client/search">Поиск</a>
+            </button>
             <table border="2" class="table">
                 <caption>База данных клиентов</caption>
                 <tbody>

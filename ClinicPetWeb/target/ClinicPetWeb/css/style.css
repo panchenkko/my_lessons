@@ -89,6 +89,7 @@ form input[type="submit"], input[type="button"] {
 .table {
 	max-width: 700px;
 	margin: auto;
+	margin-top: -36px;
 	border-color: black;
 }
 
@@ -157,6 +158,16 @@ form input[type="submit"], input[type="button"] {
 
 #Age {
 	width: 55px;
+}
+
+#searchBtn {
+	margin: 5px 0 0 15px;
+	width: 120px;
+}
+
+#searchBtn>a {
+	font-family: Cursive, Comic Sans MS, sans-serif;
+	color: white;
 }
 
 @media (max-width: 1200px) {
