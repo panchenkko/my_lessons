@@ -12,7 +12,7 @@
 		<tr>
 			<td align="right" >Имя клиента : </td>
 			<td>
-				<input type="text" name="clientName" value="${client.name}">
+				<input type="text" name="clientName" value="${client.name}" required>
 			</td>
 		</tr>
 		<tr>
@@ -24,7 +24,7 @@
 		<tr>
 			<td align="right" >Имя питомца : </td>
 			<td>
-				<input type="text" name="petName" value="${client.pet.name}">
+				<input type="text" name="petName" value="${client.pet.name}" required>
 			</td>
 		</tr>
 		<tr>
@@ -32,8 +32,18 @@
 			<td>
 				<select name="petSex">
 					<option selected="selected" disabled>Пол питомца</option>
-					<option value="Мужской">Мужской</option>
-					<option value="Женский">Женский</option>
+					<c:if test="${client.pet.petSex == 'Мужской'}">
+						<option value="Мужской" selected>Мужской</option>
+						<option value="Женский">Женский</option>
+					</c:if>
+					<c:if test="${client.pet.petSex == 'Женский'}">
+						<option value="Мужской">Мужской</option>
+						<option value="Женский" selected>Женский</option>
+					</c:if>
+					<c:if test="${client.pet.petSex != 'Мужской' && client.pet.petSex != 'Женский'}">
+						<option value="Мужской">Мужской</option>
+						<option value="Женский">Женский</option>
+					</c:if>
 				</select>
 			</td>
 		</tr>

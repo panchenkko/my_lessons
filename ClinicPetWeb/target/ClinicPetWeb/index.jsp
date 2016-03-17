@@ -65,9 +65,9 @@
         <c:if test="${!clients.isEmpty()}">
         <hr />
         <div class="body">
-            <button id="searchBtn" class="btn btn-primary">
-                <a href="${pageContext.servletContext.contextPath}/client/search">Поиск</a>
-            </button>
+            <a href="${pageContext.servletContext.contextPath}/client/search" id="searchBtn">
+                <button class="btn btn-primary">Поиск</button>
+            </a>
             <table border="2" class="table">
                 <caption>База данных клиентов</caption>
                 <tbody>
@@ -86,10 +86,13 @@
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
+                            <c:if test="${client.pet.age == ''}">
+                                <td> - </td>
+                            </c:if>
                             <c:if test="${client.pet.age == 1 || client.pet.age == 21}">
                                 <td>${client.pet.age} год</td>
                             </c:if>
-                            <c:if test="${client.pet.age != 1 && client.pet.age != 21}">
+                            <c:if test="${client.pet.age != 1 && client.pet.age != 21 && client.pet.age != ''}">
                                 <td>${client.pet.age} лет</td>
                             </c:if>
                             <td id="linkAction">

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 public class IndexServlet extends HttpServlet {
 
@@ -25,12 +26,22 @@ public class IndexServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
+
+        String petType = req.getParameter("petType");
+        if (Objects.equals(petType, ""))
+            petType = " - ";
+
+        String petSex = req.getParameter("petSex");
+        if (petSex == null)
+            petSex = " - ";
+
+        String petAge = req.getParameter("petAge");
+        if (petAge == null)
+            petAge = " - ";
+
         this.CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), req.getParameter("clientName"),
-                              new Pet(req.getParameter("petType"),
-                                      req.getParameter("petName"),
-                                      req.getParameter("petSex"),
-                                      req.getParameter("petAge")))
-        );
+                              new Pet(petType, req.getParameter("petName"), petSex, petAge)));
+
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/index"));
     }
 }

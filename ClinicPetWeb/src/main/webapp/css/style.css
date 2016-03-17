@@ -160,12 +160,9 @@ form input[type="submit"], input[type="button"] {
 	width: 55px;
 }
 
-#searchBtn {
+#searchBtn>button {
 	margin: 5px 0 0 15px;
-	width: 120px;
-}
-
-#searchBtn>a {
+	width: 105px;
 	font-family: Cursive, Comic Sans MS, sans-serif;
 	color: white;
 }
