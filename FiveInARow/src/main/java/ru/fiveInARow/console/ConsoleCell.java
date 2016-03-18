@@ -10,33 +10,36 @@ import java.io.PrintStream;
 // PrintStream - входящий поток, какой реализует нашу консоль
 public class ConsoleCell implements ICell<PrintStream> {
 
+	private boolean smallPaint;
+	private boolean bigPaint;
+
 	private boolean suggestEmpty = false;
 
 	private boolean checked = false;
 
-
-	public ConsoleCell(boolean bomb) {
-		this.bomb = bomb;
+	public ConsoleCell(boolean smallPaint, boolean bigPaint) {
+		this.smallPaint = smallPaint;
+		this.bigPaint = bigPaint;
 	}
 
 	@Override
 	public boolean isPaintCell() {
-		return false;
+		return this.smallPaint;
 	}
 
 	@Override
 	public void paintCell() {
-
+		this.smallPaint = true;
 	}
 
 	@Override
 	public boolean isPaintedCell() {
-		return false;
+		return this.bigPaint;
 	}
 
 	@Override
-	public void painedCell() {
-
+	public void paintedCell() {
+		this.bigPaint = true;
 	}
 
 	@Override
@@ -60,39 +63,14 @@ public class ConsoleCell implements ICell<PrintStream> {
 		this.checked = true;
 	}
 
-
 	@Override
 	public void draw(PrintStream paint) {
-		if (real)
-			if (this.isBomb())
-				paint.print("[\033[1;31m*\033[0m] ");
-			else
-				paint.print("[ ] ");
+		if (this.isPaintedCell())
+			paint.print("\033[1;41m[O]\033[0m ");
+		else if (this.isPaintCell())
+			paint.print("[\033[1;31mo\033[0m] ");
 		else {
-			if (this.suggestBomb)
-				paint.print("[\033[1;31m?\033[0m] ");
-
-			else if (this.suggest8)
-				paint.print("[\033[1;31m8\033[0m] ");
-			else if (this.suggest7)
-				paint.print("[\033[1;31m7\033[0m] ");
-			else if (this.suggest6)
-				paint.print("[\033[1;35m6\033[0m] ");
-			else if (this.suggest5)
-				paint.print("[\033[1;36m5\033[0m] ");
-			else if (this.suggest4)
-				paint.print("[\033[1;34m4\033[0m] ");
-			else if (this.suggest3)
-				paint.print("[\033[1;32m3\033[0m] ");
-			else if (this.suggest2)
-				paint.print("[\033[1;33m2\033[0m] ");
-			else if (this.suggest1)
-				paint.print("[\033[1;30m1\033[0m] ");
-
-			else if (this.suggestEmpty)
-				paint.print("[ ] ");
-			else
-				paint.print("[Х] ");
+			paint.print("[ ] ");
 		}
 	}
 }

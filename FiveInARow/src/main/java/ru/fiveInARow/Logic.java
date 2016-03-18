@@ -16,51 +16,18 @@ public class Logic implements ILogic {
     }
 
     @Override
-    public int sumBombs() {
-        int sum = 0;
-        if (easy == null && medium == null && expert != null)
-            sum = expert.sumBombs();
-        else if (easy == null && expert == null && medium != null)
-            sum = medium.sumBombs();
-        else if (easy != null)
-            sum = easy.sumBombs();
-        return sum;
-    }
-
-    @Override
     public int sumRow() {
-        int row = 0;
-        if (easy == null && medium == null && expert != null)
-            row = expert.sumRow();
-        else if (easy == null && expert == null && medium != null)
-            row = medium.sumRow();
-        else if (easy != null)
-            row = easy.sumRow();
-        return row;
+        return 9;
     }
 
     @Override
     public int sumColumn() {
-        int column = 0;
-        if (easy == null && medium == null && expert != null)
-            column = expert.sumColumn();
-        else if (easy == null && expert == null && medium != null)
-            column = medium.sumColumn();
-        else if (easy != null)
-            column = easy.sumColumn();
-        return column;
+        return 9;
     }
 
     @Override
     public ICell[][] sizeField() {
         return new ICell[sumRow()][sumColumn()];
-    }
-
-    @Override
-    public boolean shouldBang(int x, int y) {
-        final ICell selected = this.cells[x][y];
-        // Если это бомба, и пользователь не предположил что это бомба, то мы взрываемся
-        return selected.isBomb() && !selected.isSuggestBomb();
     }
 
     // Если пользователь всё разгадал, возвращаем истину
@@ -81,49 +48,17 @@ public class Logic implements ILogic {
         return finish;
     }
 
-    // Предположения пользователя (Бомба или пустая клетка)
+    // Проверяем, действительно ли клетки какие выбрал пользователь полностью закрашенные
     @Override
-    public void suggest(int x, int y, boolean bomb) {
-        if (!bomb)
-            this.cells[x][y].suggestEmpty();
-        if (bomb && !this.cells[x][y].isSuggestEmpty())
-            this.cells[x][y].suggestBomb();
-        else if (bomb && this.cells[x][y].isSuggestEmpty())
-            System.out.println("Вы уже открыли эту клетку!\n");
+    public boolean checkingCells(int x, int y, int x2, int y2) {
+        boolean test = false;
+        if (this.cells[x][y].isPaintCell() && this.cells[x2][y2].isPaintCell())
+            test = true;
+        return test;
     }
 
-    // Проверка первого хода. Если на поле нет бомб, возвращаем истину
     @Override
-    public boolean checkTheFirstMove() {
-        boolean check = true;
-        root: for (int i = 0; i < sumRow(); i++)
-            for (int j = 0; j < sumColumn(); j++)
-                if (this.cells[i][j].isBomb()) {
-                    check = false;
-                    break root;
-                }
-        return check;
-    }
-
-    // Очистка вокруг ячейки при первом ходе
-    // Для того, чтобы у пользователя не открылась в начале игры только одна ячейка
-    @Override
-    public void clearAroundCell(int x, int y) {
-        if (cells.length > 3) {
-            if (y > 0) suggest(x, y - 1, false);
-            if (y + 1 < sumColumn()) suggest(x, y + 1, false);
-            if (x > 0) suggest(x - 1, y, false);
-            if (x + 1 < sumRow()) suggest(x + 1, y, false);
-            if (x > 0 && y > 0) suggest(x - 1, y - 1, false);
-            if (x + 1 < sumRow() && y + 1 < sumColumn()) suggest(x + 1, y + 1, false);
-            if (x > 0 && y + 1 < sumColumn()) suggest(x - 1, y + 1, false);
-            if (x + 1 < sumRow() && y > 0) suggest(x + 1, y - 1, false);
-        }
-    }
-
-    // Генерация бомб на поле
-    @Override
-    public void bombsGeneration() {
+    public void painting() {
         Random random = new Random();
         int sumBombs = sumBombs();
         while (sumBombs > 0) {
@@ -134,23 +69,6 @@ public class Logic implements ILogic {
                 sumBombs--;
             }
         }
-    }
-
-    // Возвращаем количество бомб вокруг ячейки
-    @Override
-    public int checkingAroundCell(int x, int y) {
-        int checking = 0;
-
-        if (y > 0 && cells[x][y - 1].isBomb()) checking++;
-        if (x > 0 && cells[x - 1][y].isBomb()) checking++;
-        if (y > 0 && x > 0 && cells[x - 1][y - 1].isBomb()) checking++;
-        if (y + 1 < sumColumn() && cells[x][y + 1].isBomb()) checking++;
-        if (x + 1 < sumRow() && cells[x + 1][y].isBomb()) checking++;
-        if (x + 1 < sumRow() && y + 1 < sumColumn() && cells[x + 1][y + 1].isBomb()) checking++;
-        if (x + 1 < sumRow() && y > 0 && cells[x + 1][y - 1].isBomb()) checking++;
-        if (x > 0 && y + 1 < sumColumn() && cells[x - 1][y + 1].isBomb()) checking++;
-
-        return checking;
     }
 
     /**
@@ -195,7 +113,7 @@ public class Logic implements ILogic {
                                     break;
                             case 1: this.cells[i][j].suggest1();
                                     break;
-                            default: suggest(i, j, false);
+                            default: checkingCells(i, j, false);
                         }
                     }
                 }
@@ -227,13 +145,13 @@ public class Logic implements ILogic {
 //    }
 //
 //    @Override
-//    public void bombsGeneration() {
+//    public void painting() {
 //        if (easy == null && medium == null && expert != null)
-//            expert.bombsGeneration();
+//            expert.painting();
 //        else if (easy == null && expert == null && medium != null)
-//            medium.bombsGeneration();
+//            medium.painting();
 //        else if (easy != null)
-//            easy.bombsGeneration();
+//            easy.painting();
 //    }
 //
 //    @Override
@@ -261,13 +179,13 @@ public class Logic implements ILogic {
 //    }
 //
 //    @Override
-//    public void suggest(int x, int y, boolean bomb) {
+//    public void checkingCells(int x, int y, boolean bomb) {
 //        if (easy == null && medium == null && expert != null)
-//            expert.suggest(x, y ,bomb);
+//            expert.checkingCells(x, y ,bomb);
 //        else if (easy == null && expert == null && medium != null)
-//            medium.suggest(x, y ,bomb);
+//            medium.checkingCells(x, y ,bomb);
 //        else if (easy != null)
-//            easy.suggest(x, y ,bomb);
+//            easy.checkingCells(x, y ,bomb);
 //    }
 //
 //    @Override

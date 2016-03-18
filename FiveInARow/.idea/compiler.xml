@@ -24,8 +24,16 @@
         <processorPath useClasspath="true" />
         <module name="minesweeper" />
       </profile>
+      <profile default="false" name="Annotation profile for FiveInARow" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="FiveInARow" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="FiveInARow" target="1.8" />
       <module name="minesweeper" target="1.8" />
     </bytecodeTargetLevel>
   </component>

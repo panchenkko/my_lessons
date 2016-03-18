@@ -23,7 +23,7 @@ public interface ICell<T> {
 	/**
 	 * Устанавливаем значение полностью закрашенной клетки
 	 */
-	void painedCell();
+	void paintedCell();
 
 	/**
 	 * Пустая ли клетка

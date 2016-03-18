@@ -265,13 +265,13 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
 //    }
 //
 //    @Override
-//    public void bombsGeneration() {
+//    public void painting() {
 //        if (easy == null && medium == null && expert != null)
-//            expert.bombsGeneration();
+//            expert.painting();
 //        else if (easy == null && expert == null && medium != null)
-//            medium.bombsGeneration();
+//            medium.painting();
 //        else if (easy != null)
-//            easy.bombsGeneration();
+//            easy.painting();
 //    }
 //
 //    @Override
@@ -299,13 +299,13 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
 //    }
 //
 //    @Override
-//    public void suggest(int x, int y, boolean bomb) {
+//    public void checkingCells(int x, int y, boolean bomb) {
 //        if (easy == null && medium == null && expert != null)
-//            expert.suggest(x, y ,bomb);
+//            expert.checkingCells(x, y ,bomb);
 //        else if (easy == null && expert == null && medium != null)
-//            medium.suggest(x, y ,bomb);
+//            medium.checkingCells(x, y ,bomb);
 //        else if (easy != null)
-//            easy.suggest(x, y ,bomb);
+//            easy.checkingCells(x, y ,bomb);
 //    }
 //
 //    @Override
