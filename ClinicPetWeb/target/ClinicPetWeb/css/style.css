@@ -28,12 +28,13 @@ hr {
 }
 
 header {
-	height: 250px;
+	height: 236px;
 	background-image: url(../img/jpg16.jpg);
-	background-size: contain;
+	background-size: 38%;
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
 	font-family: Cursive, Comic Sans MS, sans-serif;
+	padding-bottom: 14px;
 }
 
 header div>h1, p {
@@ -61,7 +62,7 @@ form input {
 }
 
 form input:first-child {
-	margin: 15px 0 11px 16px;
+	margin: 5px 0 11px 16px;
 }
 
 form input[placeholder="Тип питомца"] {

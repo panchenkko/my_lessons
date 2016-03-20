@@ -5,12 +5,12 @@ body {
 .container {
     background-color: #fff;
     padding: 10px 10px 20px 10px;
-    min-width: 730px;
+    min-width: 993px;
     margin-top: 5%;
     margin-bottom: 5%;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
-    border-radius: 25px;
+    border-radius: 5px;
     -webkit-box-shadow: -6px 12px 50px black;
     -moz-box-shadow: -6px 12px 50px black;
     box-shadow: -6px 12px 50px black;
@@ -29,11 +29,15 @@ hr {
 
 header {
     height: 250px;
-    background-image: url(../img/jpg5.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
     font-family: Cursive, Comic Sans MS, sans-serif;
+}
+
+header>img {
+    width: auto;
+    height: 224px;
+    float: right;
+    margin-top: -12px;
+    margin-right: 29%;
 }
 
 header div>h1, p {
@@ -45,8 +49,25 @@ header div>p {
     margin-top: 20px;
 }
 
+#clientName {
+}
+
+#petType {
+    margin: 0 0 0 0;
+}
+
+#petName {
+}
+
+#petSex {
+}
+
+#petAge {
+}
+
 form {
     width: auto;
+    margin-top: 120px;
     clear: both;
 }
 
@@ -61,7 +82,7 @@ form input {
 }
 
 form input:first-child {
-    margin: 15px 0 11px 16px;
+    margin: 0 0 11px 156px;
 }
 
 form input[placeholder="Тип питомца"] {
@@ -89,6 +110,7 @@ form input[type="submit"], input[type="button"] {
 .table {
     max-width: 700px;
     margin: auto;
+    margin-top: -36px;
     border-color: black;
 }
 
@@ -160,19 +182,40 @@ form input[type="submit"], input[type="button"] {
 }
 
 #returnBtn>button {
-    margin: 0 0 0 15px;
+    margin: 5px 0 0 15px;
     width: 105px;
     font-family: Cursive, Comic Sans MS, sans-serif;
     color: white;
 }
 
 @media (max-width: 1200px) {
-    header {
-        background-size: auto 195px;
-        background-position: 100% -12%;
+    header>img {
+        width: auto;
+        height: 224px;
+        float: right;
+        margin-top: -12px;
+        margin-right: 19%;
+    }
+
+    form input:first-child {
+        margin: 0 0 11px 56px;
     }
 
     .lead {
         font-size: 21px;
     }
 }
+
+/*@media (max-width: 992px) {*/
+    /*header>img {*/
+        /*width: auto;*/
+        /*height: 199px;*/
+        /*float: right;*/
+        /*margin-top: -12px;*/
+        /*margin-right: 0;*/
+    /*}*/
+
+    /*form input:first-child {*/
+        /*margin: 0 0 11px 0px;*/
+    /*}*/
+/*}*/

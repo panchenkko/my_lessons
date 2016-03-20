@@ -1,6 +1,6 @@
-package ru.fiveInARow;
+package ru.minesweeper;
 
-import ru.fiveInARow.interfaces.*;
+import ru.minesweeper.interfaces.*;
 
 /**
  * Базовые действия пользователя
@@ -20,20 +20,25 @@ public class BaseAction implements IUserAction {
 	@Override
 	public void initGame() {
 		final ICell[][] cells = generator.generate();
-		this.logic.loadBoard(cells);
-		this.logic.paintingCellsInStartGame();
 		this.board.drawBoard(cells);
+		this.logic.loadBoard(cells);
 	}
 
 	@Override
-	public void select(int x, int y, int x2, int y2) {
-		this.logic.movePaintedCell(x, y, x2, y2);
-		this.logic.createSmallCells();
-		this.logic.clearCells();
-		this.logic.createBigCells();
-		if (this.logic.finish())
+	public void select(int x, int y, boolean bomb) {
+		this.logic.suggest(x, y, bomb);
+		if (this.logic.checkTheFirstMove() && !bomb) {
+			this.logic.clearAroundCell(x, y);
+			this.logic.bombsGeneration();
+		}
+		if (!bomb)
+			this.logic.openEmptyCells();
+		if (this.logic.shouldBang(x, y)) {
+			this.board.drawBang();
 			this.board.drawLosing();
-		else
-			this.board.drawSelect();
+		} else
+			this.board.drawCell(x, y);
+		if (this.logic.finish())
+			this.board.drawCongratulate();
 	}
 }

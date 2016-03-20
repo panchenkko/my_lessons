@@ -42,32 +42,32 @@
 <body>
 <div class="container">
     <header>
+        <img src="../img/jpg3.jpg" alt="">
         <div>
             <h1>Поиск клиента</h1>
             <p class="lead">Внесите требуемые данные:</p>
         </div>
         <form action="${pageContext.servletContext.contextPath}/client/index" method="POST">
             <div class="form-group">
-                <input type="text" name="clientName" id="clientName" class="form-control input-control" placeholder="Имя клиента" required>
-                <br>
-                <input type="text" name="petType" class="form-control input-control" placeholder="Тип питомца">
-                <input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца" required>
-                <select name="petSex" class="form-control input-control">
+                <input type="text" name="clientName" id="clientName" class="form-control input-control" placeholder="Имя клиента">
+                <input type="text" name="petType" id="petType" class="form-control input-control" placeholder="Тип питомца">
+                <input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца">
+                <select name="petSex" id="petSex" class="form-control input-control">
                     <option selected="selected" disabled>Пол питомца</option>
                     <option value="Мужской">Мужской</option>
                     <option value="Женский">Женский</option>
                 </select>
-                <input type="number" name="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
-                <input type="submit" id="button" class="btn btn-primary input-control" value="Поиск">
+                <input type="number" name="petAge" id="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
+                <input type="submit" id="button" class="btn btn-primary input-control" value="Найти">
             </div>
         </form>
-        <a href="${pageContext.servletContext.contextPath}/client/index" id="returnBtn">
-            <button class="btn btn-primary">Вернуться</button>
-        </a>
     </header>
     <c:if test="${!clients.isEmpty()}">
         <hr />
         <div class="body">
+            <a href="${pageContext.servletContext.contextPath}/client/index" id="returnBtn">
+                <button class="btn btn-primary">Вернуться</button>
+            </a>
             <table border="2" class="table">
                 <caption>Найденные клиенты</caption>
                 <tbody>

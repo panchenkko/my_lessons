@@ -1,7 +1,7 @@
-package ru.fiveInARow.console;
+package ru.minesweeper.console;
 
-import ru.fiveInARow.interfaces.IBoard;
-import ru.fiveInARow.interfaces.ICell;
+import ru.minesweeper.interfaces.IBoard;
+import ru.minesweeper.interfaces.ICell;
 
 /**
  * Реализация поля в консоли
@@ -10,31 +10,30 @@ public class ConsoleBoard implements IBoard {
 
 	private ICell[][] cells;
 
-	@Override
 	public void drawBoard(ICell[][] cells) {
 		this.cells = cells;
-		this.redraw();
+		this.redraw(false);
 	}
 
-	@Override
-	public void drawSelect() {
+	public void drawCell(int x, int y) {
 		System.out.println("********** SELECT **********");
-		this.redraw();
+		this.redraw(false);
 	}
 
-	@Override
+	public void drawBang() {
+		System.out.println("********** BANG **********");
+		this.redraw(true);
+	}
+
 	public void drawCongratulate() {
 		System.out.println("********** CONGRATULATE **********");
-		this.redraw();
 	}
 
-	@Override
 	public void drawLosing() {
-		this.redraw();
 		System.out.println("********** YOU LOSE **********");
 	}
 
-	private void redraw() {
+	private void redraw(boolean real) {
 		int space, numRow = 0;
 		for (ICell[] row : cells) {
 			// Нумерация столбцов
@@ -45,16 +44,16 @@ public class ConsoleBoard implements IBoard {
 					else space = 3;
 					for (int j = 0; j < space; j++)
 						System.out.print(" ");
-					System.out.print("\033[30m" + i + "\033[0m");
+					System.out.print(i);
 				}
 				System.out.println();
 			}
 			// Нумерация рядов
 			if (numRow < 9) System.out.print(" ");
-			System.out.print("\033[30m" + ++numRow + "\033[0m ");
+			System.out.print(++numRow + " ");
 
 			for (ICell cell : row) {
-				cell.draw(System.out);
+				cell.draw(System.out, real);
 			}
 			System.out.println();
 		}

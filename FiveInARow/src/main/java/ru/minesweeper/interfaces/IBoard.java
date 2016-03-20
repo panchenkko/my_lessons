@@ -1,4 +1,4 @@
-package ru.fiveInARow.interfaces;
+package ru.minesweeper.interfaces;
 
 /**
  * Описывает поведения доски.
@@ -13,11 +13,18 @@ public interface IBoard {
 
 	/**
 	 * Рисует ячейку.
+	 * @param x позиция по горизонтали.
+	 * @param y позиция по вертикали.
 	 */
-	void drawSelect();
+	void drawCell(int x, int y);
 
 	/**
-	 * Рисует, когда пользователь сложил пять в ряд
+	 * Рисует взрыв всех бомб.
+	 */
+	void drawBang();
+
+	/**
+	 * Рисует поздравление когда игра выиграна.
 	 */
 	void drawCongratulate();
 

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="fiveinarow">
+    <output-path>$PROJECT_DIR$/out/artifacts/fiveinarow</output-path>
+    <root id="root">
+      <element id="module-output" name="FiveInARow" />
+    </root>
+  </artifact>
+</component>

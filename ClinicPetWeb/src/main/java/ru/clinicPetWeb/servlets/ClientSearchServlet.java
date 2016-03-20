@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 public class ClientSearchServlet extends HttpServlet {
 
@@ -21,7 +22,16 @@ public class ClientSearchServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String clientName = request.getParameter("clientName");
+        String petType = request.getParameter("petType");
+        String petName = request.getParameter("petName");
+        String petSex = request.getParameter("petSex");
+        String petAge = request.getParameter("petAge");
 
+        if (!Objects.equals(clientName, "") && !Objects.equals(petType, "") &&
+            !Objects.equals(petName, "") && !Objects.equals(petSex, "") && !Objects.equals(petAge, "")) {
+            for ()
+        }
     }
 
 }

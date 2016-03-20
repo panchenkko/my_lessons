@@ -8,22 +8,40 @@ public interface ICell<T> {
 	/**
 	 * Является ли клетка не полностью закрашенной
 	 */
-	boolean isPaintCell();
+	boolean isSmallCellPainted();
 
 	/**
 	 * Устанавливаем значение не полностью закрашенной клетки
 	 */
-	void paintCell();
+	void smallCellPainting();
+
+	void cancelSmallCellPainting();
 
 	/**
 	 * Является ли клетка полностью закрашенной
 	 */
-	boolean isPaintedCell();
+	boolean isBigCellPainted();
 
 	/**
 	 * Устанавливаем значение полностью закрашенной клетки
 	 */
-	void paintedCell();
+	void bigCellPainting();
+
+	void cancelBigCellPainting();
+
+	void redCell();
+	void greenCell();
+	void blueCell();
+	void yellowCell();
+	void magentaCell();
+	void cyanCell();
+
+	boolean isRedCell();
+	boolean isGreenCell();
+	boolean isBlueCell();
+	boolean isYellowCell();
+	boolean isMagentaCell();
+	boolean isCyanCell();
 
 	/**
 	 * Пустая ли клетка
@@ -34,6 +52,8 @@ public interface ICell<T> {
 	 * Устанавливаем значение пустой клетки
 	 */
 	void suggestEmpty();
+
+	void cancelSuggestEmpty();
 
 	/**
 	 * Была ли проверена данная ячейка
@@ -50,4 +70,8 @@ public interface ICell<T> {
 	 * @param paint Сама прорисовка (это якобы то, на чем мы будем рисовать)
      */
 	void draw(T paint);
+
+	void selectColor(T paint, String symbol);
+
+	void generateColor(int numColor);
 }
