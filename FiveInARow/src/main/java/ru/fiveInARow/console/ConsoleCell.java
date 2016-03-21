@@ -202,4 +202,24 @@ public class ConsoleCell implements ICell<PrintStream> {
 					break;
 		}
 	}
+
+	@Override
+	public int checkColor() {
+		int color;
+		if (this.isRedCell())
+			color = 0;
+		else if (this.isGreenCell())
+			color = 1;
+		else if (this.isBlueCell())
+			color = 2;
+		else if (this.isYellowCell())
+			color = 3;
+		else if (this.isMagentaCell())
+			color = 4;
+		else if (this.isCyanCell())
+			color = 5;
+		else
+			color = 6;
+		return color;
+	}
 }

@@ -74,4 +74,6 @@ public interface ICell<T> {
 	void selectColor(T paint, String symbol);
 
 	void generateColor(int numColor);
+
+	int checkColor();
 }

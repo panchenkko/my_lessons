@@ -265,13 +265,13 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
 //    }
 //
 //    @Override
-//    public void createSmallCells() {
+//    public void createBigCells() {
 //        if (easy == null && medium == null && expert != null)
-//            expert.createSmallCells();
+//            expert.createBigCells();
 //        else if (easy == null && expert == null && medium != null)
-//            medium.createSmallCells();
+//            medium.createBigCells();
 //        else if (easy != null)
-//            easy.createSmallCells();
+//            easy.createBigCells();
 //    }
 //
 //    @Override

@@ -9,7 +9,7 @@ public class Logic implements ILogic {
 
     private ICell[][] cells;
 
-    private static int check = 1;
+    private static int check = 0;
 
     @Override
     public void loadBoard(ICell[][] cells) {
@@ -18,12 +18,12 @@ public class Logic implements ILogic {
 
     @Override
     public int sumRow() {
-        return 4;
+        return 9;
     }
 
     @Override
     public int sumColumn() {
-        return 4;
+        return 9;
     }
 
     @Override
@@ -33,12 +33,12 @@ public class Logic implements ILogic {
 
     @Override
     public int sumSmallCellsPainted() {
-        return 2;
+        return 3;
     }
 
     @Override
     public int sumInARow() {
-        return 2;
+        return 5;
     }
 
     // Если все ячейки кроме одной закрашенные, то возвращаем истину и пользователь проиграл
@@ -156,10 +156,9 @@ public class Logic implements ILogic {
 
     /**
      * Не полностью закрашенные ячейки, закрашиваем полностью
-     * и создаем 3 новых не полностью закрашенных ячейки, если ещё есть пустые ячейки
      */
     @Override
-    public void createSmallCells() {
+    public void createBigCells() {
         for (int i = 0; i < sumRow(); i++)
             for (int j = 0; j < sumColumn(); j++)
                 if (this.cells[i][j].isSmallCellPainted()) {
@@ -168,8 +167,11 @@ public class Logic implements ILogic {
                 }
     }
 
+    /**
+     * Создаем 3 новых не полностью закрашенных ячейки, если ещё есть пустые ячейки
+     */
     @Override
-    public void createBigCells() {
+    public void createSmallCells() {
         Random random = new Random();
         Random randColor = new Random();
         int checking = sumSmallCellsPainted();
@@ -188,108 +190,272 @@ public class Logic implements ILogic {
         }
     }
 
-    // Возвращаем количество бомб вокруг ячейки
     @Override
-    public void checkingAroundCell(int x, int y) {
-//        if (y > 0 && cells[x][y - 1].isBigCellPainted())
-//            // Метод проверки только в эту сторону, в начале помечаем как проверенную,
-//            // после идет проверка, если опять находит, то опять помечаем как проверенную.
-//        if (x > 0 && cells[x - 1][y].isBigCellPainted())
-//
-//        if (y > 0 && x > 0 && cells[x - 1][y - 1].isBigCellPainted())
-//
-//        if (y + 1 < sumColumn() && cells[x][y + 1].isBigCellPainted())
-//
-//        if (x + 1 < sumRow() && cells[x + 1][y].isBigCellPainted())
-//
-//        if (x + 1 < sumRow() && y + 1 < sumColumn() && cells[x + 1][y + 1].isBigCellPainted())
-//
-//        if (x + 1 < sumRow() && y > 0 && cells[x + 1][y - 1].isBigCellPainted())
-//
-//        if (x > 0 && y + 1 < sumColumn() && cells[x - 1][y + 1].isBigCellPainted())
+    public void clearCells(int x2, int y2) {
+        if (_9_00_(x2, y2) + _15_00_(x2, y2) >= sumInARow()) {
 
+            checkCell_9_00_(x2, y2);
+            checkCell_15_00_(x2, y2);
+
+            cells[x2][y2].checked();
+            for (int i = 0; i < sumRow(); i++) {
+                for (int j = 0; j < sumColumn(); j++)
+                    if (cells[i][j].isChecked()) {
+                        cells[i][j].cancelBigCellPainting();
+                        cells[i][j].suggestEmpty();
+                    }
+            }
+        }
+
+        if (_10_30_(x2, y2) + _16_30_(x2, y2) >= sumInARow()) {
+
+            checkCell_10_30_(x2, y2);
+            checkCell_16_30_(x2, y2);
+
+            cells[x2][y2].checked();
+            for (int i = 0; i < sumRow(); i++) {
+                for (int j = 0; j < sumColumn(); j++)
+                    if (cells[i][j].isChecked()) {
+                        cells[i][j].cancelBigCellPainting();
+                        cells[i][j].suggestEmpty();
+                    }
+            }
+        }
+
+        if (_12_00_(x2, y2) + _18_00_(x2, y2) >= sumInARow()) {
+
+            checkCell_12_00_(x2, y2);
+            checkCell_18_00_(x2, y2);
+
+            cells[x2][y2].checked();
+            for (int i = 0; i < sumRow(); i++) {
+                for (int j = 0; j < sumColumn(); j++)
+                    if (cells[i][j].isChecked()) {
+                        cells[i][j].cancelBigCellPainting();
+                        cells[i][j].suggestEmpty();
+                    }
+            }
+        }
+
+        if (_13_30_(x2, y2) + _19_30_(x2, y2) >= sumInARow()) {
+
+            checkCell_13_30_(x2, y2);
+            checkCell_19_30_(x2, y2);
+
+            cells[x2][y2].checked();
+            for (int i = 0; i < sumRow(); i++) {
+                for (int j = 0; j < sumColumn(); j++)
+                    if (cells[i][j].isChecked()) {
+                        cells[i][j].cancelBigCellPainting();
+                        cells[i][j].suggestEmpty();
+                    }
+            }
+        }
     }
 
+    public void checkCell_9_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        y--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x][y + 1].checkColor()) {
+            cells[x][y].checked();
+            checkCell_9_00_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_10_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x--; y--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (y >= 0 && x >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x + 1][y + 1].checkColor()) {
+            cells[x][y].checked();
+            checkCell_10_30_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_12_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        x--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x + 1][y].checkColor()) {
+            cells[x][y].checked();
+            checkCell_12_00_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_13_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x--; y++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x >= 0 && y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x + 1][y - 1].checkColor()) {
+            cells[x][y].checked();
+            checkCell_13_30_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_15_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        y++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x][y - 1].checkColor()) {
+            cells[x][y].checked();
+            checkCell_15_00_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_16_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x++; y++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x < sumRow() && y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x - 1][y - 1].checkColor()) {
+            cells[x][y].checked();
+            checkCell_16_30_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_18_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        x++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x < sumRow() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x - 1][y].checkColor()) {
+            cells[x][y].checked();
+            checkCell_18_00_(x, y);
+        }
+    }
+
+    @Override
+    public void checkCell_19_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x++; y--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x < sumRow() && y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x - 1][y + 1].checkColor()) {
+            cells[x][y].checked();
+            checkCell_19_30_(x, y);
+        }
+    }
+
+    @Override
     public int _9_00_(int x, int y) {
         // Переходим на следующую ячейку
         y--;
         // Если ячейка тоже закрашенная и она не проверенная
-        if (y > 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked()) {
-            cells[x][y].checked();
+        if (y > 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+            cells[x][y].checkColor() == cells[x][y + 1].checkColor()) {
             check++;
             _9_00_(x, y);
         }
         return check;
     }
 
-    /**
-     * Открываем пустые ячейки
-     */
     @Override
-    public void clearCells() {
-
-        // Проходим поле
-        for (int i = 0; i < sumRow(); i++) {
-            for (int j = 0; j < sumColumn(); j++) {
-                // Если это закрашенная клетка и она не проверенная
-                if (cells[i][j].isBigCellPainted() && !cells[i][j].isChecked()) {
-                    // Проходим по стрелке 9:00 и проверяем.
-                    // Если по пути стрелки было обнаружено больше чем n в ряд закрашенных ячеек,
-                    // то проходим поле и очищаем помеченные ячейки
-                    if (_9_00_(i, j) >= sumInARow()) {
-                        cells[i][j].checked();
-                        for (int s = 0; s < sumRow(); s++) {
-                            for (int h = 0; h < sumColumn(); h++)
-                                if (cells[s][h].isChecked()) {
-                                    cells[s][h].cancelBigCellPainting();
-//                                    cells[s][h].suggestEmpty();
-                                }
-                    }
-                }
-            }
+    public int _10_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x--; y--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (y > 0 && x > 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x + 1][y + 1].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _10_30_(x, y);
         }
+        return check;
+    }
 
-//        int check = 1, sumEmpty = 0;
-//
-//        while (check != sumEmpty) {
-//            check = sumEmpty;
-//            // Проходим поле и проверяем пустые ячейки
-//            for (int i = 0; i < sumRow(); i++)
-//                for (int j = 0; j < sumColumn(); j++) {
-//                    // Если ячейка пустая и мы её ещё не проверяли
-//                    if (cells[i][j].isSuggestEmpty() && !cells[i][j].isChecked()) {
-//
-//                        // Если возле ячейки нет бомб
-//                        if (checkingAroundCell(i, j) == 0) {
-//                            sumEmpty++;
-//                            // Открываем рядом стоящие ячейки
-//                            clearAroundCell(i, j);
-//                            // Помечаем данную ячейку как просмотренную
-//                            cells[i][j].checked();
-//                        }
-//
-//                        // Выводим данную ячейку
-//                        switch (checkingAroundCell(i, j)) {
-//                            case 8: this.cells[i][j].suggest8();
-//                                    break;
-//                            case 7: this.cells[i][j].suggest7();
-//                                    break;
-//                            case 6: this.cells[i][j].suggest6();
-//                                    break;
-//                            case 5: this.cells[i][j].suggest5();
-//                                    break;
-//                            case 4: this.cells[i][j].suggest4();
-//                                    break;
-//                            case 3: this.cells[i][j].suggest3();
-//                                    break;
-//                            case 2: this.cells[i][j].suggest2();
-//                                    break;
-//                            case 1: this.cells[i][j].suggest1();
-//                                    break;
-//                            default: isPaintedFirstCell(i, j, false);
-//                        }
-//                    }
-//                }
+    @Override
+    public int _12_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        x--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x > 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x + 1][y].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _12_00_(x, y);
         }
+        return check;
+    }
+
+    @Override
+    public int _13_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x--; y++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x > 0 && y + 1 < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x + 1][y - 1].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _13_30_(x, y);
+        }
+        return check;
+    }
+
+    @Override
+    public int _15_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        y++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (y + 1 < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x][y - 1].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _15_00_(x, y);
+        }
+        return check;
+    }
+
+    @Override
+    public int _16_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x++; y++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x + 1 < sumRow() && y + 1 < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x - 1][y - 1].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _16_30_(x, y);
+        }
+        return check;
+    }
+
+    @Override
+    public int _18_00_(int x, int y) {
+        // Переходим на следующую ячейку
+        x++;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x + 1 < sumRow() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x - 1][y].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _18_00_(x, y);
+        }
+        return check;
+    }
+
+    @Override
+    public int _19_30_(int x, int y) {
+        // Переходим на следующую ячейку
+        x++; y--;
+        // Если ячейка тоже закрашенная и она не проверенная
+        if (x + 1 < sumRow() && y > 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+                cells[x][y].checkColor() == cells[x - 1][y + 1].checkColor()) {
+            cells[x][y].checked();
+            check++;
+            _19_30_(x, y);
+        }
+        return check;
     }
 }

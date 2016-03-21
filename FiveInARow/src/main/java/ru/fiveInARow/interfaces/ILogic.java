@@ -69,13 +69,29 @@ public interface ILogic {
 	/**
 	 * Генерация полностью и не полностью закрашенных ячеек
 	 */
-	void createSmallCells();
 	void createBigCells();
-
-	void checkingAroundCell(int x, int y);
+	void createSmallCells();
 
 	/**
 	 * Проверка и если пользователь собрал n в ряд, делаем эти ячейки пустые
 	 */
-	void clearCells();
+	void clearCells(int x2, int y2);
+
+	int _9_00_(int x, int y);
+	int _10_30_(int x, int y);
+	int _12_00_(int x, int y);
+	int _13_30_(int x, int y);
+	int _15_00_(int x, int y);
+	int _16_30_(int x, int y);
+	int _18_00_(int x, int y);
+	int _19_30_(int x, int y);
+
+	void checkCell_9_00_(int x, int y);
+	void checkCell_10_30_(int x, int y);
+	void checkCell_12_00_(int x, int y);
+	void checkCell_13_30_(int x, int y);
+	void checkCell_15_00_(int x, int y);
+	void checkCell_16_30_(int x, int y);
+	void checkCell_18_00_(int x, int y);
+	void checkCell_19_30_(int x, int y);
 }

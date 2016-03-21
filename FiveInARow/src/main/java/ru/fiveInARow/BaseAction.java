@@ -28,9 +28,9 @@ public class BaseAction implements IUserAction {
 	@Override
 	public void select(int x, int y, int x2, int y2) {
 		this.logic.movePaintedCell(x, y, x2, y2);
-		this.logic.createSmallCells();
-		this.logic.clearCells();
 		this.logic.createBigCells();
+		this.logic.clearCells(x2, y2);
+		this.logic.createSmallCells();
 		if (this.logic.finish())
 			this.board.drawLosing();
 		else
