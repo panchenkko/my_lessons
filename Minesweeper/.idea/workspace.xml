@@ -7,51 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1eae12b-e635-4f96-aa3c-c6b9c0891096" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../FiveInARow/.idea/artifacts/fiveinarow.xml" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\.idea\artifacts\minesweeper_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\BaseAction.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\LevelSelection.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\console\Runner$1.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\console\Runner.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\IBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\ICell.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\IGeneratorBoard.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\ILogic.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\ISelectLevel.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\IUserAction.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\interfaces\TheNumOfTheField.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\levels\Easy.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\levels\Expert.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\target\classes\fiveInARow\levels\Medium.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/BaseAction.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/BaseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/console/ConsoleBoard.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/console/ConsoleBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/console/ConsoleCell.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/console/ConsoleCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/interfaces/IBoard.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/interfaces/IBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/interfaces/ICell.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/interfaces/ICell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/interfaces/ILogic.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/interfaces/ILogic.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/css/editStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientSearchServlet.class" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientSearchServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/classes/ru/clinicPetWeb/servlets/ClientSearchServlet.class" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/classes/ru/clinicPetWeb/servlets/ClientSearchServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/target/classes/ru/fiveInARow/Logic.class" afterPath="$PROJECT_DIR$/../FiveInARow/target/classes/ru/fiveInARow/Logic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/servlets/ClientSearchServlet.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/servlets/ClientSearchServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/views/client/EditClient.jsp" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/views/client/EditClient.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/views/client/EditClient.jsp" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/views/client/EditClient.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/Logic.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/Logic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/console/Runner.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/console/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/views/client/SearchClient.jsp" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/views/client/SearchClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/views/client/SearchClient.jsp" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/views/client/SearchClient.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/css/searchStyle.css" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/css/searchStyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/css/searchStyle.css" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/css/searchStyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../FiveInARow/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\BaseAction.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/BaseAction.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\LevelSelection.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/LevelSelection.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\console\ConsoleBoard.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/console/ConsoleBoard.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\console\ConsoleCell.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/console/ConsoleCell.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\console\Runner.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/console/Runner.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\IBoard.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/IBoard.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\ICell.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/ICell.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\IGeneratorBoard.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/IGeneratorBoard.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\ILogic.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/ILogic.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\ISelectLevel.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/ISelectLevel.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\IUserAction.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/IUserAction.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\interfaces\TheNumOfTheField.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/interfaces/TheNumOfTheField.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\levels\Easy.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/levels/Easy.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\levels\Expert.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/levels/Expert.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\FiveInARow\src\main\java\fiveInARow\levels\Medium.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/minesweeper/levels/Medium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="minesweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +57,7 @@
       <file leaf-file-name="ConsoleCell.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.9982877">
+            <state vertical-scroll-proportion="0.0">
               <caret line="153" column="14" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
               <folding />
             </state>
@@ -240,7 +208,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -413,7 +381,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -783,15 +751,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -836,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -878,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1196,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32020548">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,7 +1174,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/console/ConsoleCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9982877">
+        <state vertical-scroll-proportion="0.0">
           <caret line="153" column="14" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
           <folding />
         </state>

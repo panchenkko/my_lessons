@@ -28,10 +28,10 @@ public class ClientSearchServlet extends HttpServlet {
         String petSex = request.getParameter("petSex");
         String petAge = request.getParameter("petAge");
 
-        if (!Objects.equals(clientName, "") && !Objects.equals(petType, "") &&
-            !Objects.equals(petName, "") && !Objects.equals(petSex, "") && !Objects.equals(petAge, "")) {
-            for ()
-        }
+//        if (!Objects.equals(clientName, "") && !Objects.equals(petType, "") &&
+//            !Objects.equals(petName, "") && !Objects.equals(petSex, "") && !Objects.equals(petAge, "")) {
+//            for ()
+//        }
     }
 
 }

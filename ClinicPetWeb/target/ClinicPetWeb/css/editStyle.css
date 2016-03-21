@@ -4,7 +4,7 @@ body {
 
 .container {
     background-color: #fff;
-    padding: 10px 10px 20px 10px;
+    padding: 10px 10px 10px 10px;
     min-width: 993px;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -67,12 +67,11 @@ header div>p {
 
 form {
     width: auto;
-    margin-top: 120px;
-    clear: both;
 }
 
 form input {
     padding: 5px;
+    margin-bottom: 5px;
 }
 
 .input-control {

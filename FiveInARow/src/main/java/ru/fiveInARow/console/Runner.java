@@ -64,7 +64,8 @@ public class Runner {
                     if (logic.checkingCells(row - 1, column - 1, row2 - 1, column2 - 1)) {
                         action.select(row - 1, column - 1, row2 - 1, column2 - 1);
                     } else {
-                        System.out.println("Первая клетка должна быть закрашенная, а вторая пустая! Попробуйте ещё раз.");
+                        System.out.println("Первая клетка должна быть закрашенная, " +
+                                "а вторая со звездочкой или пустая! Попробуйте ещё раз.");
                         System.out.println();
                     }
                 // Создаем исключение, если пользователь ввел некорректные данные
