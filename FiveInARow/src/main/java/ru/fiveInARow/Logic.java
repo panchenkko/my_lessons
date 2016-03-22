@@ -203,10 +203,11 @@ public class Logic implements ILogic {
 
         if (num1 + num2 >= sumInARow() - 1) {
 
+            cells[x2][y2].checked();
+
             checkCell_9_00_(x2, y2);
             checkCell_15_00_(x2, y2);
 
-            cells[x2][y2].checked();
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
@@ -223,10 +224,11 @@ public class Logic implements ILogic {
 
         if (num1 + num2 >= sumInARow() - 1) {
 
+            cells[x2][y2].checked();
+
             checkCell_10_30_(x2, y2);
             checkCell_16_30_(x2, y2);
 
-            cells[x2][y2].checked();
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
@@ -243,10 +245,11 @@ public class Logic implements ILogic {
 
         if (num1 + num2 >= sumInARow() - 1) {
 
+            cells[x2][y2].checked();
+
             checkCell_12_00_(x2, y2);
             checkCell_18_00_(x2, y2);
 
-            cells[x2][y2].checked();
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
@@ -263,10 +266,11 @@ public class Logic implements ILogic {
 
         if (num1 + num2 >= sumInARow() - 1) {
 
+            cells[x2][y2].checked();
+
             checkCell_13_30_(x2, y2);
             checkCell_19_30_(x2, y2);
 
-            cells[x2][y2].checked();
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
