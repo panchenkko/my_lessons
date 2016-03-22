@@ -30,18 +30,10 @@ hr {
 header {
     height: 450px;
     background-image: url(../img/jpg17.jpg);
-    background-size: 60%;
+    background-size: 70%;
     background-repeat: no-repeat;
-    background-position: 61% 100%;;
+    background-position: 61% 100%;
     font-family: Cursive, Comic Sans MS, sans-serif;
-}
-
-header>img {
-    width: auto;
-    height: 224px;
-    float: right;
-    margin-top: -12px;
-    margin-right: 29%;
 }
 
 header div>h1, p {
@@ -71,17 +63,17 @@ header div>p {
 
 form {
     width: auto;
-    margin: 50px 0 0 500px;
+    margin: 30px 0 0 367px;
 }
 
 form input {
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .input-control {
     display: initial;
-    width: 140px;
+    width: 323px;
     clear: both;
 }
 
@@ -89,17 +81,13 @@ form input:first-child {
     margin: 0 0 11px 156px;
 }
 
-form input[placeholder="Тип питомца"] {
-    margin-left: 16px;
-}
-
 form select {
     padding: 5px;
+    margin-bottom: 6px;
 }
 
 form input[type="submit"], input[type="button"] {
     width: 105px;
-    margin-left: 5px;
 }
 
 #Age {
@@ -114,19 +102,24 @@ form input[type="submit"], input[type="button"] {
 }
 
 @media (max-width: 1200px) {
-    header>img {
+
+    header {
+        height: 405px;
+        background-image: url(../img/jpg17.jpg);
+        background-size: 74%;
+        background-repeat: no-repeat;
+        background-position: 88% 100%;
+        font-family: Cursive, Comic Sans MS, sans-serif;
+    }
+
+    form {
         width: auto;
-        height: 224px;
-        float: right;
-        margin-top: -12px;
-        margin-right: 19%;
+        margin: 8px 0 0 367px;
     }
 
-    form input:first-child {
-        margin: 0 0 11px 56px;
-    }
-
-    .lead {
-        font-size: 21px;
+    .input-control {
+        display: initial;
+        width: 298px;
+        clear: both;
     }
 }

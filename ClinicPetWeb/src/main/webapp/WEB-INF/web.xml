@@ -7,7 +7,7 @@
 	<display-name>ClinicPet</display-name>
 
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>home.jsp</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
@@ -69,5 +69,15 @@
 	<servlet-mapping>
 		<servlet-name>IndexServlet</servlet-name>
 		<url-pattern>/client/index</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>HomeServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.HomeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/client/home</url-pattern>
 	</servlet-mapping>
 </web-app>     

@@ -1,0 +1,29 @@
+body {
+    background: url("../img/jpg4.jpg") fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: 50%;
+    background-size: 50%;
+    background-position: 50% 50%;
+    font-family: Cursive, Comic Sans MS, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    font-weight: bold;
+}
+
+header div>h1 {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (max-width: 993px) {
+    body {
+        background-size: 100%;
+    }
+
+    .lead {
+        font-size: 21px;
+    }
+}

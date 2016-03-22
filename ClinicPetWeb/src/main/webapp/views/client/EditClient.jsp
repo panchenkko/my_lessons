@@ -51,11 +51,14 @@
 		<form action="${pageContext.servletContext.contextPath}/client/edit" method="POST">
 			<input type="hidden" name="id" class="form-control input-control" value="${client.id}">
 
-			<input type="text" name="clientName" class="form-control input-control" value="${client.name}" placeholder="Имя клиента" required>
+			<input type="text" name="clientName" class="form-control input-control" value="${client.name}"
+				   placeholder="Имя клиента" required>
 			<br>
-			<input type="text" name="petType" class="form-control input-control" value="${client.pet.petType}">
+			<input type="text" name="petType" class="form-control input-control" value="${client.pet.petType}"
+				   placeholder="Тип питомца">
 			<br>
-			<input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца" required>
+			<input type="text" name="petName" id="petName" class="form-control input-control" value="${client.pet.name}"
+				   placeholder="Имя питомца" required>
 			<br>
 			<select name="petSex" class="form-control input-control">
 				<option selected="selected" disabled>Пол питомца</option>
@@ -73,9 +76,10 @@
 				</c:if>
 			</select>
 			<br>
-			<input type="number" name="petAge" class="form-control input-control" value="${client.pet.age}" min="0" max="300">
+			<input type="number" name="petAge" class="form-control input-control" value="${client.pet.age}"
+				   min="0" max="300" placeholder="Возраст питомца">
 			<br>
-			<input type="submit" align="center" class="btn btn-primary input-control" value="Submit"/>
+			<input type="submit" align="center" class="btn btn-primary input-control" value="Готово"/>
 		</form>
 	</header>
 	</div>
