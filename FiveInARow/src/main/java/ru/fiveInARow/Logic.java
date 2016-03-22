@@ -11,6 +11,13 @@ public class Logic implements ILogic {
 
     private int check = 0;
 
+    private static int score = 1;
+
+    @Override
+    public int score() {
+        return score++;
+    }
+
     @Override
     public void loadBoard(ICell[][] cells) {
         this.cells = cells;
@@ -211,6 +218,7 @@ public class Logic implements ILogic {
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
+                        score();
                         cells[i][j].cancelBigCellPainting();
                         cells[i][j].suggestEmpty();
                     }
@@ -232,6 +240,7 @@ public class Logic implements ILogic {
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
+                        score();
                         cells[i][j].cancelBigCellPainting();
                         cells[i][j].suggestEmpty();
                     }
@@ -253,6 +262,7 @@ public class Logic implements ILogic {
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
+                        score();
                         cells[i][j].cancelBigCellPainting();
                         cells[i][j].suggestEmpty();
                     }
@@ -274,6 +284,7 @@ public class Logic implements ILogic {
             for (int i = 0; i < sumRow(); i++) {
                 for (int j = 0; j < sumColumn(); j++)
                     if (cells[i][j].isChecked()) {
+                        score();
                         cells[i][j].cancelBigCellPainting();
                         cells[i][j].suggestEmpty();
                     }

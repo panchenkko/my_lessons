@@ -5,6 +5,8 @@ package ru.fiveInARow.interfaces;
  */
 public interface ILogic {
 
+	int score();
+
 	/**
 	 * Загружаем поле игры
      */

@@ -31,6 +31,7 @@ public class BaseAction implements IUserAction {
 		this.logic.createBigCells();
 		this.logic.clearCells(x2, y2);
 		this.logic.createSmallCells();
+		System.out.println("Ваш счет: " + this.logic.score());
 		if (this.logic.finish())
 			this.board.drawLosing();
 		else

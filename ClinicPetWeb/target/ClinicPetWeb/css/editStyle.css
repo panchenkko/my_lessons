@@ -28,7 +28,11 @@ hr {
 }
 
 header {
-    height: 250px;
+    height: 450px;
+    background-image: url(../img/jpg17.jpg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 61% 100%;;
     font-family: Cursive, Comic Sans MS, sans-serif;
 }
 
@@ -67,6 +71,7 @@ header div>p {
 
 form {
     width: auto;
+    margin: 150px 0 0 400px;
 }
 
 form input {
@@ -95,85 +100,6 @@ form select {
 form input[type="submit"], input[type="button"] {
     width: 105px;
     margin-left: 5px;
-}
-
-.body {
-    height: auto;
-}
-
-.body h1, td[colspan="5"] {
-    font-size: 1.5em;
-    font-style: italic;
-}
-
-.table {
-    max-width: 700px;
-    margin: auto;
-    margin-top: -36px;
-    border-color: black;
-}
-
-.table caption {
-    text-align: center;
-    font-family: Cursive, Comic Sans MS, sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    color: #286090;
-}
-
-.table th:first-child, td:first-child {
-    font-weight: bold;
-    border-right: 2px solid black;
-    min-width: 150px;
-}
-
-.table td:last-child {
-    width: 100px;
-}
-
-.table th {
-    background-color: #286090;
-    border-bottom: 2px solid black;
-    min-width: 100px;
-    text-align: center;
-    font-weight: normal;
-    font-style: italic;
-    color: white;
-}
-
-.table td {
-    height: 20px;
-}
-
-.table tbody>tr>td {
-    text-align: center;
-    vertical-align: middle;
-    color: black;
-}
-
-.table>tbody>tr>td:last-child {
-    padding: 4px 0 2px 0;
-}
-
-.table>tbody>tr>th {
-    vertical-align: middle;
-}
-
-.table>tbody>tr>th:last-child {
-    width: 110px;
-}
-
-.table tr>td>a {
-    font-size: 0.9em;
-    vertical-align: top;
-}
-
-.table tr>td>a:hover {
-    cursor: pointer;
-}
-
-.table tr>td>a:last-child:hover {
-    color: red;
 }
 
 #Age {
