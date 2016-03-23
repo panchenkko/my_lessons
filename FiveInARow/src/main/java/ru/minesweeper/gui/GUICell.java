@@ -1,14 +1,11 @@
-package ru.minesweeper.console;
+package ru.minesweeper.gui;
 
 import ru.minesweeper.interfaces.ICell;
 
-import java.io.PrintStream;
+import javax.swing.*;
+import java.awt.*;
 
-/**
- * Реализация ячейки в консоли
- */
-// PrintStream - входящий поток, какой реализует нашу консоль
-public class ConsoleCell implements ICell<PrintStream> {
+public class GUICell extends JPanel implements ICell<Graphics> {
 
 	private boolean bomb;
 	private boolean suggestBomb = false;
@@ -25,8 +22,16 @@ public class ConsoleCell implements ICell<PrintStream> {
 	private boolean suggest7 = false;
 	private boolean suggest8 = false;
 
-	public ConsoleCell(boolean bomb) {
+	private Image[] img;
+
+	public GUICell(boolean bomb) {
 		this.bomb = bomb;
+
+		img = new Image[13];
+
+		for (int i = 0; i < 13; i++) {
+			img[i] = (new ImageIcon(i + ".png")).getImage();
+		}
 	}
 
 	@Override
@@ -145,42 +150,31 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
-	public void draw(PrintStream paint, boolean real) {
-		if (real)
-			if (this.isBomb())
-				paint.print("[\033[1;31m*\033[0m] ");
-			else
-				paint.print("[ ] ");
-		else {
-			if (this.suggestBomb)
-				paint.print("[\033[1;31m?\033[0m] ");
+	public void draw(Graphics paint, boolean real) {
 
-			else if (this.suggest8)
-				paint.print("[\033[1;31m8\033[0m] ");
-			else if (this.suggest7)
-				paint.print("[\033[1;31m7\033[0m] ");
-			else if (this.suggest6)
-				paint.print("[\033[1;35m6\033[0m] ");
-			else if (this.suggest5)
-				paint.print("[\033[1;36m5\033[0m] ");
-			else if (this.suggest4)
-				paint.print("[\033[1;34m4\033[0m] ");
-			else if (this.suggest3)
-				paint.print("[\033[1;32m3\033[0m] ");
-			else if (this.suggest2)
-				paint.print("[\033[1;33m2\033[0m] ");
-			else if (this.suggest1)
-				paint.print("[\033[1;30m1\033[0m] ");
-
-			else if (this.suggestEmpty)
-				paint.print("[ ] ");
-			else
-				paint.print("[Х] ");
-		}
 	}
 
 	@Override
-	public void draw(PrintStream graphics, int x, int y, boolean real) {
-
+	public void draw(Graphics paint, int x, int y, boolean real) {
+		x = x < 1 ? 17 : 58;
+		y = y < 1 ? 25 : 66;
+		if (real) {
+			if (this.isBomb()) {
+				paint.setColor(Color.red);
+				paint.fillRect(x, y, x, y);
+				paint.drawString("*", x, y);
+//				paint.drawImage(img[9], x * 40, y * 40, new GUIBoard());
+			} else {
+				paint.drawString("-", x, y);
+			}
+		} else {
+			if (this.suggestBomb) {
+				paint.drawString("?", x, y);
+			} else if (this.suggestEmpty) {
+				paint.drawString("-", x, y);
+			} else {
+				paint.drawString("X", x, y);
+			}
+		}
 	}
 }

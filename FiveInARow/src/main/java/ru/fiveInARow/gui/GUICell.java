@@ -1,14 +1,10 @@
-package ru.fiveInARow.console;
+package ru.fiveInARow.gui;
 
 import ru.fiveInARow.interfaces.ICell;
 
-import java.io.PrintStream;
+import java.awt.*;
 
-/**
- * Реализация ячейки в консоли
- */
-// PrintStream - входящий поток, какой реализует нашу консоль
-public class ConsoleCell implements ICell<PrintStream> {
+public class GUICell implements ICell<Graphics> {
 
 	private boolean smallPaint = false;
 	private boolean bigPaint = false;
@@ -16,6 +12,7 @@ public class ConsoleCell implements ICell<PrintStream> {
 	private boolean suggestEmpty = false;
 
 	private boolean checked = false;
+	private boolean checkedClick = false;
 
 	private boolean red = false;
 	private boolean green = false;
@@ -153,61 +150,36 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
-	public void draw(PrintStream paint) {
-		if (this.isBigCellPainted())
-			selectColor(paint, "O");
-		else if (this.isSmallCellPainted())
-			selectColor(paint, "*");
-		else if (this.isSuggestEmpty())
-			paint.print("[ ] ");
-	}
-
-	@Override
-	public void draw(PrintStream graphics, int x, int y) {
-
-	}
-
-	@Override
-	public boolean isCheckedClick() {
-		return false;
-	}
-
-	@Override
-	public void checkedClick() {
-
-	}
-
-	@Override
-	public void selectColor(PrintStream paint, String symbol) {
+	public void selectColor(Graphics paint, String symbol) {
 		if (this.isRedCell())
-			paint.printf("[\033[1;31m%s\033[0m] ", symbol);
+			paint.setColor(Color.red);
 		else if (this.isGreenCell())
-			paint.printf("[\033[1;32m%s\033[0m] ", symbol);
+			paint.setColor(Color.green);
 		else if (this.isBlueCell())
-			paint.printf("[\033[1;34m%s\033[0m] ", symbol);
+			paint.setColor(Color.blue);
 		else if (this.isYellowCell())
-			paint.printf("[\033[1;33m%s\033[0m] ", symbol);
+			paint.setColor(Color.yellow);
 		else if (this.isMagentaCell())
-			paint.printf("[\033[1;35m%s\033[0m] ", symbol);
+			paint.setColor(Color.magenta);
 		else if (this.isCyanCell())
-			paint.printf("[\033[1;36m%s\033[0m] ", symbol);
+			paint.setColor(Color.cyan);
 	}
 
 	@Override
 	public void generateColor(int numColor) {
 		switch (numColor) {
 			case 0: this.redCell();
-					break;
+				break;
 			case 1: this.greenCell();
-					break;
+				break;
 			case 2: this.blueCell();
-					break;
+				break;
 			case 3: this.yellowCell();
-					break;
+				break;
 			case 4: this.magentaCell();
-					break;
+				break;
 			case 5: this.cyanCell();
-					break;
+				break;
 		}
 	}
 
@@ -229,5 +201,42 @@ public class ConsoleCell implements ICell<PrintStream> {
 		else
 			color = 6;
 		return color;
+	}
+
+	@Override
+	public void draw(Graphics paint) {
+//		if (this.isBigCellPainted())
+//			selectColor(paint, "O");
+//		else if (this.isSmallCellPainted())
+//			selectColor(paint, "*");
+//		else if (this.isSuggestEmpty())
+//			paint.print("[ ] ");
+	}
+
+	@Override
+	public void draw(Graphics paint, int x, int y) {
+		x = x * 40 + 16;
+		y = y * 40 + 25;
+		if (this.isBigCellPainted()) {
+			paint.drawString("O", x, y);
+			paint.fillRect(x - 16, y - 25, x + 40, y + 40);
+			selectColor(paint, null);
+		} else if (this.isSmallCellPainted()) {
+			paint.drawString("*", x, y);
+			selectColor(paint, null);
+		} else if (this.isSuggestEmpty()) {
+			paint.drawString(" ", x, y);
+			selectColor(paint, null);
+		}
+	}
+
+	@Override
+	public boolean isCheckedClick() {
+		return this.checkedClick;
+	}
+
+	@Override
+	public void checkedClick() {
+		this.checkedClick = true;
 	}
 }

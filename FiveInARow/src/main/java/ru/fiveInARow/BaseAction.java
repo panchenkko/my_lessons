@@ -9,7 +9,7 @@ public class BaseAction implements IUserAction {
 
 	private final IGeneratorBoard generator;
 	private final IBoard board;
-	private final ILogic logic;
+	public final ILogic logic;
 
 	public BaseAction(final ILogic logic, final IBoard board, final IGeneratorBoard generator) {
 		this.generator = generator;

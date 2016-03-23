@@ -65,15 +65,22 @@ public interface ICell<T> {
 	 */
 	void checked();
 
+	void selectColor(T paint, String symbol);
+
+	void generateColor(int numColor);
+
+	int checkColor();
+
 	/**
 	 * Рисуем клетку
 	 * @param paint Сама прорисовка (это якобы то, на чем мы будем рисовать)
      */
 	void draw(T paint);
 
-	void selectColor(T paint, String symbol);
+	void draw(T graphics, int x, int y);
 
-	void generateColor(int numColor);
 
-	int checkColor();
+	boolean isCheckedClick();
+
+	void checkedClick();
 }

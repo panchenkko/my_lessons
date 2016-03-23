@@ -70,4 +70,6 @@ public interface ICell<T> {
 	 * @param real Рисовать реальную клетку или же что предположил пользователь
      */
 	void draw(T paint, boolean real);
+
+	void draw(T graphics, int x, int y, boolean real);
 }

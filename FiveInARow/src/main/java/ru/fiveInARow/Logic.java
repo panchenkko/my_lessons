@@ -64,7 +64,7 @@ public class Logic implements ILogic {
         return finish;
     }
 
-    // Проверяем, действительно ли первая клетка является закрашенной, а вторая пустой
+    // Проверяем, действительно ли первая клетка является закрашенной, а вторая пустой или звездочкой
     @Override
     public boolean checkingCells(int x, int y, int x2, int y2) {
         boolean checking = false;
@@ -135,33 +135,10 @@ public class Logic implements ILogic {
         this.cells[x2][y2].cancelSuggestEmpty();
         this.cells[x2][y2].cancelSmallCellPainting();
 
-//        selectColorForNewCell(x, y, x2, y2);
         this.cells[x2][y2].generateColor(this.cells[x][y].checkColor());
 
         this.cells[x][y].cancelBigCellPainting();
         this.cells[x][y].suggestEmpty();
-    }
-
-    // Перемещаем цвет ячейки, когда пользователь перемещает закрашенную ячейку
-    @Override
-    public void selectColorForNewCell(int x, int y, int x2, int y2) {
-//        if (this.cells[x][y].isRedCell())
-//            this.cells[x2][y2].redCell();
-//        else
-//        if (this.cells[x][y].isGreenCell())
-//            this.cells[x2][y2].greenCell();
-//        else
-//        if (this.cells[x][y].isBlueCell())
-//            this.cells[x2][y2].blueCell();
-//        else
-//        if (this.cells[x][y].isYellowCell())
-//            this.cells[x2][y2].yellowCell();
-//        else
-//        if (this.cells[x][y].isMagentaCell())
-//            this.cells[x2][y2].magentaCell();
-//        else
-//        if (this.cells[x][y].isCyanCell())
-//            this.cells[x2][y2].cyanCell();
     }
 
     /**

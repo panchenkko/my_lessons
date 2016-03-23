@@ -61,8 +61,6 @@ public interface ILogic {
 	 */
 	void movePaintedCell(int x, int y, int x2, int y2);
 
-	void selectColorForNewCell(int x, int y, int x2, int y2);
-
 	/**
 	 * Генерируем в начале игры 3 полностью закрашенные ячейки и 3 не полностью закрашенные
 	 */
