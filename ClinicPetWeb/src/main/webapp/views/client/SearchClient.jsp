@@ -21,23 +21,6 @@
     <![endif]-->
 
     <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.12.1.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#button').click(function() {
-                if ($('#clientName').val() == '' || $('#petName').val() == '') {
-                    if ($('#clientName').val() == '') {
-                        $('#petName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
-                        $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
-                    }
-                    else {
-                        $('#clientName').css('box-shadow', 'rgba(102, 175, 233, 0) 0px 0px 25px inset');
-                        $('#petName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
-                    }
-                }
-            });
-        });
-    </script>
 </head>
 <body>
 <div class="container">
@@ -45,24 +28,18 @@
         <img src="../img/jpg3.jpg" alt="">
         <div>
             <h1>Поиск клиента</h1>
-            <p class="lead">Внесите требуемые данные:</p>
+            <p class="lead">Внесите возможные данные:</p>
         </div>
-        <form action="${pageContext.servletContext.contextPath}/client/index" method="POST">
+        <form action="${pageContext.servletContext.contextPath}/client/search" method="POST">
             <div class="form-group">
                 <input type="text" name="clientName" id="clientName" class="form-control input-control" placeholder="Имя клиента">
-                <input type="text" name="petType" id="petType" class="form-control input-control" placeholder="Тип питомца">
                 <input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца">
-                <select name="petSex" id="petSex" class="form-control input-control">
-                    <option selected="selected" disabled>Пол питомца</option>
-                    <option value="Мужской">Мужской</option>
-                    <option value="Женский">Женский</option>
-                </select>
                 <input type="number" name="petAge" id="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
                 <input type="submit" id="button" class="btn btn-primary input-control" value="Найти">
             </div>
         </form>
     </header>
-    <c:if test="${!clients.isEmpty()}">
+    <c:if test="${!found.isEmpty()}">
         <hr />
         <div class="body">
             <a href="${pageContext.servletContext.contextPath}/client/index" id="returnBtn">
@@ -80,7 +57,7 @@
                     <th>Доп. действия</th>
                 </tr>
                 <div class="createClient">
-                    <c:forEach items="${clients}" var="client" varStatus="status">
+                    <c:forEach items="${found}" var="client" varStatus="status">
                         <tr>
                             <td>${client.name}</td>
                             <td>${client.pet.petType}</td>
@@ -92,7 +69,11 @@
                             <c:if test="${client.pet.age == 1 || client.pet.age == 21}">
                                 <td>${client.pet.age} год</td>
                             </c:if>
-                            <c:if test="${client.pet.age != 1 && client.pet.age != 21 && client.pet.age != ''}">
+                            <c:if test="${client.pet.age > 1 && client.pet.age < 5 ||
+                                          client.pet.age > 21 && client.pet.age < 25}">
+                                <td>${client.pet.age} года</td>
+                            </c:if>
+                            <c:if test="${client.pet.age >= 5 && client.pet.age <= 20 || client.pet.age >= 25}">
                                 <td>${client.pet.age} лет</td>
                             </c:if>
                             <td id="linkAction">

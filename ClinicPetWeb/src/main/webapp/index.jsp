@@ -92,7 +92,11 @@
                             <c:if test="${client.pet.age == 1 || client.pet.age == 21}">
                                 <td>${client.pet.age} год</td>
                             </c:if>
-                            <c:if test="${client.pet.age != 1 && client.pet.age != 21 && client.pet.age != ''}">
+                            <c:if test="${client.pet.age > 1 && client.pet.age < 5 ||
+                                          client.pet.age > 21 && client.pet.age < 25}">
+                                <td>${client.pet.age} года</td>
+                            </c:if>
+                            <c:if test="${client.pet.age >= 5 && client.pet.age <= 20 || client.pet.age >= 25}">
                                 <td>${client.pet.age} лет</td>
                             </c:if>
                             <td id="linkAction">

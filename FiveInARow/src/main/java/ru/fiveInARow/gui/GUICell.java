@@ -219,7 +219,7 @@ public class GUICell implements ICell<Graphics> {
 		y = y * 40 + 25;
 		if (this.isBigCellPainted()) {
 			paint.drawString("O", x, y);
-			paint.fillRect(x - 16, y - 25, x + 40, y + 40);
+//			paint.fillRect(x - 16, y - 25, x + 40, y + 40);
 			selectColor(paint, null);
 		} else if (this.isSmallCellPainted()) {
 			paint.drawString("*", x, y);

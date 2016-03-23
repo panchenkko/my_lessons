@@ -122,4 +122,8 @@ form input[type="submit"], input[type="button"] {
         width: 298px;
         clear: both;
     }
+
+    .lead {
+        font-size: 21px;
+    }
 }

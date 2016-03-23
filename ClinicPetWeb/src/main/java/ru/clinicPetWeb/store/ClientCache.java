@@ -3,6 +3,7 @@ package ru.clinicPetWeb.store;
 import ru.clinicPetWeb.models.Client;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -18,7 +19,17 @@ public class ClientCache {
 	private static final ClientCache INSTANCE = new ClientCache();
 
 	// Карта для многопоточности
-	private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<Integer, Client>();
+	private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<>();
+
+
+	private final AtomicInteger idFound = new AtomicInteger();
+
+	private final ConcurrentHashMap<Integer, Client> found = new ConcurrentHashMap<>();
+
+	public Collection<Client> valuesFound() {
+		return this.found.values();
+	}
+
 
 	// Возвращаем объект класса
 	public static ClientCache getInstance() {
@@ -41,13 +52,28 @@ public class ClientCache {
 		this.clients.replace(client.getId(), client);
 	}
 
-	public Client findByLogin(final String searchName) {
-		for (final Client client : clients.values()) {
-			if (client.getName().equals(searchName)) {
-				return client;
+	public void find(String clientName, String petName, String petAge) {
+		for (final Client client : this.clients.values()) {
+			if (client.getName().equals(clientName) &&
+				client.getPet().getName().equals(petName) &&
+				client.getPet().getAge().equals(petAge) ||
+
+				client.getName().equals(clientName) &&
+				client.getPet().getName().equals(petName) ||
+
+				client.getName().equals(clientName) &&
+				client.getPet().getAge().equals(petAge) ||
+
+				client.getPet().getName().equals(petName) &&
+				client.getPet().getAge().equals(petAge) ||
+
+				client.getName().equals(clientName) ||
+				client.getPet().getName().equals(petName)) {
+
+				this.found.put(this.idFound.incrementAndGet(), client);
 			}
 		}
-		throw new IllegalStateException(String.format("Login %s not found", searchName));
+		throw new IllegalStateException("Ничего не найдено!");
 	}
 
 	public int generateId() {
