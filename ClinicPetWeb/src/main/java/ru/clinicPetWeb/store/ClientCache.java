@@ -14,10 +14,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class ClientCache {
 
-	private final AtomicInteger ids = new AtomicInteger();
-
 	private static final ClientCache INSTANCE = new ClientCache();
 
+	private final AtomicInteger ids = new AtomicInteger();
 	// Карта для многопоточности
 	private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<>();
 
@@ -28,6 +27,10 @@ public class ClientCache {
 
 	public Collection<Client> valuesFound() {
 		return this.found.values();
+	}
+
+	public void deleteFound(final String delete) {
+		this.found.clear();
 	}
 
 
@@ -53,24 +56,47 @@ public class ClientCache {
 	}
 
 	public void find(String clientName, String petName, String petAge) {
+		this.found.clear();
+
+		int checkThreeParam = 0;
+		int checkTwoParam = 0;
+
 		for (final Client client : this.clients.values()) {
-			if (client.getName().equals(clientName) &&
-				client.getPet().getName().equals(petName) &&
-				client.getPet().getAge().equals(petAge) ||
-
-				client.getName().equals(clientName) &&
-				client.getPet().getName().equals(petName) ||
-
-				client.getName().equals(clientName) &&
-				client.getPet().getAge().equals(petAge) ||
-
-				client.getPet().getName().equals(petName) &&
-				client.getPet().getAge().equals(petAge) ||
-
-				client.getName().equals(clientName) ||
-				client.getPet().getName().equals(petName)) {
-
+			if (client.getName().equals(clientName) && client.getPet().getName().equals(petName) &&
+				client.getPet().getAge().equals(petAge)) {
 				this.found.put(this.idFound.incrementAndGet(), client);
+				checkThreeParam++;
+			}
+		}
+
+		if (checkThreeParam == 0) {
+			for (final Client client : this.clients.values()) {
+				if (client.getName().equals(clientName) && client.getPet().getName().equals(petName)) {
+					this.found.put(this.idFound.incrementAndGet(), client);
+					checkTwoParam++;
+				} else
+				if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)) {
+					this.found.put(this.idFound.incrementAndGet(), client);
+					checkTwoParam++;
+				} else
+				if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)) {
+					this.found.put(this.idFound.incrementAndGet(), client);
+					checkTwoParam++;
+				}
+			}
+
+			if (checkTwoParam == 0) {
+				for (final Client client : this.clients.values()) {
+					if (client.getName().equals(clientName)) {
+						this.found.put(this.idFound.incrementAndGet(), client);
+					} else
+					if (client.getPet().getName().equals(petName)) {
+						this.found.put(this.idFound.incrementAndGet(), client);
+					} else
+					if (client.getPet().getAge().equals(petAge)) {
+						this.found.put(this.idFound.incrementAndGet(), client);
+					}
+				}
 			}
 		}
 		throw new IllegalStateException("Ничего не найдено!");

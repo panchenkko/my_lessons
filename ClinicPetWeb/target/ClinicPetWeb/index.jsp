@@ -86,7 +86,7 @@
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
-                            <c:if test="${client.pet.age == ''}">
+                            <c:if test="${client.pet.age == 0 || client.pet.age == ''}">
                                 <td> - </td>
                             </c:if>
                             <c:if test="${client.pet.age == 1 || client.pet.age == 21}">

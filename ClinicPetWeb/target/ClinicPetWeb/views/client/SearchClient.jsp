@@ -21,6 +21,30 @@
     <![endif]-->
 
     <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.12.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($('#clientName').val() == '' && $('#petName').val() == '' && $('#petAge').val() == '') {
+                $('input[name="submit"]').attr('disabled', true);
+            }
+            if ($('#clientName').val() != '' || $('#petName').val() != '' || $('#petAge').val() != '') {
+                $('input[name="submit"]').removeAttr('disabled');
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#clientName, #petName, #petAge').mousemove(function () {
+                if ($('#clientName').val() == '' && $('#petName').val() == '' && $('#petAge').val() == '') {
+                    $('input[name="submit"]').attr('disabled', true);
+                }
+                if ($('#clientName').val() != '' || $('#petName').val() != '' || $('#petAge').val() != '') {
+                    $('input[name="submit"]').removeAttr('disabled');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -30,21 +54,21 @@
             <h1>Поиск клиента</h1>
             <p class="lead">Внесите возможные данные:</p>
         </div>
-        <form action="${pageContext.servletContext.contextPath}/client/search" method="POST">
+        <a href="${pageContext.servletContext.contextPath}/client/index" id="returnBtn">
+            <button class="btn btn-primary">Вернуться</button>
+        </a>
+        <form action="${pageContext.servletContext.contextPath}/client/search" method="POST" name="form">
             <div class="form-group">
                 <input type="text" name="clientName" id="clientName" class="form-control input-control" placeholder="Имя клиента">
                 <input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца">
                 <input type="number" name="petAge" id="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
-                <input type="submit" id="button" class="btn btn-primary input-control" value="Найти">
+                <input type="submit" name="submit" id="button" class="btn btn-primary input-control" value="Найти">
             </div>
         </form>
     </header>
     <c:if test="${!found.isEmpty()}">
         <hr />
         <div class="body">
-            <a href="${pageContext.servletContext.contextPath}/client/index" id="returnBtn">
-                <button class="btn btn-primary">Вернуться</button>
-            </a>
             <table border="2" class="table">
                 <caption>Найденные клиенты</caption>
                 <tbody>
@@ -54,7 +78,6 @@
                     <th>Имя питомца</th>
                     <th>Пол питомца</th>
                     <th id="Age">Возраст питомца</th>
-                    <th>Доп. действия</th>
                 </tr>
                 <div class="createClient">
                     <c:forEach items="${found}" var="client" varStatus="status">
@@ -63,7 +86,7 @@
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
-                            <c:if test="${client.pet.age == ''}">
+                            <c:if test="${client.pet.age == 0 || client.pet.age == ''}">
                                 <td> - </td>
                             </c:if>
                             <c:if test="${client.pet.age == 1 || client.pet.age == 21}">
@@ -76,10 +99,6 @@
                             <c:if test="${client.pet.age >= 5 && client.pet.age <= 20 || client.pet.age >= 25}">
                                 <td>${client.pet.age} лет</td>
                             </c:if>
-                            <td id="linkAction">
-                                <a href="${pageContext.servletContext.contextPath}/client/edit?id=${client.id}">Редактировать</a>
-                                <a href="${pageContext.servletContext.contextPath}/client/delete?id=${client.id}">Удалить</a>
-                            </td>
                         </tr>
                     </c:forEach>
                 </div>

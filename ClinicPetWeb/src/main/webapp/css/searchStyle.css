@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-    margin: 15px 15px 10px 15px;
+    margin: 15px 15px 40px 15px;
     border: 0;
     border-top: 3px solid black;
 }
@@ -67,7 +67,7 @@ header div>p {
 
 form {
     width: auto;
-    margin-top: 130px;
+    margin-top: 71px;
     clear: both;
 }
 
@@ -148,6 +148,7 @@ form input[type="submit"], input[type="button"] {
 
 .table tbody>tr>td {
     text-align: center;
+    padding: 13px 0 13px 0;
     vertical-align: middle;
     color: black;
 }

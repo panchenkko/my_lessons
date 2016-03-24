@@ -5,4 +5,5 @@ ru\clinicPetWeb\servlets\ClientEditServlet.class
 ru\clinicPetWeb\servlets\IndexServlet.class
 ru\clinicPetWeb\models\Client.class
 ru\clinicPetWeb\servlets\ClientCreateServlet.class
+ru\clinicPetWeb\servlets\ClientSearchServlet.class
 ru\clinicPetWeb\models\Pet.class
