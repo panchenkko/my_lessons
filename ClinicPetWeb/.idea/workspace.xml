@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2c93b2d-7c19-40e5-80b5-4cc2de3fc6ad" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\HomeServlet.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\src\main\webapp\css\homeStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\src\main\webapp\home.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\HomeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\homeStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\home.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\servlets\HomeServlet.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/store/ClientCache.class" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/store/ClientCache.class" />
-      <change type="MODIFICATION" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\store\ClientCache.class" afterPath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\store\ClientCache.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/ru/clinicPetWeb/servlets/ClientEditServletTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/clinicPetWeb/servlets/ClientEditServletTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientSearchServlet.class" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/ClientSearchServlet.class" />
-      <change type="MODIFICATION" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\servlets\ClientSearchServlet.class" afterPath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\servlets\ClientSearchServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/store/ClientCache.java" afterPath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/store/ClientCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientEditServletTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/clinicPetWeb/servlets/ClientEditServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientSearchServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientSearchServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/client/SearchClient.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/client/SearchClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/views/client/SearchClient.jsp" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/views/client/SearchClient.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/index.jsp" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/searchStyle.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/searchStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/css/searchStyle.css" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/css/searchStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/ClinicPetWeb/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicWeb_JSP_JSTL/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b2c93b2d-7c19-40e5-80b5-4cc2de3fc6ad" name="Default" comment="" />
     <ignored path="clinicPetWeb.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -296,10 +266,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Screenshots" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -764,7 +730,7 @@
     <option name="totallyTimeSpent" value="38398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -777,7 +743,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24346405" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24583964" sideWeight="0.48202613" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24583964" sideWeight="0.48202613" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24583964" sideWeight="0.51797384" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1005,31 +971,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search5.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/clinicPetWeb/servlets/ClientDeleteServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32020548">
@@ -1042,9 +983,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,11 +1009,6 @@
           <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/delete2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/delete3.png">
@@ -1107,11 +1041,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/delete1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/edit1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1128,6 +1057,41 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/edit4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/delete1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/delete2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Screenshots/search3.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
