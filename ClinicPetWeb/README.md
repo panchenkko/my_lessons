@@ -39,7 +39,7 @@ ___________________________________
 Видим что, в полях ввода высвечиваются все веденные ранние данные пользователем:
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit2.png)
 
-Изменяем данные:
+Изменяем данные и нажимаем на кнопку "Готово" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit3.png)
 
 Убеждаемся, что данные изменились:
