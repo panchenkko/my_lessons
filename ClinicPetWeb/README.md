@@ -39,7 +39,7 @@ ___________________________________
 Видим что, в полях ввода высвечиваются все веденные ранние данные пользователем:
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit2.png)
 
-Изменяем данные и нажимаем на кнопку "Найти" :
+Изменяем данные и нажимаем на кнопку "Готово" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit3.png)
 
 Убеждаемся, что данные изменились:
@@ -59,7 +59,7 @@ ___________________________________
 Заполняем поле "Имя клиента" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search2.png)
 
-Нажимаем кнопку "Готово" :
+И нажимаем кнопку "Найти" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search3.png)
 
 Заполним два поля: Имя клиента и возраст питомца
