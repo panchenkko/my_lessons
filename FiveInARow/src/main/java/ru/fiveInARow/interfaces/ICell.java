@@ -65,6 +65,8 @@ public interface ICell<T> {
 	 */
 	void checked();
 
+	void cancelChecked();
+
 	void selectColor(T paint, String symbol);
 
 	void generateColor(int numColor);

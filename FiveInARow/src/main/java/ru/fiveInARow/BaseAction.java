@@ -1,5 +1,6 @@
 package ru.fiveInARow;
 
+import ru.fiveInARow.gui.Main;
 import ru.fiveInARow.interfaces.*;
 
 /**
@@ -27,11 +28,13 @@ public class BaseAction implements IUserAction {
 
 	@Override
 	public void select(int x, int y, int x2, int y2) {
+		this.logic.clearCellChecked();
 		this.logic.movePaintedCell(x, y, x2, y2);
 		this.logic.createBigCells();
 		this.logic.clearCells(x2, y2);
 		this.logic.createSmallCells();
-		System.out.println("Ваш счет: " + this.logic.score());
+		Main.setScore("Ваш счет: " + this.logic.getScore() + " ");
+		System.out.println("Ваш счет: " + this.logic.getScore());
 		if (this.logic.finish())
 			this.board.drawLosing();
 		else

@@ -7,6 +7,8 @@ public interface ILogic {
 
 	int score();
 
+	int getScore();
+
 	/**
 	 * Загружаем поле игры
      */
@@ -50,11 +52,7 @@ public interface ILogic {
 	 */
 	boolean checkingCells(int x, int y, int x2, int y2);
 
-	/**
-	 * Проверка первого хода
-	 * @return Если все ячейки пустые, возвращаем истину
-	 */
-	boolean checkTheFirstMove();
+	void clearCellChecked();
 
 	/**
 	 * Перемещаем закрашенную клетку, на выбранную позицию пользователем

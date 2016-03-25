@@ -150,6 +150,11 @@ public class GUICell implements ICell<Graphics> {
 	}
 
 	@Override
+	public void cancelChecked() {
+		this.checked = false;
+	}
+
+	@Override
 	public void selectColor(Graphics paint, String symbol) {
 		if (this.isRedCell())
 			paint.setColor(Color.red);
@@ -211,27 +216,22 @@ public class GUICell implements ICell<Graphics> {
 
 	@Override
 	public void draw(Graphics paint, int x, int y) {
-		x = x * 40 + 16;
-		y = y * 40 + 25;
+		Color color = new Color(0,0,0);
+		paint.drawRect(x * GUIBoard.getPADDING(), y * GUIBoard.getPADDING(),
+				           GUIBoard.getPADDING(), GUIBoard.getPADDING());
+		paint.setColor(color);
+
+		x = x * GUIBoard.getPADDING() + 16;
+		y = y * GUIBoard.getPADDING() + 25;
 		if (this.isBigCellPainted()) {
 			selectColor(paint, null);
-			drawLine(paint, x, y);
-			paint.fillOval(x - 11, y - 20, 30, 30);
+			paint.fillOval(x - 9, y - 18, 31, 31);
 		} else if (this.isSmallCellPainted()) {
 			selectColor(paint, null);
-			drawLine(paint, x, y);
-			paint.fillOval(x - 2, y - 11, 12, 12);
+			paint.fillOval(x + 1, y - 8, 12, 12);
 		} else if (this.isSuggestEmpty()) {
 			selectColor(paint, null);
-			drawLine(paint, x, y);
 		}
-	}
-
-	public void drawLine(Graphics paint, int x, int y) {
-		paint.drawLine(x - 16, y - 25, x - 16, y + 15);
-		paint.drawLine(x - 16, y - 25, x + 24, y - 25);
-		paint.drawLine(x + 24, y - 25, x + 24, y + 15);
-		paint.drawLine(x - 16, y + 15, x + 24, y + 15);
 	}
 
 	@Override

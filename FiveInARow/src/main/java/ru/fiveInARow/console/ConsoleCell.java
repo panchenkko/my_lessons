@@ -153,6 +153,11 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
+	public void cancelChecked() {
+		this.checked = false;
+	}
+
+	@Override
 	public void draw(PrintStream paint) {
 		if (this.isBigCellPainted())
 			selectColor(paint, "O");

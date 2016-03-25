@@ -11,11 +11,16 @@ public class Logic implements ILogic {
 
     private int check = 0;
 
-    private static int score = 1;
+    private int score = 0;
 
     @Override
     public int score() {
-        return score++;
+        return this.score++;
+    }
+
+    @Override
+    public int getScore() {
+        return this.score;
     }
 
     @Override
@@ -55,11 +60,11 @@ public class Logic implements ILogic {
         int check = 0;
         for (ICell[] row : this.cells) {
             for (ICell cell : row) {
-                if (cell.isSmallCellPainted() || cell.isBigCellPainted()) check++;
+                if (cell.isBigCellPainted()) check++;
             }
         }
 
-        if (check == (sumRow() * sumColumn()) - 1)
+        if (check == sumRow() * sumColumn() - 1)
             finish = true;
         return finish;
     }
@@ -75,15 +80,13 @@ public class Logic implements ILogic {
     }
 
     @Override
-    public boolean checkTheFirstMove() {
-        boolean check = true;
-        root: for (int i = 0; i < sumRow(); i++)
-              for (int j = 0; j < sumColumn(); j++)
-                  if (this.cells[i][j].isSmallCellPainted()) {
-                      check = false;
-                      break root;
-                  }
-        return check;
+    public void clearCellChecked() {
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
+                if (cell.isChecked())
+                    cell.cancelChecked();
+            }
+        }
     }
 
     /**
@@ -138,6 +141,7 @@ public class Logic implements ILogic {
         this.cells[x2][y2].generateColor(this.cells[x][y].checkColor());
 
         this.cells[x][y].cancelBigCellPainting();
+        this.cells[x][y].cancelSmallCellPainting();
         this.cells[x][y].suggestEmpty();
     }
 
@@ -382,7 +386,7 @@ public class Logic implements ILogic {
         // Переходим на следующую ячейку
         x--; y--;
         // Если ячейка тоже закрашенная и она не проверенная
-        if (y >= 0 && x >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
+        if (x >= 0 && y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
                 cells[x][y].checkColor() == cells[x + 1][y + 1].checkColor()) {
             check++;
             _10_30_(x, y);

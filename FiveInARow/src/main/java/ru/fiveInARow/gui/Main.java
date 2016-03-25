@@ -12,7 +12,7 @@ import java.awt.event.WindowEvent;
 
 public class Main {
 	private static final JPanel controlPanel = new JPanel();
-	private static JLabel label = new JLabel("");
+	private static JLabel score = new JLabel("");
 	private static final GUIBoard board = new GUIBoard();
 
 	public static void main(String[] arg) {
@@ -21,13 +21,13 @@ public class Main {
 				final JFrame frame = new JFrame();
 				frame.setTitle("5 в ряд");
 				frame.setLayout(new BorderLayout());
-				frame.setSize(500, 500);
+				frame.setSize(510, 500);
 				frame.add(board, BorderLayout.CENTER);
 				board.setBorder(new EmptyBorder(10, 10, 10, 10));
 				frame.add(controlPanel, BorderLayout.PAGE_END);
 
-				label.setVerticalAlignment(SwingConstants.TOP);
-				frame.add(label, BorderLayout.EAST);
+				score.setVerticalAlignment(SwingConstants.TOP);
+				frame.add(score, BorderLayout.EAST);
 
 				controlPanel.setLayout(new FlowLayout());
 				final JButton generate = new JButton("Начать");
@@ -36,7 +36,7 @@ public class Main {
 					@Override
 					public ICell[][] generate() {
 						ICell[][] cells = logic.sizeField();
-						label.setText("Ваш счет: " + logic.score() + " ");
+						score.setText("Ваш счет: " + logic.getScore() + " ");
 						for (int i = 0; i < logic.sumRow(); i++) {
 							for (int j = 0; j < logic.sumColumn(); j++) {
 								cells[i][j] = new GUICell();
@@ -75,8 +75,15 @@ public class Main {
 		System.exit(0);
 	}
 
-	public static void setLabel(String textOnLabel) {
-		label.setText(textOnLabel);
-		label.repaint();
+	public static void setScore(String textOnLabel) {
+		score.setText(textOnLabel);
+		score.repaint();
+	}
+
+	public static void setLosing() {
+		JOptionPane.showMessageDialog(null,
+				"Нажмите 'OK', чтобы закрыть окно.",
+				"К сожалению Вы проиграли",
+				JOptionPane.INFORMATION_MESSAGE);
 	}
 }
