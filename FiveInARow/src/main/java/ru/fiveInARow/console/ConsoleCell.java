@@ -178,6 +178,11 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
+	public void cancelCheckedClick() {
+
+	}
+
+	@Override
 	public void selectColor(PrintStream paint, String symbol) {
 		if (this.isRedCell())
 			paint.printf("[\033[1;31m%s\033[0m] ", symbol);

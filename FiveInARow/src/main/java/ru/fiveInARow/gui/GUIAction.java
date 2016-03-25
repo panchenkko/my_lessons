@@ -39,9 +39,11 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
 			x = returnX(e);
 			y = returnY(e);
 			board.checkingClick(x, y);
-		} else if (this.logic.checkingCells(x, y, returnX(e), returnY(e)))
+		} else if (this.logic.checkingCells(x, y, returnX(e), returnY(e))) {
 			select(x, y, returnX(e), returnY(e));
-		board.repaint();
+			board.cancelCheckedClick();
+			board.repaint();
+		}
 	}
 
 	public void mousePressed(MouseEvent e) {

@@ -40,6 +40,7 @@ public class Main {
 						for (int i = 0; i < logic.sumRow(); i++) {
 							for (int j = 0; j < logic.sumColumn(); j++) {
 								cells[i][j] = new GUICell();
+								cells[i][j].suggestEmpty();
 							}
 						}
 						return cells;

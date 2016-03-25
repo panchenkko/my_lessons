@@ -83,4 +83,6 @@ public interface ICell<T> {
 	boolean isCheckedClick();
 
 	void checkedClick();
+
+	void cancelCheckedClick();
 }
