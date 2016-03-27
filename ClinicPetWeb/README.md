@@ -3,8 +3,7 @@
 ___________________________________
 ___________________________________
 
-Главная страница
------------------------------------
+# Главная страница
 ___________________________________
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/index.png)
 
