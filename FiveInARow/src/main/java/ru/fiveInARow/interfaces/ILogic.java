@@ -73,7 +73,7 @@ public interface ILogic {
 	/**
 	 * Проверка и если пользователь собрал n в ряд, делаем эти ячейки пустые
 	 */
-	void clearCells(int x2, int y2);
+	boolean clearCells(int x2, int y2);
 
 	int _9_00_(int x, int y);
 	int _10_30_(int x, int y);

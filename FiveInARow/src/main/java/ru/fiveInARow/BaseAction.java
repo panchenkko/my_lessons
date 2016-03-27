@@ -30,9 +30,10 @@ public class BaseAction implements IUserAction {
 	public void select(int x, int y, int x2, int y2) {
 		this.logic.clearCellChecked();
 		this.logic.movePaintedCell(x, y, x2, y2);
-		this.logic.createBigCells();
-		this.logic.clearCells(x2, y2);
-		this.logic.createSmallCells();
+		if (this.logic.clearCells(x2, y2)) {
+			this.logic.createBigCells();
+			this.logic.createSmallCells();
+		}
 		Main.setScore("Ваш счет: " + this.logic.getScore() + " ");
 		System.out.println("Ваш счет: " + this.logic.getScore());
 		if (this.logic.finish())

@@ -125,6 +125,10 @@ public class ConsoleCell implements ICell<PrintStream> {
 		return this.cyan;
 	}
 
+	@Override
+	public void cancelAllColor() {
+
+	}
 
 
 	@Override
@@ -222,7 +226,7 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
-	public int checkColor() {
+	public int returnColor() {
 		int color;
 		if (this.isRedCell())
 			color = 0;

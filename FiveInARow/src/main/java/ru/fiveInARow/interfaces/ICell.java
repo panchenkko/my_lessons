@@ -43,6 +43,8 @@ public interface ICell<T> {
 	boolean isMagentaCell();
 	boolean isCyanCell();
 
+	void cancelAllColor();
+
 	/**
 	 * Пустая ли клетка
 	 */
@@ -71,7 +73,7 @@ public interface ICell<T> {
 
 	void generateColor(int numColor);
 
-	int checkColor();
+	int returnColor();
 
 	/**
 	 * Рисуем клетку

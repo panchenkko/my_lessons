@@ -49,13 +49,6 @@ public class GUICell implements ICell<Graphics> {
 	@Override
 	public void cancelBigCellPainting() {
 		this.bigPaint = false;
-
-		this.red = false;
-		this.green = false;
-		this.blue = false;
-		this.yellow = false;
-		this.magenta = false;
-		this.cyan = false;
 	}
 
 
@@ -122,6 +115,15 @@ public class GUICell implements ICell<Graphics> {
 		return this.cyan;
 	}
 
+	@Override
+	public void cancelAllColor() {
+		this.red = false;
+		this.green = false;
+		this.blue = false;
+		this.yellow = false;
+		this.magenta = false;
+		this.cyan = false;
+	}
 
 
 	@Override
@@ -191,7 +193,7 @@ public class GUICell implements ICell<Graphics> {
 	}
 
 	@Override
-	public int checkColor() {
+	public int returnColor() {
 		int color;
 		if (this.isRedCell())
 			color = 0;

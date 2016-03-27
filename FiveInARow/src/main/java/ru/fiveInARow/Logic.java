@@ -83,16 +83,6 @@ public class Logic implements ILogic {
         return emptyCells;
     }
 
-    public int sumSmallCells() {
-        int smallCells = 0;
-        for (ICell[] row : this.cells) {
-            for (ICell cell : row) {
-                if (cell.isSmallCellPainted()) smallCells++;
-            }
-        }
-        return smallCells;
-    }
-
     // Проверяем, действительно ли первая клетка является закрашенной, а вторая пустой или звездочкой
     @Override
     public boolean checkingCells(int x, int y, int x2, int y2) {
@@ -161,13 +151,14 @@ public class Logic implements ILogic {
         this.cells[x2][y2].bigCellPainting();
         this.cells[x2][y2].cancelSuggestEmpty();
         this.cells[x2][y2].cancelSmallCellPainting();
+        this.cells[x2][y2].cancelAllColor();
 
-        this.cells[x2][y2].generateColor(this.cells[x][y].checkColor());
+        this.cells[x2][y2].generateColor(this.cells[x][y].returnColor());
 
         this.cells[x][y].cancelBigCellPainting();
         this.cells[x][y].cancelSmallCellPainting();
         this.cells[x][y].suggestEmpty();
-    }
+     }
 
     /**
      * Не полностью закрашенные ячейки, закрашиваем полностью
@@ -206,7 +197,8 @@ public class Logic implements ILogic {
     }
 
     @Override
-    public void clearCells(int x2, int y2) {
+    public boolean clearCells(int x2, int y2) {
+        boolean isCreateNewSmallCell = true;
 
         check = 0;
         int num1 = _9_00_(x2, y2);
@@ -214,6 +206,8 @@ public class Logic implements ILogic {
         int num2 = _15_00_(x2, y2);
 
         if (num1 + num2 >= sumInARow() - 1) {
+
+            isCreateNewSmallCell = false;
 
             cells[x2][y2].checked();
 
@@ -237,6 +231,8 @@ public class Logic implements ILogic {
 
         if (num1 + num2 >= sumInARow() - 1) {
 
+            isCreateNewSmallCell = false;
+
             cells[x2][y2].checked();
 
             checkCell_10_30_(x2, y2);
@@ -258,6 +254,8 @@ public class Logic implements ILogic {
         num2 = _18_00_(x2, y2);
 
         if (num1 + num2 >= sumInARow() - 1) {
+
+            isCreateNewSmallCell = false;
 
             cells[x2][y2].checked();
 
@@ -281,6 +279,8 @@ public class Logic implements ILogic {
 
         if (num1 + num2 >= sumInARow() - 1) {
 
+            isCreateNewSmallCell = false;
+
             cells[x2][y2].checked();
 
             checkCell_13_30_(x2, y2);
@@ -295,6 +295,7 @@ public class Logic implements ILogic {
                     }
             }
         }
+        return isCreateNewSmallCell;
     }
 
     public void checkCell_9_00_(int x, int y) {
@@ -302,7 +303,7 @@ public class Logic implements ILogic {
         y--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x][y + 1].checkColor()) {
+            cells[x][y].returnColor() == cells[x][y + 1].returnColor()) {
             cells[x][y].checked();
             checkCell_9_00_(x, y);
         }
@@ -314,7 +315,7 @@ public class Logic implements ILogic {
         x--; y--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (y >= 0 && x >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x + 1][y + 1].checkColor()) {
+            cells[x][y].returnColor() == cells[x + 1][y + 1].returnColor()) {
             cells[x][y].checked();
             checkCell_10_30_(x, y);
         }
@@ -326,7 +327,7 @@ public class Logic implements ILogic {
         x--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x + 1][y].checkColor()) {
+            cells[x][y].returnColor() == cells[x + 1][y].returnColor()) {
             cells[x][y].checked();
             checkCell_12_00_(x, y);
         }
@@ -338,7 +339,7 @@ public class Logic implements ILogic {
         x--; y++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x >= 0 && y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x + 1][y - 1].checkColor()) {
+                cells[x][y].returnColor() == cells[x + 1][y - 1].returnColor()) {
             cells[x][y].checked();
             checkCell_13_30_(x, y);
         }
@@ -350,7 +351,7 @@ public class Logic implements ILogic {
         y++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x][y - 1].checkColor()) {
+            cells[x][y].returnColor() == cells[x][y - 1].returnColor()) {
             cells[x][y].checked();
             checkCell_15_00_(x, y);
         }
@@ -362,7 +363,7 @@ public class Logic implements ILogic {
         x++; y++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x < sumRow() && y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x - 1][y - 1].checkColor()) {
+            cells[x][y].returnColor() == cells[x - 1][y - 1].returnColor()) {
             cells[x][y].checked();
             checkCell_16_30_(x, y);
         }
@@ -374,7 +375,7 @@ public class Logic implements ILogic {
         x++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x < sumRow() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x - 1][y].checkColor()) {
+            cells[x][y].returnColor() == cells[x - 1][y].returnColor()) {
             cells[x][y].checked();
             checkCell_18_00_(x, y);
         }
@@ -386,7 +387,7 @@ public class Logic implements ILogic {
         x++; y--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x < sumRow() && y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x - 1][y + 1].checkColor()) {
+            cells[x][y].returnColor() == cells[x - 1][y + 1].returnColor()) {
             cells[x][y].checked();
             checkCell_19_30_(x, y);
         }
@@ -398,7 +399,7 @@ public class Logic implements ILogic {
         y--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-            cells[x][y].checkColor() == cells[x][y + 1].checkColor()) {
+            cells[x][y].returnColor() == cells[x][y + 1].returnColor()) {
             check++;
             _9_00_(x, y);
         }
@@ -411,7 +412,7 @@ public class Logic implements ILogic {
         x--; y--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x >= 0 && y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x + 1][y + 1].checkColor()) {
+                cells[x][y].returnColor() == cells[x + 1][y + 1].returnColor()) {
             check++;
             _10_30_(x, y);
         }
@@ -424,7 +425,7 @@ public class Logic implements ILogic {
         x--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x + 1][y].checkColor()) {
+                cells[x][y].returnColor() == cells[x + 1][y].returnColor()) {
             check++;
             _12_00_(x, y);
         }
@@ -437,7 +438,7 @@ public class Logic implements ILogic {
         x--; y++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x >= 0 && y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x + 1][y - 1].checkColor()) {
+                cells[x][y].returnColor() == cells[x + 1][y - 1].returnColor()) {
             check++;
             _13_30_(x, y);
         }
@@ -450,7 +451,7 @@ public class Logic implements ILogic {
         y++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x][y - 1].checkColor()) {
+                cells[x][y].returnColor() == cells[x][y - 1].returnColor()) {
             check++;
             _15_00_(x, y);
         }
@@ -463,7 +464,7 @@ public class Logic implements ILogic {
         x++; y++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x < sumRow() && y < sumColumn() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x - 1][y - 1].checkColor()) {
+                cells[x][y].returnColor() == cells[x - 1][y - 1].returnColor()) {
             check++;
             _16_30_(x, y);
         }
@@ -476,7 +477,7 @@ public class Logic implements ILogic {
         x++;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x < sumRow() && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x - 1][y].checkColor()) {
+                cells[x][y].returnColor() == cells[x - 1][y].returnColor()) {
             check++;
             _18_00_(x, y);
         }
@@ -489,7 +490,7 @@ public class Logic implements ILogic {
         x++; y--;
         // Если ячейка тоже закрашенная и она не проверенная
         if (x < sumRow() && y >= 0 && cells[x][y].isBigCellPainted() && !cells[x][y].isChecked() &&
-                cells[x][y].checkColor() == cells[x - 1][y + 1].checkColor()) {
+                cells[x][y].returnColor() == cells[x - 1][y + 1].returnColor()) {
             check++;
             _19_30_(x, y);
         }

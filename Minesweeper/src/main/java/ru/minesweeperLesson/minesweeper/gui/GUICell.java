@@ -169,6 +169,9 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 				paint.setColor(Color.red);
 				paint.drawString("*", x - 4, y + 15);
 			}
+
+
+
 			else if (this.suggest8) {
 				paint.setColor(Color.black);
 				paint.drawString("8", x, y);
@@ -201,6 +204,9 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 				paint.setColor(new Color(0,13,255));
 				paint.drawString("1", x, y);
 			}
+
+
+
 			else {
 				paint.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 				paint.setColor(Color.black);
