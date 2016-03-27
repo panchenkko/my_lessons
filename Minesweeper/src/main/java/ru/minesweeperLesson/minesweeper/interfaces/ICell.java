@@ -30,6 +30,8 @@ public interface ICell<T> {
 	 */
 	void suggestBomb();
 
+	void cancelSuggestBomb();
+
 	/**
 	 * Была ли проверена данная ячейка
      */

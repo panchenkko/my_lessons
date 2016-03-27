@@ -55,6 +55,11 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
+	public void cancelSuggestBomb() {
+
+	}
+
+	@Override
 	public boolean isChecked() {
 		return this.checked;
 	}

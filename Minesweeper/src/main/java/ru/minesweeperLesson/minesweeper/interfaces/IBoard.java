@@ -5,6 +5,12 @@ package ru.minesweeperLesson.minesweeper.interfaces;
  */
 public interface IBoard {
 
+	int returnSumBomb();
+
+	void cancelSuggestBomb(int x, int y);
+
+	boolean returnSuggestBomb(int x, int y);
+
 	/**
 	 * Рисует доску исходя из входящего массива ячеек.
 	 * @param cells Массив ячеек.

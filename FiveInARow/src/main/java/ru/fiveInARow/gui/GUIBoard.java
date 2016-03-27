@@ -82,12 +82,12 @@ public class GUIBoard extends JPanel implements IBoard {
 	@Override
 	public void drawCongratulate() {
 //		Main.setScore("Плюс пять к счёту!");
-		this.repaint();
+//		this.repaint();
 	}
 
 	public void drawLosing() {
 //		Main.setScore("Вы проиграли!");
-        Main.setLosing();
 		this.repaint();
+		Main.setLosing();
 	}
 }

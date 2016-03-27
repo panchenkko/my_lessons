@@ -23,6 +23,10 @@ public class Logic implements ILogic {
         return this.score;
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public void loadBoard(ICell[][] cells) {
         this.cells = cells;
@@ -67,6 +71,26 @@ public class Logic implements ILogic {
         if (check == sumRow() * sumColumn() - 1)
             finish = true;
         return finish;
+    }
+
+    public int sumEmptyCells() {
+        int emptyCells = 0;
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
+                if (cell.isSuggestEmpty()) emptyCells++;
+            }
+        }
+        return emptyCells;
+    }
+
+    public int sumSmallCells() {
+        int smallCells = 0;
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
+                if (cell.isSmallCellPainted()) smallCells++;
+            }
+        }
+        return smallCells;
     }
 
     // Проверяем, действительно ли первая клетка является закрашенной, а вторая пустой или звездочкой
@@ -166,7 +190,7 @@ public class Logic implements ILogic {
         Random random = new Random();
         Random randColor = new Random();
         int checking = sumSmallCellsPainted();
-        while (checking > 0 && !finish()) {
+        while (checking > 0 && !finish() && sumEmptyCells() > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {

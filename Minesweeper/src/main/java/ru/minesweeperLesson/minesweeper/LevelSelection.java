@@ -239,7 +239,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
                 }
         }
     }
-}
 
 //    @Override
 //    public ICell[][] sizeField() {
@@ -332,3 +331,4 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
 //    public int checkingAroundCell(int x, int y) {
 //        return 0;
 //    }
+}

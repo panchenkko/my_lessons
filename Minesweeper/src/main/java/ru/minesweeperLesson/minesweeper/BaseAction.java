@@ -1,5 +1,6 @@
 package ru.minesweeperLesson.minesweeper;
 
+import ru.minesweeperLesson.minesweeper.gui.Main;
 import ru.minesweeperLesson.minesweeper.interfaces.*;
 
 /**
@@ -31,6 +32,7 @@ public class BaseAction implements IUserAction {
 			this.logic.clearAroundCell(x, y);
 			this.logic.bombsGeneration();
 		}
+		Main.setLabel("Флажки: " + this.board.returnSumBomb() + " ");
 		if (!bomb)
 			this.logic.openEmptyCells();
 		if (this.logic.shouldBang(x, y)) {

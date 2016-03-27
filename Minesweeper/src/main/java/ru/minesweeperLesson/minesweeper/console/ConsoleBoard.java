@@ -10,6 +10,21 @@ public class ConsoleBoard implements IBoard {
 
 	private ICell[][] cells;
 
+	@Override
+	public int returnSumBomb() {
+		return 0;
+	}
+
+	@Override
+	public void cancelSuggestBomb(int x, int y) {
+
+	}
+
+	@Override
+	public boolean returnSuggestBomb(int x, int y) {
+		return false;
+	}
+
 	public void drawBoard(ICell[][] cells) {
 		this.cells = cells;
 		this.redraw(false);
