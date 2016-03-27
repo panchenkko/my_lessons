@@ -1,5 +1,6 @@
 package ru.minesweeperLesson.minesweeper.gui;
 
+import ru.minesweeperLesson.minesweeper.LevelSelectionGUI;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
 

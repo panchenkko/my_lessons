@@ -1,4 +1,4 @@
-package ru.minesweeperLesson.minesweeper.gui;
+package ru.minesweeperLesson.minesweeper;
 
 import ru.minesweeperLesson.minesweeper.gui.GUICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;

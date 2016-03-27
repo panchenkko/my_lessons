@@ -49,7 +49,7 @@ public class Logic implements ILogic {
 
     @Override
     public int sumSmallCellsPainted() {
-        return 3;
+        return 5;
     }
 
     @Override
