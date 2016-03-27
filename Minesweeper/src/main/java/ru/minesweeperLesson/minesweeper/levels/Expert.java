@@ -14,11 +14,11 @@ public class Expert implements TheNumOfTheField {
 
     @Override
     public int sumRow() {
-        return 16;
+        return 30;
     }
 
     @Override
     public int sumColumn() {
-        return 30;
+        return 16;
     }
 }

@@ -2,7 +2,6 @@ package ru.minesweeperLesson.minesweeper.gui;
 
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
-import ru.minesweeperLesson.minesweeper.levelsGUI.EasyGUI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -31,14 +30,15 @@ public class Main {
 
 				controlPanel.setLayout(new FlowLayout());
 				final JButton generate = new JButton("Начать");
-				EasyGUI easy = new EasyGUI();
-				generate.addActionListener(new GUIAction (easy, board, new IGeneratorBoard() {
+				LevelSelectionGUI level = new LevelSelectionGUI();
+				level.expert();
+				generate.addActionListener(new GUIAction (level, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {
-						ICell[][] cells = easy.sizeField();
+						ICell[][] cells = level.sizeField();
 						label.setText("Флажки: 0 ");
-						for (int i = 0; i < easy.sumRow(); i++) {
-							for (int j = 0; j < easy.sumColumn(); j++) {
+						for (int i = 0; i < level.sumRow(); i++) {
+							for (int j = 0; j < level.sumColumn(); j++) {
 								cells[i][j] = new GUICell(false);
 							}
 						}
