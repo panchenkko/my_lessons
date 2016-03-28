@@ -11,6 +11,8 @@ ___________________________________
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy2.png)
 
+Выигрыш:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy3.png)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy4.png)
