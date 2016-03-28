@@ -40,7 +40,7 @@ public class BaseAction implements IUserAction {
 			this.board.drawLosing();
 		} else
 			this.board.drawCell(x, y);
-		if (this.logic.finish())
+		if (this.logic.finish() && !this.logic.shouldBang(x, y))
 			this.board.drawCongratulate();
 	}
 }

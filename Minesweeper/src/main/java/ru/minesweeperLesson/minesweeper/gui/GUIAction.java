@@ -32,8 +32,8 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("X: " + returnX(e));
-		System.out.println("Y: " + returnY(e));
+		System.out.println("X: " + returnX(e) + " Y: " + returnY(e));
+		System.out.println();
 
 		// Если ячейка уже помечена как бомба и пользователь говорит что в ячейке нет бомбы
 		if (board.returnSuggestBomb(returnX(e), returnY(e)) && e.getButton() != 1)  {
