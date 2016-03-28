@@ -32,7 +32,7 @@ public class Main {
 				controlPanel.setLayout(new FlowLayout());
 				final JButton generate = new JButton("Начать");
 				LevelSelectionGUI level = new LevelSelectionGUI();
-				level.expert();
+				level.easy();
 				generate.addActionListener(new GUIAction (level, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {
@@ -80,10 +80,7 @@ public class Main {
 		label.repaint();
 	}
 
-	public static void setLosing() {
-		JOptionPane.showMessageDialog(null,
-				"Нажмите 'OK', чтобы закрыть окно.",
-				" К сожалению Вы проиграли",
-				JOptionPane.INFORMATION_MESSAGE);
+	public static void setLosing(String body, String title) {
+		JOptionPane.showMessageDialog(null, body, title, JOptionPane.INFORMATION_MESSAGE);
 	}
 }

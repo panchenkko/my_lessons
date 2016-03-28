@@ -72,13 +72,12 @@ public class GUIBoard extends JPanel implements IBoard {
 
 	@Override
 	public void drawCongratulate() {
-//		Main.setLabel("CONGRATULATE");
 		this.repaint();
+		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " Поздравляем! Вы выиграли!");
 	}
 
 	public void drawLosing() {
-//		Main.setLabel("YOU LOSE");
 		this.repaint();
-		Main.setLosing();
+		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " К сожалению Вы проиграли");
 	}
 }

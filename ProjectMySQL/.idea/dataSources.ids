@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - mydb@localhost" uuid="dd79b7fb-df48-4fc6-88c5-df3e4400c31d">
+    <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="mydb"/>
+    <table name="blizzard" schema="" catalog="mydb" type="TABLE">
+      <column name="id_extends" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="powerLevel" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <foreign-key name="blizzard_ibfk_1" columns="id_extends" ref-table="snow" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="rain" schema="" catalog="mydb" type="TABLE">
+      <column name="id_extends" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="speed" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="powerLevel" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <foreign-key name="rain_ibfk_1" columns="id_extends" ref-table="weather" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="snow" schema="" catalog="mydb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_extends" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="size" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="speed" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="snow_ibfk_1" columns="id_extends" ref-table="weather" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="blizzard_ibfk_1" table="blizzard" schema="" catalog="mydb" columns="id_extends"/>
+    </table>
+    <table name="weather" schema="" catalog="mydb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="temperature" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="atmospherePressure" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="rain_ibfk_1" table="rain" schema="" catalog="mydb" columns="id_extends"/>
+      <exported-key name="snow_ibfk_1" table="snow" schema="" catalog="mydb" columns="id_extends"/>
+    </table>
+  </data-source>
+</component>

@@ -214,7 +214,9 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 			}
 		} else {
 			if (this.suggestBomb) {
-				paint.setColor(Color.gray);
+				paint.drawLine(x - 16, y - 25, x + 25, y + 15);
+				paint.drawLine(x + 25, y - 25, x - 16, y + 15);
+				paint.setColor(Color.black);
 				paint.drawString("?", x, y);
 			}
 
@@ -255,6 +257,11 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 				paint.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 				paint.setColor(Color.black);
 				paint.drawString("-", x - 2, y);
+			}
+
+			else {
+				paint.drawLine(x - 16, y - 25, x + 25, y + 15);
+				paint.drawLine(x + 25, y - 25, x - 16, y + 15);
 			}
 		}
 	}
