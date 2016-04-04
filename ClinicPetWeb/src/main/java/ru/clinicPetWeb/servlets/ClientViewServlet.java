@@ -20,4 +20,10 @@ public class ClientViewServlet extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/views/client/ClientView.jsp");
 		dispatcher.forward(req, resp);
 	}
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        CLIENT_CACHE.close();
+    }
 }

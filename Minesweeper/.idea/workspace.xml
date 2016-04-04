@@ -7,17 +7,140 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1eae12b-e635-4f96-aa3c-c6b9c0891096" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\easy1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\easy2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\easy3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\easy4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\easy5.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\expert1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\src\Screenshots\medium1.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/GUICell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/Multithreading/ExampleThread.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/Exceptions/Generator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/MemoryStorage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/Exceptions/Runner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/service/Settings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/Exceptions/SimpleException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/Storage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/resources/panchenko.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/sql/schema.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/tutorial.sql" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Linzu\Linzu.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Linzu\Runner.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Linzu\UvelichitelnoeSteklo.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Blizzard.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Rain.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Runner.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Snow.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Weather.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\ArrayLines.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars$1.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars$2.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars$3.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Family$1.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Family.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW1.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW2.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW3.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW4_DOP.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW4_SHELL.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW5.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW5_Library.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW6.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\BigDog.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Dalmatian.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Date_.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Director.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Dog.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Dog2.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\DynamicSizeSquare.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\DynamicSizeTriangle.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\LinkedHashSet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Manager.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\OOP.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Personnel.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\PriceItem.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Student.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Students.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\VivodParnihChisel.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Worker.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Workers.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\collection_list.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\diapazon_num_sortViborom.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\laba3_oop.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\laba6_2course.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\arrays.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\calc.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\ifelse.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\matrix.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\min_max_numbers.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\sort_array_with_char.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\sort_vuborom.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\srednee_arif.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\zapic_v_array.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\sql\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\out\artifacts\minesweeper_jar\minesweeper.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\JDBC1.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\JDBC2.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/out/production/lessons/ANSI_CODES.class" afterPath="$PROJECT_DIR$/../LessonsJavaSE/out/production/lessons/ANSI_CODES.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/target/classes/ru/fiveInARow/Logic.class" afterPath="$PROJECT_DIR$/../FiveInARow/target/classes/ru/fiveInARow/Logic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/Runner.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/Runner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/src/ANSI_CODES.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/ANSI_CODES.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/ClientCache.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/ClientCache.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dictionaries/Home.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dictionaries/Home.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/Logic.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/Logic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Runner.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/clinicPetWeb.iml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/clinicPetWeb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../LessonsJavaSE/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/minesweeper_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/minesweeper_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/../LessonsJavaSE/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/test.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/test.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/test.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/test.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../FiveInARow/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../LessonsJavaSE/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Linzu\Linzu.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Linzu/Linzu.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Linzu\Runner.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Linzu/Runner.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Linzu\UvelichitelnoeSteklo.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Linzu/UvelichitelnoeSteklo.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Blizzard.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Weather/Blizzard.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Rain.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Weather/Rain.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Runner.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Weather/Runner.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Snow.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Weather/Snow.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Weather.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS2/Weather/Weather.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW1.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW1.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW2.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW2.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW3.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW3.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW4_DOP.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW4_DOP.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW4_SHELL.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW4_SHELL.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW5.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW5.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW5_Library.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW5_Library.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW6.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/PRACTICAL_WORKS/PW6.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\Date_.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/Date_.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\DynamicSizeSquare.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/DynamicSizeSquare.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\DynamicSizeTriangle.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/DynamicSizeTriangle.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\LinkedHashSet.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/LinkedHashSet.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\OOP.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/OOP.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\VivodParnihChisel.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/VivodParnihChisel.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\collection_list.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/collection_list.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\diapazon_num_sortViborom.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/diapazon_num_sortViborom.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\laba3_oop.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/laba3_oop.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\laba6_2course.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_average/laba6_2course.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\arrays.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/arrays.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\calc.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/calc.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\ifelse.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/ifelse.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\matrix.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/matrix.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\min_max_numbers.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/min_max_numbers.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\sort_array_with_char.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/sort_array_with_char.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\sort_vuborom.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/sort_vuborom.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\srednee_arif.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/srednee_arif.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\zapic_v_array.java" afterPath="$PROJECT_DIR$/../LessonsJavaSE/src/com/company/lessons_basic/zapic_v_array.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\JDBC1.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC1.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\JDBC2.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC2.java" />
     </list>
     <ignored path="minesweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,18 +166,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40753424">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUICell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="250" column="38" selection-start-line="250" selection-start-column="38" selection-end-line="250" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.8150685">
+              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -64,10 +177,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
+              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
               <folding>
-                <element signature="e#2779#2780#0" expanded="true" />
-                <element signature="e#2834#2835#0" expanded="true" />
+                <element signature="e#2913#2914#0" expanded="true" />
+                <element signature="e#2968#2969#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,9 +192,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,8 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/Logics/Expert.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/GUI/GUIAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/GUI/GUIBoard.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/Console/ConsoleBoard.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/interfaces/IBoard.java" />
@@ -151,6 +262,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/BaseAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUICell.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/SelectLevel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
       </list>
     </option>
@@ -218,6 +331,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,8 +479,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -713,6 +826,7 @@
       <workItem from="1459156713665" duration="1221000" />
       <workItem from="1459160604185" duration="301000" />
       <workItem from="1459168291085" duration="1610000" />
+      <workItem from="1459635280814" duration="1255000" />
     </task>
     <servers />
   </component>
@@ -749,7 +863,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7112000" />
+    <option name="totallyTimeSpent" value="8367000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -761,7 +875,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -772,6 +886,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6666667" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -782,7 +897,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JFormDesigner Bindings" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -810,20 +924,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Medium.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1083,13 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2034188">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Expert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46575344">
@@ -1108,13 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.92706645">
           <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30307943">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1139,8 +1225,45 @@
         <state vertical-scroll-proportion="0.02905983">
           <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="false" />
+            <element signature="e#890#891#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Screenshots/easy1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Screenshots/easy2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29109588">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/levels/Easy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32020548">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+          <folding>
+            <element signature="e#2913#2914#0" expanded="true" />
+            <element signature="e#2968#2969#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1153,26 +1276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Screenshots/easy1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/LevelSelectionGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
-          <folding>
-            <element signature="e#2779#2780#0" expanded="true" />
-            <element signature="e#2834#2835#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40753424">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.8150685">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
           <folding />
         </state>
       </provider>

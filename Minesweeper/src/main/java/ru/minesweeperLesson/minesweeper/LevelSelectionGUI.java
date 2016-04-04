@@ -34,16 +34,22 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
 
     @Override
     public Easy easy() {
+        medium = null;
+        expert = null;
         return easy = new Easy();
     }
 
     @Override
     public Medium medium() {
+        easy = null;
+        expert = null;
         return medium = new Medium();
     }
 
     @Override
     public Expert expert() {
+        easy = null;
+        medium = null;
         return expert = new Expert();
     }
 

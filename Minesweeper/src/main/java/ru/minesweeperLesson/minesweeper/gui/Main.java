@@ -32,7 +32,7 @@ public class Main {
 				controlPanel.setLayout(new FlowLayout());
 				final JButton generate = new JButton("Начать");
 				LevelSelectionGUI level = new LevelSelectionGUI();
-				level.expert();
+				level.medium();
 				generate.addActionListener(new GUIAction (level, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {

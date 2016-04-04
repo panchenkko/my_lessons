@@ -170,6 +170,8 @@ public class Logic implements ILogic {
                 if (this.cells[i][j].isSmallCellPainted()) {
                     this.cells[i][j].cancelSmallCellPainting();
                     this.cells[i][j].bigCellPainting();
+
+                    clearCells(i, j);
                 }
     }
 
@@ -185,8 +187,7 @@ public class Logic implements ILogic {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
-
+                int color = randColor.nextInt(5);
                 this.cells[row][column].generateColor(color);
 
                 this.cells[row][column].cancelSuggestEmpty();

@@ -3,10 +3,10 @@
     <output-path>$PROJECT_DIR$/out/artifacts/minesweeper_jar</output-path>
     <root id="archive" name="minesweeper.jar">
       <element id="module-output" name="minesweeper" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jgoodies-forms.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jgoodies-common.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/intellij_forms_rt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.1/commons-lang-2.1.jar" path-in-jar="/" />
     </root>
   </artifact>

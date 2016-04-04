@@ -4,19 +4,19 @@
     <file url="file://$PROJECT_DIR$/src/GUI/SWING/swing2.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/GUI/SWING/swing3.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/GUI/SWING/swing_.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_average/LinkedHashSet.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_average/OOP.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_average/collection_list.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_average/diapazon_num_sortViborom.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_average/laba3_oop.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_average/laba6_2course.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/arrays.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/calc.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/ifelse.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/matrix.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/sort_array_with_char.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/sort_vuborom.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/lessons_basic/zapic_v_array.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_average/LinkedHashSet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_average/OOP.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_average/collection_list.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_average/diapazon_num_sortViborom.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_average/laba3_oop.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_average/laba6_2course.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/arrays.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/calc.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/ifelse.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/matrix.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/sort_array_with_char.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/sort_vuborom.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/lessons_basic/zapic_v_array.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -7,21 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1eae12b-e635-4f96-aa3c-c6b9c0891096" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="D:\Vlad\GitProjects\java-lessons\java-lessons\FiveInARow\.idea\artifacts\fiveinarow.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleBoard.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/console/ConsoleBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/FiveInARow_jar/FiveInARow.jar" afterPath="$PROJECT_DIR$/out/artifacts/FiveInARow_jar/FiveInARow.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/GUIBoard.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC3.java" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\out\artifacts\minesweeper_jar\minesweeper.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/JDBC1.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/JDBC1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/fiveInARow/Logic.class" afterPath="$PROJECT_DIR$/target/classes/ru/fiveInARow/Logic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/FiveInARow_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/FiveInARow_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/GUIBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../LessonsJavaSE/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/Runner.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/Runner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/fiveInARow/Logic.java" afterPath="$PROJECT_DIR$/src/main/java/ru/fiveInARow/Logic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Runner.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/artifacts/minesweeper_jar.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/artifacts/minesweeper_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/test.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/test.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LessonsJavaSE/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../LessonsJavaSE/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\JDBC1.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC1.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\JDBC2.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC2.java" />
     </list>
     <ignored path="minesweeper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/Logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46839547">
-              <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="189" column="49" selection-start-line="189" selection-start-column="49" selection-end-line="189" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -59,6 +61,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUICell.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/gui/GUICell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.52397263">
+              <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -192,8 +204,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="776" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -283,6 +295,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,7 +338,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -719,7 +731,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -729,10 +741,9 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66976744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6503268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24676375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24659607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -741,6 +752,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JFormDesigner Bindings" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -783,6 +795,22 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/BaseAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1084,24 +1112,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/gui/GUICell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/interfaces/ILogic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6078767">
           <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/interfaces/ICell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1119,22 +1133,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/System.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/interfaces/ICell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9288025">
-          <caret line="398" column="30" selection-start-line="398" selection-start-column="30" selection-end-line="398" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.02910959">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4174757">
-          <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
-          <folding>
-            <element signature="e#3504#3505#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,8 +1151,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46839547">
-          <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="189" column="49" selection-start-line="189" selection-start-column="49" selection-end-line="189" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/fiveInARow/gui/GUICell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52397263">
+          <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
           <folding />
         </state>
       </provider>

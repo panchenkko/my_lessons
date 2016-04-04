@@ -12,25 +12,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Создание объекта этого класса, происходит только в этом классе
  * Создать можно только один объект этого класса
  */
-public class ClientCache {
+public class ClientCache implements Storage {
 
 	private static final ClientCache INSTANCE = new ClientCache();
 
-	private final AtomicInteger ids = new AtomicInteger();
-	// Карта для многопоточности
-	private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<>();
+    private final Storage storage = new MemoryStorage();
 
 
-	private final AtomicInteger idFound = new AtomicInteger();
-
-	private final ConcurrentHashMap<Integer, Client> found = new ConcurrentHashMap<>();
-
+    @Override
 	public Collection<Client> valuesFound() {
-		return this.found.values();
-	}
-
-	public void deleteFound(final String delete) {
-		this.found.clear();
+		return this.storage.valuesFound();
 	}
 
 
@@ -39,78 +30,48 @@ public class ClientCache {
 		return INSTANCE;
 	}
 
-	public int size() {
-		return this.clients.size();
-	}
-
+    @Override
 	public Collection<Client> values() {
-		return this.clients.values();
+		return this.storage.values();
 	}
 
+    @Override
+    public int size() {
+        return this.storage.size();
+    }
+
+    @Override
 	public void add(final Client client) {
-		this.clients.put(client.getId(), client);
+		this.storage.add(client);
 	}
 
+    @Override
 	public void edit(final Client client) {
-		this.clients.replace(client.getId(), client);
+		this.storage.edit(client);
 	}
 
+    @Override
 	public void find(String clientName, String petName, String petAge) {
-		this.found.clear();
-
-		int checkThreeParam = 0;
-		int checkTwoParam = 0;
-
-		for (final Client client : this.clients.values()) {
-			if (client.getName().equals(clientName) && client.getPet().getName().equals(petName) &&
-				client.getPet().getAge().equals(petAge)) {
-				this.found.put(this.idFound.incrementAndGet(), client);
-				checkThreeParam++;
-			}
-		}
-
-		if (checkThreeParam == 0) {
-			for (final Client client : this.clients.values()) {
-				if (client.getName().equals(clientName) && client.getPet().getName().equals(petName)) {
-					this.found.put(this.idFound.incrementAndGet(), client);
-					checkTwoParam++;
-				} else
-				if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)) {
-					this.found.put(this.idFound.incrementAndGet(), client);
-					checkTwoParam++;
-				} else
-				if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)) {
-					this.found.put(this.idFound.incrementAndGet(), client);
-					checkTwoParam++;
-				}
-			}
-
-			if (checkTwoParam == 0) {
-				for (final Client client : this.clients.values()) {
-					if (client.getName().equals(clientName)) {
-						this.found.put(this.idFound.incrementAndGet(), client);
-					} else
-					if (client.getPet().getName().equals(petName)) {
-						this.found.put(this.idFound.incrementAndGet(), client);
-					} else
-					if (client.getPet().getAge().equals(petAge)) {
-						this.found.put(this.idFound.incrementAndGet(), client);
-					}
-				}
-			}
-		}
-		throw new IllegalStateException("Ничего не найдено!");
+		this.storage.find(clientName, petName, petAge);
 	}
 
+    @Override
 	public int generateId() {
-		return this.ids.incrementAndGet();
+		return this.storage.generateId();
 	}
 
-	public void delete(final int id) {
-		this.clients.remove(id);
+    @Override
+    public void delete(final int id) {
+		this.storage.delete(id);
 	}
 
+    @Override
 	public Client get(final int id) {
-		return this.clients.get(id);
+		return this.storage.get(id);
 	}
+
+    @Override
+    public void close() {
+
+    }
 }

@@ -16,8 +16,11 @@ public class Runner {
             while (resultSet.next()) {
                 Weather weather = new Weather();
 
-                weather.setTemperature(resultSet.getInt(2));
-                weather.setAtmospherePressure(resultSet.getInt(3));
+                weather.setTemperature(resultSet.getInt("temperature"));
+                weather.setAtmospherePressure(resultSet.getInt("atmospherePressure"));
+                // Так же можно по нумерации колонок
+//                weather.setTemperature(resultSet.getInt(2));
+//                weather.setAtmospherePressure(resultSet.getInt(3));
 
                 System.out.println(weather);
             }
