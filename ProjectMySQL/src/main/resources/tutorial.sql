@@ -39,8 +39,8 @@ UPDATE weather SET temperature = 30, atmospherePressure = 800;
 
 
 
-DELETE * FROM weather;
-# DELETE * FROM weather WHERE id = 1;
+DELETE FROM weather;
+# DELETE FROM weather WHERE id = 1;
 
 
 
@@ -195,3 +195,5 @@ UNION
 (SELECT email FROM managers)
 UNION
 (SELECT email FROM customers WHERE subscribed = 1);
+
+

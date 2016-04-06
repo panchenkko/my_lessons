@@ -13,6 +13,9 @@ public class JdbcStorage implements Storage {
 
 	private final Connection connection;
 
+	final List<Client> clients = new ArrayList<>();
+	final List<Client> found = new ArrayList<>();
+
 	public JdbcStorage() {
 		final Settings settings = Settings.getInstance();
 		try {
@@ -28,42 +31,71 @@ public class JdbcStorage implements Storage {
 
     @Override
     public Collection<Client> valuesFound() {
-        return null;
+        try (final Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery("select * from client")) {
+            while (rs.next()) {
+                found.add(new Client(rs.getInt("uid"), rs.getString("name"),
+                                new Pet(rs.getString("type"), rs.getString("name"),
+                                        rs.getString("sex"), rs.getString("age")))
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return found;
     }
 
     @Override
 	public Collection<Client> values() {
-		final List<Client> users = new ArrayList<>();
 		try (final Statement statement = this.connection.createStatement();
 		     final ResultSet rs = statement.executeQuery("select * from client")) {
 			while (rs.next()) {
-				users.add(new Client(rs.getInt("uid"), rs.getString("name"),
-                          new Pet(rs.getString("type"), rs.getString("name"),
-                                  rs.getString("sex"), rs.getString("age")))
-                );
+				clients.add(new Client(rs.getInt("uid"), rs.getString("name"),
+								new Pet(rs.getString("type"), rs.getString("name"),
+										rs.getString("sex"), rs.getString("age")))
+				);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return users;
+		return clients;
 	}
 
     @Override
     public int size() {
-        return 0;
+        return clients.size();
     }
 
     @Override
 	public void add(Client client) {
-		try (final PreparedStatement statement = this.connection.prepareStatement
-				("insert into client (name) values (?)", Statement.RETURN_GENERATED_KEYS)) {
+        int num = 0;
+        try (final PreparedStatement statement = this.connection.prepareStatement
+				("insert into client (name) values (?)",
+                        Statement.RETURN_GENERATED_KEYS)) {
 			statement.setString(1, client.getName());
 			statement.executeUpdate();
 			try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
 				if (generatedKeys.next()) {
-					generatedKeys.getInt(1);
+					num = generatedKeys.getInt(1);
 				}
 			}
+            addPet(client, num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		throw new IllegalStateException("Could not create new user");
+	}
+
+	public void addPet(Client client, int num) {
+		try (final PreparedStatement statement = this.connection.prepareStatement
+				("insert into pet (client_id, type, name, sex, age)  values (?,?,?,?,?)",
+                        Statement.RETURN_GENERATED_KEYS)) {
+			statement.setInt(1, num);
+			statement.setString(2, client.getPet().getPetType());
+			statement.setString(3, client.getPet().getName());
+			statement.setString(4, client.getPet().getPetSex());
+			statement.setString(5, client.getPet().getAge());
+			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

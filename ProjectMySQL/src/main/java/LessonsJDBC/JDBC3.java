@@ -30,7 +30,7 @@ public class JDBC3 {
             preparedStatement.setFloat(4, 0.2f);
             preparedStatement.setBoolean(5, true);
             preparedStatement.setDate(6, new Date(Calendar.getInstance().getTimeInMillis()));
-
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Неудалось загрузить класс драйвера!");
         }

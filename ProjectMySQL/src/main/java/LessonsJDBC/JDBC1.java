@@ -2,27 +2,29 @@ package LessonsJDBC;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.beans.Statement;
+import java.sql.*;
 
 public class JDBC1 {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/mydb";
-    private static final String USER = "root";
+    private static final String URL = "jdbc:postgresql://localhost:5432/Weather.Weather";
+    private static final String USER = "postgres";
     private static final String PASSWORD = "root";
 
     public static void main(String[] args) {
 
-        Connection connection;
+        Connection connection; // Хранит соединение с базой данных
+//        Statement statement; // Хранит и выполняет sql запросы
+//        ResultSet resultSet; // Получает результаты выполнения sql запросов
 
         try {
-            // Какой драйвер для jdbc мы будем использовать
+            // Регистрируем драйвер
             Driver driver = new FabricMySQLDriver();
             DriverManager.registerDriver(driver);
 
+            // Подключаемся к базе данных
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
+
             if (!connection.isClosed()) {
                 System.out.println("Соединение с БД установлено!");
             }

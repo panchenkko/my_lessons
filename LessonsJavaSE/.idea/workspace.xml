@@ -2,137 +2,147 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb0a792b-4740-48b9-8071-131befa1c26f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Multithreading/ExampleThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptions/Generator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/MemoryStorage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptions/Runner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/service/Settings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptions/SimpleException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/Storage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/resources/panchenko.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/sql/schema.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/sqldialects.xml" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Linzu\Linzu.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Linzu\Runner.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Linzu\UvelichitelnoeSteklo.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Blizzard.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Rain.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Runner.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Snow.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS2\Weather\Weather.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\ArrayLines.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars$1.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars$2.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars$3.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Cars.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Family$1.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\Family.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW1.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW2.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW3.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW4_DOP.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW4_SHELL.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW5.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW5_Library.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\PRACTICAL_WORKS\PW6.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\BigDog.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Dalmatian.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Date_.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Director.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Dog.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Dog2.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\DynamicSizeSquare.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\DynamicSizeTriangle.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\LinkedHashSet.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Manager.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\OOP.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Personnel.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\PriceItem.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Student.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Students.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\VivodParnihChisel.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Worker.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\Workers.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\collection_list.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\diapazon_num_sortViborom.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\laba3_oop.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_average\laba6_2course.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\arrays.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\calc.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\ifelse.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\matrix.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\min_max_numbers.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\sort_array_with_char.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\sort_vuborom.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\srednee_arif.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\out\production\lessons\lessons_basic\zapic_v_array.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\sql\schema.sql" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\Minesweeper\out\artifacts\minesweeper_jar\minesweeper.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\JDBC1.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\JDBC2.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/lessons/ANSI_CODES.class" afterPath="$PROJECT_DIR$/out/production/lessons/ANSI_CODES.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/target/classes/ru/fiveInARow/Logic.class" afterPath="$PROJECT_DIR$/../FiveInARow/target/classes/ru/fiveInARow/Logic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" afterPath="$PROJECT_DIR$/../Minesweeper/target/classes/ru/minesweeperLesson/minesweeper/gui/Main$1.class" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\src\main\java\ru\clinicPetWeb\servlets\ClientViewServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\src\main\webapp\views\client\ClientView.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb.war" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\META-INF\MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\models\Client.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\models\Pet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\ClientCreateServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\ClientDeleteServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\ClientEditServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\ClientSearchServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\ClientViewServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\servlets\IndexServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\classes\ru\clinicPetWeb\store\ClientCache.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\commons-lang-2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\commons-logging-1.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\jackson-core-asl-1.9.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\jackson-mapper-asl-1.9.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\jstl-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\log4j-1.2.17.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\plexus-utils-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\postgresql-9.1-901-1.jdbc4.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\lib\standard-1.1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\WEB-INF\web.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\editStyle.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\indexStyle.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\css\searchStyle.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\img\fons\jpg1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\img\fons\jpg2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\img\jpg16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\img\jpg17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\img\jpg3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\js\bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\js\bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\js\html5shiv\3.7.2\html5shiv.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\js\jquery-1.12.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\js\npm.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\js\respond\1.4.2\respond.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\views\client\ClientView.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\views\client\CreateClient.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\views\client\EditClient.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\ClinicPetWeb\views\client\SearchClient.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\classes\ru\clinicPetWeb\servlets\ClientViewServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\maven-archiver\pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\branchfc.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\branchnc.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\branchpc.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\bundle.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\class.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\down.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\greenbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\group.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\method.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\package.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\redbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\report.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\report.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\session.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\sort.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\sort.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\source.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.resources\up.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\.sessions.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\jacoco.csv" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\jacoco.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.models\Client.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.models\Client.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.models\Pet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.models\Pet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.models\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.models\index.source.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientCreateServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientCreateServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientDeleteServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientDeleteServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientEditServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientEditServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientSearchServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientSearchServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientViewServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\ClientViewServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\IndexServlet.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\IndexServlet.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.servlets\index.source.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.store\ClientCache.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.store\ClientCache.java.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.store\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\site\jacoco\ru.clinicPetWeb.store\index.source.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\surefire-reports\TEST-ru.clinicPetWeb.servlets.ClientViewServletTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\surefire-reports\ru.clinicPetWeb.servlets.ClientViewServletTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\target\test-classes\ru\clinicPetWeb\servlets\ClientViewServletTest.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\Blizzard.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\Rain.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\Snow.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\Weather.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\target\classes\test.sql" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/DBWorker.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/DBWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/LessonsJDBC/JDBC1.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/LessonsJDBC/JDBC1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/LessonsJDBC/JDBC2.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/LessonsJDBC/JDBC2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/LessonsJDBC/JDBC3.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/LessonsJDBC/JDBC3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/Runner.class" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/Runner.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ANSI_CODES.java" afterPath="$PROJECT_DIR$/src/ANSI_CODES.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/ClientCache.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/ClientCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dictionaries/Home.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dictionaries/Home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/Logic.java" afterPath="$PROJECT_DIR$/../FiveInARow/src/main/java/ru/fiveInARow/Logic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" afterPath="$PROJECT_DIR$/../Minesweeper/src/main/java/ru/minesweeperLesson/minesweeper/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/coverage-reports/jacoco-unit.exec" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/coverage-reports/jacoco-unit.exec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/DBWorker.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/DBWorker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC1.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC2.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC3.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/JdbcStorage.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/JdbcStorage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Runner.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/clinicPetWeb.iml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/clinicPetWeb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/TEST-ru.clinicPetWeb.servlets.ClientCreateServletTest.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/TEST-ru.clinicPetWeb.servlets.ClientCreateServletTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/TEST-ru.clinicPetWeb.servlets.ClientDeleteServletTest.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/TEST-ru.clinicPetWeb.servlets.ClientDeleteServletTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/TEST-ru.clinicPetWeb.servlets.ClientEditServletTest.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/TEST-ru.clinicPetWeb.servlets.ClientEditServletTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/artifacts/minesweeper_jar.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/artifacts/minesweeper_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/ru.clinicPetWeb.servlets.ClientCreateServletTest.txt" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/ru.clinicPetWeb.servlets.ClientCreateServletTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/ru.clinicPetWeb.servlets.ClientEditServletTest.txt" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/surefire-reports/ru.clinicPetWeb.servlets.ClientEditServletTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/sql/schema.sql" afterPath="$PROJECT_DIR$/../ClinicPetWeb/sql/schema.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/sqldialects.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/test.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/test.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/target/classes/test.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/target/classes/test.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/tutorial.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/resources/tutorial.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FiveInARow/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../FiveInARow/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Minesweeper/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectMySQL/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ProjectMySQL/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Linzu\Linzu.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Linzu/Linzu.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Linzu\Runner.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Linzu/Runner.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Linzu\UvelichitelnoeSteklo.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Linzu/UvelichitelnoeSteklo.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Blizzard.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Weather/Blizzard.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Rain.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Weather/Rain.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Runner.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Weather/Runner.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Snow.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Weather/Snow.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS2\Weather\Weather.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS2/Weather/Weather.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW1.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW1.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW2.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW2.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW3.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW3.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW4_DOP.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW4_DOP.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW4_SHELL.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW4_SHELL.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW5.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW5.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW5_Library.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW5_Library.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\PRACTICAL_WORKS\PW6.java" afterPath="$PROJECT_DIR$/src/com/company/PRACTICAL_WORKS/PW6.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\Date_.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/Date_.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\DynamicSizeSquare.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/DynamicSizeSquare.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\DynamicSizeTriangle.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/DynamicSizeTriangle.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\LinkedHashSet.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/LinkedHashSet.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\OOP.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/OOP.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\VivodParnihChisel.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/VivodParnihChisel.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\collection_list.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/collection_list.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\diapazon_num_sortViborom.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/diapazon_num_sortViborom.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\laba3_oop.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/laba3_oop.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_average\laba6_2course.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_average/laba6_2course.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\arrays.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/arrays.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\calc.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/calc.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\ifelse.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/ifelse.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\matrix.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/matrix.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\min_max_numbers.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/min_max_numbers.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\sort_array_with_char.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/sort_array_with_char.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\sort_vuborom.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/sort_vuborom.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\srednee_arif.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/srednee_arif.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\LessonsJavaSE\src\lessons_basic\zapic_v_array.java" afterPath="$PROJECT_DIR$/src/com/company/lessons_basic/zapic_v_array.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\JDBC1.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC1.java" />
-      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\JDBC2.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/LessonsJDBC/JDBC2.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ClinicPetWeb\src\test\java\ru\clinicPetWeb\servlets\ClientViewServletTest.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/test/java/ru/clinicPetWeb/servlets/IndexServletTest.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\Blizzard.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Weather/Blizzard.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\Rain.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Weather/Rain.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\Snow.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Weather/Snow.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\java\Weather.java" afterPath="$PROJECT_DIR$/../ProjectMySQL/src/main/java/Weather/Weather.java" />
+      <change type="MOVED" beforePath="D:\Installation\GitJavaProjects\java-lessons\ProjectMySQL\src\main\resources\test.sql" afterPath="$PROJECT_DIR$/../ProjectMySQL/.gitignore" />
     </list>
     <ignored path="lessons.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -168,7 +178,18 @@
     <favorites_list name="lessons" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ANSI_CODES.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ANSI_CODES.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40753424">
+              <caret line="14" column="45" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -338,8 +359,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -726,18 +747,19 @@
       <workItem from="1458729453690" duration="2954000" />
       <workItem from="1459159106294" duration="1940000" />
       <workItem from="1459588839985" duration="192000" />
+      <workItem from="1459933245103" duration="628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26359000" />
+    <option name="totallyTimeSpent" value="26987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21709532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21709532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37125748" sideWeight="0.509375" order="11" side_tool="true" content_ui="tabs" />
@@ -999,13 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ANSI_CODES.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AWT/Pack1/FrameWithPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1143,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,12 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding>
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,7 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,6 +1179,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23247863">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ANSI_CODES.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40753424">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="45" />
           <folding />
         </state>
       </provider>
