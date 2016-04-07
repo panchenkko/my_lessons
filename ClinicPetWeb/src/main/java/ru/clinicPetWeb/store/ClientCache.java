@@ -16,7 +16,7 @@ public class ClientCache implements Storage {
 
 	private static final ClientCache INSTANCE = new ClientCache();
 
-    private final Storage storage = new MemoryStorage();
+    private final Storage storage = new JdbcStorage();
 
 
     @Override
@@ -72,6 +72,6 @@ public class ClientCache implements Storage {
 
     @Override
     public void close() {
-
+        storage.close();
     }
 }

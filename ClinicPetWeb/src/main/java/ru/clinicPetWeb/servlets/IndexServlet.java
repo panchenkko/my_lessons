@@ -16,6 +16,7 @@ public class IndexServlet extends HttpServlet {
 
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         req.setAttribute("clients", this.CLIENT_CACHE.values());
@@ -43,5 +44,11 @@ public class IndexServlet extends HttpServlet {
                               new Pet(petType, req.getParameter("petName"), petSex, petAge)));
 
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/index"));
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        CLIENT_CACHE.close();
     }
 }

@@ -1,4 +1,5 @@
 /.idea
 /target
 clinicPetWeb.iml
+/.gitignore
 clinicWeb.iml

@@ -11,6 +11,16 @@
 	</welcome-file-list>
 
 	<servlet>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>ru.clinicPetWeb.servlets.IndexServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/client/index</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>ClientEditServlet</servlet-name>
 		<servlet-class>ru.clinicPetWeb.servlets.ClientEditServlet</servlet-class>
 	</servlet>
@@ -38,16 +48,5 @@
 	<servlet-mapping>
 		<servlet-name>ClientSearchServlet</servlet-name>
 		<url-pattern>/client/search</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
-		<servlet-name>IndexServlet</servlet-name>
-		<servlet-class>ru.clinicPetWeb.servlets.IndexServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>IndexServlet</servlet-name>
-		<url-pattern>/client/index</url-pattern>
 	</servlet-mapping>
 </web-app>     

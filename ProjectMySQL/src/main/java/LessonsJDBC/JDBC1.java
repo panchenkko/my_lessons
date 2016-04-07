@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class JDBC1 {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/Weather.Weather";
+    private static final String URL = "jdbc:postgresql://localhost:5432/Weather";
     private static final String USER = "postgres";
     private static final String PASSWORD = "root";
 
