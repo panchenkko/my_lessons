@@ -186,8 +186,12 @@ public class JdbcStorage implements Storage {
 	}
 
     @Override
-    public void find(String clientName, String petName, String petAge) {
+    public void find(String idClient, String clientName, String petName, String petAge) {
         this.found.clear();
+
+        if (!Objects.equals(idClient, ""))
+            findIdClient(Integer.valueOf(idClient));
+        else
         if (!findThreeParameters(clientName, petName, petAge))
             if (!findTwoParameters(clientName, petName, petAge))
                 findOneParameters(clientName, petName, petAge);
@@ -198,6 +202,21 @@ public class JdbcStorage implements Storage {
                         new Pet(rs.getString("type"), rs.getString("petName"),
                                 rs.getString("sex"), rs.getString("age")))
         );
+    }
+
+    public void findIdClient(int idClient) {
+        try (final PreparedStatement statement = this.connection.prepareStatement
+                ("select * from client right join pet on client.uid = pet.client_id")) {
+            try (final ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    if (rs.getInt("uid") == idClient) {
+                        foundAdd(rs);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean findThreeParameters(String clientName, String petName, String petAge) {

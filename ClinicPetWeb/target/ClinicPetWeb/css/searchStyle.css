@@ -82,7 +82,7 @@ form input {
 }
 
 form input:first-child {
-    margin: 0 0 11px 270px;
+    margin: 0 0 11px 183px;
 }
 
 form input[placeholder="Тип питомца"] {
@@ -123,6 +123,16 @@ form input[type="submit"], input[type="button"] {
 }
 
 .table th:first-child, td:first-child {
+    /*color: #000;*/
+    /*background-color: #fff;*/
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+    border-right: 2px solid black;
+    min-width: 40px;
+}
+
+.colNameClient {
     font-weight: bold;
     border-right: 2px solid black;
     min-width: 150px;
@@ -137,7 +147,6 @@ form input[type="submit"], input[type="button"] {
     border-bottom: 2px solid black;
     min-width: 100px;
     text-align: center;
-    font-weight: normal;
     font-style: italic;
     color: white;
 }
@@ -148,9 +157,9 @@ form input[type="submit"], input[type="button"] {
 
 .table tbody>tr>td {
     text-align: center;
-    padding: 13px 0 13px 0;
     vertical-align: middle;
     color: black;
+    padding-left: 6px;
 }
 
 .table>tbody>tr>td:last-child {
@@ -199,7 +208,7 @@ form input[type="submit"], input[type="button"] {
     }
 
     form input:first-child {
-        margin: 0 0 11px 56px;
+        margin: 0 0 11px 97px;
     }
 
     .lead {

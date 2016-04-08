@@ -36,6 +36,13 @@ header {
     font-family: Cursive, Comic Sans MS, sans-serif;
 }
 
+header div>h1:first-child {
+    float: right;
+    margin: 0 15px 0 0;
+    font-size: 4em;
+    /*font-style: italic;*/
+}
+
 header div>h1, p {
     padding-right: 15px;
     padding-left: 15px;

@@ -72,7 +72,8 @@
                 <caption>База данных клиентов</caption>
                 <tbody>
                 <tr>
-                    <th>Имя клиента</th>
+                    <th>ID</th>
+                    <th class="colNameClient">Имя клиента</th>
                     <th>Тип питомца</th>
                     <th>Имя питомца</th>
                     <th>Пол питомца</th>
@@ -82,7 +83,8 @@
                 <div class="createClient">
                     <c:forEach items="${clients}" var="client" varStatus="status">
                         <tr>
-                            <td>${client.name}</td>
+                            <td>${client.id}</td>
+                            <td class="colNameClient">${client.name}</td>
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>

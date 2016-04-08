@@ -42,6 +42,7 @@
 	<div class="container">
 		<header>
 			<div>
+				<h1>${client.id}</h1>
 				<h1>Редактирование</h1>
 				<p class="lead">Внесите требуемые данные:</p>
 			</div>

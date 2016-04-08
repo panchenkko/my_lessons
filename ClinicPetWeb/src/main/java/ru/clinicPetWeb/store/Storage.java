@@ -20,7 +20,7 @@ public interface Storage {
 
 	Client get(final int id);
 
-	void find(final String clientName, final String petName, final String petAge) ;
+	void find(final String idClient, final String clientName, final String petName, final String petAge) ;
 
 	int generateId();
 

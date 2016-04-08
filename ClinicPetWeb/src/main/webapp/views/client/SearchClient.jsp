@@ -24,26 +24,23 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            if ($('#clientName').val() == '' && $('#petName').val() == '' && $('#petAge').val() == '') {
+            if ($('#clientName').val() == '' && $('#petName').val() == '' && $('#petAge').val() == ''
+                    && $('#idClient').val() == '') {
                 $('input[name="submit"]').attr('disabled', true);
             }
-            if ($('#clientName').val() != '' || $('#petName').val() != '' || $('#petAge').val() != '') {
+            if ($('#clientName').val() != '' || $('#petName').val() != '' || $('#petAge').val() != ''
+                    || $('#idClient').val() != '') {
                 $('input[name="submit"]').removeAttr('disabled');
             }
         });
-    </script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#clientName, #petName, #petAge').mousemove(function () {
-                if ($('#clientName').val() == '' && $('#petName').val() == '' && $('#petAge').val() == '') {
-                    $('input[name="submit"]').attr('disabled', true);
-                }
-                if ($('#clientName').val() != '' || $('#petName').val() != '' || $('#petAge').val() != '') {
-                    $('input[name="submit"]').removeAttr('disabled');
-                }
-            });
-        });
+        function check() {
+            if ($('#clientName').val() == '' && $('#petName').val() == '' && $('#petAge').val() == ''
+                    && $('#idClient').val() == '')
+                $('input[name="submit"]').attr('disabled','disable');
+            else
+                $('input[name="submit"]').removeAttr('disabled');
+        }
     </script>
 </head>
 <body>
@@ -59,9 +56,10 @@
         </a>
         <form action="${pageContext.servletContext.contextPath}/client/search" method="POST" name="form">
             <div class="form-group">
-                <input type="text" name="clientName" id="clientName" class="form-control input-control" placeholder="Имя клиента">
-                <input type="text" name="petName" id="petName" class="form-control input-control" placeholder="Имя питомца">
-                <input type="number" name="petAge" id="petAge" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
+                <input type="number" name="idClient" id="idClient" onkeyup="check();" class="form-control input-control" min="1" placeholder="ID клиента">
+                <input type="text" name="clientName" id="clientName" onkeyup="check();" class="form-control input-control" placeholder="Имя клиента">
+                <input type="text" name="petName" id="petName" onkeyup="check();" class="form-control input-control" placeholder="Имя питомца">
+                <input type="number" name="petAge" id="petAge" onkeyup="check();" class="form-control input-control" min="0" max="300" placeholder="Возраст питомца">
                 <input type="submit" name="submit" id="button" class="btn btn-primary input-control" value="Найти">
             </div>
         </form>
@@ -73,7 +71,8 @@
                 <caption>Найденные клиенты</caption>
                 <tbody>
                 <tr>
-                    <th>Имя клиента</th>
+                    <th>ID</th>
+                    <th class="colNameClient">Имя клиента</th>
                     <th>Тип питомца</th>
                     <th>Имя питомца</th>
                     <th>Пол питомца</th>
@@ -82,7 +81,8 @@
                 <div class="createClient">
                     <c:forEach items="${found}" var="client" varStatus="status">
                         <tr>
-                            <td>${client.name}</td>
+                            <td>${client.id}</td>
+                            <td class="colNameClient">${client.name}</td>
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>

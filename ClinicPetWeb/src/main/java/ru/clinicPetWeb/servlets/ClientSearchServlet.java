@@ -22,12 +22,13 @@ public class ClientSearchServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        String idClient = request.getParameter("idClient");
         String clientName = request.getParameter("clientName");
         String petName = request.getParameter("petName");
         String petAge = request.getParameter("petAge");
 
         try {
-            this.CLIENT_CACHE.find(clientName, petName, petAge);
+            this.CLIENT_CACHE.find(idClient, clientName, petName, petAge);
         } catch (IllegalStateException ise) {
             System.out.println(ise.getMessage());
         }

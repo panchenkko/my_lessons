@@ -51,8 +51,8 @@ public class ClientCache implements Storage {
 	}
 
     @Override
-	public void find(String clientName, String petName, String petAge) {
-		this.storage.find(clientName, petName, petAge);
+	public void find(final String idClient, final String clientName, final String petName, final String petAge) {
+		this.storage.find(idClient, clientName, petName, petAge);
 	}
 
     @Override

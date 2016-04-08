@@ -102,7 +102,30 @@ form input[type="submit"], input[type="button"] {
 	color: #286090;
 }
 
+.table th {
+	background-color: #286090;
+	border-bottom: 2px solid black;
+	min-width: 100px;
+	text-align: center;
+	font-style: italic;
+	color: white;
+}
+
+.table td {
+	height: 20px;
+}
+
 .table th:first-child, td:first-child {
+	/*color: #000;*/
+	/*background-color: #fff;*/
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.5em;
+	border-right: 2px solid black;
+	min-width: 40px;
+}
+
+.colNameClient {
 	font-weight: bold;
 	border-right: 2px solid black;
 	min-width: 150px;
@@ -112,24 +135,11 @@ form input[type="submit"], input[type="button"] {
 	width: 100px;
 }
 
-.table th {
-	background-color: #286090;
-	border-bottom: 2px solid black;
-	min-width: 100px;
-	text-align: center;
-	font-weight: normal;
-	font-style: italic;
-	color: white;
-}
-
-.table td {
-	height: 20px;
-}
-
 .table tbody>tr>td {
 	text-align: center;
 	vertical-align: middle;
 	color: black;
+	padding-left: 6px;
 }
 
 .table>tbody>tr>td:last-child {
