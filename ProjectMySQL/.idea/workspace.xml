@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4c6529d-fcdc-4515-bce9-0888d12ffdfb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/store/ClientCache.class" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/store/ClientCache.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/classes/ru/clinicPetWeb/store/ClientCache.class" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/classes/ru/clinicPetWeb/store/ClientCache.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/classes/ru/clinicPetWeb/servlets/IndexServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/classes/ru/clinicPetWeb/servlets/IndexServlet.class" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/classes/ru/clinicPetWeb/servlets/IndexServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/LessonsJDBC/JDBC1.class" afterPath="$PROJECT_DIR$/target/classes/LessonsJDBC/JDBC1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.gitignore" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/ClientCache.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/ClientCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/servlets/IndexServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC1.java" afterPath="$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/JdbcStorage.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/JdbcStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/resources/panchenko.properties" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/resources/panchenko.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/target/ClinicPetWeb/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/MemoryStorage.java" afterPath="$PROJECT_DIR$/../ClinicPetWeb/src/main/java/ru/clinicPetWeb/store/MemoryStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tutorial.sql" afterPath="$PROJECT_DIR$/src/main/resources/tutorial.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ClinicPetWeb/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -66,17 +60,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7174658">
-              <caret line="226" column="14" selection-start-line="226" selection-start-column="14" selection-end-line="226" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
               <folding>
                 <element signature="method#insertWeather#0;class#Runner#0" expanded="false" />
                 <element signature="method#insertSnow#0;class#Runner#0" expanded="false" />
                 <element signature="method#insertRain#0;class#Runner#0" expanded="false" />
                 <element signature="method#insertBlizzard#0;class#Runner#0" expanded="false" />
-                <element signature="method#selectSnow#0;class#Runner#0" expanded="false" />
                 <element signature="method#selectRain#0;class#Runner#0" expanded="false" />
                 <element signature="method#selectBlizzard#0;class#Runner#0" expanded="false" />
                 <marker date="1459965717380" expanded="true" signature="593:658" placeholder="INSERT INTO ..." />
@@ -103,42 +96,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBC2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <marker date="1459879851200" expanded="true" signature="771:841" placeholder="INSERT INTO ..." />
-                <marker date="1459879851200" expanded="true" signature="884:945" placeholder="UPDATE weath..." />
-                <marker date="1459879851200" expanded="true" signature="1003:1024" placeholder="SELECT * FRO..weather..." />
-                <marker date="1459879851200" expanded="true" signature="1114:1184" placeholder="INSERT INTO ..." />
-                <marker date="1459879851200" expanded="true" signature="1221:1291" placeholder="INSERT INTO ..." />
-                <marker date="1459879851200" expanded="true" signature="1328:1398" placeholder="INSERT INTO ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tutorial.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tutorial.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/tutorial.sql">
           <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.310345">
-              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+            <state vertical-scroll-proportion="-4.012613">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,13 +147,13 @@
         <option value="$PROJECT_DIR$/src/main/java/DBWorker.java" />
         <option value="$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC3.java" />
         <option value="dbtable:/4561462b/3029fcff-f3dc-4ac1-b0c2-2d3690a822d3/Weather.public.weather" />
-        <option value="$PROJECT_DIR$/src/main/resources/tutorial.sql" />
         <option value="$PROJECT_DIR$/src/main/java/Weather/Weather.java" />
         <option value="$PROJECT_DIR$/src/main/java/Weather/Snow.java" />
         <option value="$PROJECT_DIR$/src/main/java/Weather/Rain.java" />
         <option value="$PROJECT_DIR$/src/main/java/Weather/Blizzard.java" />
         <option value="$PROJECT_DIR$/src/main/java/Runner.java" />
         <option value="$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC1.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/tutorial.sql" />
       </list>
     </option>
   </component>
@@ -366,9 +331,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -730,12 +695,13 @@
       <workItem from="1459933113264" duration="16143000" />
       <workItem from="1459980728245" duration="25000" />
       <workItem from="1460011439708" duration="1152000" />
-      <workItem from="1460016448207" duration="3023000" />
+      <workItem from="1460016448207" duration="6451000" />
+      <workItem from="1460062416828" duration="1499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73522000" />
+    <option name="totallyTimeSpent" value="78449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -793,7 +759,6 @@
             <element signature="method#insertSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#insertRain#0;class#Runner#0" expanded="false" />
             <element signature="method#insertBlizzard#0;class#Runner#0" expanded="false" />
-            <element signature="method#selectSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#selectRain#0;class#Runner#0" expanded="false" />
             <element signature="method#selectBlizzard#0;class#Runner#0" expanded="false" />
             <marker date="1459965717380" expanded="true" signature="593:658" placeholder="INSERT INTO ..." />
@@ -849,7 +814,6 @@
             <element signature="method#insertSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#insertRain#0;class#Runner#0" expanded="false" />
             <element signature="method#insertBlizzard#0;class#Runner#0" expanded="false" />
-            <element signature="method#selectSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#selectRain#0;class#Runner#0" expanded="false" />
             <element signature="method#selectBlizzard#0;class#Runner#0" expanded="false" />
             <marker date="1459965717380" expanded="true" signature="593:658" placeholder="INSERT INTO ..." />
@@ -913,7 +877,6 @@
             <element signature="method#insertSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#insertRain#0;class#Runner#0" expanded="false" />
             <element signature="method#insertBlizzard#0;class#Runner#0" expanded="false" />
-            <element signature="method#selectSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#selectRain#0;class#Runner#0" expanded="false" />
             <element signature="method#selectBlizzard#0;class#Runner#0" expanded="false" />
             <marker date="1459965717380" expanded="true" signature="593:658" placeholder="INSERT INTO ..." />
@@ -984,7 +947,6 @@
             <element signature="method#insertSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#insertRain#0;class#Runner#0" expanded="false" />
             <element signature="method#insertBlizzard#0;class#Runner#0" expanded="false" />
-            <element signature="method#selectSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#selectRain#0;class#Runner#0" expanded="false" />
             <element signature="method#selectBlizzard#0;class#Runner#0" expanded="false" />
             <marker date="1459965717380" expanded="true" signature="593:658" placeholder="INSERT INTO ..." />
@@ -1308,6 +1270,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26324788">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/4561462b/3029fcff-f3dc-4ac1-b0c2-2d3690a822d3/Weather.public.blizzard">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1327,74 +1304,35 @@
         </state>
       </provider>
       <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26324788">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.02910959">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="21" />
-          <folding />
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LessonsJDBC/JDBC2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1459879851200" expanded="true" signature="771:841" placeholder="INSERT INTO ..." />
-            <marker date="1459879851200" expanded="true" signature="884:945" placeholder="UPDATE weath..." />
-            <marker date="1459879851200" expanded="true" signature="1003:1024" placeholder="SELECT * FRO..weather..." />
-            <marker date="1459879851200" expanded="true" signature="1114:1184" placeholder="INSERT INTO ..." />
-            <marker date="1459879851200" expanded="true" signature="1221:1291" placeholder="INSERT INTO ..." />
-            <marker date="1459879851200" expanded="true" signature="1328:1398" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/tutorial.sql">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.310345">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.7380137">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7174658">
-          <caret line="226" column="14" selection-start-line="226" selection-start-column="14" selection-end-line="226" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
           <folding>
             <element signature="method#insertWeather#0;class#Runner#0" expanded="false" />
             <element signature="method#insertSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#insertRain#0;class#Runner#0" expanded="false" />
             <element signature="method#insertBlizzard#0;class#Runner#0" expanded="false" />
-            <element signature="method#selectSnow#0;class#Runner#0" expanded="false" />
             <element signature="method#selectRain#0;class#Runner#0" expanded="false" />
             <element signature="method#selectBlizzard#0;class#Runner#0" expanded="false" />
             <marker date="1459965717380" expanded="true" signature="593:658" placeholder="INSERT INTO ..." />
@@ -1417,6 +1355,17 @@
             <marker date="1459965717380" expanded="true" signature="7895:7932" placeholder="ALTER SEQUEN..RESTART..." />
             <marker date="1459965717380" expanded="true" signature="7895:7939" placeholder="ALTER SEQUEN..weather_id_seq..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/tutorial.sql">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.012613">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

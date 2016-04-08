@@ -15,6 +15,7 @@ public class JDBC1 {
 
         Connection connection; // Хранит соединение с базой данных
 //        Statement statement; // Хранит и выполняет sql запросы
+//        PreparedStatement preparedStatement; // Подготовленный sql запрос. Изменяются только параметры, то есть "?"
 //        ResultSet resultSet; // Получает результаты выполнения sql запросов
 
         try {

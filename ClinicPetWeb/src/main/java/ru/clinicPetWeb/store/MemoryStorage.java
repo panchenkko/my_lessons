@@ -3,6 +3,7 @@ package ru.clinicPetWeb.store;
 import ru.clinicPetWeb.models.Client;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -61,7 +62,7 @@ public class MemoryStorage implements Storage {
 
         for (final Client client : this.clients.values()) {
             if (client.getName().equals(clientName) && client.getPet().getName().equals(petName) &&
-                    client.getPet().getAge().equals(petAge)) {
+                    client.getPet().getAge().equals(petAge) && !Objects.equals(petAge, "")) {
                 this.found.put(this.idFound.incrementAndGet(), client);
                 checkThreeParam++;
             }
@@ -73,11 +74,13 @@ public class MemoryStorage implements Storage {
                     this.found.put(this.idFound.incrementAndGet(), client);
                     checkTwoParam++;
                 } else
-                if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)) {
+                if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)
+                        && !Objects.equals(petAge, "")) {
                     this.found.put(this.idFound.incrementAndGet(), client);
                     checkTwoParam++;
                 } else
-                if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)) {
+                if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)
+                        && !Objects.equals(petAge, "")) {
                     this.found.put(this.idFound.incrementAndGet(), client);
                     checkTwoParam++;
                 }
@@ -91,7 +94,8 @@ public class MemoryStorage implements Storage {
                     if (client.getPet().getName().equals(petName)) {
                         this.found.put(this.idFound.incrementAndGet(), client);
                     } else
-                    if (client.getPet().getAge().equals(petAge)) {
+                    if (client.getPet().getAge().equals(petAge)
+                            && !Objects.equals(petAge, "")) {
                         this.found.put(this.idFound.incrementAndGet(), client);
                     }
                 }

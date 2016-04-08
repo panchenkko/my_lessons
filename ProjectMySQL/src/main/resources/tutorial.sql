@@ -4,6 +4,9 @@
 # Меняем базу данных
 # USE my_database2;
 
+# Изменение имени столбца
+# ALTER TABLE table_name RENAME COLUMN column_name TO new_column_name
+
 
 
 INSERT INTO weather (temperature, atmospherePressure) VALUES (20, 768);
