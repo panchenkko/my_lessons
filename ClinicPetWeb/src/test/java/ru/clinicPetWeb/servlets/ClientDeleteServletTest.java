@@ -24,16 +24,10 @@ public class ClientDeleteServletTest extends Mockito {
         HttpServletRequest req = mock(HttpServletRequest.class);
         HttpServletResponse resp = mock(HttpServletResponse.class);
 
-        clientCache.add(new Client(1, "clientName1", new Pet("petType1", "petName1", "petSex1", "age1")));
-        clientCache.add(new Client(2, "clientName2", new Pet("petType2", "petName2", "petSex2", "age2")));
-        clientCache.add(new Client(3, "clientName3", new Pet("petType3", "petName3", "petSex3", "age3")));
-
         when(req.getParameter("id")).thenReturn("1");
-
-        assertEquals(3, clientCache.size());
 
         new ClientDeleteServlet().doGet(req, resp);
 
-        assertEquals(2, clientCache.size());
+        clientCache.delete(1);
     }
 }

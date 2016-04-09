@@ -28,10 +28,6 @@ public class MemoryStorage implements Storage {
         return this.clients.values();
     }
 
-    @Override
-    public int size() {
-        return this.clients.size();
-    }
 
     @Override
     public void add(Client client) {
@@ -46,6 +42,11 @@ public class MemoryStorage implements Storage {
     @Override
     public void delete(int id) {
         this.clients.remove(id);
+    }
+
+    @Override
+    public void deleteAll() {
+        clients.clear();
     }
 
     @Override
@@ -105,7 +106,6 @@ public class MemoryStorage implements Storage {
                 }
             }
         }
-        throw new IllegalStateException("Ничего не найдено!");
     }
 
     @Override

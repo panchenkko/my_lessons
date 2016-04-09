@@ -27,11 +27,7 @@ public class ClientSearchServlet extends HttpServlet {
         String petName = request.getParameter("petName");
         String petAge = request.getParameter("petAge");
 
-        try {
-            this.CLIENT_CACHE.find(idClient, clientName, petName, petAge);
-        } catch (IllegalStateException ise) {
-            System.out.println(ise.getMessage());
-        }
+        this.CLIENT_CACHE.find(idClient, clientName, petName, petAge);
 
         response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/search"));
     }

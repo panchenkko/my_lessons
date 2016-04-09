@@ -10,13 +10,16 @@ public interface Storage {
 
 	Collection<Client> values();
 
-    int size();
-
 	void add(final Client client);
 
 	void edit(final Client client);
 
 	void delete(final int id);
+
+	/**
+	 * Использутся в тестах
+	 */
+	void deleteAll();
 
 	Client get(final int id);
 

@@ -247,9 +247,7 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 			}
 
 			else if (this.suggestEmpty) {
-//				paint.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-//				paint.setColor(Color.black);
-//				paint.drawString("-", x - 2, y);
+				paint.drawString("", x - 2, y);
 			}
 
 			else {

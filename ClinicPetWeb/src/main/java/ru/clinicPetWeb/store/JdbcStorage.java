@@ -40,19 +40,6 @@ public class JdbcStorage implements Storage {
 
     @Override
     public Collection<Client> valuesFound() {
-//        found.clear();
-//        try (final Statement statement = this.connection.createStatement();
-//             final ResultSet rs = statement.executeQuery
-//                     ("select * from client right join pet on client.uid = pet.client_id")) {
-//            while (rs.next()) {
-//                found.add(new Client(rs.getInt("uid"), rs.getString("name"),
-//                          new Pet(rs.getString("type"), rs.getString("petName"),
-//                                  rs.getString("sex"), rs.getString("age")))
-//                );
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
         return found;
     }
 
@@ -73,11 +60,6 @@ public class JdbcStorage implements Storage {
 		}
 		return clients;
 	}
-
-    @Override
-    public int size() {
-        return clients.size();
-    }
 
     @Override
 	public void add(Client client) {
@@ -145,13 +127,6 @@ public class JdbcStorage implements Storage {
             statement.setInt(1, id);
             statement.executeUpdate();
             deleteClient(id);
-//            clients.remove(id);
-//            if (clients.isEmpty()) {
-//                statement.execute("ALTER SEQUENCE pet_uid_seq RESTART WITH 1");
-//                statement.execute("ALTER SEQUENCE client_uid_seq RESTART WITH 1");
-//                statement.executeUpdate();
-//            }
-            statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -162,6 +137,19 @@ public class JdbcStorage implements Storage {
                 ("DELETE FROM client WHERE uid = (?)")) {
             statement.setInt(1, id);
             statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteAll() {
+        try (final Statement statement = this.connection.createStatement()) {
+            statement.addBatch("DELETE FROM pet;");
+            statement.addBatch("DELETE FROM client");
+            statement.addBatch("ALTER SEQUENCE pet_uid_seq RESTART WITH 1");
+            statement.addBatch("ALTER SEQUENCE client_uid_seq RESTART WITH 1");
+            statement.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
         }

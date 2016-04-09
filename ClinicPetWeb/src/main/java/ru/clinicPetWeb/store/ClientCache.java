@@ -16,8 +16,7 @@ public class ClientCache implements Storage {
 
 	private static final ClientCache INSTANCE = new ClientCache();
 
-    private final Storage storage = new JdbcStorage();
-
+    private Storage storage = new JdbcStorage();
 
     @Override
 	public Collection<Client> valuesFound() {
@@ -35,10 +34,6 @@ public class ClientCache implements Storage {
 		return this.storage.values();
 	}
 
-    @Override
-    public int size() {
-        return this.storage.size();
-    }
 
     @Override
 	public void add(final Client client) {
@@ -64,6 +59,11 @@ public class ClientCache implements Storage {
     public void delete(final int id) {
 		this.storage.delete(id);
 	}
+
+    @Override
+    public void deleteAll() {
+        this.storage.deleteAll();
+    }
 
     @Override
 	public Client get(final int id) {

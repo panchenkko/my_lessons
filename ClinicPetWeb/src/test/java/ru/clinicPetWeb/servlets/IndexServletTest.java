@@ -2,8 +2,6 @@ package ru.clinicPetWeb.servlets;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-import ru.clinicPetWeb.models.Client;
-import ru.clinicPetWeb.models.Pet;
 import ru.clinicPetWeb.store.ClientCache;
 
 import javax.servlet.RequestDispatcher;
@@ -22,14 +20,31 @@ public class IndexServletTest extends Mockito {
         HttpServletResponse resp = mock(HttpServletResponse.class);
         RequestDispatcher dispatcher = mock(RequestDispatcher.class);
 
-        when(req.getRequestDispatcher("/views/client/index.jsp")).thenReturn(dispatcher);
+        IndexServlet indexServlet = new IndexServlet();
 
-        clientCache.add(new Client(1, "clientName1", new Pet("petType1", "petName1", "petSex1", "age1")));
-        clientCache.add(new Client(2, "clientName2", new Pet("petType2", "petName2", "petSex2", "age2")));
-        clientCache.add(new Client(3, "clientName3", new Pet("petType3", "petName3", "petSex3", "age3")));
+        when(req.getRequestDispatcher("/index.jsp")).thenReturn(dispatcher);
 
-        new IndexServlet().doGet(req, resp);
+        indexServlet.doGet(req, resp);
 
         verify(dispatcher).forward(req,resp);
+
+        when(req.getParameter("petType")).thenReturn("");
+        when(req.getParameter("petSex")).thenReturn(null);
+        when(req.getParameter("petAge")).thenReturn(null);
+
+        indexServlet.doPost(req, resp);
+
+        when(req.getParameter("petType")).thenReturn("test");
+        when(req.getParameter("petSex")).thenReturn("test");
+        when(req.getParameter("petAge")).thenReturn("5");
+
+        indexServlet.doPost(req, resp);
+
+        /**
+         * УДАЛЯЕТ ВСЕ ДАННЫЕ ИЗ ВСЕХ ТАБЛИЦ
+         */
+        clientCache.deleteAll();
+
+        indexServlet.destroy();
     }
 }
