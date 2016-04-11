@@ -95,6 +95,8 @@ ___________________________________
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test2.png)
 
+Примеры непокрытого кода:
+___________________________________
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test3.png)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test4.png)
