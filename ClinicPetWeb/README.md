@@ -88,6 +88,17 @@ ___________________________________
 Также в проекте частично был использован Bootstrap 3
 ___________________________________
 
+Тесты
+-----------------------------------
+___________________________________
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test1.png)
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test2.png)
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test3.png)
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/test4.png)
+
 Конец
 -----------------------------------
 ___________________________________
