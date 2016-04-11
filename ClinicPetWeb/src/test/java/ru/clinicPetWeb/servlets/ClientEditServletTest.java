@@ -25,9 +25,9 @@ public class ClientEditServletTest extends Mockito {
 
         ClientEditServlet clientEdit = new ClientEditServlet();
 
-//        clientCache.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex1", "petAge")));
+//        clientCache.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex", "petAge")));
 
-//        when(req.getRequestDispatcher("/views/client/EditClient.jsp")).thenReturn(dispatcher);
+        when(req.getRequestDispatcher("/views/client/EditClient.jsp")).thenReturn(dispatcher);
         when(req.getParameter("id")).thenReturn("1");
 
         try {

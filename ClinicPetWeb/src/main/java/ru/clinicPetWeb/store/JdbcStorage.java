@@ -193,13 +193,12 @@ public class JdbcStorage implements Storage {
     }
 
     public void findIdClient(int idClient) {
-        try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client right join pet on client.uid = pet.client_id")) {
-            try (final ResultSet rs = statement.executeQuery()) {
-                while (rs.next()) {
-                    if (rs.getInt("uid") == idClient) {
-                        foundAdd(rs);
-                    }
+        try (final Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery
+                     ("select * from client right join pet on client.uid = pet.client_id")) {
+            while (rs.next()) {
+                if (rs.getInt("uid") == idClient) {
+                    foundAdd(rs);
                 }
             }
         } catch (SQLException e) {
@@ -209,15 +208,14 @@ public class JdbcStorage implements Storage {
 
     public boolean findThreeParameters(String clientName, String petName, String petAge) {
         boolean check = false;
-        try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client right join pet on client.uid = pet.client_id")) {
-            try (final ResultSet rs = statement.executeQuery()) {
-                while (rs.next()) {
-                    if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName) &&
-                            findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
-                        foundAdd(rs);
-                        check = true;
-                    }
+        try (final Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery
+                     ("select * from client right join pet on client.uid = pet.client_id")) {
+            while (rs.next()) {
+                if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName) &&
+                        findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
+                    foundAdd(rs);
+                    check = true;
                 }
             }
         } catch (SQLException e) {
@@ -228,24 +226,23 @@ public class JdbcStorage implements Storage {
 
     public boolean findTwoParameters(String clientName, String petName, String petAge) {
         boolean check = false;
-        try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client right join pet on client.uid = pet.client_id")) {
-            try (final ResultSet rs = statement.executeQuery()) {
-                while (rs.next()) {
-                    if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName)) {
-                        foundAdd(rs);
-                        check = true;
-                    } else
-                    if (findClientName(rs.getInt("uid"), clientName) && findAge(rs.getInt("uid"), petAge)
-                            && !Objects.equals(petAge, "")) {
-                        foundAdd(rs);
-                        check = true;
-                    } else
-                    if (findPetName(rs.getInt("uid"), petName) && findAge(rs.getInt("uid"), petAge)
-                            && !Objects.equals(petAge, "")) {
-                        foundAdd(rs);
-                        check = true;
-                    }
+        try (final Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery
+                     ("select * from client right join pet on client.uid = pet.client_id")) {
+            while (rs.next()) {
+                if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName)) {
+                    foundAdd(rs);
+                    check = true;
+                } else
+                if (findClientName(rs.getInt("uid"), clientName) && findAge(rs.getInt("uid"), petAge)
+                        && !Objects.equals(petAge, "")) {
+                    foundAdd(rs);
+                    check = true;
+                } else
+                if (findPetName(rs.getInt("uid"), petName) && findAge(rs.getInt("uid"), petAge)
+                        && !Objects.equals(petAge, "")) {
+                    foundAdd(rs);
+                    check = true;
                 }
             }
         } catch (SQLException e) {
@@ -255,19 +252,18 @@ public class JdbcStorage implements Storage {
     }
 
     public void findOneParameters(String clientName, String petName, String petAge) {
-        try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client right join pet on client.uid = pet.client_id")) {
-            try (final ResultSet rs = statement.executeQuery()) {
-                while (rs.next()) {
-                    if (findClientName(rs.getInt("uid"), clientName)) {
-                        foundAdd(rs);
-                    } else
-                    if (findPetName(rs.getInt("uid"), petName)) {
-                        foundAdd(rs);
-                    } else
-                    if (findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
-                        foundAdd(rs);
-                    }
+        try (final Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery
+                     ("select * from client right join pet on client.uid = pet.client_id")) {
+            while (rs.next()) {
+                if (findClientName(rs.getInt("uid"), clientName)) {
+                    foundAdd(rs);
+                } else
+                if (findPetName(rs.getInt("uid"), petName)) {
+                    foundAdd(rs);
+                } else
+                if (findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
+                    foundAdd(rs);
                 }
             }
         } catch (SQLException e) {

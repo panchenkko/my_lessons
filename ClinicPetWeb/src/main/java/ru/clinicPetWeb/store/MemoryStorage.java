@@ -58,52 +58,58 @@ public class MemoryStorage implements Storage {
     public void find(String idClient, String clientName, String petName, String petAge) {
         this.found.clear();
 
-        int checkThreeParam = 0;
-        int checkTwoParam = 0;
-
         if (!Objects.equals(idClient, "")) {
-            for (final Client client : this.clients.values()) {
-                if (client.getId() == Integer.valueOf(idClient)) {
-                    this.found.put(this.idFound.incrementAndGet(), client);
-                }
-            }
+            findIdClient(Integer.valueOf(idClient));
         } else {
-            for (final Client client : this.clients.values()) {
-                if (client.getName().equals(clientName) && client.getPet().getName().equals(petName) &&
-                        client.getPet().getAge().equals(petAge) && !Objects.equals(petAge, "")) {
-                    this.found.put(this.idFound.incrementAndGet(), client);
-                    checkThreeParam++;
-                }
+            findThreeParameters(clientName, petName, petAge);
+            if (found.isEmpty()) {
+                findTwoParameters(clientName, petName, petAge);
+                if (found.isEmpty())
+                    findOneParameters(clientName, petName, petAge);
             }
+        }
+    }
 
-            if (checkThreeParam == 0) {
-                for (final Client client : this.clients.values()) {
-                    if (client.getName().equals(clientName) && client.getPet().getName().equals(petName)) {
-                        this.found.put(this.idFound.incrementAndGet(), client);
-                        checkTwoParam++;
-                    } else if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)
-                            && !Objects.equals(petAge, "")) {
-                        this.found.put(this.idFound.incrementAndGet(), client);
-                        checkTwoParam++;
-                    } else if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)
-                            && !Objects.equals(petAge, "")) {
-                        this.found.put(this.idFound.incrementAndGet(), client);
-                        checkTwoParam++;
-                    }
-                }
+    public void findIdClient(int idClient) {
+        for (final Client client : this.clients.values()) {
+            if (client.getId() == idClient) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            }
+        }
+    }
 
-                if (checkTwoParam == 0) {
-                    for (final Client client : this.clients.values()) {
-                        if (client.getName().equals(clientName)) {
-                            this.found.put(this.idFound.incrementAndGet(), client);
-                        } else if (client.getPet().getName().equals(petName)) {
-                            this.found.put(this.idFound.incrementAndGet(), client);
-                        } else if (client.getPet().getAge().equals(petAge)
-                                && !Objects.equals(petAge, "")) {
-                            this.found.put(this.idFound.incrementAndGet(), client);
-                        }
-                    }
-                }
+    public void findThreeParameters(String clientName, String petName, String petAge) {
+        for (final Client client : this.clients.values()) {
+            if (client.getName().equals(clientName) && client.getPet().getName().equals(petName) &&
+                    client.getPet().getAge().equals(petAge) && !Objects.equals(petAge, "")) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            }
+        }
+    }
+
+    public void findTwoParameters(String clientName, String petName, String petAge) {
+        for (final Client client : this.clients.values()) {
+            if (client.getName().equals(clientName) && client.getPet().getName().equals(petName)) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            } else if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)
+                    && !Objects.equals(petAge, "")) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            } else if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)
+                    && !Objects.equals(petAge, "")) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            }
+        }
+    }
+
+    public void findOneParameters(String clientName, String petName, String petAge) {
+        for (final Client client : this.clients.values()) {
+            if (client.getName().equals(clientName)) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            } else if (client.getPet().getName().equals(petName)) {
+                this.found.put(this.idFound.incrementAndGet(), client);
+            } else if (client.getPet().getAge().equals(petAge)
+                    && !Objects.equals(petAge, "")) {
+                this.found.put(this.idFound.incrementAndGet(), client);
             }
         }
     }

@@ -2,7 +2,9 @@ package ru.clinicPetWeb.servlets;
 
 import org.junit.Test;
 import org.mockito.Mockito;
+import ru.clinicPetWeb.service.Settings;
 import ru.clinicPetWeb.store.ClientCache;
+import ru.clinicPetWeb.store.JdbcStorage;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +17,7 @@ public class IndexServletTest extends Mockito {
     final ClientCache clientCache = ClientCache.getInstance();
 
     @Test
-    public void testClinicDeleteServlet() throws ServletException, IOException {
+    public void testIndexServlet() throws ServletException, IOException {
         HttpServletRequest req = mock(HttpServletRequest.class);
         HttpServletResponse resp = mock(HttpServletResponse.class);
         RequestDispatcher dispatcher = mock(RequestDispatcher.class);
