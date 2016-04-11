@@ -56,17 +56,23 @@ ___________________________________
 Заранее скажу, что заполнить нужно хотя бы одно поле из трёх, иначе кнопка будет заблокирована.
 ___________________________________
 
-Заполняем поле "Имя клиента" :
+Введем ID клиента :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search2.png)
 
-И нажимаем на кнопку "Найти" :
+Данные нашлись:
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search3.png)
 
-Заполним два поля: Имя клиента и возраст питомца
+Заполним поле "Имя клиента" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search4.png)
 
-Видим, что список отфильтровался:
+Данные нашлись:
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search5.png)
+
+Заполним два поля: Имя клиента и возраст питомца
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search6.png)
+
+Видим, что список отфильтровался:
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search7.png)
 
 Нажимаем в верхнем левом углу на кнопку "Вернуться"
 ___________________________________
@@ -75,10 +81,10 @@ ___________________________________
 -----------------------------------
 ___________________________________
 
-Выбираем второго клиента из списка и в столбце "Доп. действия" нажимаем "Удалить" :
+Выбираем клиента под номером "4" и в столбце "Доп. действия" нажимаем "Удалить" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete1.png)
 
-Видим, что осталось четыре клиента. Сделаем тоже самое для третьего клиента:
+Видим, что осталось четыре клиента. Сделаем тоже самое для клиента под номером "3" :
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete2.png)
 
 Убеждаемся, что клиентов осталось три:
