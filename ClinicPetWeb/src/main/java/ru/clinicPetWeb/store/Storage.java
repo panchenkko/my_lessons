@@ -17,7 +17,7 @@ public interface Storage {
 	void delete(final int id);
 
 	/**
-	 * Использутся в тестах
+	 * Используется в тестах
 	 */
 	void deleteAll();
 
