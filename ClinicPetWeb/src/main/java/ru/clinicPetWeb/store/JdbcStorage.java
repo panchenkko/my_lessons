@@ -48,7 +48,7 @@ public class JdbcStorage implements Storage {
         clients.clear();
 		try (final Statement statement = this.connection.createStatement();
 		     final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.uid = pet.client_id")) {
+                     ("select * from client right join pet on client.uid = pet.client_id ORDER BY client.uid")) {
 			while (rs.next()) {
 				clients.add(new Client(rs.getInt("uid"), rs.getString("name"),
 							new Pet(rs.getString("type"), rs.getString("petName"),
