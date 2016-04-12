@@ -111,7 +111,8 @@ ___________________________________
 В методах поиска не весь код покрыт:
 ___________________________________
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/failTest1.png)
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/failTest1.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/failTest2.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/failTest3.png)
 
 Конец
 -----------------------------------
