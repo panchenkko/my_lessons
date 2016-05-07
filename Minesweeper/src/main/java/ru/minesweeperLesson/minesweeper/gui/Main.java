@@ -1,14 +1,20 @@
 package ru.minesweeperLesson.minesweeper.gui;
 
-import ru.minesweeperLesson.minesweeper.LevelSelectionGUI;
+import ru.minesweeperLesson.minesweeper.StandardLogicGUI;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+/**
+ * Запуск игры в графической версии
+ */
 
 public class Main {
 	private static final JPanel controlPanel = new JPanel();
@@ -31,8 +37,46 @@ public class Main {
 
 				controlPanel.setLayout(new FlowLayout());
 				final JButton generate = new JButton("Начать");
-				LevelSelectionGUI level = new LevelSelectionGUI();
-				level.medium();
+				StandardLogicGUI level = new StandardLogicGUI();
+				level.easy();
+				/**
+				 * ПЕРЕКЛЮЧЕНИЕ УРОВНЕЙ.
+				 */
+				JMenuBar menuBar = new JMenuBar();  // Верхняя полоска с элементами меню
+				frame.setJMenuBar(menuBar);
+				JMenu menu = new JMenu("Уровень");    // Меню
+				menuBar.add(menu);
+
+				JMenuItem easy = new JMenuItem("Легкий"); // Подменю
+				menu.add(easy);
+				easy.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						level.easy();
+						generate.doClick();
+					}
+				});
+
+				JMenuItem medium = new JMenuItem("Средний"); // Подменю
+				menu.add(medium);
+				medium.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						level.medium();
+						generate.doClick();
+					}
+				});
+
+				JMenuItem expert = new JMenuItem("Эксперт"); // Подменю
+				menu.add(expert);
+				expert.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						level.expert();
+						generate.doClick();
+					}
+				});
+
 				generate.addActionListener(new GUIAction (level, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {

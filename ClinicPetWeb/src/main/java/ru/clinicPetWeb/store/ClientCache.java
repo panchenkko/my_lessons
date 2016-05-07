@@ -3,9 +3,6 @@ package ru.clinicPetWeb.store;
 import ru.clinicPetWeb.models.Client;
 
 import java.util.Collection;
-import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Шаблон проектирования "Singleton".
@@ -16,7 +13,7 @@ public class ClientCache implements Storage {
 
 	private static final ClientCache INSTANCE = new ClientCache();
 
-    private Storage storage = new JdbcStorage();
+    private Storage storage = new HibernateStorage();
 
     @Override
 	public Collection<Client> valuesFound() {

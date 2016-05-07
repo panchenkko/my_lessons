@@ -5,16 +5,9 @@ import org.mockito.Mockito;
 import ru.clinicPetWeb.models.Client;
 import ru.clinicPetWeb.models.Pet;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class JdbcStorageTest extends Mockito {
 

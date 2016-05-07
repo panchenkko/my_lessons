@@ -2,8 +2,6 @@ package ru.clinicPetWeb.servlets;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-import ru.clinicPetWeb.models.Client;
-import ru.clinicPetWeb.models.Pet;
 import ru.clinicPetWeb.store.ClientCache;
 
 import javax.servlet.RequestDispatcher;

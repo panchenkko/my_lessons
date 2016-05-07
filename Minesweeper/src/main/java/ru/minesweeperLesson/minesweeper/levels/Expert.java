@@ -2,9 +2,6 @@ package ru.minesweeperLesson.minesweeper.levels;
 
 import ru.minesweeperLesson.minesweeper.interfaces.TheNumOfTheField;
 
-/**
- * Реализация сложного уровня игры
- */
 public class Expert implements TheNumOfTheField {
 
     @Override

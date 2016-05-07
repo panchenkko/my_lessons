@@ -2,9 +2,6 @@ package ru.minesweeperLesson.minesweeper.levels;
 
 import ru.minesweeperLesson.minesweeper.interfaces.TheNumOfTheField;
 
-/**
- * Реализация среднего уровня игры
- */
 public class Medium implements TheNumOfTheField {
 
     @Override

@@ -127,6 +127,12 @@ public class JdbcStorage implements Storage {
             statement.setInt(1, id);
             statement.executeUpdate();
             deleteClient(id);
+
+//            final ResultSet rs = statement.executeQuery
+//                    ("select * from client right join pet on client.uid = pet.client_id");
+//            statement.executeUpdate();
+//            if (rs.getRow() == 0)
+//                deleteAll();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -145,7 +151,7 @@ public class JdbcStorage implements Storage {
     @Override
     public void deleteAll() {
         try (final Statement statement = this.connection.createStatement()) {
-            statement.addBatch("DELETE FROM pet;");
+            statement.addBatch("DELETE FROM pet");
             statement.addBatch("DELETE FROM client");
             statement.addBatch("ALTER SEQUENCE pet_uid_seq RESTART WITH 1");
             statement.addBatch("ALTER SEQUENCE client_uid_seq RESTART WITH 1");

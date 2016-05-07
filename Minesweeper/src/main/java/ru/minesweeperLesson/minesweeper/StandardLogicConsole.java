@@ -12,7 +12,7 @@ import ru.minesweeperLesson.minesweeper.levels.Medium;
 import java.util.Random;
 
 /**
- * Реализация проверки выбраного уровня пользователем
+ * Стандартная логика игры
  */
 
 /**
@@ -20,12 +20,13 @@ import java.util.Random;
  *
  * 1. Расширить класс уровня добавив интерфейс ILogic. После изменить логику игры в доступных методах
  *
- * 2. После переходим в этот класс и проверяем на null уровень в методе,
+ * 2. После перейти в этот класс и проверить на null уровень в методе,
  *    где была изменена логика (как это релизовано в 5-7-ом методах),
  *    если данный уровень был выбран, то вызываем метод находящийся в этом уровне
  *    (в каком уже изменена логика), иначе запускаем стандартную логику находящуюся в этом классе
  */
-public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
+
+public class StandardLogicConsole implements ISelectLevel, ILogic, TheNumOfTheField {
 
     private Easy easy;
     private Medium medium;
@@ -37,6 +38,7 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
     public Easy easy() {
         return easy = new Easy();
     }
+
 
     @Override
     public Medium medium() {
@@ -101,7 +103,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
         return selected.isBomb() && !selected.isSuggestBomb();
     }
 
-    // Если пользователь всё разгадал, возвращаем истину
     @Override
     public boolean finish() {
         boolean finish = false;
@@ -119,7 +120,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
         return finish;
     }
 
-    // Предположения пользователя (Бомба или пустая клетка)
     @Override
     public void suggest(int x, int y, boolean bomb) {
         if (!bomb)
@@ -130,7 +130,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
             System.out.println("Вы уже открыли эту клетку!\n");
     }
 
-    // Проверка первого хода. Если на поле нет бомб, возвращаем истину
     @Override
     public boolean checkTheFirstMove() {
         boolean check = true;
@@ -143,8 +142,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
         return check;
     }
 
-    // Очистка вокруг ячейки при первом ходе
-    // Для того, чтобы у пользователя не открылась в начале игры только одна ячейка
     @Override
     public void clearAroundCell(int x, int y) {
         if (cells.length > 3) {
@@ -159,7 +156,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
         }
     }
 
-    // Генерация бомб на поле
     @Override
     public void bombsGeneration() {
         Random random = new Random();
@@ -174,7 +170,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
         }
     }
 
-    // Возвращаем количество бомб вокруг ячейки
     @Override
     public int checkingAroundCell(int x, int y) {
         int checking = 0;
@@ -191,9 +186,6 @@ public class LevelSelection implements ISelectLevel, ILogic, TheNumOfTheField {
         return checking;
     }
 
-    /**
-     * Открываем пустые ячейки
-     */
     @Override
     public void openEmptyCells() {
         int check = 1, sumEmpty = 0;

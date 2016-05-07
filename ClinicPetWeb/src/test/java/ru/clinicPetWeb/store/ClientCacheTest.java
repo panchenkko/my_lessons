@@ -1,7 +1,6 @@
 package ru.clinicPetWeb.store;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -11,8 +10,6 @@ import ru.clinicPetWeb.models.Pet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
-import static org.junit.Assert.*;
 
 public class ClientCacheTest extends Mockito {
 

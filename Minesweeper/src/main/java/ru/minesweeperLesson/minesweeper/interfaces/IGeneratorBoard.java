@@ -1,12 +1,9 @@
 package ru.minesweeperLesson.minesweeper.interfaces;
 
 /**
- * Генерация самого игрового поля
+ * Генерация игрового поля
  */
+
 public interface IGeneratorBoard {
-	/**
-	 * Метод генерации поля
-	 * Это может быть: сложный, средний или легкий уровень
- 	 */
 	ICell[][] generate();
 }

@@ -10,8 +10,9 @@ import ru.minesweeperLesson.minesweeper.levels.Expert;
 import ru.minesweeperLesson.minesweeper.levels.Medium;
 
 import java.util.Random;
+
 /**
- * Реализация проверки выбраного уровня пользователем
+ * Стандартная логика игры
  */
 
 /**
@@ -19,12 +20,13 @@ import java.util.Random;
  *
  * 1. Расширить класс уровня добавив интерфейс ILogic. После изменить логику игры в доступных методах
  *
- * 2. После переходим в этот класс и проверяем на null уровень в методе,
+ * 2. После перейти в этот класс и проверить на null уровень в методе,
  *    где была изменена логика (как это релизовано в 5-7-ом методах),
  *    если данный уровень был выбран, то вызываем метод находящийся в этом уровне
  *    (в каком уже изменена логика), иначе запускаем стандартную логику находящуюся в этом классе
  */
-public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField {
+
+public class StandardLogicGUI implements ISelectLevel, ILogic, TheNumOfTheField {
 
     private Easy easy;
     private Medium medium;
@@ -106,7 +108,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         return selected.isBomb() && !selected.isSuggestBomb();
     }
 
-    // Если пользователь всё разгадал, возвращаем истину
     @Override
     public boolean finish() {
         boolean finish = false;
@@ -114,7 +115,7 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         for (ICell[] row : this.cells)
             for (ICell cell : row)
                 if ((cell.isSuggestBomb() && cell.isBomb()) ||
-                        (cell.isSuggestEmpty() && !cell.isBomb()) || (!cell.isSuggestBomb() && cell.isBomb())
+                        (cell.isSuggestEmpty() && !cell.isBomb()) /*|| (!cell.isSuggestBomb() && cell.isBomb())*/
                         || cell.isSuggest1() || cell.isSuggest2() || cell.isSuggest3() || cell.isSuggest4()
                         || cell.isSuggest5() || cell.isSuggest6() || cell.isSuggest7() || cell.isSuggest8()) {
                     check++;
@@ -124,7 +125,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         return finish;
     }
 
-    // Предположения пользователя (Бомба или пустая клетка)
     @Override
     public void suggest(int x, int y, boolean bomb) {
         if (!bomb)
@@ -135,7 +135,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
             System.out.println("Вы уже открыли эту клетку!\n");
     }
 
-    // Проверка первого хода. Если на поле нет бомб, возвращаем истину
     @Override
     public boolean checkTheFirstMove() {
         boolean check = true;
@@ -148,8 +147,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         return check;
     }
 
-    // Очистка вокруг ячейки при первом ходе
-    // Для того, чтобы у пользователя не открылась в начале игры только одна ячейка
     @Override
     public void clearAroundCell(int x, int y) {
         if (cells.length > 3) {
@@ -164,7 +161,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         }
     }
 
-    // Генерация бомб на поле
     @Override
     public void bombsGeneration() {
         Random random = new Random();
@@ -179,7 +175,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         }
     }
 
-    // Возвращаем количество бомб вокруг ячейки
     @Override
     public int checkingAroundCell(int x, int y) {
         int checking = 0;
@@ -196,9 +191,6 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
         return checking;
     }
 
-    /**
-     * Открываем пустые ячейки
-     */
     @Override
     public void openEmptyCells() {
         int check = 1, sumEmpty = 0;
@@ -244,96 +236,4 @@ public class LevelSelectionGUI implements ISelectLevel, ILogic, TheNumOfTheField
                 }
         }
     }
-
-//    @Override
-//    public ICell[][] sizeField() {
-//        ICell[][] ICells = null;
-//        if (easy == null && medium == null && expert != null)
-//            ICells = expert.sizeField();
-//        else if (easy == null && expert == null && medium != null)
-//            ICells = medium.sizeField();
-//        else if (easy != null)
-//            ICells = easy.sizeField();
-//        return ICells;
-//    }
-//
-//    @Override
-//    public boolean checkTheFirstMove() {
-//        if (easy == null && medium == null && expert != null)
-//            return expert.checkTheFirstMove();
-//        else if (easy == null && expert == null && medium != null)
-//            return medium.checkTheFirstMove();
-//        else if (easy != null)
-//            return easy.checkTheFirstMove();
-//        return false;
-//    }
-//
-//    @Override
-//    public void bombsGeneration() {
-//        if (easy == null && medium == null && expert != null)
-//            expert.bombsGeneration();
-//        else if (easy == null && expert == null && medium != null)
-//            medium.bombsGeneration();
-//        else if (easy != null)
-//            easy.bombsGeneration();
-//    }
-//
-//    @Override
-//    public boolean shouldBang(int x, int y) {
-//        boolean bang = false;
-//        if (easy == null && medium == null && expert != null)
-//            bang = expert.shouldBang(x, y);
-//        else if (easy == null && expert == null && medium != null)
-//            bang = medium.shouldBang(x, y);
-//        else if (easy != null)
-//            bang = easy.shouldBang(x, y);
-//        return bang;
-//    }
-//
-//    @Override
-//    public boolean finish() {
-//        boolean finish = false;
-//        if (easy == null && medium == null && expert != null)
-//            finish = expert.finish();
-//        else if (easy == null && expert == null && medium != null)
-//            finish = medium.finish();
-//        else if (easy != null)
-//            finish = easy.finish();
-//        return finish;
-//    }
-//
-//    @Override
-//    public void suggest(int x, int y, boolean bomb) {
-//        if (easy == null && medium == null && expert != null)
-//            expert.suggest(x, y ,bomb);
-//        else if (easy == null && expert == null && medium != null)
-//            medium.suggest(x, y ,bomb);
-//        else if (easy != null)
-//            easy.suggest(x, y ,bomb);
-//    }
-//
-//    @Override
-//    public void openEmptyCells() {
-//        if (easy == null && medium == null && expert != null)
-//            expert.openEmptyCells();
-//        else if (easy == null && expert == null && medium != null)
-//            medium.openEmptyCells();
-//        else if (easy != null)
-//            easy.openEmptyCells();
-//    }
-//
-//    @Override
-//    public void clearAroundCell(int x, int y) {
-//        if (easy == null && medium == null && expert != null)
-//            expert.clearAroundCell(x, y);
-//        else if (easy == null && expert == null && medium != null)
-//            medium.clearAroundCell(x, y);
-//        else if (easy != null)
-//            easy.clearAroundCell(x, y);
-//    }
-//
-//    @Override
-//    public int checkingAroundCell(int x, int y) {
-//        return 0;
-//    }
 }

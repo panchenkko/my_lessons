@@ -14,7 +14,7 @@ public class JDBC3 {
     private static final String INSERT_NEW = "INSERT INTO testtableforjdbc3 VALUES(?,?,?,?,?,?)";
 
     public static void main(String[] args) {
-        Connection connection = null;
+        Connection connection;
         PreparedStatement preparedStatement;
 
         try {

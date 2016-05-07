@@ -11,14 +11,8 @@ public interface IBoard {
 	 */
 	void drawBoard(ICell[][] cells);
 
-	/**
-	 * Рисует ячейку.
-	 */
 	void drawSelect();
 
-	/**
-	 * Рисует, когда пользователь сложил пять в ряд
-	 */
 	void drawCongratulate();
 
 	/**

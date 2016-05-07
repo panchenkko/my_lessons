@@ -1,7 +1,5 @@
 package ru.clinicPetWeb.store;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -10,8 +8,6 @@ import ru.clinicPetWeb.models.Pet;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import static org.junit.Assert.*;
 
 public class MemoryStorageTest extends Mockito {
 

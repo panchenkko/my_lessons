@@ -1,19 +1,70 @@
+//package ru.clinicPetWeb.models;
+//
+//public class Client {
+//
+//    private int id;
+//    private String name;
+//    private Pet pet;
+//
+//    // Обязательно нужен пустой конструктор для Hibernate.
+//    // Он изначально создает нулевой объект, а после уже начинает дергать геттеры и сеттеры
+//    public Client() {
+//    }
+//
+//    public Client(final int id, final String name, final Pet pet) {
+//        this.id = id;
+//        this.name = name;
+//        this.pet = pet;
+//    }
+//
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public String getName() {
+//        return this.name;
+//    }
+//
+//    public Pet getPet() {
+//        return this.pet;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public void setPet(Pet pet) {
+//        this.pet = pet;
+//    }
+//}
+
 package ru.clinicPetWeb.models;
 
-public class Client {
+import javax.persistence.*;
 
-    private final int id;
-    private final String name;
-    private final Pet pet;
+@Entity
+@Table(name = "client")
+public class Client extends Base {
+
+    private String name;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pet_id")
+    private Pet pet;
+
+    // Обязательно нужен пустой конструктор для Hibernate.
+    // Он изначально создает нулевой объект, а после уже начинает дергать геттеры и сеттеры
+    public Client() {
+    }
 
     public Client(final int id, final String name, final Pet pet) {
         this.id = id;
         this.name = name;
         this.pet = pet;
-    }
-
-    public int getId() {
-        return this.id;
     }
 
     public String getName() {
@@ -22,5 +73,13 @@ public class Client {
 
     public Pet getPet() {
         return this.pet;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 }

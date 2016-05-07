@@ -168,36 +168,91 @@ public class Runner {
         }
     }
 
-    public void deleteTable(Scanner sc, DBWorker dbWorker) {
-//        System.out.print("1. Снег\n" + "2. Дождь\n" + "3. Снегопад \n" + "Ответ: ");
-//        int answer = sc.nextInt();
-        try {
-            Statement statement = dbWorker.getConnection().createStatement();
+    public void delete(Scanner sc, DBWorker dbWorker) {
 
-//            switch (answer) {
-//                case 1: break;
-//                case 2: break;
-//                case 3: statement.execute(
-//                            "DELETE FROM blizzard USING snow, weather " +
-//                            "WHERE blizzard.snow_id = snow.id AND snow.weather_id = weather.id");
-//                    break;
-//                default: System.out.println("Вы не выбрали таблицу!");
-//            }
+        System.out.print("1. Удалить все данные\n" + "2. Удалить выбранный ряд\n" + "Ответ: ");
+        int whatToDelete = sc.nextInt();
 
-            statement.execute("DELETE FROM blizzard");
-            statement.execute("DELETE FROM rain");
-            statement.execute("DELETE FROM snow");
-            statement.execute("DELETE FROM weather");
-            // Обнуление счетчика auto_increment
-            statement.execute("ALTER SEQUENCE blizzard_id_seq RESTART WITH 1");
-            statement.execute("ALTER SEQUENCE rain_id_seq RESTART WITH 1");
-            statement.execute("ALTER SEQUENCE snow_id_seq RESTART WITH 1");
-            statement.execute("ALTER SEQUENCE weather_id_seq RESTART WITH 1");
-
-            System.out.println("Удалено!");
+        try (Statement statement = dbWorker.getConnection().createStatement()) {
+            if (whatToDelete == 1) {
+                statement.execute("DELETE FROM weather");
+                statement.execute("DELETE FROM rain");
+                statement.execute("DELETE FROM snow");
+                statement.execute("DELETE FROM blizzard");
+                // Обнуление счетчика auto_increment
+                statement.execute("ALTER SEQUENCE weather_id_seq RESTART WITH 1");
+                statement.execute("ALTER SEQUENCE rain_id_seq RESTART WITH 1");
+                statement.execute("ALTER SEQUENCE snow_id_seq RESTART WITH 1");
+                statement.execute("ALTER SEQUENCE blizzard_id_seq RESTART WITH 1");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        if (whatToDelete == 2) {
+            System.out.print("Выберите таблицу: \n" +
+                    "1. Снег\n" +
+                    "2. Дождь\n" +
+                    "3. Снегопад \n" +
+                    "Ответ: ");
+            int answer = sc.nextInt();
+            System.out.print("\nУкажите номер ряда: ");
+            int numRow = sc.nextInt();
+            switch (answer) {
+                case 1:
+                    try {
+                        PreparedStatement statement = dbWorker.getConnection().prepareStatement(
+                                "delete from weather where snow_id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+
+                        statement = dbWorker.getConnection().prepareStatement(
+                                "delete from snow where id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+                        statement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 2:
+                    try {
+                        PreparedStatement statement = dbWorker.getConnection().prepareStatement(
+                                "delete from weather where rain_id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+                        statement = dbWorker.getConnection().prepareStatement(
+                                "delete from rain where id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+                        statement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 3:
+                    try {
+                        PreparedStatement statement = dbWorker.getConnection().prepareStatement(
+                                "delete from weather where snow_id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+                        statement = dbWorker.getConnection().prepareStatement(
+                                "delete from snow where blizzard_id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+                        statement = dbWorker.getConnection().prepareStatement(
+                                "delete from blizzard where id = (?)");
+                        statement.setInt(1, numRow);
+                        statement.executeUpdate();
+                        statement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                default: System.out.println("Вы не выбрали таблицу!");
+            }
+        }
+        System.out.println("Удалено!");
     }
 
     public static void main(String[] args) {
@@ -220,7 +275,7 @@ public class Runner {
                     "5. Вывести таблицу \"Дождь\" \n" +
                     "6. Вывести таблицу \"Снегопад\" \n \n" +
 
-                    "0. Удалить все данные из всех таблиц \n \n" +
+                    "0. Удалить данные \n \n" +
 
                     "7. Выйти \n \n" +
                             "Ответ: "
@@ -238,20 +293,32 @@ public class Runner {
                     if (table == 3)
                         runner.insertBlizzard(sc, dbWorker, num);
                 }
-            }
-
-            System.out.println();
-            switch (table) {
-                case 4: runner.selectSnow(dbWorker);
+            } else {
+                System.out.println();
+                switch (table) {
+                    case 4:
+                        System.out.println("=================================");
+                        runner.selectSnow(dbWorker);
+                        System.out.println("=================================");
                         break;
-                case 5: runner.selectRain(dbWorker);
+                    case 5:
+                        System.out.println("=================================");
+                        runner.selectRain(dbWorker);
+                        System.out.println("=================================");
                         break;
-                case 6: runner.selectBlizzard(dbWorker);
+                    case 6:
+                        System.out.println("=================================");
+                        runner.selectBlizzard(dbWorker);
+                        System.out.println("=================================");
                         break;
-                case 0: runner.deleteTable(sc, dbWorker);
+                    case 0:
+                        System.out.println("=================================");
+                        runner.delete(sc, dbWorker);
+                        System.out.println("=================================");
                         break;
-                case 7: System.out.println("Пока");
-                    break;
+                    case 7: System.out.println("Пока");
+                        break;
+                }
             }
         } while(table != 7);
     }

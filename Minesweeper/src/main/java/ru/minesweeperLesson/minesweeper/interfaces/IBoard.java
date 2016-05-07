@@ -1,41 +1,57 @@
 package ru.minesweeperLesson.minesweeper.interfaces;
 
 /**
- * Описывает поведения доски.
+ * Описывает поведение доски
  */
+
 public interface IBoard {
 
+    /**
+     * Количество помеченных бомб
+     * @return сколько помеченных бомб
+     */
 	int returnSumBomb();
 
+    /**
+     * Отменяем данную ячейку как помеченную
+     * @param x координата
+     * @param y координата
+     */
 	void cancelSuggestBomb(int x, int y);
 
+	/**
+	 * Помеченная ли ячейка
+	 * @param x координата
+	 * @param y координата
+	 * @return если данная ячейка помечена как бомба, то возвращаем true
+	 */
 	boolean returnSuggestBomb(int x, int y);
 
 	/**
-	 * Рисует доску исходя из входящего массива ячеек.
-	 * @param cells Массив ячеек.
+	 * Рисуем доску исходя из входящего массива ячеек
+	 * @param cells массив ячеек
 	 */
 	void drawBoard(ICell[][] cells);
 
 	/**
-	 * Рисует ячейку.
-	 * @param x позиция по горизонтали.
-	 * @param y позиция по вертикали.
+	 * Рисуем ячейку.
+	 * @param x координата
+	 * @param y координата
 	 */
 	void drawCell(int x, int y);
 
 	/**
-	 * Рисует взрыв всех бомб.
+	 * Рисуем взрыв всех бомб
 	 */
 	void drawBang();
 
 	/**
-	 * Рисует поздравление когда игра выиграна.
+	 * Рисуем поздравление когда игра выиграна
 	 */
 	void drawCongratulate();
 
 	/**
-	 * Рисует проигрыш.
+	 * Рисуем проигрыш
 	 */
 	void drawLosing();
 }

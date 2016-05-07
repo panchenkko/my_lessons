@@ -57,7 +57,6 @@ public class Logic implements ILogic {
         return 5;
     }
 
-    // Если все ячейки кроме одной закрашенные, то возвращаем истину и пользователь проиграл
     @Override
     public boolean finish() {
         boolean finish = false;
@@ -83,7 +82,10 @@ public class Logic implements ILogic {
         return emptyCells;
     }
 
-    // Проверяем, действительно ли первая клетка является закрашенной, а вторая пустой или звездочкой
+    /**
+     * Проверяем, действительно ли первая клетка является закрашенной,
+     * а вторая пустой или неполностью закрашенной
+     */
     @Override
     public boolean checkingCells(int x, int y, int x2, int y2) {
         boolean checking = false;
@@ -104,8 +106,8 @@ public class Logic implements ILogic {
     }
 
     /**
-     * При первом ходе создаем сначала n полностью закрашенные ячейки,
-     * после n не полностью закрашенные
+     * При первом ходе создаем сначала n полностью закрашенных ячеек,
+     * после n не полностью закрашенных
      */
     @Override
     public void paintingCellsInStartGame() {

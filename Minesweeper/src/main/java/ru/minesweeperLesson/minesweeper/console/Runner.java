@@ -3,7 +3,7 @@ package ru.minesweeperLesson.minesweeper.console;
 import ru.minesweeperLesson.minesweeper.BaseAction;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
-import ru.minesweeperLesson.minesweeper.LevelSelection;
+import ru.minesweeperLesson.minesweeper.StandardLogicConsole;
 
 import java.util.InputMismatchException;
 import java.util.Objects;
@@ -12,10 +12,11 @@ import java.util.Scanner;
 /**
  * Запуск игры в консольной версии
  */
+
 public class Runner {
 
     // Генерация поля
-    public void generateField(Scanner sc, LevelSelection level, ICell[][] cells) {
+    public void generateField(Scanner sc, StandardLogicConsole level, ICell[][] cells) {
         final BaseAction action = new BaseAction(level, new ConsoleBoard(), new IGeneratorBoard() {
             @Override
             public ICell[][] generate() {
@@ -30,14 +31,14 @@ public class Runner {
     }
 
     // При первом ходе делаем все клетки пустыми
-    public void generateEmptyCells(LevelSelection level, ICell[][] cells) {
+    public void generateEmptyCells(StandardLogicConsole level, ICell[][] cells) {
         for (int i = 0; i < level.sumRow(); i++)
             for (int j = 0; j < level.sumColumn(); j++)
                 cells[i][j] = new ConsoleCell(false);
     }
 
     // Вводим ряд и столбец. Работает до тех пор, пока пользователь не выиграет или не проиграет
-    public void cycleInput(Scanner sc, BaseAction action, LevelSelection level) {
+    public void cycleInput(Scanner sc, BaseAction action, StandardLogicConsole level) {
         int row = 0, column = 0;
         try {
             do {
@@ -70,7 +71,7 @@ public class Runner {
      */
     public static void main(String[] args) {
         Runner runner = new Runner();
-        LevelSelection level = new LevelSelection();
+        StandardLogicConsole level = new StandardLogicConsole();
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println(
                     "\n<-- ВВЕДИТЕ ЦИФРУ -->\n\n"

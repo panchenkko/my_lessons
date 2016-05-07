@@ -7,6 +7,7 @@ import java.io.PrintStream;
 /**
  * Реализация ячейки в консоли
  */
+
 // PrintStream - входящий поток, какой реализует нашу консоль
 public class ConsoleCell implements ICell<PrintStream> {
 
@@ -186,6 +187,5 @@ public class ConsoleCell implements ICell<PrintStream> {
 
 	@Override
 	public void draw(PrintStream graphics, int x, int y, boolean real) {
-
 	}
 }

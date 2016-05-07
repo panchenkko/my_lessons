@@ -1,6 +1,6 @@
 package Weather;
 
-public class Weather {
+public abstract class Weather {
 
     private int temperature;
     private int atmospherePressure; // Атмосферное давление

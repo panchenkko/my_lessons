@@ -34,7 +34,6 @@ public class GUIBoard extends JPanel implements IBoard {
 		this.cells[x][y].cancelSuggestBomb();
 	}
 
-	// Если ячейка какую выбрал пользователь уже помечена как бомба, то возвращаем true
 	@Override
 	public boolean returnSuggestBomb(int x, int y) {
 		return this.cells[x][y].isSuggestBomb();

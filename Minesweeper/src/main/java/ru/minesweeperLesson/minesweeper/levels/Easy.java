@@ -2,9 +2,6 @@ package ru.minesweeperLesson.minesweeper.levels;
 
 import ru.minesweeperLesson.minesweeper.interfaces.TheNumOfTheField;
 
-/**
- * Реализация легкого уровня игры
- */
 public class Easy implements TheNumOfTheField {
 
 	@Override

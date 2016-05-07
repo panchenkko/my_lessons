@@ -17,7 +17,6 @@ public class ConsoleBoard implements IBoard {
 
 	@Override
 	public void cancelSuggestBomb(int x, int y) {
-
 	}
 
 	@Override

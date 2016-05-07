@@ -11,7 +11,32 @@
 	<name>Clinic Pet Web</name>
 	<url>http://maven.apache.org</url>
 
+    <repositories>
+        <repository>
+            <id>JBoss repository</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
 	<dependencies>
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+        <!-- Библиотека нужна для создания пула соединений -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- End -->
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -58,7 +83,7 @@
 			<artifactId>plexus-utils</artifactId>
 			<version>1.1</version>
 		</dependency>
-		<!-- Библиотека для тестирования java кодв -->
+		<!-- Библиотека для тестирования java кода -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

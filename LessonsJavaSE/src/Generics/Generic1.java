@@ -15,10 +15,6 @@ class Box<T> {
     public String showType() {
         return item.getClass().getName();
     }
-
-//    public <B extends String, K extends Number, M extends Number> B sum(K item1, M item2) {
-//        return item1 + item2;
-//    }
 }
 
 public class Generic1 {

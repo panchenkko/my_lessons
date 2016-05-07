@@ -149,7 +149,6 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 
 	@Override
 	public void draw(Graphics paint, boolean real) {
-
 	}
 
 	@Override
