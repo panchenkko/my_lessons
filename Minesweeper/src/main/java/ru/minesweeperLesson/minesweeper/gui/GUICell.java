@@ -1,6 +1,5 @@
 package ru.minesweeperLesson.minesweeper.gui;
 
-
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 
 import javax.swing.*;

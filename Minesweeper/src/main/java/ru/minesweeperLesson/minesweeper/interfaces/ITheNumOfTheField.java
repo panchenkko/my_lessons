@@ -4,7 +4,7 @@ package ru.minesweeperLesson.minesweeper.interfaces;
  * Содержит количество рядов, столбцов и количество бомб на поле
  */
 
-public interface TheNumOfTheField {
+public interface ITheNumOfTheField {
 
     /**
      * Количество бомб

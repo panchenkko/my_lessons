@@ -4,7 +4,7 @@ import ru.minesweeperLesson.minesweeper.gui.GUICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ILogic;
 import ru.minesweeperLesson.minesweeper.interfaces.ISelectLevel;
-import ru.minesweeperLesson.minesweeper.interfaces.TheNumOfTheField;
+import ru.minesweeperLesson.minesweeper.interfaces.ITheNumOfTheField;
 import ru.minesweeperLesson.minesweeper.levels.Easy;
 import ru.minesweeperLesson.minesweeper.levels.Expert;
 import ru.minesweeperLesson.minesweeper.levels.Medium;
@@ -26,7 +26,7 @@ import java.util.Random;
  *    (в каком уже изменена логика), иначе запускаем стандартную логику находящуюся в этом классе
  */
 
-public class StandardLogicGUI implements ISelectLevel, ILogic, TheNumOfTheField {
+public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField {
 
     private Easy easy;
     private Medium medium;

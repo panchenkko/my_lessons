@@ -1,8 +1,8 @@
 package ru.minesweeperLesson.minesweeper.levels;
 
-import ru.minesweeperLesson.minesweeper.interfaces.TheNumOfTheField;
+import ru.minesweeperLesson.minesweeper.interfaces.ITheNumOfTheField;
 
-public class Medium implements TheNumOfTheField {
+public class Medium implements ITheNumOfTheField {
 
     @Override
     public int sumBombs() {

@@ -6,6 +6,7 @@ import ru.minesweeperLesson.minesweeper.interfaces.*;
 /**
  * Базовые действия пользователя
  */
+
 public class BaseAction implements IUserAction {
 
 	private final IGeneratorBoard generator;

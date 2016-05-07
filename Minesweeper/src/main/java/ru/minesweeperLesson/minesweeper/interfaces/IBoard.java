@@ -1,7 +1,7 @@
 package ru.minesweeperLesson.minesweeper.interfaces;
 
 /**
- * Описывает поведение доски
+ * Описываем поведение доски
  */
 
 public interface IBoard {
