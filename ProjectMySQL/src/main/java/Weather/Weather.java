@@ -1,7 +1,6 @@
 package Weather;
 
 public abstract class Weather {
-
     private int temperature;
     private int atmospherePressure; // Атмосферное давление
 
@@ -27,11 +26,5 @@ public abstract class Weather {
 
     public void setAtmospherePressure(int atmospherePressure) {
         this.atmospherePressure = atmospherePressure;
-    }
-
-    @Override
-    public String toString() {
-        return "Температура: " + temperature +
-                ", Атмосферное давление: " + atmospherePressure;
     }
 }

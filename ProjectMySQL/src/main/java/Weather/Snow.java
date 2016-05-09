@@ -1,17 +1,22 @@
 package Weather;
 
 public class Snow extends Weather {
-
+    private int id;
     private int size;
     private int speed;
 
     public Snow() {
     }
 
-    public Snow(int temperature, int atmospherePressure, int size, int speed) {
+    public Snow(int id, int temperature, int atmospherePressure, int size, int speed) {
         super(temperature, atmospherePressure);
+        this.id = id;
         this.size = size;
         this.speed = speed;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getSize() {
@@ -20,6 +25,10 @@ public class Snow extends Weather {
 
     public int getSpeed() {
         return speed;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setSize(int size) {
@@ -32,7 +41,12 @@ public class Snow extends Weather {
 
     @Override
     public String toString() {
-        return "\033[30mТемпература: " + getTemperature() + "; Атмосферное давление: " + getAtmospherePressure() +
-               "; Размер: " + this.size + " мм; Скорость: " + this.speed + " м/сек\033[0m";
+        return "\033[30m" +
+                this.id + ". " +
+                "Температура: " + getTemperature() + "; " +
+                "Атмосферное давление: " + getAtmospherePressure() + "; " +
+                "Размер: " + this.size + " мм; " +
+                "Скорость: " + this.speed + " м/сек" +
+                "\033[0m";
     }
 }

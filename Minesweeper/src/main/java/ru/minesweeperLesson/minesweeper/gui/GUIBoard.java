@@ -75,6 +75,7 @@ public class GUIBoard extends JPanel implements IBoard {
 		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " Поздравляем! Вы выиграли!");
 	}
 
+	@Override
 	public void drawLosing() {
 		this.repaint();
 		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " К сожалению Вы проиграли");
