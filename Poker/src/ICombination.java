@@ -1,13 +1,13 @@
 
 public interface ICombination {
-    boolean highCards(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean onePair(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean twoPairs(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean threeOfAKind(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean straight(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean flush(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean fullHouse(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean fourOfAKind(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean straightFlush(Cart[] cartsGamer, Cart[] cartsTable);
-    boolean royalFlush(Cart[] cartsGamer, Cart[] cartsTable);
+    boolean highCards(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean onePair(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean twoPairs(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean threeOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean straight(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean flush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean fullHouse(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean fourOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean straightFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean royalFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
 }

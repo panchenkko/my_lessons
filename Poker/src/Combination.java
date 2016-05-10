@@ -1,56 +1,63 @@
-
 public class Combination implements ICombination {
 
     private Table table;
+    private Gamer[] gamers;
+
+    public Combination(Table table, Gamer[] gamers) {
+        this.table = table;
+        this.gamers = gamers;
+    }
 
     @Override
     public boolean highCards(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
-        cartsTable = table.getCart();
+        for (int i = 0; i < cartsTable.length; i++) {
+            gamers[i].setCarts(cartGamer1, cartGamer2);
+        }
         return false;
     }
 
     @Override
-    public boolean onePair(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean onePair(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean twoPairs(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean twoPairs(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean threeOfAKind(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean threeOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean straight(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean straight(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean flush(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean flush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean fullHouse(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean fullHouse(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean fourOfAKind(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean fourOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean straightFlush(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean straightFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 
     @Override
-    public boolean royalFlush(Cart[] cartsGamer, Cart[] cartsTable) {
+    public boolean royalFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
         return false;
     }
 }

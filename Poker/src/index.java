@@ -15,9 +15,7 @@
  *      3.1. Свойства: Cart[] deck = new Cart[52]
  * 4. Класс Table (Стол)
  *      4.1. Свойства: Cart[] cart = new Cart[5], Gamer[] gamers = new Gamer[n]
- * 5. Класс Combination (Комбинации)
+ * 5. Класс other.Combination (Комбинации)
  *      5.1. Методы комбинаций
  */
 
-public class index {
-}
