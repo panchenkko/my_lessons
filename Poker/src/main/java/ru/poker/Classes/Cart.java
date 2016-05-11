@@ -34,4 +34,5 @@ public class Cart {
     public void setInUse(boolean inUse) {
         this.inUse = inUse;
     }
+
 }

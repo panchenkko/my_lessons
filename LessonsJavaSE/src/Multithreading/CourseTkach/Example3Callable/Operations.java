@@ -26,7 +26,7 @@ public class Operations {
 
         ScheduledExecutorService scheduledService = Executors.newSingleThreadScheduledExecutor();
         for (int i = 0; i < 10; i++) {
-            scheduledService.scheduleAtFixedRate();
+//            scheduledService.scheduleAtFixedRate();
         }
     }
 }
