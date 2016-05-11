@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class Runner {
 
     public void generate(final Scanner sc) {
-        final BaseAction action = new BaseAction(new Table(), new IGenerator() {
+        final Table table = new Table();
+        final BaseAction action = new BaseAction(table, new IGenerator() {
             @Override
             public Cart[] generateDeck() {
                 return emptyData();
@@ -22,7 +23,7 @@ public class Runner {
             }
         });
         action.initGame();
-        progress();
+        progress(action, table);
     }
 
     public Cart[] emptyData() {
@@ -56,8 +57,10 @@ public class Runner {
         return gamers;
     }
 
-    public void progress() {
-
+    public void progress(BaseAction action, Table table) {
+        while (table.getSumCartOnTable() != 5) {
+            action.progress();
+        }
     }
 
     public static void main(String[] args) {
