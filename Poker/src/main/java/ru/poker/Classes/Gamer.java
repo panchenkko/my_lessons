@@ -1,5 +1,7 @@
 package ru.poker.Classes;
 
+import java.util.Random;
+
 public class Gamer {
     private int id;
     private String name;
@@ -36,13 +38,6 @@ public class Gamer {
 
     public void setTwoCart(Cart twoCart) {
         this.twoCart = twoCart;
-    }
-
-    public void setCart(String value, String suit, boolean inUse) {
-        if (this.oneCart == null)
-            this.oneCart = new Cart(value, suit, inUse);
-        else if (this.twoCart == null)
-            this.twoCart = new Cart(value, suit, inUse);
     }
 
     public int getId() {
@@ -168,5 +163,26 @@ public class Gamer {
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
+    }
+
+    public void randomCart(Cart[] deck) {
+        nullCarts();
+        while (this.oneCart == null || this.twoCart == null) {
+            int rand = new Random().nextInt(51) + 1;
+            if (!deck[rand].isInUse()) {
+                if (this.oneCart == null) {
+                    initializationOneCarts();
+                    this.oneCart.setSuit(deck[rand].getSuit());
+                    this.oneCart.setValue(deck[rand].getValue());
+                    deck[rand].setInUse(true);
+                }
+                else if (this.twoCart == null) {
+                    initializationTwoCarts();
+                    this.twoCart.setSuit(deck[rand].getSuit());
+                    this.twoCart.setValue(deck[rand].getValue());
+                    deck[rand].setInUse(true);
+                }
+            }
+        }
     }
 }

@@ -1,7 +1,4 @@
 package ru.poker.Classes;
-
-import java.util.Random;
-
 public class Table {
 
     private Gamer[] gamers;
@@ -15,33 +12,6 @@ public class Table {
         this.deck = deck;
     }
 
-    public void loadTalbe() {
-
-    }
-
-    public void randomCart() {
-        for (Gamer gamer : this.gamers) {
-            gamer.nullCarts();
-            while (gamer.getOneCart() == null || gamer.getTwoCart() == null) {
-                int rand = new Random().nextInt(51) + 1;
-                if (!this.deck[rand].isInUse()) {
-                    if (gamer.getOneCart() == null) {
-                        gamer.initializationOneCarts();
-                        gamer.getOneCart().setSuit(this.deck[rand].getSuit());
-                        gamer.getOneCart().setValue(this.deck[rand].getValue());
-                        this.deck[rand].setInUse(true);
-                    }
-                    else if (gamer.getTwoCart() == null) {
-                        gamer.initializationTwoCarts();
-                        gamer.getTwoCart().setSuit(this.deck[rand].getSuit());
-                        gamer.getTwoCart().setValue(this.deck[rand].getValue());
-                        this.deck[rand].setInUse(true);
-                    }
-                }
-            }
-        }
-    }
-
     public void writingDeck() {
         for (int i = 0; i < this.deck.length; i++) {
             this.deck[i].setInUse(false);
@@ -51,7 +21,6 @@ public class Table {
             pike(i);
         }
     }
-
     public void heart(int i) {
         if (i >= 0 && i < 13 ) {
             this.deck[i].setSuit("\033[1;31;40m♥\033[1;40m");
@@ -125,17 +94,38 @@ public class Table {
         }
     }
 
+    public void loadTable() {
+
+    }
+
+    public void randomCart() {
+        for (Gamer gamer : this.gamers) {
+            gamer.randomCart(this.deck);
+//            gamer.nullCarts();
+//            while (gamer.getOneCart() == null || gamer.getTwoCart() == null) {
+//                int rand = new Random().nextInt(51) + 1;
+//                if (!this.deck[rand].isInUse()) {
+//                    if (gamer.getOneCart() == null) {
+//                        gamer.initializationOneCarts();
+//                        gamer.getOneCart().setSuit(this.deck[rand].getSuit());
+//                        gamer.getOneCart().setValue(this.deck[rand].getValue());
+//                        this.deck[rand].setInUse(true);
+//                    }
+//                    else if (gamer.getTwoCart() == null) {
+//                        gamer.initializationTwoCarts();
+//                        gamer.getTwoCart().setSuit(this.deck[rand].getSuit());
+//                        gamer.getTwoCart().setValue(this.deck[rand].getValue());
+//                        this.deck[rand].setInUse(true);
+//                    }
+//                }
+//            }
+        }
+    }
+
     public void inscription(String inscription) {
         System.out.println();
         System.out.println(String.format("============== %s ==============", inscription));
         System.out.println();
-    }
-
-    public void drawDeck() {
-        inscription("КОЛОДА КАРТ");
-        for (Cart cart : this.deck) {
-            System.out.println(cart.getSuit() + " " + cart.getValue());
-        }
     }
 
     public void drawGamers() {
