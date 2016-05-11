@@ -5,7 +5,7 @@ import java.util.Random;
 public class Gamer {
     private int id;
     private String name;
-    private int money; // кошелек
+    private int money; // кошелёк
     private Cart oneCart;
     private Cart twoCart;
     private int store; // выпавшая комбинация (по нумерации)
@@ -19,81 +19,17 @@ public class Gamer {
         this.inGame = inGame;
     }
 
-    public void initializationOneCarts() {
+    public void initializationOneCart() {
         this.oneCart = new Cart("", "", false);
     }
 
-    public void initializationTwoCarts() {
+    public void initializationTwoCart() {
         this.twoCart = new Cart("", "", false);
     }
 
     public void nullCarts() {
         this.oneCart = null;
         this.twoCart = null;
-    }
-
-    public void setOneCart(Cart oneCart) {
-        this.oneCart = oneCart;
-    }
-
-    public void setTwoCart(Cart twoCart) {
-        this.twoCart = twoCart;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
-    public Cart getOneCart() {
-        return oneCart;
-    }
-
-    public Cart getTwoCart() {
-        return twoCart;
-    }
-
-    public int getStore() {
-        return store;
-    }
-
-    public void setStore(int store) {
-        this.store = store;
-    }
-
-    public boolean isInGame() {
-        return inGame;
-    }
-
-    public void setInGame(boolean inGame) {
-        this.inGame = inGame;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
     }
 
     @Override
@@ -105,6 +41,7 @@ public class Gamer {
                 "Карты: \n" + drawCartLogic();
     }
 
+    // Логика вывода карт игрока
     public String drawCartLogic() {
         if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
                 this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
@@ -119,65 +56,63 @@ public class Gamer {
 
     public String drawDoubleSpaceCart() {
         return String.format(
-                "\033[1;40m" + " %s      " + "\033[0m" + "    " + "\033[1;40m" +" %s      "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" +"    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "      %s " + "\033[0m" + "    " + "\033[1;40m" +"      %s "  + "\033[0m" + "\n",
+                "\033[1;40m" + " %s      "  + "\033[0m" + "    " + "\033[1;40m" + " %s      "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "      %s "  + "\033[0m" + "    " + "\033[1;40m" + "      %s "   + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
     }
-
     public String drawOneCart() {
         return String.format(
-                "\033[1;40m" + " %s      " + "\033[0m" + "    " + "\033[1;40m" +" %s       "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" +"    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "      %s " + "\033[0m" + "    " + "\033[1;40m" +"       %s "  + "\033[0m" + "\n",
+                "\033[1;40m" + " %s      "  + "\033[0m" + "    " + "\033[1;40m" + " %s       "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "      %s "  + "\033[0m" + "    " + "\033[1;40m" + "       %s "  + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
     }
-
     public String drawTwoCart() {
         return String.format(
-                "\033[1;40m" + " %s       " + "\033[0m" + "    " + "\033[1;40m" +" %s      "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" +"    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" +"      %s "  + "\033[0m" + "\n",
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " + "\033[1;40m" + " %s      "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" + "      %s "  + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
     }
-
     public String drawCartStandard() {
         return String.format(
-                "\033[1;40m" + " %s       " + "\033[0m" + "    " + "\033[1;40m" +" %s       "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" +"    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         " + "\033[0m" + "    " + "\033[1;40m" +"         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" +"       %s "  + "\033[0m" + "\n",
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " + "\033[1;40m" + " %s       "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
+                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" + "       %s "  + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
     }
 
+    // Раздаем случайные карты игроку
     public void randomCart(Cart[] deck) {
         nullCarts();
         while (this.oneCart == null || this.twoCart == null) {
             int rand = new Random().nextInt(51) + 1;
             if (!deck[rand].isInUse()) {
                 if (this.oneCart == null) {
-                    initializationOneCarts();
+                    initializationOneCart();
                     this.oneCart.setSuit(deck[rand].getSuit());
                     this.oneCart.setValue(deck[rand].getValue());
                     deck[rand].setInUse(true);
                 }
                 else if (this.twoCart == null) {
-                    initializationTwoCarts();
+                    initializationTwoCart();
                     this.twoCart.setSuit(deck[rand].getSuit());
                     this.twoCart.setValue(deck[rand].getValue());
                     deck[rand].setInUse(true);

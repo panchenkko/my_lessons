@@ -22,12 +22,15 @@ public class BaseAction implements Progress {
         this.table.loadDeck(deck);
         final Gamer[] gamers = generator.generateGamers();
         this.table.loadGamers(gamers);
+
         this.table.writingDeck();
+        this.table.randomCartForTable();
+        this.table.randomCartForGamer();
+        this.table.drawTable();
 	}
 
     @Override
     public void progress() {
-        this.table.randomCart();
-        this.table.drawGamers();
+
     }
 }

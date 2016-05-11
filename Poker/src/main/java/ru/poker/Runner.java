@@ -22,7 +22,7 @@ public class Runner {
             }
         });
         action.initGame();
-        action.progress();
+        progress();
     }
 
     public Cart[] emptyData() {
@@ -54,6 +54,10 @@ public class Runner {
             gamers[id] = new Gamer(++id, name, money, true);
         }
         return gamers;
+    }
+
+    public void progress() {
+
     }
 
     public static void main(String[] args) {
