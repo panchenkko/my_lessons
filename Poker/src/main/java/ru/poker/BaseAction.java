@@ -28,10 +28,8 @@ public class BaseAction implements Progress {
 
     @Override
     public void progress() {
-//        System.out.println("============== КОЛОДА КАРТ ==============");
-//        this.table.drawDeck();
+        this.table.drawDeck();
         this.table.randomCart();
-        System.out.println("============== ВСЕ ИГРОКИ ==============");
         this.table.drawGamers();
     }
 }

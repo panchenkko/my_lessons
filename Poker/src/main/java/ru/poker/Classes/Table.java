@@ -15,7 +15,9 @@ public class Table {
         this.deck = deck;
     }
 
+    public void loadTalbe() {
 
+    }
 
     public void randomCart() {
         for (Gamer gamer : this.gamers) {
@@ -123,13 +125,21 @@ public class Table {
         }
     }
 
+    public void inscription(String inscription) {
+        System.out.println();
+        System.out.println(String.format("============== %s ==============", inscription));
+        System.out.println();
+    }
+
     public void drawDeck() {
+        inscription("КОЛОДА КАРТ");
         for (Cart cart : this.deck) {
             System.out.println(cart.getSuit() + " " + cart.getValue());
         }
     }
 
     public void drawGamers() {
+        inscription("ВСЕ ИГРОКИ");
         for (Gamer gamer : this.gamers) {
             System.out.println(gamer.toString());
             System.out.println();
