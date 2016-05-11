@@ -39,7 +39,6 @@ public class StandardLogicConsole implements ISelectLevel, ILogic, ITheNumOfTheF
         return easy = new Easy();
     }
 
-
     @Override
     public Medium medium() {
         return medium = new Medium();

@@ -16,29 +16,29 @@ import java.util.Scanner;
 public class Runner {
 
     // Генерация поля
-    public void generateField(Scanner sc, StandardLogicConsole level, ICell[][] cells) {
-        final BaseAction action = new BaseAction(level, new ConsoleBoard(), new IGeneratorBoard() {
+    public void generateField(Scanner sc, StandardLogicConsole logic, ICell[][] cells) {
+        final BaseAction action = new BaseAction(logic, new ConsoleBoard(), new IGeneratorBoard() {
             @Override
             public ICell[][] generate() {
-                generateEmptyCells(level, cells);
-                System.out.println("Бомб: " + level.sumBombs());
-                System.out.println("Пустых клеток: " + ((level.sumRow() * level.sumColumn()) - level.sumBombs()));
+                generateEmptyCells(logic, cells);
+                System.out.println("Бомб: " + logic.sumBombs());
+                System.out.println("Пустых клеток: " + ((logic.sumRow() * logic.sumColumn()) - logic.sumBombs()));
                 return cells;
             }
         });
         action.initGame();
-        cycleInput(sc, action, level);
+        cycleInput(sc, action, logic);
     }
 
     // При первом ходе делаем все клетки пустыми
-    public void generateEmptyCells(StandardLogicConsole level, ICell[][] cells) {
-        for (int i = 0; i < level.sumRow(); i++)
-            for (int j = 0; j < level.sumColumn(); j++)
+    public void generateEmptyCells(StandardLogicConsole logic, ICell[][] cells) {
+        for (int i = 0; i < logic.sumRow(); i++)
+            for (int j = 0; j < logic.sumColumn(); j++)
                 cells[i][j] = new ConsoleCell(false);
     }
 
     // Вводим ряд и столбец. Работает до тех пор, пока пользователь не выиграет или не проиграет
-    public void cycleInput(Scanner sc, BaseAction action, StandardLogicConsole level) {
+    public void cycleInput(Scanner sc, BaseAction action, StandardLogicConsole logic) {
         int row = 0, column = 0;
         try {
             do {
@@ -51,18 +51,18 @@ public class Runner {
                 } catch (InputMismatchException ignored) {}
                 String answer = sc.next();
                 System.out.println();
-                if (row - 1 < level.sumRow() && column - 1 < level.sumColumn() && row - 1 >= 0 && column - 1 >= 0) {
+                if (row - 1 < logic.sumRow() && column - 1 < logic.sumColumn() && row - 1 >= 0 && column - 1 >= 0) {
                     if (Objects.equals(answer, "да"))
                         action.select(row - 1, column - 1, true);
                     else if (Objects.equals(answer, "нет"))
                         action.select(row - 1, column - 1, false);
                 // Создаем исключение, если пользователь ввел некорректные данные
                 } else throw new ArrayIndexOutOfBoundsException("Такого ряда или столбца не существует!\n");
-            } while (!level.finish() && !level.shouldBang(row - 1, column - 1));
+            } while (!logic.finish() && !logic.shouldBang(row - 1, column - 1));
         // Перехватываем и выводим исключение
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
-            cycleInput(sc, action, level);
+            cycleInput(sc, action, logic);
         }
     }
 
@@ -71,7 +71,7 @@ public class Runner {
      */
     public static void main(String[] args) {
         Runner runner = new Runner();
-        StandardLogicConsole level = new StandardLogicConsole();
+        StandardLogicConsole logic = new StandardLogicConsole();
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println(
                     "\n<-- ВВЕДИТЕ ЦИФРУ -->\n\n"
@@ -82,18 +82,18 @@ public class Runner {
             System.out.print("Ваш выбор: ");
             int answer = sc.nextInt();
             switch (answer) {
-                case 1: level.easy();
+                case 1: logic.easy();
                         break;
-                case 2: level.medium();
+                case 2: logic.medium();
                         break;
-                case 3: level.expert();
+                case 3: logic.expert();
                         break;
                 default:
                     System.out.println("\nВы не выбрали уровень. По умолчанию запущен \"Легкий\"!\n");
-                    level.easy();
+                    logic.easy();
             }
-            ICell[][] cells = level.sizeField();
-            runner.generateField(sc, level, cells);
+            ICell[][] cells = logic.sizeField();
+            runner.generateField(sc, logic, cells);
         } catch (InputMismatchException ime) {
             System.out.println(ime.getMessage());
         }

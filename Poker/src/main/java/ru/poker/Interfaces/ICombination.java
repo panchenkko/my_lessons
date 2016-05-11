@@ -1,3 +1,6 @@
+package ru.poker.Interfaces;
+
+import ru.poker.Classes.Cart;
 
 public interface ICombination {
     boolean highCards(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);

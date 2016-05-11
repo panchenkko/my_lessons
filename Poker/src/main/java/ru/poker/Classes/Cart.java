@@ -1,3 +1,4 @@
+package ru.poker.Classes;
 
 public class Cart {
     private String value;

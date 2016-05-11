@@ -1,3 +1,4 @@
+package ru.poker.Other;
 
 public enum CombinationEnum {
 
