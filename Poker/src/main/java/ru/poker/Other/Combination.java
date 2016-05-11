@@ -1,3 +1,10 @@
+package ru.poker.Other;
+
+import ru.poker.Classes.Cart;
+import ru.poker.Classes.Gamer;
+import ru.poker.Interfaces.ICombination;
+import ru.poker.Classes.Table;
+
 public class Combination implements ICombination {
 
     private Table table;
@@ -10,9 +17,6 @@ public class Combination implements ICombination {
 
     @Override
     public boolean highCards(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable) {
-        for (int i = 0; i < cartsTable.length; i++) {
-            gamers[i].setCarts(cartGamer1, cartGamer2);
-        }
         return false;
     }
 
