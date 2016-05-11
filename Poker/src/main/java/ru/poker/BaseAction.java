@@ -20,17 +20,17 @@ public class BaseAction implements Progress {
 	public void initGame() {
 		final Cart[] deck = generator.generateDeck();
         this.table.loadDeck(deck);
-        this.table.writingDeck(deck);
         final Gamer[] gamers = generator.generateGamers();
         this.table.loadGamers(gamers);
+        this.table.writingDeck();
 //		this.table.drawGamers();
 	}
 
     @Override
     public void progress() {
-        System.out.println("============== КОЛОДА КАРТ ==============");
-        this.table.drawDeck(this.table.getDeck());
-
+//        System.out.println("============== КОЛОДА КАРТ ==============");
+//        this.table.drawDeck();
+        this.table.randomCart();
         System.out.println("============== ВСЕ ИГРОКИ ==============");
         this.table.drawGamers();
     }

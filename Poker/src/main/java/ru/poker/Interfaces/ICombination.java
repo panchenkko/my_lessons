@@ -1,16 +1,17 @@
 package ru.poker.Interfaces;
 
 import ru.poker.Classes.Cart;
+import ru.poker.Classes.Gamer;
 
 public interface ICombination {
-    boolean highCards(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean onePair(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean twoPairs(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean threeOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean straight(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean flush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean fullHouse(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean fourOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean straightFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    boolean royalFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    int highCards(Gamer[] gamers, Cart[] cartsTable);
+    int onePair(Gamer[] gamers, Cart[] cartsTable);
+    int twoPairs(Gamer[] gamers, Cart[] cartsTable);
+    int threeOfAKind(Gamer[] gamers, Cart[] cartsTable);
+    int straight(Gamer[] gamers, Cart[] cartsTable);
+    int flush(Gamer[] gamers, Cart[] cartsTable);
+    int fullHouse(Gamer[] gamers, Cart[] cartsTable);
+    int fourOfAKind(Gamer[] gamers, Cart[] cartsTable);
+    int straightFlush(Gamer[] gamers, Cart[] cartsTable);
+    int royalFlush(Gamer[] gamers, Cart[] cartsTable);
 }
