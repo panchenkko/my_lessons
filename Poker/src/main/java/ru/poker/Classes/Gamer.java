@@ -19,6 +19,18 @@ public class Gamer {
         this.inGame = inGame;
     }
 
+    public int getMoney() {
+        return money;
+    }
+
+    public boolean isInGame() {
+        return inGame;
+    }
+
+    public void setInGame(boolean inGame) {
+        this.inGame = inGame;
+    }
+
     public void initializationOneCart() {
         this.oneCart = new Cart("", "", false);
     }
@@ -32,15 +44,21 @@ public class Gamer {
         this.twoCart = null;
     }
 
-    @Override
-    public String toString() {
+    // Информация об игроке (Вне игры)
+    public String informationAll() {
+        return this.id + ". " + this.name + "\n" +
+                "Кошелёк: " + this.money + "\n" +
+                "Активность игрока: " + this.inGame + "\n";
+    }
+
+    // Информация об игроке во время игры
+    public String informationInGame() {
         return this.id + ". " + this.name + "\n" +
                 "Кошелёк: " + this.money + "\n" +
                 "Сделанная ставка: " + this.rate + "\n" +
                 "Активность игрока: " + this.inGame + "\n" +
                 "Карты: \n" + drawCartLogic();
     }
-
     // Логика вывода карт игрока
     public String drawCartLogic() {
         if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
@@ -102,20 +120,21 @@ public class Gamer {
     // Раздаем случайные карты игроку
     public void randomCart(Cart[] deck) {
         nullCarts();
-        while (this.oneCart == null || this.twoCart == null) {
-            int rand = new Random().nextInt(51) + 1;
-            if (!deck[rand].isInUse()) {
-                if (this.oneCart == null) {
-                    initializationOneCart();
-                    this.oneCart.setSuit(deck[rand].getSuit());
-                    this.oneCart.setValue(deck[rand].getValue());
-                    deck[rand].setInUse(true);
-                }
-                else if (this.twoCart == null) {
-                    initializationTwoCart();
-                    this.twoCart.setSuit(deck[rand].getSuit());
-                    this.twoCart.setValue(deck[rand].getValue());
-                    deck[rand].setInUse(true);
+        if (this.inGame) {
+            while (this.oneCart == null || this.twoCart == null) {
+                int rand = new Random().nextInt(51) + 1;
+                if (!deck[rand].isInUse()) {
+                    if (this.oneCart == null) {
+                        initializationOneCart();
+                        this.oneCart.setSuit(deck[rand].getSuit());
+                        this.oneCart.setValue(deck[rand].getValue());
+                        deck[rand].setInUse(true);
+                    } else if (this.twoCart == null) {
+                        initializationTwoCart();
+                        this.twoCart.setSuit(deck[rand].getSuit());
+                        this.twoCart.setValue(deck[rand].getValue());
+                        deck[rand].setInUse(true);
+                    }
                 }
             }
         }

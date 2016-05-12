@@ -11,6 +11,7 @@ public class Runner {
 
     public void generate(final Scanner sc) {
         final Table table = new Table();
+        table.inputPurse(sc);
         final BaseAction action = new BaseAction(table, new IGenerator() {
             @Override
             public Cart[] generateDeck() {
@@ -58,9 +59,10 @@ public class Runner {
     }
 
     public void progress(BaseAction action, Table table) {
-        while (table.getSumCartOnTable() != 5) {
-            action.progress();
-        }
+//        while (table.getSumCartOnTable() != 5) {
+//            action.progress();
+//        }
+        action.progress();
     }
 
     public static void main(String[] args) {

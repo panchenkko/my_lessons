@@ -1,10 +1,11 @@
 package ru.poker.Classes;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Table {
 
-    private Gamer[] gamers; // Игроков за столом
+    private Gamer[] gamers; // Список игроков
     private Cart[] deck; // Колода
 
     private int sumCartOnTable = 0; // Сколько на данный момент карт на столе
@@ -21,10 +22,6 @@ public class Table {
         return sumCartOnTable;
     }
 
-    public int getPurse() {
-        return purse;
-    }
-
     public void loadGamers(Gamer[] gamers) {
         this.gamers = gamers;
     }
@@ -33,7 +30,7 @@ public class Table {
         this.deck = deck;
     }
 
-    /* Инициализация карточек */
+    // Инициализация карточек
     public void initializationCart1() {
         this.cart1 = new Cart("", "", false);
     }
@@ -50,7 +47,7 @@ public class Table {
         this.cart5 = new Cart("", "", false);
     }
 
-    /* Создаём колоду карт */
+    // Создаём колоду карт
     public void writingDeck() {
         for (int i = 0; i < this.deck.length; i++) {
             this.deck[i].setInUse(false);
@@ -133,10 +130,18 @@ public class Table {
         }
     }
 
-    // Раздаём карты игрокам
-    public void randomCartForGamer() {
+    // Ввод начальной суммы входа за стол
+    public void inputPurse(Scanner sc) {
+        inscription(" ВВЕДИТЕ НАЧАЛЬНУЮ СУММУ ВХОДА ЗА СТОЛ ");
+        System.out.print("Сумма: ");
+        this.purse = sc.nextInt();
+    }
+
+    // Проверка суммы денег у игроков (Достаточна ли она для входа в игру)
+    public void checkMoneyInGamers() {
         for (Gamer gamer : this.gamers) {
-            gamer.randomCart(this.deck);
+            if (gamer.getMoney() < purse)
+                gamer.setInGame(false);
         }
     }
 
@@ -147,20 +152,50 @@ public class Table {
         System.out.println();
     }
 
-    // Вывод всех игроков за столом
-    public void drawGamers() {
+    // Раздаём карты игрокам
+    public void randomCartForGamer() {
+        for (Gamer gamer : this.gamers) {
+            gamer.randomCart(this.deck);
+        }
+    }
+
+    // Игроки вошедшие за стол
+    public void drawGamersInGame() {
+        inscription(" ИГРОКИ ЗА СТОЛОМ ");
+        for (Gamer gamer : this.gamers) {
+            if (gamer.isInGame()) {
+                System.out.println(gamer.informationInGame());
+            }
+        }
+    }
+
+    // Игроки не вошедшие за стол
+    public void drawGamersOutGame() {
+        inscription(" ИГРОКИ НЕ ВОШЕДШИЕ ЗА СТОЛ ");
+        int sum = 0;
+        for (Gamer gamer : this.gamers) {
+            if (!gamer.isInGame()) {
+                sum++;
+                System.out.println(gamer.informationAll());
+            }
+        }
+        if (sum == 0) System.out.println("За стол сели все игроки.");
+    }
+
+    // Вывод всех игроков
+    public void drawAllGamers() {
         inscription(" ВСЕ ИГРОКИ ");
         for (Gamer gamer : this.gamers) {
-            System.out.println(gamer.toString());
+            System.out.println(gamer.informationAll());
             System.out.println();
         }
     }
 
     // Случайные три карточки на стол
-    public void randomCartForTable() {
+    public void random3CartForTable() {
         this.sumCartOnTable = 3;
         int inc = 0;
-        while (inc < sumCartOnTable || this.cart1 == null || this.cart2 == null || this.cart3 == null) {
+        while (inc < this.sumCartOnTable || this.cart1 == null || this.cart2 == null || this.cart3 == null) {
             int rand = new Random().nextInt(51) + 1;
             if (!this.deck[rand].isInUse()) {
                 if (this.cart1 == null) {
@@ -192,24 +227,27 @@ public class Table {
         inscription("============СТОЛ============");
     }
 
-    /* ЛОГИКА ВЫВОДА ДЛЯ ТРЁХ КАРТ */
+    // ЛОГИКА ВЫВОДА ДЛЯ ТРЁХ КАРТ
     public String draw3CartLogic() {
-        if (this.cart1.getValue().equals("10") &&
-            this.cart2.getValue().equals("10") &&
-            this.cart3.getValue().equals("10"))
+        if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
+            this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
+            this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
             return draw3CartFirstSecondThird10();
         else
-        if (this.cart1.getValue().equals("10") && this.cart2.getValue().equals("10"))
+        if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
+            this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
             return draw3CartFirstSecond10();
         else
-        if (this.cart1.getValue().equals("10") && this.cart3.getValue().equals("10"))
+        if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
+            this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
             return draw3CartFirstThird10();
         else
-        if (this.cart2.getValue().equals("10") && this.cart3.getValue().equals("10"))
+        if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
+            this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
             return draw3CartSecondThird10();
-        else if (this.cart1.getValue().equals("10")) return draw3CartFirst10();
-        else if (this.cart2.getValue().equals("10")) return draw3CartSecond10();
-        else if (this.cart3.getValue().equals("10")) return draw3CartThird10();
+        else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m")) return draw3CartFirst10();
+        else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m")) return draw3CartSecond10();
+        else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m")) return draw3CartThird10();
         else return draw3CartStandard();
     }
 

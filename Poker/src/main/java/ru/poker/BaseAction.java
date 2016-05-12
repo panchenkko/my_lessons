@@ -24,13 +24,15 @@ public class BaseAction implements Progress {
         this.table.loadGamers(gamers);
 
         this.table.writingDeck();
-        this.table.randomCartForTable();
-        this.table.randomCartForGamer();
-        this.table.drawTable();
 	}
 
     @Override
     public void progress() {
-
+        this.table.checkMoneyInGamers();
+        this.table.randomCartForGamer();
+        this.table.random3CartForTable();
+        this.table.drawGamersOutGame();
+        this.table.drawTable();
+        this.table.drawGamersInGame();
     }
 }
