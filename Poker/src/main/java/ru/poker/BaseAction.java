@@ -28,11 +28,12 @@ public class BaseAction implements Progress {
 
     @Override
     public void progress() {
-        this.table.checkMoneyInGamers();
-        this.table.randomCartForGamer();
-        this.table.random3CartForTable();
-        this.table.drawGamersOutGame();
-        this.table.drawTable();
-        this.table.drawGamersInGame();
+        this.table.checkMoneyInGamers(); // фильтруем игроков, какие не имеют достаточной суммы для старта
+        this.table.drawGamersOutGame(); // выводим список игроков, у каких недостаточная сумма для входа в игру
+        this.table.initialAmount(); // у всех игроков, какие за столом снимаем стартовую сумму
+        this.table.randomCartForGamer(); // раздаём карты игрокам
+        this.table.random3CartForTable(); // вылаживаем три карты на стол
+        this.table.drawTable(); // рисуем стол
+        this.table.drawGamersInGame(); // рисуем игроков за столом
     }
 }

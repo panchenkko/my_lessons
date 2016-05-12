@@ -19,6 +19,14 @@ public class Gamer {
         this.inGame = inGame;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public int getMoney() {
         return money;
     }
@@ -27,8 +35,20 @@ public class Gamer {
         return inGame;
     }
 
+    public int getRate() {
+        return rate;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
     public void setInGame(boolean inGame) {
         this.inGame = inGame;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     public void initializationOneCart() {
@@ -59,6 +79,30 @@ public class Gamer {
                 "Активность игрока: " + this.inGame + "\n" +
                 "Карты: \n" + drawCartLogic();
     }
+
+    // Раздаем случайные карты игроку
+    public void randomCart(Cart[] deck) {
+        nullCarts();
+        if (this.inGame) {
+            while (this.oneCart == null || this.twoCart == null) {
+                int rand = new Random().nextInt(51) + 1;
+                if (!deck[rand].isInUse()) {
+                    if (this.oneCart == null) {
+                        initializationOneCart();
+                        this.oneCart.setSuit(deck[rand].getSuit());
+                        this.oneCart.setValue(deck[rand].getValue());
+                        deck[rand].setInUse(true);
+                    } else if (this.twoCart == null) {
+                        initializationTwoCart();
+                        this.twoCart.setSuit(deck[rand].getSuit());
+                        this.twoCart.setValue(deck[rand].getValue());
+                        deck[rand].setInUse(true);
+                    }
+                }
+            }
+        }
+    }
+
     // Логика вывода карт игрока
     public String drawCartLogic() {
         if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
@@ -115,28 +159,5 @@ public class Gamer {
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
-    }
-
-    // Раздаем случайные карты игроку
-    public void randomCart(Cart[] deck) {
-        nullCarts();
-        if (this.inGame) {
-            while (this.oneCart == null || this.twoCart == null) {
-                int rand = new Random().nextInt(51) + 1;
-                if (!deck[rand].isInUse()) {
-                    if (this.oneCart == null) {
-                        initializationOneCart();
-                        this.oneCart.setSuit(deck[rand].getSuit());
-                        this.oneCart.setValue(deck[rand].getValue());
-                        deck[rand].setInUse(true);
-                    } else if (this.twoCart == null) {
-                        initializationTwoCart();
-                        this.twoCart.setSuit(deck[rand].getSuit());
-                        this.twoCart.setValue(deck[rand].getValue());
-                        deck[rand].setInUse(true);
-                    }
-                }
-            }
-        }
     }
 }

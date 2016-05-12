@@ -4,17 +4,23 @@ import ru.poker.Classes.Cart;
 
 public class Deck {
 
-    public void loadDeck(Cart[] deck) {
+    private final Cart[] deck;
+
+    public Deck(Cart[] deck) {
+        this.deck = deck;
+    }
+
+    public void writingDeck() {
         for (int i = 0; i < deck.length; i++) {
             deck[i].setInUse(false);
-            heart(deck, i);
-            diamonds(deck, i);
-            club(deck, i);
-            pike(deck, i);
+            heart(i);
+            diamonds(i);
+            club(i);
+            pike(i);
         }
     }
 
-    public void heart(Cart[] deck, int i) {
+    public void heart(int i) {
         if (i >= 0 && i < 13 ) {
             deck[i].setSuit("Черви");
             if (i < 9) {
@@ -32,7 +38,7 @@ public class Deck {
             }
         }
     }
-    public void diamonds(Cart[] deck, int i) {
+    public void diamonds(int i) {
         if (i >= 13 && i < 26 ) {
             deck[i].setSuit("Бубна");
             if (i < 22) {
@@ -50,7 +56,7 @@ public class Deck {
             }
         }
     }
-    public void club(Cart[] deck, int i) {
+    public void club(int i) {
         if (i >= 26 && i < 39 ) {
             deck[i].setSuit("Крести");
             if (i < 35) {
@@ -68,7 +74,7 @@ public class Deck {
             }
         }
     }
-    public void pike(Cart[] deck, int i) {
+    public void pike(int i) {
         if (i >= 39 && i < 52 ) {
             deck[i].setSuit("Крести");
             if (i < 48) {

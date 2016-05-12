@@ -1,7 +1,6 @@
 package ru.poker.Classes;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Table {
 
@@ -11,6 +10,8 @@ public class Table {
     private int sumCartOnTable = 0; // Сколько на данный момент карт на столе
     private int purse; // Сумма входа (Минимальная сумма, какая должна быть у игрока)
 
+    private int reserveMoney = 0; // Минимальная сумма какую должен внести игрок
+
     // Карточки на стол
     private Cart cart1;
     private Cart cart2;
@@ -18,16 +19,32 @@ public class Table {
     private Cart cart4;
     private Cart cart5;
 
-    public int getSumCartOnTable() {
-        return sumCartOnTable;
-    }
-
     public void loadGamers(Gamer[] gamers) {
         this.gamers = gamers;
     }
 
     public void loadDeck(Cart[] deck) {
         this.deck = deck;
+    }
+
+    public Gamer[] getGamers() {
+        return gamers;
+    }
+
+    public int getSumCartOnTable() {
+        return sumCartOnTable;
+    }
+
+    public int getReserveMoney() {
+        return reserveMoney;
+    }
+
+    public void setPurse(int purse) {
+        this.purse = purse;
+    }
+
+    public void setReserveMoney(int reserveMoney) {
+        this.reserveMoney = reserveMoney;
     }
 
     // Инициализация карточек
@@ -130,18 +147,20 @@ public class Table {
         }
     }
 
-    // Ввод начальной суммы входа за стол
-    public void inputPurse(Scanner sc) {
-        inscription(" ВВЕДИТЕ НАЧАЛЬНУЮ СУММУ ВХОДА ЗА СТОЛ ");
-        System.out.print("Сумма: ");
-        this.purse = sc.nextInt();
-    }
-
     // Проверка суммы денег у игроков (Достаточна ли она для входа в игру)
     public void checkMoneyInGamers() {
         for (Gamer gamer : this.gamers) {
-            if (gamer.getMoney() < purse)
+            if (gamer.getMoney() < this.purse)
                 gamer.setInGame(false);
+        }
+    }
+
+    // Снимаем начальную сумму с каждого игрока
+    public void initialAmount() {
+        inscription(" СТАРТОВАЯ СУММА ");
+        for (Gamer gamer : this.gamers) {
+            System.out.println(gamer.getId() + ". " + gamer.getName() + ": " + -this.purse);
+            gamer.setMoney(gamer.getMoney() - this.purse);
         }
     }
 
@@ -191,6 +210,12 @@ public class Table {
         }
     }
 
+    public void drawTable() {
+        inscription("============СТОЛ============");
+        System.out.print(draw3CartLogic());
+        inscription("============СТОЛ============");
+    }
+
     // Случайные три карточки на стол
     public void random3CartForTable() {
         this.sumCartOnTable = 3;
@@ -219,12 +244,6 @@ public class Table {
             }
             inc++;
         }
-    }
-
-    public void drawTable() {
-        inscription("============СТОЛ============");
-        System.out.print(draw3CartLogic());
-        inscription("============СТОЛ============");
     }
 
     // ЛОГИКА ВЫВОДА ДЛЯ ТРЁХ КАРТ

@@ -3,7 +3,7 @@
  *
  * 1. Класс Gamer (Игрок)
  *      1.1. Свойства: int id, String name, int money, Cart oneCart, Cart twoCart, int store(выпавшая комбинация),
- *           boolean inGame, int rate(ставка)
+ *           boolean inGame, int raise(ставка)
  *      1.2. Конструктор: name, money
  *      1.3. getters, setters
  * 2. Класс Cart (Карта)
