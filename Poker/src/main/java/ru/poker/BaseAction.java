@@ -33,7 +33,8 @@ public class BaseAction implements Progress {
         this.table.initialAmount(); // у всех игроков, какие за столом снимаем стартовую сумму
         this.table.randomCartForGamer(); // раздаём карты игрокам
         this.table.random3CartForTable(); // вылаживаем три карты на стол
-        this.table.drawTable(); // рисуем стол
-        this.table.drawGamersInGame(); // рисуем игроков за столом
+//        this.table.drawTable(); // рисуем стол
+//        this.table.drawGamersInGame(); // рисуем игроков за столом
+        this.table.gamerInput();
     }
 }

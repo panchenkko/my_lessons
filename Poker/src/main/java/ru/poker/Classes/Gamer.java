@@ -68,7 +68,7 @@ public class Gamer {
     public String informationAll() {
         return this.id + ". " + this.name + "\n" +
                 "Кошелёк: " + this.money + "\n" +
-                "Активность игрока: " + this.inGame + "\n";
+                "Сделанная ставка: " + this.rate;
     }
 
     // Информация об игроке во время игры
@@ -105,15 +105,16 @@ public class Gamer {
 
     // Логика вывода карт игрока
     public String drawCartLogic() {
-        if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
-                this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
+        if ((this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.oneCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.twoCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return drawDoubleSpaceCart();
-        else if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
-            return drawOneCart();
-        else if (this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
-            return drawTwoCart();
-        else
-            return drawCartStandard();
+        else if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                 this.oneCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return drawOneCart();
+        else if (this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                 this.twoCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return drawTwoCart();
+        else return drawCartStandard();
     }
 
     public String drawDoubleSpaceCart() {

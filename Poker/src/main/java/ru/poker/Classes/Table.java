@@ -1,6 +1,7 @@
 package ru.poker.Classes;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Table {
 
@@ -114,16 +115,16 @@ public class Table {
         if (i >= 26 && i < 39 ) {
             this.deck[i].setSuit("\033[1;37;40m♣\033[1;40m");
             if (i < 35) {
-                this.deck[i].setValue("\033[1;31;40m" + String.valueOf(i - 24) + "\033[1;40m");
+                this.deck[i].setValue("\033[1;37;40m" + String.valueOf(i - 24) + "\033[1;40m");
             }
             switch (i) {
-                case 35: this.deck[i].setValue("\033[1;31;40m" + "В" + "\033[1;40m");
+                case 35: this.deck[i].setValue("\033[1;37;40m" + "В" + "\033[1;40m");
                          break;
-                case 36: this.deck[i].setValue("\033[1;31;40m" + "Д" + "\033[1;40m");
+                case 36: this.deck[i].setValue("\033[1;37;40m" + "Д" + "\033[1;40m");
                          break;
-                case 37: this.deck[i].setValue("\033[1;31;40m" + "К" + "\033[1;40m");
+                case 37: this.deck[i].setValue("\033[1;37;40m" + "К" + "\033[1;40m");
                          break;
-                case 38: this.deck[i].setValue("\033[1;31;40m" + "Т" + "\033[1;40m");
+                case 38: this.deck[i].setValue("\033[1;37;40m" + "Т" + "\033[1;40m");
                          break;
             }
         }
@@ -132,16 +133,16 @@ public class Table {
         if (i >= 39 && i < 52 ) {
             this.deck[i].setSuit("\033[1;37;40m♠\033[1;40m");
             if (i < 48) {
-                this.deck[i].setValue("\033[1;31;40m" + String.valueOf(i - 37) + "\033[1;40m");
+                this.deck[i].setValue("\033[1;37;40m" + String.valueOf(i - 37) + "\033[1;40m");
             }
             switch (i) {
-                case 48: this.deck[i].setValue("\033[1;31;40m" + "В" + "\033[1;40m");
+                case 48: this.deck[i].setValue("\033[1;37;40m" + "В" + "\033[1;40m");
                          break;
-                case 49: this.deck[i].setValue("\033[1;31;40m" + "Д" + "\033[1;40m");
+                case 49: this.deck[i].setValue("\033[1;37;40m" + "Д" + "\033[1;40m");
                          break;
-                case 50: this.deck[i].setValue("\033[1;31;40m" + "К" + "\033[1;40m");
+                case 50: this.deck[i].setValue("\033[1;37;40m" + "К" + "\033[1;40m");
                          break;
-                case 51: this.deck[i].setValue("\033[1;31;40m" + "Т" + "\033[1;40m");
+                case 51: this.deck[i].setValue("\033[1;37;40m" + "Т" + "\033[1;40m");
                          break;
             }
         }
@@ -216,6 +217,110 @@ public class Table {
         inscription("============СТОЛ============");
     }
 
+    // Ход каждого игрока
+    public void gamerInput() {
+        Scanner sc = new Scanner(System.in);
+        boolean raise = false, check = false, call = false, fold = false;
+        int id = 0;
+        int counter = id;
+        do {
+            if (this.gamers[counter].isInGame()) {
+                while (!raise && !check && !call && !fold) {
+                    inscription(" СОСТОЯНИЕ ДРУГИХ ИГРОКОВ ");
+                    for (Gamer gamer : this.gamers) {
+                        if (gamer.getId() != this.gamers[counter].getId()) {
+                            System.out.println(gamer.informationAll());
+                        }
+                    }
+                    inscription(" ИГРОК \"" +
+                            this.gamers[counter].getId() + ". " +
+                            this.gamers[counter].getName() + "\" ");
+                    System.out.println("Ваши деньги: " + this.gamers[counter].getMoney());
+                    System.out.println("Уже поставлено: " + gamers[counter].getRate());
+                    System.out.println("Текущая ставка: " + getReserveMoney());
+                    drawTable();
+                    System.out.println(this.gamers[counter].drawCartLogic());
+                    System.out.println("1. Повысить ставку" + "\n" +
+                            "2. Пропустить" + "\n" +
+                            "3. Поддержать" + "\n" +
+                            "4. Пас" + "\n");
+                    System.out.print("Ответ: ");
+                    int answer = sc.nextInt();
+                    switch (answer) {
+                        case 1: raise = raise(sc, this.gamers[counter]);
+                            id = counter;
+                            break;
+                        case 2: check = check(this.gamers[counter]);
+                            break;
+                        case 3: call = call(this.gamers[counter]);
+                            break;
+                        case 4: fold = fold(this.gamers[counter]);
+                            break;
+                    }
+                }
+                raise = false; check = false; call = false; fold = false;
+            }
+            counter++;
+            if(counter == this.gamers.length) counter = 0;
+        } while (counter != id);
+    }
+
+    // Игрок повышает ставку
+    public boolean raise(Scanner sc, Gamer gamer) {
+        System.out.println("Минимальная ставка: " + (getReserveMoney() + 1));
+        System.out.println();
+        System.out.print("Ставка: ");
+        int rate = sc.nextInt();
+        if (rate > getReserveMoney() - gamer.getRate()) {
+            if (gamer.getMoney() >= rate - gamer.getRate()) {
+                setReserveMoney(rate);
+                gamer.setMoney(gamer.getMoney() - (rate - gamer.getRate()));
+                gamer.setRate(rate);
+                return true;
+            } else {
+                inscription("\033[1;31m" + " НЕ ХВАТАЕТ ДЕНЕГ " + "\033[0m");
+                gamer.setRate(0);
+                return false;
+            }
+        }
+        else {
+            inscription("\033[1;31m" + " ВАША СТАВКА ДОЛЖНА БЫТЬ БОЛЬШЕ " + "\033[0m");
+            gamer.setRate(0);
+            return false;
+        }
+    }
+
+    // Игрок пропускает ход
+    public boolean check(Gamer gamer) {
+        if (gamer.getRate() == getReserveMoney())
+            return true;
+        else {
+            inscription("\033[1;31m" + " ВЫ МОЖЕТЕ ТОЛЬКО ПОДДЕРЖАТЬ СТАВКУ " + "\033[0m");
+            return false;
+        }
+    }
+
+    // Игрок поддерживает ставку
+    public boolean call(Gamer gamer) {
+        if (gamer.getMoney() >= getReserveMoney() - gamer.getRate()) {
+            gamer.setMoney(gamer.getMoney() - (getReserveMoney() - gamer.getRate()));
+            gamer.setRate(getReserveMoney());
+            inscription("\033[1;32m" + " ВЫ УСПЕШНО ПОДДЕРЖАЛИ СТАВКУ " + "\033[0m");
+            return true;
+        } else {
+            inscription("\033[1;31m" + " НЕ ХВАТАЕТ ДЕНЕГ " + "\033[0m");
+            return false;
+        }
+    }
+
+    // Игрок выходит с партии
+    public boolean fold(Gamer gamer) {
+        gamer.setInGame(false);
+        inscription(
+                "\033[1;31m" + " ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ВЫШЕЛ ИЗ ИГРЫ " + "\033[0m");
+        return true;
+    }
+
     // Случайные три карточки на стол
     public void random3CartForTable() {
         this.sumCartOnTable = 3;
@@ -246,27 +351,39 @@ public class Table {
         }
     }
 
-    // ЛОГИКА ВЫВОДА ДЛЯ ТРЁХ КАРТ
+    // ЛОГИКА ВЫВОДА ТРЁХ КАРТ
     public String draw3CartLogic() {
-        if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
-            this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
-            this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3CartFirstSecondThird10();
         else
-        if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
-            this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3CartFirstSecond10();
         else
-        if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
-            this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3CartFirstThird10();
         else
-        if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") &&
-            this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m"))
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+             this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3CartSecondThird10();
-        else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m")) return draw3CartFirst10();
-        else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m")) return draw3CartSecond10();
-        else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m")) return draw3CartThird10();
+        else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                 this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3CartFirst10();
+        else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                 this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3CartSecond10();
+        else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                 this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3CartThird10();
         else return draw3CartStandard();
     }
 
@@ -488,5 +605,20 @@ public class Table {
                 this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
+    }
+
+    public void random4CartForTable() {
+        this.sumCartOnTable = 4;
+        int inc = 0;
+        while (inc < this.sumCartOnTable || this.cart4 == null) {
+            int rand = new Random().nextInt(51) + 1;
+            if (!this.deck[rand].isInUse()) {
+                initializationCart4();
+                this.cart4.setSuit(this.deck[rand].getSuit());
+                this.cart4.setValue(this.deck[rand].getValue());
+                this.deck[rand].setInUse(true);
+            }
+            inc++;
+        }
     }
 }
