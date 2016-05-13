@@ -24,7 +24,7 @@ public class Runner {
             }
         });
         action.initGame();
-        progress(sc ,action, table);
+        action.progress();
     }
 
     // Заполняем колоду пустыми значениями
@@ -58,30 +58,11 @@ public class Runner {
         return gamers;
     }
 
-    // Ввод начальной суммы входа за стол
+    // Ввод стартовой суммы на столе (снятие при каждой партии)
     public void inputPurse(Scanner sc, Table table) {
-        table.inscription(" ВВЕДИТЕ НАЧАЛЬНУЮ СУММУ ВХОДА ЗА СТОЛ ");
+        table.inscription(" ВВЕДИТЕ СТАРТОВУЮ СУММУ ВХОДА ЗА СТОЛ ");
         System.out.print("Сумма: ");
         table.setPurse(sc.nextInt());
-    }
-
-    // Дисквалификация игрока, в случае если не хватает денег для резервной ставки
-    public boolean disqualification(Table table, Gamer gamer) {
-        if (gamer.getMoney() < table.getReserveMoney()) {
-            gamer.setInGame(false);
-            table.inscription("\033[1;31m" +
-                    " ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ДИСКВАЛИФИЦИРОВАН " + "\033[0m");
-            return true;
-        }
-        return false;
-    }
-
-    public void progress(Scanner sc, BaseAction action, Table table) {
-        action.progress();
-//        while (table.getSumCartOnTable() != 5) {
-
-//            action.progress();
-//        }
     }
 
     public static void main(String[] args) {

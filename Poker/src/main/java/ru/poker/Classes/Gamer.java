@@ -31,6 +31,18 @@ public class Gamer {
         return money;
     }
 
+    public Cart getOneCart() {
+        return oneCart;
+    }
+
+    public Cart getTwoCart() {
+        return twoCart;
+    }
+
+    public int getStore() {
+        return store;
+    }
+
     public boolean isInGame() {
         return inGame;
     }
@@ -41,6 +53,10 @@ public class Gamer {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void setStore(int store) {
+        this.store = store;
     }
 
     public void setInGame(boolean inGame) {
@@ -64,7 +80,7 @@ public class Gamer {
         this.twoCart = null;
     }
 
-    // Информация об игроке (Вне игры)
+    // Краткая информация об игроке
     public String informationAll() {
         return this.id + ". " + this.name + "\n" +
                 "Кошелёк: " + this.money + "\n" +

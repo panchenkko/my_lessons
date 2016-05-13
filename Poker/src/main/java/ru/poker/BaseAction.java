@@ -30,11 +30,14 @@ public class BaseAction implements Progress {
     public void progress() {
         this.table.checkMoneyInGamers(); // фильтруем игроков, какие не имеют достаточной суммы для старта
         this.table.drawGamersOutGame(); // выводим список игроков, у каких недостаточная сумма для входа в игру
-        this.table.initialAmount(); // у всех игроков, какие за столом снимаем стартовую сумму
+        this.table.initialAmount(); // у всех игроков за столом снимаем стартовую сумму
         this.table.randomCartForGamer(); // раздаём карты игрокам
-        this.table.random3CartForTable(); // вылаживаем три карты на стол
-//        this.table.drawTable(); // рисуем стол
-//        this.table.drawGamersInGame(); // рисуем игроков за столом
-        this.table.gamerInput();
+        this.table.random3CartForTable(); // получаем первые 3 случайные карты из колоды
+        this.table.gamerInput(); // обработка хода каждого игрока за столом
+        this.table.random4CartForTable(); // получаем 4-ю случайную карту из колоды
+        this.table.gamerInput(); // обработка хода каждого игрока за столом
+        this.table.random5CartForTable(); // получаем 5-ю случайную карту из колоды
+        this.table.gamerInput(); // обработка хода каждого игрока за столом
+        this.table.drawGamersInGame();
     }
 }

@@ -1,5 +1,7 @@
 package ru.poker.Classes;
 
+import ru.poker.*;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,6 +14,11 @@ public class Table {
     private int purse; // Сумма входа (Минимальная сумма, какая должна быть у игрока)
 
     private int reserveMoney = 0; // Минимальная сумма какую должен внести игрок
+
+    private int bank = 0; // Банк (достанется игроку, какой выиграл партию)
+    private int numCircle = 0; // Номер круга игры (определяет сколько карточек отображать на столе)
+
+    private Combination combination;
 
     // Карточки на стол
     private Cart cart1;
@@ -163,6 +170,7 @@ public class Table {
             System.out.println(gamer.getId() + ". " + gamer.getName() + ": " + -this.purse);
             gamer.setMoney(gamer.getMoney() - this.purse);
         }
+        ThreadSleep.sleep(2000);
     }
 
     // Титулка
@@ -200,21 +208,48 @@ public class Table {
             }
         }
         if (sum == 0) System.out.println("За стол сели все игроки.");
+        ThreadSleep.sleep(2000);
     }
 
-    // Вывод всех игроков
-    public void drawAllGamers() {
-        inscription(" ВСЕ ИГРОКИ ");
+    public void clearRateGamers() {
         for (Gamer gamer : this.gamers) {
-            System.out.println(gamer.informationAll());
-            System.out.println();
+            gamer.setRate(0);
         }
     }
 
-    public void drawTable() {
-        inscription("============СТОЛ============");
-        System.out.print(draw3CartLogic());
-        inscription("============СТОЛ============");
+    // Проверка на то, что ещё как минимум 2 игрока могут продолжать ставить ставки
+    public int checkNotTheEndGame() {
+        int inc = 0;
+        for (Gamer gamer : this.gamers) {
+            if (gamer.isInGame() && (gamer.getMoney() > 0 || gamer.getRate() > 0))
+                inc++;
+        }
+        return inc;
+    }
+
+    public void checkCombination(Gamer gamer) {
+        if (this.combination.royalFlush(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5))
+            gamer.setStore(10);
+        if (this.combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5))
+            gamer.setStore(9);
+        /**
+         * Потом проводим сравнение. У какого игрока больше нумерация, тот и выиграл!
+         */
+    }
+
+    public void finish() {
+        if (checkNotTheEndGame() >= 2) {
+            for (Gamer gamer : this.gamers) {
+                checkCombination(gamer)
+            }
+            int larger = 0;
+            for (Gamer gamer : this.gamers) {
+                if (gamer.getStore() > larger)
+                    larger = gamer.getStore();
+            }
+        }
     }
 
     // Ход каждого игрока
@@ -225,44 +260,65 @@ public class Table {
         int counter = id;
         do {
             if (this.gamers[counter].isInGame()) {
-                while (!raise && !check && !call && !fold) {
-                    inscription(" СОСТОЯНИЕ ДРУГИХ ИГРОКОВ ");
-                    for (Gamer gamer : this.gamers) {
-                        if (gamer.getId() != this.gamers[counter].getId()) {
-                            System.out.println(gamer.informationAll());
+                if (checkNotTheEndGame() >= 2) {
+                    while (!raise && !check && !call && !fold) {
+                        inscription(" СОСТОЯНИЕ ДРУГИХ ИГРОКОВ ");
+                        for (Gamer gamer : this.gamers) {
+                            if (gamer.getId() != this.gamers[counter].getId()) {
+                                System.out.println(gamer.informationAll());
+                            }
+                        }
+                        ThreadSleep.sleep(2000);
+                        drawTable();
+                        inscription(" ИГРОК \"" +
+                                this.gamers[counter].getId() + ". " +
+                                this.gamers[counter].getName() + "\" ");
+                        System.out.println("Ваши деньги: " + this.gamers[counter].getMoney());
+                        System.out.println("Уже поставлено: " + gamers[counter].getRate());
+                        System.out.println("Текущая ставка: " + getReserveMoney());
+                        System.out.println();
+                        System.out.println(this.gamers[counter].drawCartLogic());
+                        System.out.println("1. Повысить ставку" + "\n" +
+                                           "2. Пропустить" + "\n" +
+                                           "3. Поддержать" + "\n" +
+                                           "4. Пас" + "\n");
+                        System.out.print("Ответ: ");
+                        int answer = sc.nextInt();
+                        switch (answer) {
+                            case 1: raise = raise(sc, this.gamers[counter]);
+                                    id = counter;
+                                    break;
+                            case 2: check = check(this.gamers[counter]);
+                                    break;
+                            case 3: call = call(this.gamers[counter]);
+                                    break;
+                            case 4: fold = fold(this.gamers[counter]);
+                                    break;
                         }
                     }
-                    inscription(" ИГРОК \"" +
-                            this.gamers[counter].getId() + ". " +
-                            this.gamers[counter].getName() + "\" ");
-                    System.out.println("Ваши деньги: " + this.gamers[counter].getMoney());
-                    System.out.println("Уже поставлено: " + gamers[counter].getRate());
-                    System.out.println("Текущая ставка: " + getReserveMoney());
-                    drawTable();
-                    System.out.println(this.gamers[counter].drawCartLogic());
-                    System.out.println("1. Повысить ставку" + "\n" +
-                            "2. Пропустить" + "\n" +
-                            "3. Поддержать" + "\n" +
-                            "4. Пас" + "\n");
-                    System.out.print("Ответ: ");
-                    int answer = sc.nextInt();
-                    switch (answer) {
-                        case 1: raise = raise(sc, this.gamers[counter]);
-                            id = counter;
-                            break;
-                        case 2: check = check(this.gamers[counter]);
-                            break;
-                        case 3: call = call(this.gamers[counter]);
-                            break;
-                        case 4: fold = fold(this.gamers[counter]);
-                            break;
+                } else {
+                    while (this.numCircle <= 2) {
+                        drawTable();
+                        this.numCircle++;
                     }
+                    for (Gamer gamer : this.gamers) {
+                        if (gamer.isInGame() && gamer.getMoney() > 0) {
+                            inscription("\033[1;32m" + " ИГРОК \"" +
+                                    this.gamers[counter].getId() + ". " +
+                                    this.gamers[counter].getName() + "\" ЗАБИРАЕТ ВСЮ СУММУ " + "\033[0m");
+                            gamer.setMoney(gamer.getMoney() + this.bank);
+                            this.bank = 0;
+                        }
+                    }
+                    return;
                 }
                 raise = false; check = false; call = false; fold = false;
             }
             counter++;
-            if(counter == this.gamers.length) counter = 0;
+            if (counter == this.gamers.length) counter = 0;
         } while (counter != id);
+        clearRateGamers();
+        this.numCircle++;
     }
 
     // Игрок повышает ставку
@@ -276,16 +332,19 @@ public class Table {
                 setReserveMoney(rate);
                 gamer.setMoney(gamer.getMoney() - (rate - gamer.getRate()));
                 gamer.setRate(rate);
+                this.bank += gamer.getRate();
                 return true;
             } else {
                 inscription("\033[1;31m" + " НЕ ХВАТАЕТ ДЕНЕГ " + "\033[0m");
                 gamer.setRate(0);
+                ThreadSleep.sleep(1500);
                 return false;
             }
         }
         else {
             inscription("\033[1;31m" + " ВАША СТАВКА ДОЛЖНА БЫТЬ БОЛЬШЕ " + "\033[0m");
             gamer.setRate(0);
+            ThreadSleep.sleep(1500);
             return false;
         }
     }
@@ -296,6 +355,7 @@ public class Table {
             return true;
         else {
             inscription("\033[1;31m" + " ВЫ МОЖЕТЕ ТОЛЬКО ПОДДЕРЖАТЬ СТАВКУ " + "\033[0m");
+            ThreadSleep.sleep(1500);
             return false;
         }
     }
@@ -304,11 +364,14 @@ public class Table {
     public boolean call(Gamer gamer) {
         if (gamer.getMoney() >= getReserveMoney() - gamer.getRate()) {
             gamer.setMoney(gamer.getMoney() - (getReserveMoney() - gamer.getRate()));
+            this.bank += getReserveMoney() - gamer.getRate();
             gamer.setRate(getReserveMoney());
             inscription("\033[1;32m" + " ВЫ УСПЕШНО ПОДДЕРЖАЛИ СТАВКУ " + "\033[0m");
+            ThreadSleep.sleep(1500);
             return true;
         } else {
             inscription("\033[1;31m" + " НЕ ХВАТАЕТ ДЕНЕГ " + "\033[0m");
+            ThreadSleep.sleep(1500);
             return false;
         }
     }
@@ -318,10 +381,46 @@ public class Table {
         gamer.setInGame(false);
         inscription(
                 "\033[1;31m" + " ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ВЫШЕЛ ИЗ ИГРЫ " + "\033[0m");
+        ThreadSleep.sleep(1500);
         return true;
     }
 
-    // Случайные три карточки на стол
+    // Дисквалификация игрока, в случае если не хватает денег для резервной ставки
+    public boolean disqualification(Table table, Gamer gamer) {
+        if (gamer.getMoney() < table.getReserveMoney()) {
+            gamer.setInGame(false);
+            table.inscription("\033[1;31m" +
+                    " ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ДИСКВАЛИФИЦИРОВАН " + "\033[0m");
+            ThreadSleep.sleep(1500);
+            return true;
+        }
+        return false;
+    }
+
+    public void drawTable() {
+        if (this.numCircle <= 2) {
+            inscription("============СТОЛ============");
+            switch (this.numCircle) {
+                case 0: System.out.print(draw3CartLogic());
+                        break;
+                case 1: if (this.cart4 == null) random4CartForTable();
+                        System.out.print(draw4CartLogic());
+                        break;
+                case 2: if (this.cart5 == null) random5CartForTable();
+                        System.out.println(draw5CartLogic());
+                        break;
+            }
+            inscription("============СТОЛ============");
+            System.out.println("ТЕКУЩИЙ БАНК: " + this.bank);
+            inscription("============================");
+            ThreadSleep.sleep(2000);
+        } else {
+            this.numCircle = 0;
+            inscription("\033[1;32m" + " КОНЕЦ ПАРТИИ " + "\033[0m");
+        }
+    }
+
+    // Случайные карты на стол
     public void random3CartForTable() {
         this.sumCartOnTable = 3;
         int inc = 0;
@@ -350,6 +449,34 @@ public class Table {
             inc++;
         }
     }
+    public void random4CartForTable() {
+        this.sumCartOnTable = 4;
+        int inc = 0;
+        while (inc < this.sumCartOnTable || this.cart4 == null) {
+            int rand = new Random().nextInt(51) + 1;
+            if (!this.deck[rand].isInUse()) {
+                initializationCart4();
+                this.cart4.setSuit(this.deck[rand].getSuit());
+                this.cart4.setValue(this.deck[rand].getValue());
+                this.deck[rand].setInUse(true);
+            }
+            inc++;
+        }
+    }
+    public void random5CartForTable() {
+        this.sumCartOnTable = 5;
+        int inc = 0;
+        while (inc < this.sumCartOnTable || this.cart5 == null) {
+            int rand = new Random().nextInt(51) + 1;
+            if (!this.deck[rand].isInUse()) {
+                initializationCart5();
+                this.cart5.setSuit(this.deck[rand].getSuit());
+                this.cart5.setValue(this.deck[rand].getValue());
+                this.deck[rand].setInUse(true);
+            }
+            inc++;
+        }
+    }
 
     // ЛОГИКА ВЫВОДА ТРЁХ КАРТ
     public String draw3CartLogic() {
@@ -359,35 +486,35 @@ public class Table {
              this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
             (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
-            return draw3CartFirstSecondThird10();
+            return draw3Cart_123_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
             (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
-            return draw3CartFirstSecond10();
+            return draw3Cart_12_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
             (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
-            return draw3CartFirstThird10();
+            return draw3Cart_13_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
             (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
              this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
-            return draw3CartSecondThird10();
+            return draw3Cart_23_10();
         else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3CartFirst10();
+                 this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_1_10();
         else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3CartSecond10();
+                 this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_2_10();
         else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3CartThird10();
+                 this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_3_10();
         else return draw3CartStandard();
     }
 
-    public String draw3CartFirstSecondThird10() {
+    public String draw3Cart_123_10() {
         return String.format(
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -414,64 +541,9 @@ public class Table {
                 this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
     }
-
-    public String draw3CartSecondThird10() {
+    public String draw3Cart_12_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
-                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
-    }
-    public String draw3CartFirstThird10() {
-        return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
-                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
-    }
-    public String draw3CartFirstSecond10() {
-        return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
 
@@ -496,8 +568,115 @@ public class Table {
                 this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
     }
+    public String draw3Cart_13_10() {
+        return String.format(
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
 
-    public String draw3CartThird10() {
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
+    }
+    public String draw3Cart_23_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
+    }
+    public String draw3Cart_1_10() {
+        return String.format(
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
+    }
+    public String draw3Cart_2_10() {
+        return String.format(
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
+    }
+    public String draw3Cart_3_10() {
         return String.format(
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -524,61 +703,6 @@ public class Table {
                 this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
     }
-    public String draw3CartSecond10() {
-        return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
-                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
-    }
-    public String draw3CartFirst10() {
-        return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
-                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
-                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "    " +
-                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
-
-                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
-                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(),
-                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
-                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
-    }
-
     public String draw3CartStandard() {
         return String.format(
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -607,18 +731,1883 @@ public class Table {
                 this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue());
     }
 
-    public void random4CartForTable() {
-        this.sumCartOnTable = 4;
-        int inc = 0;
-        while (inc < this.sumCartOnTable || this.cart4 == null) {
-            int rand = new Random().nextInt(51) + 1;
-            if (!this.deck[rand].isInUse()) {
-                initializationCart4();
-                this.cart4.setSuit(this.deck[rand].getSuit());
-                this.cart4.setValue(this.deck[rand].getValue());
-                this.deck[rand].setInUse(true);
-            }
-            inc++;
-        }
+    // ЛОГИКА ВЫВОДА ЧЕТЫРЁХ КАРТ
+    public String draw4CartLogic() {
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_1234_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_123_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_124_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_134_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_234_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_12_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_13_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_14_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_23_10();
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_24_10();
+        if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw4Cart_34_10();
+        else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw4Cart_1_10();
+        else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw4Cart_2_10();
+        else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw4Cart_3_10();
+        else if (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw4Cart_4_10();
+        else return draw4CartStandard();
+    }
+
+    public String draw4Cart_1234_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_123_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_124_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_134_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_234_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_12_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_13_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_14_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_23_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_24_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_34_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_1_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_2_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_3_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4Cart_4_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+    public String draw4CartStandard() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue());
+    }
+
+    // ЛОГИКА ВЫВОДА ПЯТИ КАРТ
+    public String draw5CartLogic() {
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_2345_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_1345_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_1245_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_1235_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_1234_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_123_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_124_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_125_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_134_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_135_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_145_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_234_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_235_10();
+        else
+        if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_345_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_12_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_13_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_14_10();
+        else
+        if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_15_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_23_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_24_10();
+        else
+        if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_25_10();
+        else
+        if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_34_10();
+        else
+        if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_35_10();
+        else
+        if ((this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+            return draw5Cart_45_10();
+        else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_1_10();
+        else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_2_10();
+        else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_3_10();
+        else if (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_4_10();
+        else if (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_5_10();
+        else return draw5CartStandard();
+    }
+
+    public String draw5Cart_2345_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_1345_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_1245_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_1235_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_1234_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_123_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_124_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_125_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_134_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_135_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_145_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_234_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_235_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_345_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_12_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_13_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_14_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_15_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_23_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_24_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_25_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_34_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_35_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_45_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_1_10() {
+        return String.format(
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_2_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_3_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_4_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5Cart_5_10() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "      %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
+    }
+    public String draw5CartStandard() {
+        return String.format(
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                        "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "    " +
+                        "\033[1;40m" + "         " + "\033[0m" + "\n" +
+
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "\n",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue(),
+                this.cart1.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart2.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart3.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart4.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart5.getSuit(), "\033[1;30;40m♥\033[1;40m",
+                this.cart1.getValue(), this.cart2.getValue(), this.cart3.getValue(), this.cart4.getValue(), this.cart5.getValue());
     }
 }

@@ -4,16 +4,16 @@ import ru.poker.Classes.Cart;
 import ru.poker.Classes.Gamer;
 
 public interface ICombination {
-    int highCards(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int onePair(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int twoPairs(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int threeOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int straight(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int flush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int fullHouse(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int fourOfAKind(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int straightFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
-    int royalFlush(Cart cartGamer1, Cart cartGamer2, Cart[] cartsTable);
+    boolean highCards(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean onePair(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean twoPairs(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean threeOfAKind(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean straight(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean flush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean fullHouse(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean fourOfAKind(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean straightFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
+    boolean royalFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five);
 //    int highCards(Gamer[] gamers, Cart[] cartsTable);
 //    int onePair(Gamer[] gamers, Cart[] cartsTable);
 //    int twoPairs(Gamer[] gamers, Cart[] cartsTable);
