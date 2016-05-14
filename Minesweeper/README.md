@@ -1,4 +1,8 @@
-Сапёр
+Игра "Сапёр"
+===================================
+___________________________________
+
+Графическая версия игры
 -----------------------------------
 ___________________________________
 ___________________________________
@@ -32,3 +36,20 @@ ___________________________________
 ___________________________________
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/expert1.png)
+
+Консольная версия игры
+-----------------------------------
+___________________________________
+___________________________________
+
+Выбор уровня:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/console1.png)
+
+Выбор клетки:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/console2.png)
+
+Генерация открытого поля:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/console3.png)
