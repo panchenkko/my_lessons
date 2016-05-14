@@ -211,7 +211,8 @@ public class Table {
         ThreadSleep.sleep(2000);
     }
 
-    public void clearRateGamers() {
+    public void clearRate() {
+        this.reserveMoney = 0;
         for (Gamer gamer : this.gamers) {
             gamer.setRate(0);
         }
@@ -232,7 +233,7 @@ public class Table {
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5))
             gamer.setStore(10);
         if (this.combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5))
+            this.cart1, this.cart2, this.cart3, this.cart4, this.cart5) != 0)
             gamer.setStore(9);
         /**
          * Потом проводим сравнение. У какого игрока больше нумерация, тот и выиграл!
@@ -242,7 +243,7 @@ public class Table {
     public void finish() {
         if (checkNotTheEndGame() >= 2) {
             for (Gamer gamer : this.gamers) {
-                checkCombination(gamer)
+                checkCombination(gamer);
             }
             int larger = 0;
             for (Gamer gamer : this.gamers) {
@@ -268,7 +269,7 @@ public class Table {
                                 System.out.println(gamer.informationAll());
                             }
                         }
-                        ThreadSleep.sleep(2000);
+                        ThreadSleep.sleep(1500);
                         drawTable();
                         inscription(" ИГРОК \"" +
                                 this.gamers[counter].getId() + ". " +
@@ -317,7 +318,7 @@ public class Table {
             counter++;
             if (counter == this.gamers.length) counter = 0;
         } while (counter != id);
-        clearRateGamers();
+        clearRate();
         this.numCircle++;
     }
 
@@ -367,7 +368,7 @@ public class Table {
             this.bank += getReserveMoney() - gamer.getRate();
             gamer.setRate(getReserveMoney());
             inscription("\033[1;32m" + " ВЫ УСПЕШНО ПОДДЕРЖАЛИ СТАВКУ " + "\033[0m");
-            ThreadSleep.sleep(1500);
+            ThreadSleep.sleep(1000);
             return true;
         } else {
             inscription("\033[1;31m" + " НЕ ХВАТАЕТ ДЕНЕГ " + "\033[0m");
@@ -399,7 +400,7 @@ public class Table {
 
     public void drawTable() {
         if (this.numCircle <= 2) {
-            inscription("============СТОЛ============");
+            inscription("===============СТОЛ==============");
             switch (this.numCircle) {
                 case 0: System.out.print(draw3CartLogic());
                         break;
@@ -407,13 +408,12 @@ public class Table {
                         System.out.print(draw4CartLogic());
                         break;
                 case 2: if (this.cart5 == null) random5CartForTable();
-                        System.out.println(draw5CartLogic());
+                        System.out.print(draw5CartLogic());
                         break;
             }
-            inscription("============СТОЛ============");
+            inscription("===============СТОЛ==============");
             System.out.println("ТЕКУЩИЙ БАНК: " + this.bank);
-            inscription("============================");
-            ThreadSleep.sleep(2000);
+            ThreadSleep.sleep(1500);
         } else {
             this.numCircle = 0;
             inscription("\033[1;32m" + " КОНЕЦ ПАРТИИ " + "\033[0m");
