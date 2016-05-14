@@ -13,7 +13,7 @@ public class ClientCache implements Storage {
 
 	private static final ClientCache INSTANCE = new ClientCache();
 
-    private Storage storage = new HibernateStorage();
+    private Storage storage = new JdbcStorage();
 
     @Override
 	public Collection<Client> valuesFound() {
