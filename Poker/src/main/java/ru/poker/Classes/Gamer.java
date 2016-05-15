@@ -9,6 +9,7 @@ public class Gamer {
     private Cart oneCart;
     private Cart twoCart;
     private int store; // выпавшая комбинация (по нумерации)
+    private String storeName;
     private boolean inGame; // играет ли игрок в этой партии
     private int rate; // ставка
 
@@ -43,6 +44,10 @@ public class Gamer {
         return store;
     }
 
+    public String getStoreName() {
+        return storeName;
+    }
+
     public boolean isInGame() {
         return inGame;
     }
@@ -59,6 +64,10 @@ public class Gamer {
         this.store = store;
     }
 
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
+    }
+
     public void setInGame(boolean inGame) {
         this.inGame = inGame;
     }
@@ -68,11 +77,11 @@ public class Gamer {
     }
 
     public void initializationOneCart() {
-        this.oneCart = new Cart("", "", false);
+        this.oneCart = new Cart("", 0, "", false);
     }
 
     public void initializationTwoCart() {
-        this.twoCart = new Cart("", "", false);
+        this.twoCart = new Cart("", 0, "", false);
     }
 
     public void nullCarts() {
@@ -96,6 +105,15 @@ public class Gamer {
                 "Карты: \n" + drawCartLogic();
     }
 
+    // Краткая информация об игроке
+    public String informationInEndGame() {
+        return this.id + ". " + this.name + "\n" +
+                "Кошелёк: " + this.money + "\n" +
+                "КОМБИНАЦИЯ: " + this.storeName + "\n" +
+                "Активность игрока: " + this.inGame + "\n" +
+                "Карты: \n" + drawCartLogic();
+    }
+
     // Раздаем случайные карты игроку
     public void randomCart(Cart[] deck) {
         nullCarts();
@@ -107,11 +125,13 @@ public class Gamer {
                         initializationOneCart();
                         this.oneCart.setSuit(deck[rand].getSuit());
                         this.oneCart.setValue(deck[rand].getValue());
+                        this.oneCart.setValueNum(deck[rand].getValueNum());
                         deck[rand].setInUse(true);
                     } else if (this.twoCart == null) {
                         initializationTwoCart();
                         this.twoCart.setSuit(deck[rand].getSuit());
                         this.twoCart.setValue(deck[rand].getValue());
+                        this.twoCart.setValueNum(deck[rand].getValueNum());
                         deck[rand].setInUse(true);
                     }
                 }

@@ -18,7 +18,6 @@ public class Table {
     private int bank = 0; // Банк (достанется игроку, какой выиграл партию)
     private int numCircle = 0; // Номер круга игры (определяет сколько карточек отображать на столе)
 
-    private Combination combination;
     private int[] winners; // игроки, какие выиграли партию
 
     // Карточки на стол
@@ -58,19 +57,19 @@ public class Table {
 
     // Инициализация карточек
     public void initializationCart1() {
-        this.cart1 = new Cart("", "", false);
+        this.cart1 = new Cart("", 0, "", false);
     }
     public void initializationCart2() {
-        this.cart2 = new Cart("", "", false);
+        this.cart2 = new Cart("", 0, "", false);
     }
     public void initializationCart3() {
-        this.cart3 = new Cart("", "", false);
+        this.cart3 = new Cart("", 0, "", false);
     }
     public void initializationCart4() {
-        this.cart4 = new Cart("", "", false);
+        this.cart4 = new Cart("", 0, "", false);
     }
     public void initializationCart5() {
-        this.cart5 = new Cart("", "", false);
+        this.cart5 = new Cart("", 0, "", false);
     }
 
     // Создаём колоду карт
@@ -88,15 +87,20 @@ public class Table {
             this.deck[i].setSuit("\033[1;31;40m♥\033[1;40m");
             if (i < 9) {
                 this.deck[i].setValue("\033[1;31;40m" + String.valueOf(i + 2) + "\033[1;40m");
+                this.deck[i].setValueNum(i + 2);
             }
             switch (i) {
                 case 9:  this.deck[i].setValue("\033[1;31;40m" + "В" + "\033[1;40m");
+                         this.deck[i].setValueNum(11);
                          break;
                 case 10: this.deck[i].setValue("\033[1;31;40m" + "Д" + "\033[1;40m");
+                         this.deck[i].setValueNum(12);
                          break;
                 case 11: this.deck[i].setValue("\033[1;31;40m" + "К" + "\033[1;40m");
+                         this.deck[i].setValueNum(13);
                          break;
                 case 12: this.deck[i].setValue("\033[1;31;40m" + "Т" + "\033[1;40m");
+                         this.deck[i].setValueNum(14);
                          break;
             }
         }
@@ -106,15 +110,20 @@ public class Table {
             this.deck[i].setSuit("\033[1;31;40m♦\033[1;40m");
             if (i < 22) {
                 deck[i].setValue("\033[1;31;40m" + String.valueOf(i - 11) + "\033[1;40m");
+                this.deck[i].setValueNum(i - 11);
             }
             switch (i) {
                 case 22: this.deck[i].setValue("\033[1;31;40m" + "В" + "\033[1;40m");
+                         this.deck[i].setValueNum(11);
                          break;
                 case 23: this.deck[i].setValue("\033[1;31;40m" + "Д" + "\033[1;40m");
+                         this.deck[i].setValueNum(12);
                          break;
                 case 24: this.deck[i].setValue("\033[1;31;40m" + "К" + "\033[1;40m");
+                         this.deck[i].setValueNum(13);
                          break;
                 case 25: this.deck[i].setValue("\033[1;31;40m" + "Т" + "\033[1;40m");
+                         this.deck[i].setValueNum(14);
                          break;
             }
         }
@@ -124,15 +133,20 @@ public class Table {
             this.deck[i].setSuit("\033[1;37;40m♣\033[1;40m");
             if (i < 35) {
                 this.deck[i].setValue("\033[1;37;40m" + String.valueOf(i - 24) + "\033[1;40m");
+                this.deck[i].setValueNum(i - 24);
             }
             switch (i) {
                 case 35: this.deck[i].setValue("\033[1;37;40m" + "В" + "\033[1;40m");
+                         this.deck[i].setValueNum(11);
                          break;
                 case 36: this.deck[i].setValue("\033[1;37;40m" + "Д" + "\033[1;40m");
+                         this.deck[i].setValueNum(12);
                          break;
                 case 37: this.deck[i].setValue("\033[1;37;40m" + "К" + "\033[1;40m");
+                         this.deck[i].setValueNum(13);
                          break;
                 case 38: this.deck[i].setValue("\033[1;37;40m" + "Т" + "\033[1;40m");
+                         this.deck[i].setValueNum(14);
                          break;
             }
         }
@@ -142,15 +156,20 @@ public class Table {
             this.deck[i].setSuit("\033[1;37;40m♠\033[1;40m");
             if (i < 48) {
                 this.deck[i].setValue("\033[1;37;40m" + String.valueOf(i - 37) + "\033[1;40m");
+                this.deck[i].setValueNum(i - 37);
             }
             switch (i) {
                 case 48: this.deck[i].setValue("\033[1;37;40m" + "В" + "\033[1;40m");
+                         this.deck[i].setValueNum(11);
                          break;
                 case 49: this.deck[i].setValue("\033[1;37;40m" + "Д" + "\033[1;40m");
+                         this.deck[i].setValueNum(12);
                          break;
                 case 50: this.deck[i].setValue("\033[1;37;40m" + "К" + "\033[1;40m");
+                         this.deck[i].setValueNum(13);
                          break;
                 case 51: this.deck[i].setValue("\033[1;37;40m" + "Т" + "\033[1;40m");
+                         this.deck[i].setValueNum(14);
                          break;
             }
         }
@@ -170,6 +189,7 @@ public class Table {
         for (Gamer gamer : this.gamers) {
             System.out.println(gamer.getId() + ". " + gamer.getName() + ": " + -this.purse);
             gamer.setMoney(gamer.getMoney() - this.purse);
+            this.bank += this.purse;
         }
         ThreadSleep.sleep(2000);
     }
@@ -212,6 +232,14 @@ public class Table {
         ThreadSleep.sleep(2000);
     }
 
+    public void listAllGamers() {
+        inscription(" СПИСОК ВСЕХ ИГРОКОВ ");
+        for (Gamer gamer : this.gamers) {
+            System.out.println(gamer.informationInEndGame());
+        }
+    }
+
+    // Скидываем резервную сумму и ставки всех игроков
     public void clearRate() {
         this.reserveMoney = 0;
         for (Gamer gamer : this.gamers) {
@@ -230,54 +258,74 @@ public class Table {
     }
 
     public void checkCombination(Gamer gamer) {
-        int royalFlush = this.combination.royalFlush(gamer.getOneCart(), gamer.getTwoCart(),
+        final Combination combination = new Combination();
+        int royalFlush = combination.royalFlush(gamer.getOneCart(), gamer.getTwoCart(),
                          this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int straightFlush = this.combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
+        int straightFlush = combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
                             this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int fourOfAKind = this.combination.fourOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
+        int fourOfAKind = combination.fourOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
                           this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int fullHouse = this.combination.fullHouse(gamer.getOneCart(), gamer.getTwoCart(),
+        int fullHouse = combination.fullHouse(gamer.getOneCart(), gamer.getTwoCart(),
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int flush = this.combination.flush(gamer.getOneCart(), gamer.getTwoCart(),
+        int flush = combination.flush(gamer.getOneCart(), gamer.getTwoCart(),
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int straight = this.combination.straight(gamer.getOneCart(), gamer.getTwoCart(),
+        int straight = combination.straight(gamer.getOneCart(), gamer.getTwoCart(),
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int threeOfAKind = this.combination.threeOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
+        int threeOfAKind = combination.threeOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int twoPairs = this.combination.twoPairs(gamer.getOneCart(), gamer.getTwoCart(),
+        int twoPairs = combination.twoPairs(gamer.getOneCart(), gamer.getTwoCart(),
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int onePair = this.combination.onePair(gamer.getOneCart(), gamer.getTwoCart(),
+        int onePair = combination.onePair(gamer.getOneCart(), gamer.getTwoCart(),
                 this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
-        int highCards = this.combination.highCards(gamer.getOneCart(), gamer.getTwoCart());
+        int highCards = combination.highCards(gamer.getOneCart(), gamer.getTwoCart());
 
         /**
          * Проводим сравнение. У какого игрока больше нумерация, тот и выиграл!
          */
-             if (royalFlush > 0) gamer.setStore(royalFlush);
-        else if (straightFlush > 0) gamer.setStore(straightFlush);
-        else if (fourOfAKind > 0) gamer.setStore(fourOfAKind);
-        else if (fullHouse > 0) gamer.setStore(fullHouse);
-        else if (flush > 0) gamer.setStore(flush);
-        else if (straight > 0) gamer.setStore(straight);
-        else if (threeOfAKind > 0) gamer.setStore(threeOfAKind);
-        else if (twoPairs > 0) gamer.setStore(twoPairs);
-        else if (onePair > 0) gamer.setStore(onePair);
-        else if (highCards > 0) gamer.setStore(highCards);
+             if (royalFlush > 0) {
+                 gamer.setStore(royalFlush);
+                 gamer.setStoreName("ФЛЕШ РОЯЛЬ");
+             }
+        else if (straightFlush > 0) {
+                 gamer.setStore(straightFlush);
+                 gamer.setStoreName("СТРИТ ФЛЕШ");
+             }
+        else if (fourOfAKind > 0) {
+                 gamer.setStore(fourOfAKind);
+                 gamer.setStoreName("КАРЕ");
+             }
+        else if (fullHouse > 0) {
+                 gamer.setStore(fullHouse);
+                 gamer.setStoreName("ФУЛЛ ХАУС");
+             }
+        else if (flush > 0) {
+                 gamer.setStore(flush);
+                 gamer.setStoreName("ФЛЕШ");
+             }
+        else if (straight > 0) {
+                 gamer.setStore(straight);
+                 gamer.setStoreName("СТРИТ");
+             }
+        else if (threeOfAKind > 0) {
+                 gamer.setStore(threeOfAKind);
+                 gamer.setStoreName("ТРОЙКА");
+             }
+        else if (twoPairs > 0) {
+                 gamer.setStore(twoPairs);
+                 gamer.setStoreName("ДВЕ ПАРЫ");
+             }
+        else if (onePair > 0) {
+                 gamer.setStore(onePair);
+                 gamer.setStoreName("ПАРА");
+             }
+        else if (highCards > 0) {
+                 gamer.setStore(highCards);
+                 gamer.setStoreName("КИКЕР");
+             }
     }
 
-    public void finish() {
-        if (checkNotTheEndGame() >= 2 && this.numCircle == 2) {
-            // Записываем каждому игроку, какая у него комбинация
-            for (Gamer gamer : this.gamers) {
-                checkCombination(gamer);
-            }
-        }
-        checkMatches();
-        drawWinners();
-    }
-
+    // Получаем id игрока, у какого самая высокая комбинация за столом
     public int returnWinner() {
-        // Получаем id игрока, у какого самая высокая комбинация за столом
         int id = 0;
         for (int i = 1; i < this.gamers.length; i++) {
             if (this.gamers[i].getStore() > this.gamers[id].getStore()) {
@@ -300,8 +348,9 @@ public class Table {
         this.winners = new int[matches];
         int inc = 0;
         for (Gamer gamers : this.gamers) {
-            if (gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
+            if (gamers.getStore() == gamer.getStore()) {
                 this.winners[inc] = gamers.getId();
+                inc++;
             }
         }
 //        int matches = 0;
@@ -313,14 +362,33 @@ public class Table {
 //        }
     }
 
+    // Выводим список победителей
     public void drawWinners() {
         inscription(" ПОБЕДИТЕЛИ ");
+        // Делим банк на всех победителей
+        int shareGain = this.bank / this.winners.length;
         for (int id : this.winners) {
             for (Gamer gamer : this.gamers) {
-                if (gamer.getId() == id)
+                if (gamer.getId() == id) {
                     System.out.println(gamer.getId() + ". " + gamer.getName());
+                    System.out.println("КОМБИНАЦИЯ: " + "\033[1;32m" + gamer.getStoreName() + "\033[0m");
+                    System.out.println("ВЫИГРЫШ: " + gamer.getMoney() + " + " + "\033[1;32m" + shareGain + "\033[0m");
+                    gamer.setMoney(gamer.getMoney() + shareGain);
+                }
             }
         }
+        this.bank = 0;
+    }
+
+    public void finish() {
+        if (this.bank > 0) {
+            // Записываем каждому игроку, какая у него комбинация
+            for (Gamer gamer : this.gamers) {
+                checkCombination(gamer);
+            }
+        }
+        checkMatches();
+        drawWinners();
     }
 
     // Ход каждого игрока
@@ -372,14 +440,12 @@ public class Table {
                         drawTable();
                         this.numCircle++;
                     }
-                    for (Gamer gamer : this.gamers) {
-                        if (gamer.isInGame() && gamer.getMoney() > 0) {
-                            inscription("\033[1;32m" + " ИГРОК \"" +
-                                    this.gamers[counter].getId() + ". " +
-                                    this.gamers[counter].getName() + "\" ЗАБИРАЕТ ВСЮ СУММУ " + "\033[0m");
-                            gamer.setMoney(gamer.getMoney() + this.bank);
-                            this.bank = 0;
-                        }
+                    if (this.gamers[counter].isInGame() && this.gamers[counter].getMoney() > 0) {
+                        inscription("\033[1;32m" + " ИГРОК \"" +
+                                this.gamers[counter].getId() + ". " +
+                                this.gamers[counter].getName() + "\" ЗАБИРАЕТ ВСЮ СУММУ " + "\033[0m");
+                        this.gamers[counter].setMoney(this.gamers[counter].getMoney() + this.bank);
+                        this.bank = 0;
                     }
                     return;
                 }
@@ -388,8 +454,8 @@ public class Table {
             counter++;
             if (counter == this.gamers.length) counter = 0;
         } while (counter != id);
-        clearRate();
         this.numCircle++;
+        if (this.numCircle < 3) clearRate();
     }
 
     // Игрок повышает ставку

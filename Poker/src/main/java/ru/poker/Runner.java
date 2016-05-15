@@ -31,7 +31,7 @@ public class Runner {
     public Cart[] emptyData() {
         Cart[] deck = new Cart[52];
         for (int i = 0; i < deck.length; i++) {
-            deck[i] = new Cart("", "", false);
+            deck[i] = new Cart("", 0, "", false);
         }
         return deck;
     }
