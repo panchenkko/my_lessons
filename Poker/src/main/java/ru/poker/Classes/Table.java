@@ -35,14 +35,6 @@ public class Table {
         this.deck = deck;
     }
 
-    public Gamer[] getGamers() {
-        return gamers;
-    }
-
-    public int getSumCartOnTable() {
-        return sumCartOnTable;
-    }
-
     public int getReserveMoney() {
         return reserveMoney;
     }
@@ -266,22 +258,19 @@ public class Table {
         int fourOfAKind = combination.fourOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
                           this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int fullHouse = combination.fullHouse(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                        this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int flush = combination.flush(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                    this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int straight = combination.straight(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                       this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int threeOfAKind = combination.threeOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                           this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int twoPairs = combination.twoPairs(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                       this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int onePair = combination.onePair(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                      this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int highCards = combination.highCards(gamer.getOneCart(), gamer.getTwoCart());
 
-        /**
-         * Проводим сравнение. У какого игрока больше нумерация, тот и выиграл!
-         */
              if (royalFlush > 0) {
                  gamer.setStore(royalFlush);
                  gamer.setStoreName("ФЛЕШ РОЯЛЬ");
@@ -329,7 +318,7 @@ public class Table {
         int id = 0;
         for (int i = 1; i < this.gamers.length; i++) {
             if (this.gamers[i].getStore() > this.gamers[id].getStore()) {
-                id = this.gamers[i].getId();
+                id = this.gamers[i].getId() - 1;
             }
         }
         return id;

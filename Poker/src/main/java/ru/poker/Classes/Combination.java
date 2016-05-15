@@ -6,398 +6,407 @@ public class Combination implements ICombination {
 
     @Override
     public int highCards(Cart cartGamer1, Cart cartGamer2) {
-        return getCartsValues(cartGamer1, cartGamer2);
-    }
+        if(cartGamer1.getValueNum() > cartGamer2.getValueNum())
+            return cartGamer1.getValueNum();
+        else
+            return cartGamer2.getValueNum();
+    } // Рабочий, проверил
 
     @Override
     public int onePair(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        int rateValue = 0;
-        if (cartGamer1.getValue() == cartGamer2.getValue()) {
-            rateValue = getCartValue(cartGamer1);
-        } else {
-            if(getCartValue(cartGamer1) == getCartsValues(cartsTable[0], cartsTable[1]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[1], cartsTable[2]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[2], cartsTable[3]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[3], cartsTable[4]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[4], cartsTable[0])) {
-                rateValue = getCartValue(cartGamer1);
-            }
-            if(getCartValue(cartGamer2) == getCartsValues(cartsTable[0], cartsTable[1]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[1], cartsTable[2]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[2], cartsTable[3]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[3], cartsTable[4]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[4], cartsTable[0])) {
-                rateValue = getCartValue(cartGamer2);
-            }
+        int counter ;
+        int pairCounter;
+        int retValue = 0;
 
-            if(getCartValue(cartsTable[0]) == getCartsValues(cartsTable[1],cartsTable[2]) ||
-               getCartValue(cartsTable[0]) == getCartsValues(cartsTable[3],cartsTable[4]))
-                rateValue = getCartValue(cartsTable[0]);
-            if(getCartValue(cartsTable[1]) == getCartsValues(cartsTable[0],cartsTable[2]) ||
-               getCartValue(cartsTable[0]) == getCartsValues(cartsTable[3],cartsTable[4]))
-                rateValue = getCartValue(cartsTable[1]);
-            if(getCartValue(cartsTable[2]) == getCartsValues(cartsTable[1],cartsTable[0]) ||
-               getCartValue(cartsTable[0]) == getCartsValues(cartsTable[3],cartsTable[4]))
-                rateValue = getCartValue(cartsTable[2]);
-            if(getCartValue(cartsTable[3]) == getCartsValues(cartsTable[1],cartsTable[2]) ||
-               getCartValue(cartsTable[0]) == getCartsValues(cartsTable[0],cartsTable[4]))
-                rateValue = getCartValue(cartsTable[3]);
-            if(getCartValue(cartsTable[4]) == getCartsValues(cartsTable[1],cartsTable[2]) ||
-               getCartValue(cartsTable[0]) == getCartsValues(cartsTable[3],cartsTable[0]))
-                rateValue = getCartValue(cartsTable[4]);
+        if (cartGamer1.getValueNum() == cartGamer2.getValueNum()) {
+            retValue = cartGamer1.getValueNum();
+        } else {
+            counter = 0;
+            pairCounter = 1;
+            while (counter != cartsTable.length) {
+                if(cartGamer1.getValueNum() == cartsTable[counter].getValueNum())
+                    pairCounter++;
+                counter++;
+            }
+            if(pairCounter == 2)
+                retValue = cartGamer1.getValueNum();
+            // Сравнили первую карту с колодой, дальше сравниваем вторую:
+
+            counter = 0;
+            pairCounter = 1;
+            while (counter != cartsTable.length) {
+                if(cartGamer2.getValueNum() == cartsTable[counter].getValueNum())
+                    pairCounter++;
+                counter++;
+            }
+            if(pairCounter == 2)
+                retValue = cartGamer2.getValueNum();
         }
-        return rateValue;
-    }
+        return retValue;
+    } // Нужно затестить. Если это работает корректно, то комбинации "Трио", "Каре" и "Фулл Хауз" так же работают отлично
 
     @Override
     public int twoPairs(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        int rateValue = 0;
+        int retValue = 0; // returtValue, а не rateValue
+        int counter ;
+        int pairCounter;
         int firstPair = onePair(cartGamer1, cartGamer2, one, two, three, four, five);
+        int buff = 1;
 
-        if (getCartValue(cartGamer1) == getCartValue(cartGamer2) ||
-            getCartValue(cartGamer2) != firstPair) {
-            rateValue = getCartValue(cartGamer1);
-        } else {
-            if(getCartValue(cartGamer1) == getCartsValues(cartsTable[0], cartsTable[1]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[1], cartsTable[2]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[2], cartsTable[3]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[3], cartsTable[4]) ||
-               getCartValue(cartGamer1) == getCartsValues(cartsTable[4], cartsTable[0]) ||
-               getCartValue(cartGamer1) != firstPair) {
-                rateValue = getCartValue(cartGamer1);
+        if(firstPair != 0) {
+            if (cartGamer1.getValueNum() == cartGamer2.getValueNum() ||
+                cartGamer1.getValueNum() != firstPair) {
+            buff = 2;
             }
-            else
-            if(getCartValue(cartGamer2) == getCartsValues(cartsTable[0], cartsTable[1]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[1], cartsTable[2]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[2], cartsTable[3]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[3], cartsTable[4]) ||
-               getCartValue(cartGamer2) == getCartsValues(cartsTable[4], cartsTable[0]) ||
-               getCartValue(cartGamer2) != firstPair) {
-                rateValue = getCartValue(cartGamer2);
+            counter = 0;
+            pairCounter = buff;
+            while (counter != cartsTable.length) {
+                if (cartGamer1.getValueNum() == cartsTable[counter].getValueNum() &&
+                        cartsTable[counter].getValueNum() != firstPair) {
+                    pairCounter++;
+                }
+                counter++;
             }
+            if (pairCounter == 2)
+                retValue = cartGamer1.getValueNum();
+            // Сравнили первую карту с колодой, дальше сравниваем вторую:
+
+            counter = 0;
+            pairCounter = buff;
+            while (counter != cartsTable.length) {
+                if (cartGamer1.getValueNum() == cartsTable[counter].getValueNum() &&
+                        cartsTable[counter].getValueNum() != firstPair) {
+                    pairCounter++;
+                }
+                counter++;
+            }
+            if (pairCounter == 2)
+                retValue = cartGamer1.getValueNum();
         }
-        return rateValue;
+        return retValue;
     }
 
     @Override
     public int threeOfAKind(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        int rateValue = 0;
-        byte counter;
-        byte cartCounter = 1;
-        if(getCartValue(cartGamer1) == getCartValue(cartGamer2)) cartCounter = 2;
+        int counter ;
+        int pairCounter;
+        int buff = 1;
+        int retValue = 0;
 
+        if (cartGamer1.getValueNum() == cartGamer2.getValueNum()) {
+            buff = 2;
+        }
         counter = 0;
-        while(counter != 5) {
-            if(getCartValue(cartsTable[counter]) == getCartValue(cartGamer1)) cartCounter++;
-            if(cartCounter >= 3) rateValue = getCartValue(cartGamer1);
+        pairCounter = buff;
+        while (counter != cartsTable.length) {
+            if(cartGamer1.getValueNum() == cartsTable[counter].getValueNum())
+                pairCounter++;
             counter++;
         }
-
-        if(cartCounter < 3) cartCounter = 0;
+        if(pairCounter == 3) // Поменяли значение с метода "пара" тут
+            retValue = cartGamer1.getValueNum();
+        // Сравнили первую карту с колодой, дальше сравниваем вторую:
 
         counter = 0;
-        while(counter != 5) {
-            if(getCartValue(cartsTable[counter]) == getCartValue(cartGamer2)) cartCounter++;
-            if(cartCounter >= 3) rateValue = getCartValue(cartGamer2);
+        pairCounter = buff;
+        while (counter != cartsTable.length) {
+            if(cartGamer1.getValueNum() == cartsTable[counter].getValueNum())
+                pairCounter++;
             counter++;
         }
+        if(pairCounter == 3) // Поменяли значение с метода "пара" тут
+            retValue = cartGamer1.getValueNum();
 
-        if(cartCounter < 3) cartCounter = 0;
-
-        return rateValue;
-    }
+        return retValue;
+    } // Метод такой же, как и пара, просто заменены константы "2" на "3" в некоторых местах
 
     @Override
     public int straight(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        byte counter = 0;
-        byte cartCounter = 1;
-        int cartValue = getCartValue(cartGamer1);
-        int rateValue = 0;
+        int counter ;
+        int straightCounter;
+        int straightValue;
+        int higtestCart = cartGamer1.getValueNum();
 
-        if (getCartValue(cartGamer2) == getCartValue(cartGamer1) - 1) {
-            cartCounter++;
-            cartValue = getCartValue(cartGamer2);
+        counter = 0;
+        straightCounter = 1;
+        straightValue = cartGamer1.getValueNum();
+        while(counter != cartsTable.length) {
+            if(cartsTable[counter].getValueNum() == (straightValue + 1)) {
+                straightCounter++;
+                straightValue++;
+                higtestCart = cartsTable[counter].getValueNum();
+            }
+            counter++;
         }
 
-        if (getCartValue(cartGamer1) == getCartValue(cartGamer2) - 1) {
-            cartCounter++;
-            cartValue = getCartValue(cartGamer2);
-            rateValue = getCartValue(cartGamer1);
-        }
+        if(cartGamer1.getValueNum() == (cartGamer2.getValueNum() - 1)){
+            straightCounter++;
+            counter = 0;
+            straightValue = cartGamer2.getValueNum();
 
-        if (getCartValue(cartGamer1) == getCartValue(cartGamer2) + 1) rateValue = getCartValue(cartGamer2);
-
-        while (counter != 5) {
-            if (getCartValue(cartsTable[counter]) == cartValue + 1){
-                cartValue = getCartValue(cartsTable[counter]);
-                cartCounter++;
-                counter = 0;
-                rateValue = getCartValue(cartsTable[counter]);
-            } else
+            while(counter != cartsTable.length) {
+                if(cartsTable[counter].getValueNum() == (straightValue - 1)) {
+                    straightCounter++;
+                    straightValue--;
+                }
                 counter++;
+            }
+        } else {
+            counter = 0;
+            straightValue = cartGamer1.getValueNum();
+            while (counter != cartsTable.length) {
+                if (cartsTable[counter].getValueNum() == (straightValue - 1)) {
+                    straightCounter++;
+                    straightValue--;
+                }
+                counter++;
+            }
+
         }
 
-        if (getCartValue(cartGamer2) == getCartValue(cartGamer1)-1) cartValue = getCartValue(cartGamer1);
-        else cartValue = getCartValue(cartGamer2);
+        if(straightCounter >= 5)
+            return higtestCart;
 
-        counter = 4;
-        while (counter != -1) {
-            if (getCartValue(cartsTable[counter]) == cartValue-1){
-                cartValue = getCartValue(cartsTable[counter]);
-                cartCounter++;
-                counter = 4;
-            } else
-                counter--;
+        counter = 0;
+        straightCounter = 1;
+        straightValue = cartGamer2.getValueNum();
+        while(counter != cartsTable.length) {
+            if(cartsTable[counter].getValueNum() == (straightValue + 1)) {
+                straightCounter++;
+                straightValue++;
+                higtestCart = cartsTable[counter].getValueNum();
+            }
+            counter++;
         }
 
-        if (cartCounter < 5)
-            rateValue = 0;
+        if(cartGamer2.getValueNum() == (cartGamer1.getValueNum() - 1)){
+            straightCounter++;
+            counter = 0;
+            straightValue = cartGamer1.getValueNum();
 
-        return rateValue;
-    }
+            while(counter != cartsTable.length) {
+                if(cartsTable[counter].getValueNum() == (straightValue - 1)) {
+                    straightCounter++;
+                    straightValue--;
+                }
+                counter++;
+            }
+        } else {
+            counter = 0;
+            straightValue = cartGamer2.getValueNum();
+            while (counter != cartsTable.length) {
+                if (cartsTable[counter].getValueNum() == (straightValue - 1)) {
+                    straightCounter++;
+                    straightValue--;
+                }
+                counter++;
+            }
+        }
+
+        if(straightCounter >= 5)
+            return higtestCart;
+        else
+            return 0;
+    } // Вот его нужно тестить
 
     @Override
     public int flush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        byte suits = 1;
-        int rateValue = 0;
+        int counter ;
+        int suitCounter;
+        int buff = 0;
+        int retValue = 0;
 
-        rateValue = getCartValue(cartGamer1);
-        if (cartGamer1.getSuit() == cartGamer2.getSuit()) suits = 2;
-        if (cartsTable[0].getSuit() == cartGamer1.getSuit()) {
-            suits++;
-            if (rateValue < getCartValue(cartsTable[0]))
-                rateValue = getCartValue(cartsTable[0]);
+        if (cartGamer1.getSuit() == cartGamer2.getSuit()) {
+            buff = 2;
         }
-        if (cartsTable[1].getSuit() == cartGamer1.getSuit()) {
-            suits++;
-            if (rateValue < getCartValue(cartsTable[1]))
-                rateValue = getCartValue(cartsTable[1]);
+        counter = 0;
+        suitCounter = buff;
+        while (counter != cartsTable.length) {
+            if(cartGamer1.getSuit() == cartsTable[counter].getSuit())
+                suitCounter++;
+            counter++;
         }
-        if (cartsTable[2].getSuit() == cartGamer1.getSuit()) {
-            suits++;
-            if (rateValue < getCartValue(cartsTable[2]))
-                rateValue = getCartValue(cartsTable[2]);
-        }
-        if (cartsTable[3].getSuit() == cartGamer1.getSuit()) {
-            suits++;
-            if (rateValue < getCartValue(cartsTable[3]))
-                rateValue = getCartValue(cartsTable[3]);
-        }
-        if (cartsTable[4].getSuit() == cartGamer1.getSuit()) {
-            suits++;
-            if (rateValue < getCartValue(cartsTable[4]))
-                rateValue = getCartValue(cartsTable[4]);
-        }
+        if(suitCounter >= 5)
+            retValue = cartGamer1.getValueNum();
+        // Сравнили первую карту с колодой, дальше сравниваем вторую:
 
-        if(suits < 5) {
-            if (cartsTable[0].getSuit() == cartGamer2.getSuit()) {
-                suits++;
-                if (rateValue < getCartValue(cartsTable[0]))
-                    rateValue = getCartValue(cartsTable[0]);
-            }
-            if (cartsTable[1].getSuit() == cartGamer2.getSuit()) {
-                suits++;
-                if (rateValue < getCartValue(cartsTable[1]))
-                    rateValue = getCartValue(cartsTable[1]);
-            }
-            if (cartsTable[2].getSuit() == cartGamer2.getSuit()) {
-                suits++;
-                if (rateValue < getCartValue(cartsTable[2]))
-                    rateValue = getCartValue(cartsTable[2]);
-            }
-            if (cartsTable[3].getSuit() == cartGamer2.getSuit()) {
-                suits++;
-                if (rateValue < getCartValue(cartsTable[3]))
-                    rateValue = getCartValue(cartsTable[3]);
-            }
-            if (cartsTable[4].getSuit() == cartGamer2.getSuit()) {
-                suits++;
-                if (rateValue < getCartValue(cartsTable[4]))
-                    rateValue = getCartValue(cartsTable[4]);
-            }
+        counter = 0;
+        suitCounter = buff;
+        while (counter != cartsTable.length) {
+            if(cartGamer2.getSuit() == cartsTable[counter].getSuit())
+                suitCounter++;
+            counter++;
         }
-        if(rateValue < 5) {
-            rateValue = 0;
-        }
+        if(suitCounter >= 5)
+            retValue = cartGamer2.getValueNum();
 
-        return rateValue;
+        return retValue;
     }
 
     @Override
     public int fullHouse(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
-        int rateValue = 0;
+        int retValue = 0;
         if((onePair(cartGamer1, cartGamer2, one, two, three, four, five) > 0) &&
            (threeOfAKind(cartGamer1, cartGamer2, one, two, three, four, five) > 0) ||
           ((twoPairs(cartGamer1, cartGamer2, one, two, three, four, five) > 0) &&
            (threeOfAKind(cartGamer1, cartGamer2, one, two, three, four, five) > 0))) {
-            rateValue = threeOfAKind(cartGamer1, cartGamer2, one, two, three, four, five);
+            if(threeOfAKind(cartGamer1, cartGamer2, one, two, three, four, five)
+                    > twoPairs(cartGamer1, cartGamer2, one, two, three, four, five))
+                retValue = threeOfAKind(cartGamer1, cartGamer2, one, two, three, four, five);
+            else
+                retValue = twoPairs(cartGamer1, cartGamer2, one, two, three, four, five);
         }
-        return rateValue;
+        return retValue;
     }
 
     @Override
     public int fourOfAKind(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        int rateValue = 0;
-        byte counter;
-        byte cartCounter = 1;
+        int counter ;
+        int pairCounter;
+        int buff = 1;
+        int retValue = 0;
 
-        if (getCartValue(cartGamer1) == getCartValue(cartGamer2)) cartCounter = 2;
-
+        if (cartGamer1.getValueNum() == cartGamer2.getValueNum()) {
+            buff = 2;
+        }
         counter = 0;
-        while (counter != 5) {
-            if (getCartValue(cartsTable[counter]) == getCartValue(cartGamer1)) cartCounter++;
-            if (cartCounter >= 4) rateValue = getCartValue(cartGamer1);
+        pairCounter = buff;
+        while (counter != cartsTable.length) {
+            if(cartGamer1.getValueNum() == cartsTable[counter].getValueNum())
+                pairCounter++;
             counter++;
         }
-
-        if (cartCounter < 4) cartCounter = 0;
+        if(pairCounter == 4) // Поменяли значение с метода "пара" тут
+            retValue = cartGamer1.getValueNum();
+        // Сравнили первую карту с колодой, дальше сравниваем вторую:
 
         counter = 0;
-        while (counter != 5) {
-            if (getCartValue(cartsTable[counter]) == getCartValue(cartGamer2)) cartCounter++;
-            if (cartCounter >=4) rateValue = getCartValue(cartGamer2);
+        pairCounter = buff;
+        while (counter != cartsTable.length) {
+            if(cartGamer1.getValueNum() == cartsTable[counter].getValueNum())
+                pairCounter++;
             counter++;
         }
+        if(pairCounter == 4) // Поменяли значение с метода "пара" тут
+            retValue = cartGamer1.getValueNum();
 
-        if (cartCounter < 4) cartCounter = 0;
-
-        return rateValue;
-    }
+        return retValue;
+    } // Метод такой же, как и пара, просто заменены константы "2" на "4" в некоторых местах
 
     @Override
     public int straightFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
         Cart[] cartsTable = {one, two, three, four, five};
-        byte counter = 0;
-        byte cartCounter = 1;
-        int cartValue = getCartValue(cartGamer1);
-        int rateValue = 0;
+        int counter ;
+        int straightCounter;
+        int straightValue;
         String suit;
+        int higtestCart = cartGamer1.getValueNum();
 
+        counter = 0;
+        straightCounter = 1;
+        straightValue = cartGamer1.getValueNum();
         suit = cartGamer1.getSuit();
-        if(getCartValue(cartGamer2) == getCartValue(cartGamer1) - 1 || cartGamer1.getSuit() == cartGamer2.getSuit()) {
-            cartCounter++;
-            cartValue = getCartValue(cartGamer2);
-            rateValue = getCartValue(cartGamer2);
-            suit = cartGamer1.getSuit();
+        while(counter != cartsTable.length) {
+            if(cartsTable[counter].getValueNum() == (straightValue + 1) ||
+                    suit == cartsTable[counter].getSuit()) {
+                straightCounter++;
+                straightValue++;
+                higtestCart = cartsTable[counter].getValueNum();
+            }
+            counter++;
         }
 
-        if(getCartValue(cartGamer1) == getCartValue(cartGamer2) - 1 || cartGamer1.getSuit() == cartGamer2.getSuit()) {
-            cartCounter++;
-            cartValue = getCartValue(cartGamer2);
-            rateValue = getCartValue(cartGamer1);
-            suit = cartGamer1.getSuit();
-        }
+        if(cartGamer1.getValueNum() == (cartGamer2.getValueNum() - 1)
+                || cartGamer2.getSuit() == suit){
+            straightCounter++;
+            counter = 0;
+            straightValue = cartGamer2.getValueNum();
 
-        while(counter != 5) {
-            if(getCartValue(cartsTable[counter]) == cartValue + 1 || cartsTable[counter].getSuit() == suit){
-                cartValue = getCartValue(cartsTable[counter]);
-                cartCounter++;
-                counter = 0;
-                rateValue = getCartValue(cartsTable[counter]);
-            } else
+            while(counter != cartsTable.length) {
+                if(cartsTable[counter].getValueNum() == (straightValue - 1) ||
+                        suit == cartsTable[counter].getSuit()) {
+                    straightCounter++;
+                    straightValue--;
+                }
                 counter++;
+            }
+        } else {
+            counter = 0;
+            straightValue = cartGamer1.getValueNum();
+            while (counter != cartsTable.length) {
+                if (cartsTable[counter].getValueNum() == (straightValue - 1) ||
+                        suit == cartsTable[counter].getSuit()) {
+                    straightCounter++;
+                    straightValue--;
+                }
+                counter++;
+            }
+
         }
 
-        if(getCartValue(cartGamer2) == getCartValue(cartGamer1) - 1) cartValue = getCartValue(cartGamer1);
-        else cartValue = getCartValue(cartGamer2);
+        if(straightCounter >= 5)
+            return higtestCart;
 
-        counter = 4;
-        while(counter != -1) {
-            if(getCartValue(cartsTable[counter]) == cartValue - 1 || cartsTable[counter].getSuit() == suit){
-                cartValue = getCartValue(cartsTable[counter]);
-                cartCounter++;
-                counter = 4;
-            } else
-                counter--;
-        }
-
-        if(cartCounter < 5)
-            rateValue = 0;
-
+        counter = 0;
+        straightCounter = 1;
+        straightValue = cartGamer2.getValueNum();
         suit = cartGamer2.getSuit();
-        if(getCartValue(cartGamer2) == getCartValue(cartGamer1) - 1 || cartGamer1.getSuit() == cartGamer2.getSuit()) {
-            cartCounter++;
-            cartValue = getCartValue(cartGamer2);
-            rateValue = getCartValue(cartGamer2);
-            suit = cartGamer1.getSuit();
+        while(counter != cartsTable.length) {
+            if(cartsTable[counter].getValueNum() == (straightValue + 1) ||
+                    suit == cartsTable[counter].getSuit()) {
+                straightCounter++;
+                straightValue++;
+                higtestCart = cartsTable[counter].getValueNum();
+            }
+            counter++;
         }
 
-        if(getCartValue(cartGamer1) == getCartValue(cartGamer2) - 1 || cartGamer1.getSuit() == cartGamer2.getSuit()) {
-            cartCounter++;
-            cartValue = getCartValue(cartGamer2);
-            rateValue = getCartValue(cartGamer1);
-            suit = cartGamer1.getSuit();
-        }
+        if(cartGamer2.getValueNum() == (cartGamer2.getValueNum() - 1)
+                || cartGamer1.getSuit() == suit){
+            straightCounter++;
+            counter = 0;
+            straightValue = cartGamer1.getValueNum();
 
-        while(counter != 5) {
-            if(getCartValue(cartsTable[counter]) == cartValue + 1 || cartsTable[counter].getSuit() == suit){
-                cartValue = getCartValue(cartsTable[counter]);
-                cartCounter++;
-                counter = 0;
-                rateValue = getCartValue(cartsTable[counter]);
-            } else
+            while(counter != cartsTable.length) {
+                if(cartsTable[counter].getValueNum() == (straightValue - 1) ||
+                        suit == cartsTable[counter].getSuit()) {
+                    straightCounter++;
+                    straightValue--;
+                }
                 counter++;
+            }
+        } else {
+            counter = 0;
+            straightValue = cartGamer2.getValueNum();
+            while (counter != cartsTable.length) {
+                if (cartsTable[counter].getValueNum() == (straightValue - 1) ||
+                        suit == cartsTable[counter].getSuit()) {
+                    straightCounter++;
+                    straightValue--;
+                }
+                counter++;
+            }
+
         }
 
-        if (getCartValue(cartGamer2) == getCartValue(cartGamer1) - 1) cartValue = getCartValue(cartGamer1);
-        else cartValue = getCartValue(cartGamer2);
-
-        counter = 4;
-        while(counter != -1) {
-            if(getCartValue(cartsTable[counter]) == cartValue - 1 || cartsTable[counter].getSuit() == suit){
-                cartValue = getCartValue(cartsTable[counter]);
-                cartCounter++;
-                counter = 4;
-            } else
-                counter--;
-        }
-
-        if (cartCounter < 5) rateValue = 0;
-
-        return rateValue;
+        if(straightCounter >= 5)
+            return higtestCart;
+        else
+            return 0;
     }
 
     @Override
     public int royalFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
-        return straightFlush(cartGamer1, cartGamer2, one, two, three, four, five);
+        if(straightFlush(cartGamer1, cartGamer2, one, two, three, four, five) == 14)
+            return straightFlush(cartGamer1, cartGamer2, one, two, three, four, five);
+        else
+            return 0;
     }
 
-    private byte getCartsValues(Cart cartGamer1, Cart cartGamer2) {
-        byte retValue = 0;
-
-        if(cartGamer1.getValue() == "Т" || cartGamer2.getValue() == "Т") retValue = 14;
-        else
-        if(cartGamer1.getValue() == "К" || cartGamer2.getValue() == "К") retValue = 13;
-        else
-        if(cartGamer1.getValue() == "Д" || cartGamer2.getValue() == "Д") retValue = 12;
-        else
-        if(cartGamer1.getValue() == "В" || cartGamer2.getValue() == "В") retValue = 11;
-        else
-        if(Integer.valueOf(cartGamer1.getValue()) > Integer.valueOf(cartGamer2.getValue()))
-            retValue = Byte.valueOf(cartGamer1.getValue());
-        else retValue = Byte.valueOf(cartGamer1.getValue());
-        return retValue;
-    }
-
-    // Приобразовывает старшые значения карт в числа и передает значение карты в числовом виде
-    private int getCartValue(Cart cart) {
-        int rateValue = 2;
-
-        if (cart.getValue() == "Т") rateValue = 14;
-        else
-        if (cart.getValue() == "К") rateValue = 13;
-        else
-        if (cart.getValue() == "Д") rateValue = 12;
-        else
-        if (cart.getValue() == "В") rateValue = 11;
-        else
-        if (Integer.valueOf(cart.getValue()) <= 10) rateValue = Integer.valueOf(cart.getValue());
-        return rateValue;
-    }
 }
