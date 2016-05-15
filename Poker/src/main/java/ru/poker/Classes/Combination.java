@@ -364,8 +364,8 @@ public class Combination implements ICombination {
     }
 
     @Override
-    public boolean royalFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
-        return straightFlush(cartGamer1, cartGamer2, one, two, three, four, five) == 14;
+    public int royalFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
+        return straightFlush(cartGamer1, cartGamer2, one, two, three, four, five);
     }
 
     private byte getCartsValues(Cart cartGamer1, Cart cartGamer2) {

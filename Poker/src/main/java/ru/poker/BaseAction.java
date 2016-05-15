@@ -39,5 +39,6 @@ public class BaseAction implements Progress {
         this.table.random5CartForTable(); // получаем 5-ю случайную карту из колоды
         this.table.gamerInput(); // обработка хода каждого игрока за столом
         this.table.drawGamersInGame();
+        this.table.finish();
     }
 }

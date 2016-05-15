@@ -19,6 +19,7 @@ public class Table {
     private int numCircle = 0; // Номер круга игры (определяет сколько карточек отображать на столе)
 
     private Combination combination;
+    private int[] winners; // игроки, какие выиграли партию
 
     // Карточки на стол
     private Cart cart1;
@@ -229,26 +230,95 @@ public class Table {
     }
 
     public void checkCombination(Gamer gamer) {
-        if (this.combination.royalFlush(gamer.getOneCart(), gamer.getTwoCart(),
-                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5))
-            gamer.setStore(10);
-        if (this.combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
-            this.cart1, this.cart2, this.cart3, this.cart4, this.cart5) != 0)
-            gamer.setStore(9);
+        int royalFlush = this.combination.royalFlush(gamer.getOneCart(), gamer.getTwoCart(),
+                         this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int straightFlush = this.combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
+                            this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int fourOfAKind = this.combination.fourOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
+                          this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int fullHouse = this.combination.fullHouse(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int flush = this.combination.flush(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int straight = this.combination.straight(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int threeOfAKind = this.combination.threeOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int twoPairs = this.combination.twoPairs(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int onePair = this.combination.onePair(gamer.getOneCart(), gamer.getTwoCart(),
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+        int highCards = this.combination.highCards(gamer.getOneCart(), gamer.getTwoCart());
+
         /**
-         * Потом проводим сравнение. У какого игрока больше нумерация, тот и выиграл!
+         * Проводим сравнение. У какого игрока больше нумерация, тот и выиграл!
          */
+             if (royalFlush > 0) gamer.setStore(royalFlush);
+        else if (straightFlush > 0) gamer.setStore(straightFlush);
+        else if (fourOfAKind > 0) gamer.setStore(fourOfAKind);
+        else if (fullHouse > 0) gamer.setStore(fullHouse);
+        else if (flush > 0) gamer.setStore(flush);
+        else if (straight > 0) gamer.setStore(straight);
+        else if (threeOfAKind > 0) gamer.setStore(threeOfAKind);
+        else if (twoPairs > 0) gamer.setStore(twoPairs);
+        else if (onePair > 0) gamer.setStore(onePair);
+        else if (highCards > 0) gamer.setStore(highCards);
     }
 
     public void finish() {
-        if (checkNotTheEndGame() >= 2) {
+        if (checkNotTheEndGame() >= 2 && this.numCircle == 2) {
+            // Записываем каждому игроку, какая у него комбинация
             for (Gamer gamer : this.gamers) {
                 checkCombination(gamer);
             }
-            int larger = 0;
+        }
+        checkMatches();
+        drawWinners();
+    }
+
+    public int returnWinner() {
+        // Получаем id игрока, у какого самая высокая комбинация за столом
+        int id = 0;
+        for (int i = 1; i < this.gamers.length; i++) {
+            if (this.gamers[i].getStore() > this.gamers[id].getStore()) {
+                id = this.gamers[i].getId();
+            }
+        }
+        return id;
+    }
+
+    // Возвращаем количество игроков, у каких одинаковая комбинация
+    public void checkMatches() {
+        Gamer gamer = this.gamers[returnWinner()];
+        int matches = 1;
+        for (Gamer gamers : this.gamers) {
+            if (gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
+                matches++;
+            }
+        }
+        // записываем в массив id игроков, какие выиграли
+        this.winners = new int[matches];
+        int inc = 0;
+        for (Gamer gamers : this.gamers) {
+            if (gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
+                this.winners[inc] = gamers.getId();
+            }
+        }
+//        int matches = 0;
+//        for (int i = 0; i < this.gamers.length; i++) {
+//            for (int j = i; j < this.gamers.length; j++) {
+//                if (this.gamers[i].getStore() == this.gamers[j].getStore())
+//                    matches++;
+//            }
+//        }
+    }
+
+    public void drawWinners() {
+        inscription(" ПОБЕДИТЕЛИ ");
+        for (int id : this.winners) {
             for (Gamer gamer : this.gamers) {
-                if (gamer.getStore() > larger)
-                    larger = gamer.getStore();
+                if (gamer.getId() == id)
+                    System.out.println(gamer.getId() + ". " + gamer.getName());
             }
         }
     }
