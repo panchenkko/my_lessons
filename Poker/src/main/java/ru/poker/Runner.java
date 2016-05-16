@@ -11,7 +11,6 @@ public class Runner {
 
     public void generate(final Scanner sc) {
         final Table table = new Table();
-        inputPurse(sc, table);
         final BaseAction action = new BaseAction(table, new IGenerator() {
             @Override
             public Cart[] generateDeck() {
@@ -24,7 +23,7 @@ public class Runner {
             }
         });
         action.initGame();
-        action.progress();
+        progress(sc, action, table);
     }
 
     // Заполняем колоду пустыми значениями
@@ -60,9 +59,26 @@ public class Runner {
 
     // Ввод стартовой суммы на столе (снятие при каждой партии)
     public void inputPurse(Scanner sc, Table table) {
-        table.inscription(" ВВЕДИТЕ СТАРТОВУЮ СУММУ ВХОДА ЗА СТОЛ ");
-        System.out.print("Сумма: ");
-        table.setPurse(sc.nextInt());
+        if (table.getPurse() == 0) {
+            table.inscription(" ВВЕДИТЕ СТАРТОВУЮ СУММУ ВХОДА ЗА СТОЛ ");
+            System.out.print("Сумма: ");
+            table.setPurse(sc.nextInt());
+        }
+    }
+
+    public void progress(Scanner sc, BaseAction action, Table table) {
+        String startGame = "";
+        while (!startGame.equals("нет")) {
+            inputPurse(sc, table);
+            action.progress();
+            if (table.checkNotTheEndGame() < 2) {
+                table.inscription(" НЕДОСТАТОЧНО КОЛИЧЕСТВА ДЕНЕГ У ИГРОКОВ ИЛИ САМИХ ИГРОКОВ ДЛЯ ПРОДОЛЖЕНИЯ ИГРЫ ");
+                return;
+            }
+            table.exitGamers(sc);
+            System.out.print("Начать игру? (да/нет) ");
+            startGame = sc.next();
+        }
     }
 
     public static void main(String[] args) {

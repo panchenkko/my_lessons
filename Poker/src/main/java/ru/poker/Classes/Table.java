@@ -10,7 +10,6 @@ public class Table {
     private Gamer[] gamers; // Список игроков
     private Cart[] deck; // Колода
 
-    private int sumCartOnTable = 0; // Сколько на данный момент карт на столе
     private int purse; // Сумма входа (Минимальная сумма, какая должна быть у игрока)
 
     private int reserveMoney = 0; // Минимальная сумма какую должен внести игрок
@@ -20,7 +19,7 @@ public class Table {
 
     private int[] winners; // игроки, какие выиграли партию
 
-    // Карточки на стол
+    // Карты на столе
     private Cart cart1;
     private Cart cart2;
     private Cart cart3;
@@ -33,6 +32,10 @@ public class Table {
 
     public void loadDeck(Cart[] deck) {
         this.deck = deck;
+    }
+
+    public int getPurse() {
+        return purse;
     }
 
     public int getReserveMoney() {
@@ -200,16 +203,6 @@ public class Table {
         }
     }
 
-    // Игроки вошедшие за стол
-    public void drawGamersInGame() {
-        inscription(" ИГРОКИ ЗА СТОЛОМ ");
-        for (Gamer gamer : this.gamers) {
-            if (gamer.isInGame()) {
-                System.out.println(gamer.informationInGame());
-            }
-        }
-    }
-
     // Игроки не вошедшие за стол
     public void drawGamersOutGame() {
         inscription(" ИГРОКИ НЕ ВОШЕДШИЕ ЗА СТОЛ ");
@@ -313,11 +306,43 @@ public class Table {
              }
     }
 
-    // Получаем id игрока, у какого самая высокая комбинация за столом
-    public int returnWinner() {
+    // Получаем id игрока, у какого самая высокая комбинация за столом (по getStoreName())
+    public int returnWinnerName() {
         int id = 0;
         for (int i = 1; i < this.gamers.length; i++) {
-            if (this.gamers[i].getStore() > this.gamers[id].getStore()) {
+            switch (this.gamers[i].getStoreName()) {
+                case "ФЛЕШ РОЯЛЬ": id = this.gamers[i].getId() - 1;
+                                   break;
+                case "СТРИТ ФЛЕШ": id = this.gamers[i].getId() - 1;
+                                   break;
+                case "КАРЕ": id = this.gamers[i].getId() - 1;
+                             break;
+                case "ФУЛЛ ХАУС": id = this.gamers[i].getId() - 1;
+                                  break;
+                case "ФЛЕШ": id = this.gamers[i].getId() - 1;
+                             break;
+                case "СТРИТ": id = this.gamers[i].getId() - 1;
+                              break;
+                case "ТРОЙКА": id = this.gamers[i].getId() - 1;
+                               break;
+                case "ДВЕ ПАРЫ": id = this.gamers[i].getId() - 1;
+                                 break;
+                case "ПАРА": id = this.gamers[i].getId() - 1;
+                             break;
+                case "КИКЕР": id = this.gamers[i].getId() - 1;
+                              break;
+            }
+        }
+        return id;
+    }
+
+    // Получаем id игрока, у какого самая высокая комбинация за столом (по getStore())
+    public int returnWinnerId() {
+        Gamer gamer = this.gamers[returnWinnerName()];
+        int id = gamer.getId() - 1;
+        for (int i = 1; i < this.gamers.length; i++) {
+            if (this.gamers[i].getStoreName().equals(gamer.getStoreName()) &&
+                this.gamers[i].getStore() > this.gamers[id].getStore()) {
                 id = this.gamers[i].getId() - 1;
             }
         }
@@ -326,10 +351,11 @@ public class Table {
 
     // Возвращаем количество игроков, у каких одинаковая комбинация
     public void checkMatches() {
-        Gamer gamer = this.gamers[returnWinner()];
+        Gamer gamer = this.gamers[returnWinnerId()];
         int matches = 1;
         for (Gamer gamers : this.gamers) {
-            if (gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
+            if (gamer.getStoreName().equals(gamers.getStoreName()) &&
+                gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
                 matches++;
             }
         }
@@ -337,18 +363,11 @@ public class Table {
         this.winners = new int[matches];
         int inc = 0;
         for (Gamer gamers : this.gamers) {
-            if (gamers.getStore() == gamer.getStore()) {
+            if (gamer.getStoreName().equals(gamers.getStoreName()) && gamers.getStore() == gamer.getStore()) {
                 this.winners[inc] = gamers.getId();
                 inc++;
             }
         }
-//        int matches = 0;
-//        for (int i = 0; i < this.gamers.length; i++) {
-//            for (int j = i; j < this.gamers.length; j++) {
-//                if (this.gamers[i].getStore() == this.gamers[j].getStore())
-//                    matches++;
-//            }
-//        }
     }
 
     // Выводим список победителей
@@ -378,6 +397,18 @@ public class Table {
         }
         checkMatches();
         drawWinners();
+    }
+
+    public void exitGamers(Scanner sc) {
+        for (Gamer gamer : this.gamers) {
+            inscription(" ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ");
+            String exit;
+            do {
+                System.out.print("Выйти? (да/нет) ");
+                exit = sc.next();
+                if (exit.equals("да")) gamer.setInGame(false);
+            } while (!exit.equals("нет") && !exit.equals("да"));
+        }
     }
 
     // Ход каждого игрока
@@ -416,7 +447,7 @@ public class Table {
                             case 1: raise = raise(sc, this.gamers[counter]);
                                     id = counter;
                                     break;
-                            case 2: check = check(this.gamers[counter]);
+                            case 2: check = returnWinnerId(this.gamers[counter]);
                                     break;
                             case 3: call = call(this.gamers[counter]);
                                     break;
@@ -476,7 +507,7 @@ public class Table {
     }
 
     // Игрок пропускает ход
-    public boolean check(Gamer gamer) {
+    public boolean returnWinnerId(Gamer gamer) {
         if (gamer.getRate() == getReserveMoney())
             return true;
         else {
@@ -547,59 +578,55 @@ public class Table {
 
     // Случайные карты на стол
     public void random3CartForTable() {
-        this.sumCartOnTable = 3;
-        int inc = 0;
-        while (inc < this.sumCartOnTable || this.cart1 == null || this.cart2 == null || this.cart3 == null) {
+        while (this.cart1 == null || this.cart2 == null || this.cart3 == null) {
             int rand = new Random().nextInt(51) + 1;
             if (!this.deck[rand].isInUse()) {
                 if (this.cart1 == null) {
                     initializationCart1();
                     this.cart1.setSuit(this.deck[rand].getSuit());
                     this.cart1.setValue(this.deck[rand].getValue());
+                    this.cart1.setValueNum(this.deck[rand].getValueNum());
                     this.deck[rand].setInUse(true);
                 } else
                 if (this.cart2 == null) {
                     initializationCart2();
                     this.cart2.setSuit(this.deck[rand].getSuit());
                     this.cart2.setValue(this.deck[rand].getValue());
+                    this.cart2.setValueNum(this.deck[rand].getValueNum());
                     this.deck[rand].setInUse(true);
                 } else
                 if (this.cart3 == null) {
                     initializationCart3();
                     this.cart3.setSuit(this.deck[rand].getSuit());
                     this.cart3.setValue(this.deck[rand].getValue());
+                    this.cart3.setValueNum(this.deck[rand].getValueNum());
                     this.deck[rand].setInUse(true);
                 }
             }
-            inc++;
         }
     }
     public void random4CartForTable() {
-        this.sumCartOnTable = 4;
-        int inc = 0;
-        while (inc < this.sumCartOnTable || this.cart4 == null) {
+        while (this.cart4 == null) {
             int rand = new Random().nextInt(51) + 1;
             if (!this.deck[rand].isInUse()) {
                 initializationCart4();
                 this.cart4.setSuit(this.deck[rand].getSuit());
                 this.cart4.setValue(this.deck[rand].getValue());
+                this.cart4.setValueNum(this.deck[rand].getValueNum());
                 this.deck[rand].setInUse(true);
             }
-            inc++;
         }
     }
     public void random5CartForTable() {
-        this.sumCartOnTable = 5;
-        int inc = 0;
-        while (inc < this.sumCartOnTable || this.cart5 == null) {
+        while (this.cart5 == null) {
             int rand = new Random().nextInt(51) + 1;
             if (!this.deck[rand].isInUse()) {
                 initializationCart5();
                 this.cart5.setSuit(this.deck[rand].getSuit());
                 this.cart5.setValue(this.deck[rand].getValue());
+                this.cart5.setValueNum(this.deck[rand].getValueNum());
                 this.deck[rand].setInUse(true);
             }
-            inc++;
         }
     }
 
