@@ -191,6 +191,37 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
         return checking;
     }
 
+    // Определяем и записываем сколько бомб возле клетки, координаты какой переданы в параметрах метода
+    public void arrangeValues(int i, int j) {
+        switch (checkingAroundCell(i, j)) {
+            case 8: this.cells[i][j].suggest8();
+                    break;
+            case 7: this.cells[i][j].suggest7();
+                    break;
+            case 6: this.cells[i][j].suggest6();
+                    break;
+            case 5: this.cells[i][j].suggest5();
+                    break;
+            case 4: this.cells[i][j].suggest4();
+                    break;
+            case 3: this.cells[i][j].suggest3();
+                    break;
+            case 2: this.cells[i][j].suggest2();
+                    break;
+            case 1: this.cells[i][j].suggest1();
+                    break;
+        }
+    }
+
+    // Проходим поле и записываем в каждую клетку, сколько возле неё находится бомб
+    public void beforeGameArrangeValues() {
+        for (int i = 0; i < sumRow(); i++) {
+            for (int j = 0; j < sumColumn(); j++) {
+                if (!this.cells[i][j].isBomb()) arrangeValues(i, j);
+            }
+        }
+    }
+
     @Override
     public void openEmptyCells() {
         int check = 1, sumEmpty = 0;
@@ -202,7 +233,6 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
                 for (int j = 0; j < sumColumn(); j++) {
                     // Если ячейка пустая и мы её ещё не проверяли
                     if (cells[i][j].isSuggestEmpty() && !cells[i][j].isChecked()) {
-
                         // Если возле ячейки нет бомб
                         if (checkingAroundCell(i, j) == 0) {
                             sumEmpty++;
@@ -210,27 +240,6 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
                             clearAroundCell(i, j);
                             // Помечаем данную ячейку как просмотренную
                             cells[i][j].checked();
-                        }
-
-                        // Выводим данную ячейку
-                        switch (checkingAroundCell(i, j)) {
-                            case 8: this.cells[i][j].suggest8();
-                                break;
-                            case 7: this.cells[i][j].suggest7();
-                                break;
-                            case 6: this.cells[i][j].suggest6();
-                                break;
-                            case 5: this.cells[i][j].suggest5();
-                                break;
-                            case 4: this.cells[i][j].suggest4();
-                                break;
-                            case 3: this.cells[i][j].suggest3();
-                                break;
-                            case 2: this.cells[i][j].suggest2();
-                                break;
-                            case 1: this.cells[i][j].suggest1();
-                                break;
-                            default: suggest(i, j, false);
                         }
                     }
                 }

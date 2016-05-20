@@ -66,6 +66,11 @@ public interface ILogic {
      */
 	int checkingAroundCell(int x, int y);
 
+	/**
+	 * Расставляем значения в клетках (от 1-го до 8-ми) после первого клика
+	 */
+	void beforeGameArrangeValues();
+
     /**
      * Открываем пустые ячейки
      */

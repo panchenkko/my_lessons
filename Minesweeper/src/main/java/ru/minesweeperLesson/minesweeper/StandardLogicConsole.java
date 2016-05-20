@@ -186,6 +186,10 @@ public class StandardLogicConsole implements ISelectLevel, ILogic, ITheNumOfTheF
     }
 
     @Override
+    public void beforeGameArrangeValues() {
+    }
+
+    @Override
     public void openEmptyCells() {
         int check = 1, sumEmpty = 0;
 

@@ -211,43 +211,36 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 				paint.drawString("?", x, y);
 			}
 
-			else if (this.suggest8) {
-				paint.setColor(Color.black);
-				paint.drawString("8", x, y);
-			}
-			else if (this.suggest7) {
-				paint.setColor(Color.black);
-				paint.drawString("7", x, y);
-			}
-			else if (this.suggest6) {
-				paint.setColor(Color.black);
-				paint.drawString("6", x, y);
-			}
-			else if (this.suggest5) {
-				paint.setColor(new Color(136,96,44));
-				paint.drawString("5", x, y);
-			}
-			else if (this.suggest4) {
-				paint.setColor(new Color(34,44,118));
-				paint.drawString("4", x, y);
-			}
-			else if (this.suggest3) {
-				paint.setColor(new Color(255,0,0));
-				paint.drawString("3", x, y);
-			}
-			else if (this.suggest2) {
-				paint.setColor(new Color(45,146,40));
-				paint.drawString("2", x, y);
-			}
-			else if (this.suggest1) {
-				paint.setColor(new Color(0,13,255));
-				paint.drawString("1", x, y);
-			}
 
-			else if (this.suggestEmpty) {
-				paint.drawString("", x - 2, y);
-			}
-
+            if (this.suggestEmpty) {
+                if (this.suggest8) {
+                    paint.setColor(Color.black);
+                    paint.drawString("8", x, y);
+                } else if (this.suggest7) {
+                    paint.setColor(Color.black);
+                    paint.drawString("7", x, y);
+                } else if (this.suggest6) {
+                    paint.setColor(Color.black);
+                    paint.drawString("6", x, y);
+                } else if (this.suggest5) {
+                    paint.setColor(new Color(136, 96, 44));
+                    paint.drawString("5", x, y);
+                } else if (this.suggest4) {
+                    paint.setColor(new Color(34, 44, 118));
+                    paint.drawString("4", x, y);
+                } else if (this.suggest3) {
+                    paint.setColor(new Color(255, 0, 0));
+                    paint.drawString("3", x, y);
+                } else if (this.suggest2) {
+                    paint.setColor(new Color(45, 146, 40));
+                    paint.drawString("2", x, y);
+                } else if (this.suggest1) {
+                    paint.setColor(new Color(0, 13, 255));
+                    paint.drawString("1", x, y);
+                } else {
+                    paint.drawString("", x - 2, y);
+                }
+            }
 			else {
 				paint.drawLine(x - 16, y - 25, x + 25, y + 15);
 				paint.drawLine(x + 25, y - 25, x - 16, y + 15);

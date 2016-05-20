@@ -43,6 +43,9 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
 			select(returnX(e), returnY(e), true);
 		else
             select(returnX(e), returnY(e), e.getButton() != 1);
+
+		Main.setLabel("Флажки: " + this.board.returnSumBomb() + " ");
+
 		board.repaint();
 	}
 

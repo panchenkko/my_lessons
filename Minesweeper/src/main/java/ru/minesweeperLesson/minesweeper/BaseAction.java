@@ -32,8 +32,8 @@ public class BaseAction implements IUserAction {
 		if (this.logic.checkTheFirstMove() && !bomb) {
 			this.logic.clearAroundCell(x, y);
 			this.logic.bombsGeneration();
+			this.logic.beforeGameArrangeValues();
 		}
-		Main.setLabel("Флажки: " + this.board.returnSumBomb() + " ");
 		if (!bomb)
 			this.logic.openEmptyCells();
 		if (this.logic.shouldBang(x, y)) {
