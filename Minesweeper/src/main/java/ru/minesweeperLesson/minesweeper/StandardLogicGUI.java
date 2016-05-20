@@ -115,9 +115,9 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
         for (ICell[] row : this.cells)
             for (ICell cell : row)
                 if ((cell.isSuggestBomb() && cell.isBomb()) ||
-                        (cell.isSuggestEmpty() && !cell.isBomb()) /*|| (!cell.isSuggestBomb() && cell.isBomb())*/
-                        || cell.isSuggest1() || cell.isSuggest2() || cell.isSuggest3() || cell.isSuggest4()
-                        || cell.isSuggest5() || cell.isSuggest6() || cell.isSuggest7() || cell.isSuggest8()) {
+                    (cell.isSuggestEmpty() && !cell.isBomb()) /*|| (!cell.isSuggestBomb() && cell.isBomb())*/
+                    || cell.isSuggest1() || cell.isSuggest2() || cell.isSuggest3() || cell.isSuggest4()
+                    || cell.isSuggest5() || cell.isSuggest6() || cell.isSuggest7() || cell.isSuggest8()) {
                     check++;
                 }
         if (check == (sumRow() * sumColumn()))
@@ -127,12 +127,8 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
 
     @Override
     public void suggest(int x, int y, boolean bomb) {
-        if (!bomb)
-            this.cells[x][y].suggestEmpty();
-        if (bomb && !this.cells[x][y].isSuggestEmpty())
-            this.cells[x][y].suggestBomb();
-        else if (bomb && this.cells[x][y].isSuggestEmpty())
-            System.out.println("Вы уже открыли эту клетку!\n");
+        if (!bomb) this.cells[x][y].suggestEmpty();
+        if (bomb && !this.cells[x][y].isSuggestEmpty()) this.cells[x][y].suggestBomb();
     }
 
     @Override
@@ -149,15 +145,15 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
 
     @Override
     public void clearAroundCell(int x, int y) {
-        if (cells.length > 3) {
-            if (y > 0) suggest(x, y - 1, false);
-            if (y + 1 < sumColumn()) suggest(x, y + 1, false);
-            if (x > 0) suggest(x - 1, y, false);
-            if (x + 1 < sumRow()) suggest(x + 1, y, false);
-            if (x > 0 && y > 0) suggest(x - 1, y - 1, false);
-            if (x + 1 < sumRow() && y + 1 < sumColumn()) suggest(x + 1, y + 1, false);
-            if (x > 0 && y + 1 < sumColumn()) suggest(x - 1, y + 1, false);
-            if (x + 1 < sumRow() && y > 0) suggest(x + 1, y - 1, false);
+         if (cells.length > 3) {
+            if (y > 0 && !cells[x][y - 1].isSuggestBomb()) suggest(x, y - 1, false);
+            if (y + 1 < sumColumn() && !cells[x][y + 1].isSuggestBomb()) suggest(x, y + 1, false);
+            if (x > 0 && !cells[x - 1][y].isSuggestBomb()) suggest(x - 1, y, false);
+            if (x + 1 < sumRow() && !cells[x + 1][y].isSuggestBomb()) suggest(x + 1, y, false);
+            if (x > 0 && y > 0 && !cells[x - 1][y - 1].isSuggestBomb()) suggest(x - 1, y - 1, false);
+            if (x + 1 < sumRow() && y + 1 < sumColumn() && !cells[x + 1][y + 1].isSuggestBomb()) suggest(x + 1, y + 1, false);
+            if (x > 0 && y + 1 < sumColumn() && !cells[x - 1][y + 1].isSuggestBomb()) suggest(x - 1, y + 1, false);
+            if (x + 1 < sumRow() && y > 0 && !cells[x + 1][y - 1].isSuggestBomb()) suggest(x + 1, y - 1, false);
         }
     }
 

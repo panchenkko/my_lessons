@@ -162,13 +162,12 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 		y = y * GUIBoard.getPADDING() + 25;
 
 		if (real) {
+
 			if (this.isBomb()) {
 				paint.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
 				paint.setColor(Color.red);
 				paint.drawString("*", x - 4, y + 15);
 			}
-
-
 
 			else if (this.suggest8) {
 				paint.setColor(Color.black);
@@ -204,15 +203,17 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 			}
 
 		} else {
+
 			if (this.suggestBomb) {
+                paint.setColor(Color.black);
 				paint.drawLine(x - 16, y - 25, x + 25, y + 15);
 				paint.drawLine(x + 25, y - 25, x - 16, y + 15);
-				paint.setColor(Color.black);
 				paint.drawString("?", x, y);
 			}
 
+            else
 
-            if (this.suggestEmpty) {
+			if (this.suggestEmpty) {
                 if (this.suggest8) {
                     paint.setColor(Color.black);
                     paint.drawString("8", x, y);
@@ -237,9 +238,8 @@ public class GUICell extends JPanel implements ICell<Graphics> {
                 } else if (this.suggest1) {
                     paint.setColor(new Color(0, 13, 255));
                     paint.drawString("1", x, y);
-                } else {
+                } else
                     paint.drawString("", x - 2, y);
-                }
             }
 			else {
 				paint.drawLine(x - 16, y - 25, x + 25, y + 15);
