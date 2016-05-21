@@ -58,8 +58,8 @@ public class ClientCache implements Storage {
 	}
 
     @Override
-    public void deleteAll() {
-        this.storage.deleteAll();
+    public void foldCounter() {
+        this.storage.foldCounter();
     }
 
     @Override

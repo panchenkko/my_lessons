@@ -18,7 +18,7 @@ public class JdbcStorageTest extends Mockito {
 
     @AfterClass
     public static void tearDownClass() throws Exception {
-        jdbcStorage.deleteAll();
+        jdbcStorage.foldCounter();
     }
 
     @Before
@@ -76,7 +76,7 @@ public class JdbcStorageTest extends Mockito {
 
     @Test
     public void testDeleteAll() throws Exception {
-        jdbcStorage.deleteAll();
+        jdbcStorage.foldCounter();
     }
 
     @Test

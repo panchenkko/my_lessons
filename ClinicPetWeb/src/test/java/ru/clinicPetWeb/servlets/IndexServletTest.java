@@ -2,9 +2,7 @@ package ru.clinicPetWeb.servlets;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-import ru.clinicPetWeb.service.Settings;
 import ru.clinicPetWeb.store.ClientCache;
-import ru.clinicPetWeb.store.JdbcStorage;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,7 +43,7 @@ public class IndexServletTest extends Mockito {
         /**
          * УДАЛЯЕТ ВСЕ ДАННЫЕ ИЗ ВСЕХ ТАБЛИЦ
          */
-        clientCache.deleteAll();
+        clientCache.foldCounter();
 
         indexServlet.destroy();
     }

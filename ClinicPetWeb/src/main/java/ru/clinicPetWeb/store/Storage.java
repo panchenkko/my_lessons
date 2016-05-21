@@ -16,10 +16,7 @@ public interface Storage {
 
 	void delete(final int id);
 
-	/**
-	 * Используется в тестах
-	 */
-	void deleteAll();
+	void foldCounter();
 
 	Client get(final int id);
 

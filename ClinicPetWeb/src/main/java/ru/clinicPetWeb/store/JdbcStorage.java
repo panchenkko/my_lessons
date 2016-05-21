@@ -48,7 +48,7 @@ public class JdbcStorage implements Storage {
         clients.clear();
 		try (final Statement statement = this.connection.createStatement();
 		     final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.uid = pet.client_id ORDER BY client.uid")) {
+                     ("select * from client right join pet on client.pet_id = pet.uid ORDER BY client.uid")) {
 			while (rs.next()) {
 				clients.add(new Client(rs.getInt("uid"), rs.getString("name"),
 							new Pet(rs.getString("type"), rs.getString("petName"),
@@ -63,52 +63,47 @@ public class JdbcStorage implements Storage {
 
     @Override
 	public void add(Client client) {
-        int num = 0;
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("insert into client (name) values (?)", Statement.RETURN_GENERATED_KEYS)) {
-			statement.setString(1, client.getName());
-			statement.executeUpdate();
-			try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
-				if (generatedKeys.next()) {
-					num = generatedKeys.getInt(1);
-				}
-			}
-            addPet(client, num);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void addPet(Client client, int num) {
-		try (final PreparedStatement statement = this.connection.prepareStatement
-				("insert into pet (client_id, type, petName, sex, age) values (?,?,?,?,?)")) {
-			statement.setInt(1, num);
-			statement.setString(2, client.getPet().getPetType());
-			statement.setString(3, client.getPet().getName());
-			statement.setString(4, client.getPet().getPetSex());
-			statement.setString(5, client.getPet().getAge());
-			statement.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	@Override
-	public void edit(Client client) {
-        try (final PreparedStatement statement = this.connection.prepareStatement
-                ("UPDATE client SET name = (?) WHERE uid = (?)")) {
-            statement.setString(1, client.getName());
-            statement.setInt(2, client.getId());
+                ("insert into pet (type, petName, sex, age) values (?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, client.getPet().getPetType());
+            statement.setString(2, client.getPet().getName());
+            statement.setString(3, client.getPet().getPetSex());
+            statement.setString(4, client.getPet().getAge());
             statement.executeUpdate();
-            editPet(client);
+
+            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    client.setId(generatedKeys.getInt(1));
+                }
+            }
+
+            addClient(client);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 	}
 
+	public void addClient(Client client) {
+        try (final PreparedStatement statement = this.connection.prepareStatement
+                ("insert into client (name, pet_id) values (?,?)", Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, client.getName());
+            statement.setInt(2, client.getId());
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+	}
+
+	@Override
+	public void edit(Client client) {
+        editPet(client);
+        editClient(client);
+	}
+
     public void editPet(Client client) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("UPDATE pet SET type = (?), petName = (?), sex = (?), age = (?) WHERE client_id = (?)")) {
+                ("UPDATE pet SET type = (?), petName = (?), sex = (?), age = (?) WHERE uid = (?)")) {
             statement.setString(1, client.getPet().getPetType());
             statement.setString(2, client.getPet().getName());
             statement.setString(3, client.getPet().getPetSex());
@@ -120,25 +115,34 @@ public class JdbcStorage implements Storage {
         }
     }
 
-	@Override
-	public void delete(int id) {
+    public void editClient(Client client) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("DELETE FROM pet WHERE client_id = (?)")) {
-            statement.setInt(1, id);
+                ("UPDATE client SET name = (?) WHERE uid = (?)")) {
+            statement.setString(1, client.getName());
+            statement.setInt(2, client.getId());
             statement.executeUpdate();
-            deleteClient(id);
-
-//            final ResultSet rs = statement.executeQuery
-//                    ("select * from client right join pet on client.uid = pet.client_id");
-//            statement.executeUpdate();
-//            if (rs.getRow() == 0)
-//                deleteAll();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-	}
 
-    public void deleteClient(int id) {
+    }
+
+	@Override
+	public void delete(int id) {
+        int sum = 0;
+        // Записываем id питомца, какого нужно удалить
+        try (Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery
+                     ("select * from client right join pet on client.pet_id = pet.uid")) {
+            while (rs.next()) {
+                if (rs.getInt("uid") == id) {
+                    sum = rs.getInt("pet_id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // Удаляем клиента и после удаляем питомца
         try (final PreparedStatement statement = this.connection.prepareStatement
                 ("DELETE FROM client WHERE uid = (?)")) {
             statement.setInt(1, id);
@@ -146,15 +150,39 @@ public class JdbcStorage implements Storage {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        deletePet(sum);
+	}
+
+    public void deletePet(int id) {
+        try (final PreparedStatement statement = this.connection.prepareStatement
+                ("DELETE FROM pet WHERE uid = (?)")) {
+            statement.setInt(1, id);
+            int affectedRows = statement.executeUpdate();
+            if (affectedRows == 0) throw new SQLException("Ошибка! Удаление клиента не удалось!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        checkEmptyTable();
     }
 
+    // Если таблица пустая скидываем счетчик первичных ключей
+    public void checkEmptyTable() {
+        try (final Statement statement = this.connection.createStatement();
+             final ResultSet rs = statement.executeQuery("select count(*) as count from client")) {
+            rs.next();
+            int count = rs.getInt("count");
+            if (count == 0) foldCounter();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Скидываем счётчик
     @Override
-    public void deleteAll() {
+    public void foldCounter() {
         try (final Statement statement = this.connection.createStatement()) {
-            statement.addBatch("DELETE FROM pet");
-            statement.addBatch("DELETE FROM client");
+            statement.addBatch("ALTER SEQUENCE client_uid_seq1 RESTART WITH 1");
             statement.addBatch("ALTER SEQUENCE pet_uid_seq RESTART WITH 1");
-            statement.addBatch("ALTER SEQUENCE client_uid_seq RESTART WITH 1");
             statement.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -164,7 +192,7 @@ public class JdbcStorage implements Storage {
 	@Override
 	public Client get(int id) {
 		try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client join pet on client.uid = pet.client_id where pet.client_id=(?)")) {
+                ("select * from client join pet on client.pet_id = pet.uid where client.uid=(?)")) {
 			statement.setInt(1, id);
 			try (final ResultSet rs = statement.executeQuery()) {
 				while (rs.next()) {
@@ -201,7 +229,7 @@ public class JdbcStorage implements Storage {
     public void findIdClient(int idClient) {
         try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.uid = pet.client_id")) {
+                     ("select * from client right join pet on client.pet_id = pet.uid")) {
             while (rs.next()) {
                 if (rs.getInt("uid") == idClient) {
                     foundAdd(rs);
@@ -216,7 +244,7 @@ public class JdbcStorage implements Storage {
         boolean check = false;
         try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.uid = pet.client_id")) {
+                     ("select * from client right join pet on client.pet_id = pet.uid")) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName) &&
                         findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
@@ -234,7 +262,7 @@ public class JdbcStorage implements Storage {
         boolean check = false;
         try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.uid = pet.client_id")) {
+                     ("select * from client right join pet on client.pet_id = pet.uid")) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName)) {
                     foundAdd(rs);
@@ -260,7 +288,7 @@ public class JdbcStorage implements Storage {
     public void findOneParameters(String clientName, String petName, String petAge) {
         try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.uid = pet.client_id")) {
+                     ("select * from client right join pet on client.pet_id = pet.uid")) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName)) {
                     foundAdd(rs);
@@ -279,7 +307,7 @@ public class JdbcStorage implements Storage {
 
     public boolean findClientName(int id, String clientName) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client where uid = (?)")) {
+                ("select * from client left join pet on client.pet_id = pet.uid where client.uid = (?)")) {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
@@ -295,7 +323,7 @@ public class JdbcStorage implements Storage {
 
     public boolean findPetName(int id, String petName) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from pet where client_id = (?)")) {
+                ("select * from pet left join client on client.pet_id = pet.uid where client.uid = (?)")) {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
@@ -311,7 +339,7 @@ public class JdbcStorage implements Storage {
 
     public boolean findAge(int id, String age) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from pet where client_id = (?)")) {
+                ("select * from pet left join client on client.pet_id = pet.uid where client.uid = (?)")) {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {

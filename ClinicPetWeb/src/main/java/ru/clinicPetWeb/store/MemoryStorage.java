@@ -45,7 +45,7 @@ public class MemoryStorage implements Storage {
     }
 
     @Override
-    public void deleteAll() {
+    public void foldCounter() {
         clients.clear();
     }
 

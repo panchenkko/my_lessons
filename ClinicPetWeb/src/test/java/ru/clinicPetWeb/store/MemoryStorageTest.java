@@ -54,7 +54,7 @@ public class MemoryStorageTest extends Mockito {
 
     @Test
     public void testDeleteAll() throws Exception {
-        memoryStorage.deleteAll();
+        memoryStorage.foldCounter();
     }
 
     @Test

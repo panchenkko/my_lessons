@@ -77,7 +77,7 @@ public class HibernateStorage implements Storage {
 	}
 
 	@Override
-	public void deleteAll() {
+	public void foldCounter() {
 
 	}
 
