@@ -22,6 +22,21 @@ public class HibernateStorage implements Storage {
         this.factory = new Configuration().configure().buildSessionFactory();
     }
 
+    public interface Command<T> {
+        T process(Session session);
+    }
+
+    private <T> T transaction(final Command<T> command) {
+        final Session session = factory.openSession();
+        final Transaction tx = session.beginTransaction();
+        try {
+            return command.process(session);
+        } finally {
+            tx.commit();
+            session.close();
+        }
+    }
+
     @Override
 	public Collection<Client> valuesFound() {
 		return found;
@@ -29,68 +44,38 @@ public class HibernateStorage implements Storage {
 
 	@Override
 	public Collection<Client> values() {
-        final Session session = factory.openSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            return session.createQuery("from Client").list();
-        } finally {
-            tx.commit();
-            session.close();
-        }
+        // session - это входной параметр, а дальше после стрелки говорим, что хотим сделать
+        return transaction(session -> session.createQuery("from Client").list());
 	}
 
 	@Override
 	public void add(Client client) {
-        final Session session = factory.openSession();
-        try {
-            session.beginTransaction();
-            session.save(client);
-            session.getTransaction().commit();
-        } finally {
-//            if (session != null && session.isOpen())
-                session.close();
-        }
+        transaction(session -> session.save(client));
 	}
 
 	@Override
 	public void edit(Client client) {
-        final Session session = factory.openSession();
-        try {
-            session.beginTransaction();
+        transaction(session -> {
             session.update(client);
-            session.getTransaction().commit();
-        } finally {
-            session.close();
-        }
+            return null;
+        });
 	}
 
 	@Override
 	public void delete(int id) {
-        final Session session = factory.openSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            session.delete(new Client(id, null, null));
-        } finally {
-            tx.commit();
-            session.close();
-        }
+        transaction(session -> {
+            session.delete(get(id));
+            return null;
+        });
 	}
 
 	@Override
 	public void foldCounter() {
-
 	}
 
 	@Override
 	public Client get(int id) {
-        final Session session = factory.openSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            return (Client) session.get(Client.class, id);
-        } finally {
-            tx.commit();
-            session.close();
-        }
+        return transaction(session -> (Client) session.get(Client.class, id));
 	}
 
 	@Override
@@ -113,7 +98,6 @@ public class HibernateStorage implements Storage {
     }
 
     public void findIdClient(int idClient) {
-
     }
 
     public boolean findThreeParameters(String clientName, String petName, String petAge) {
@@ -125,7 +109,6 @@ public class HibernateStorage implements Storage {
     }
 
     public void findOneParameters(String clientName, String petName, String petAge) {
-
     }
 
     public boolean findClientName(int id, String clientName) {

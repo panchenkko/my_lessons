@@ -85,7 +85,7 @@ public class JdbcStorage implements Storage {
 
 	public void addClient(Client client) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("insert into client (name, pet_id) values (?,?)", Statement.RETURN_GENERATED_KEYS)) {
+                ("insert into client (name, pet_id) values (?,?)")) {
             statement.setString(1, client.getName());
             statement.setInt(2, client.getId());
             statement.executeUpdate();

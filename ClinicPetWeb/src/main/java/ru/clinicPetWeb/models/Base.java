@@ -3,7 +3,7 @@ package ru.clinicPetWeb.models;
 import javax.persistence.*;
 
 @MappedSuperclass
-public class Base {
+public abstract class Base {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
