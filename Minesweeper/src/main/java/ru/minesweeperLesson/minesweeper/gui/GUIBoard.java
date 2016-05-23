@@ -12,18 +12,28 @@ public class GUIBoard extends JPanel implements IBoard {
 
 	public boolean real = false;
 
+	private boolean isFinish = false;
+
 	public ICell<Graphics>[][] cells;
 
 	public static int getPADDING() {
 		return PADDING;
 	}
 
-	@Override
+	public boolean isFinish() {
+		return isFinish;
+	}
+
+    public void setIsFinish(boolean isFinish) {
+        this.isFinish = isFinish;
+    }
+
+    @Override
 	public int returnSumBomb() {
 		int sumBomb = 0;
-		for (int x = 0; x != cells.length; x++) {
-			for (int y = 0; y != cells[0].length; y++) {
-				if (cells[x][y].isSuggestBomb()) sumBomb++;
+		for (int x = 0; x != this.cells.length; x++) {
+			for (int y = 0; y != this.cells[0].length; y++) {
+				if (this.cells[x][y].isSuggestBomb()) sumBomb++;
 			}
 		}
 		return sumBomb;
@@ -43,9 +53,9 @@ public class GUIBoard extends JPanel implements IBoard {
 	protected void paintComponent(Graphics graphics) {
 		super.paintComponent(graphics);
 		if (this.cells != null) {
-			for (int x = 0; x != cells.length; x++) {
-				for (int y = 0; y != cells[0].length; y++) {
-					cells[x][y].draw(graphics, x, y, real);
+			for (int x = 0; x != this.cells.length; x++) {
+				for (int y = 0; y != this.cells[0].length; y++) {
+                    this.cells[x][y].draw(graphics, x, y, this.real);
 				}
 			}
 		}
@@ -54,7 +64,7 @@ public class GUIBoard extends JPanel implements IBoard {
 	@Override
 	public void drawBoard(ICell[][] cells) {
 		this.cells = cells;
-		real = false;
+		this.real = false;
 		this.repaint();
 	}
 
@@ -65,19 +75,21 @@ public class GUIBoard extends JPanel implements IBoard {
 
 	@Override
 	public void drawBang() {
-		real = true;
+		this.real = true;
 		this.repaint();
 	}
 
 	@Override
 	public void drawCongratulate() {
 		this.repaint();
+		this.isFinish = true;
 		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " Поздравляем! Вы выиграли!");
 	}
 
 	@Override
 	public void drawLosing() {
 		this.repaint();
+		this.isFinish = true;
 		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " К сожалению Вы проиграли");
 	}
 }

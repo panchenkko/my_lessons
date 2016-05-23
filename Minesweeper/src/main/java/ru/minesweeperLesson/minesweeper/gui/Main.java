@@ -80,6 +80,7 @@ public class Main {
 				generate.addActionListener(new GUIAction (level, board, new IGeneratorBoard() {
 					@Override
 					public ICell[][] generate() {
+						board.setIsFinish(false);
 						ICell[][] cells = level.sizeField();
 						label.setText("Флажки: 0 ");
 						for (int i = 0; i < level.sumRow(); i++) {

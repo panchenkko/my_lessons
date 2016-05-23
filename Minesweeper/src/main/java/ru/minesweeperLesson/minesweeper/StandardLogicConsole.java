@@ -108,10 +108,7 @@ public class StandardLogicConsole implements ISelectLevel, ILogic, ITheNumOfTheF
         int check = 0;
         for (ICell[] row : this.cells)
             for (ICell cell : row)
-                if ((cell.isSuggestBomb() && cell.isBomb()) ||
-                        (cell.isSuggestEmpty() && !cell.isBomb()) || (!cell.isSuggestBomb() && cell.isBomb())
-                        || cell.isSuggest1() || cell.isSuggest2() || cell.isSuggest3() || cell.isSuggest4()
-                        || cell.isSuggest5() || cell.isSuggest6() || cell.isSuggest7() || cell.isSuggest8()) {
+                if ((cell.isSuggestBomb() && cell.isBomb()) || cell.isSuggestEmpty()) {
                     check++;
                 }
         if (check == (sumRow() * sumColumn()))

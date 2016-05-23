@@ -57,7 +57,6 @@ public class ConsoleCell implements ICell<PrintStream> {
 
 	@Override
 	public void cancelSuggestBomb() {
-
 	}
 
 	@Override

@@ -32,21 +32,24 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("X: " + returnX(e) + " Y: " + returnY(e));
-		System.out.println();
+		if (!this.board.isFinish()) {
+            System.out.println("X: " + returnX(e) + " Y: " + returnY(e));
+            System.out.println();
+			// Если ячейка уже помечена как бомба и пользователь говорит что в ячейке нет бомбы
+			if (this.board.returnSuggestBomb(returnX(e), returnY(e)) && e.getButton() != 1) {
+				this.board.cancelSuggestBomb(returnX(e), returnY(e));
+			} else if (this.board.returnSuggestBomb(returnX(e), returnY(e)))
+				select(returnX(e), returnY(e), true);
+			else
+				select(returnX(e), returnY(e), e.getButton() != 1);
 
-		// Если ячейка уже помечена как бомба и пользователь говорит что в ячейке нет бомбы
-		if (board.returnSuggestBomb(returnX(e), returnY(e)) && e.getButton() != 1)  {
-			board.cancelSuggestBomb(returnX(e), returnY(e));
-		} else
-        if (board.returnSuggestBomb(returnX(e), returnY(e)))
-			select(returnX(e), returnY(e), true);
-		else
-            select(returnX(e), returnY(e), e.getButton() != 1);
+			Main.setLabel("Флажки: " + this.board.returnSumBomb() + " ");
 
-		Main.setLabel("Флажки: " + this.board.returnSumBomb() + " ");
-
-		board.repaint();
+			this.board.repaint();
+		} else {
+            Main.setLabel("Игра окончена! ");
+            System.out.println("Начните новую игру!");
+        }
 	}
 
 	public void mousePressed(MouseEvent e) {

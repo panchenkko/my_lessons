@@ -36,23 +36,23 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
 
     @Override
     public Easy easy() {
-        medium = null;
-        expert = null;
-        return easy = new Easy();
+        this.medium = null;
+        this.expert = null;
+        return this.easy = new Easy();
     }
 
     @Override
     public Medium medium() {
-        easy = null;
-        expert = null;
-        return medium = new Medium();
+        this.easy = null;
+        this.expert = null;
+        return this.medium = new Medium();
     }
 
     @Override
     public Expert expert() {
-        easy = null;
-        medium = null;
-        return expert = new Expert();
+        this.easy = null;
+        this.medium = null;
+        return this.expert = new Expert();
     }
 
     @Override
@@ -63,36 +63,36 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
     @Override
     public int sumBombs() {
         int sum = 0;
-        if (easy == null && medium == null && expert != null)
+        if (this.easy == null && this.medium == null && this.expert != null)
             sum = expert.sumBombs();
-        else if (easy == null && expert == null && medium != null)
+        else if (this.easy == null && this.expert == null && this.medium != null)
             sum = medium.sumBombs();
-        else if (easy != null)
-            sum = easy.sumBombs();
+        else if (this.easy != null)
+            sum = this.easy.sumBombs();
         return sum;
     }
 
     @Override
     public int sumRow() {
         int row = 0;
-        if (easy == null && medium == null && expert != null)
+        if (this.easy == null && this.medium == null && this.expert != null)
             row = expert.sumRow();
-        else if (easy == null && expert == null && medium != null)
+        else if (this.easy == null && this.expert == null && this.medium != null)
             row = medium.sumRow();
-        else if (easy != null)
-            row = easy.sumRow();
+        else if (this.easy != null)
+            row = this.easy.sumRow();
         return row;
     }
 
     @Override
     public int sumColumn() {
         int column = 0;
-        if (easy == null && medium == null && expert != null)
+        if (this.easy == null && this.medium == null && this.expert != null)
             column = expert.sumColumn();
-        else if (easy == null && expert == null && medium != null)
-            column = medium.sumColumn();
-        else if (easy != null)
-            column = easy.sumColumn();
+        else if (this.easy == null && this.expert == null && this.medium != null)
+            column = this.medium.sumColumn();
+        else if (this.easy != null)
+            column = this.easy.sumColumn();
         return column;
     }
 
@@ -114,10 +114,7 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
         int check = 0;
         for (ICell[] row : this.cells)
             for (ICell cell : row)
-                if ((cell.isSuggestBomb() && cell.isBomb()) ||
-                    (cell.isSuggestEmpty() && !cell.isBomb()) /*|| (!cell.isSuggestBomb() && cell.isBomb())*/
-                    || cell.isSuggest1() || cell.isSuggest2() || cell.isSuggest3() || cell.isSuggest4()
-                    || cell.isSuggest5() || cell.isSuggest6() || cell.isSuggest7() || cell.isSuggest8()) {
+                if ((cell.isSuggestBomb() && cell.isBomb()) || cell.isSuggestEmpty()) {
                     check++;
                 }
         if (check == (sumRow() * sumColumn()))
@@ -145,15 +142,15 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
 
     @Override
     public void clearAroundCell(int x, int y) {
-         if (cells.length > 3) {
-            if (y > 0 && !cells[x][y - 1].isSuggestBomb()) suggest(x, y - 1, false);
-            if (y + 1 < sumColumn() && !cells[x][y + 1].isSuggestBomb()) suggest(x, y + 1, false);
-            if (x > 0 && !cells[x - 1][y].isSuggestBomb()) suggest(x - 1, y, false);
-            if (x + 1 < sumRow() && !cells[x + 1][y].isSuggestBomb()) suggest(x + 1, y, false);
-            if (x > 0 && y > 0 && !cells[x - 1][y - 1].isSuggestBomb()) suggest(x - 1, y - 1, false);
-            if (x + 1 < sumRow() && y + 1 < sumColumn() && !cells[x + 1][y + 1].isSuggestBomb()) suggest(x + 1, y + 1, false);
-            if (x > 0 && y + 1 < sumColumn() && !cells[x - 1][y + 1].isSuggestBomb()) suggest(x - 1, y + 1, false);
-            if (x + 1 < sumRow() && y > 0 && !cells[x + 1][y - 1].isSuggestBomb()) suggest(x + 1, y - 1, false);
+         if (this.cells.length > 3) {
+            if (y > 0 && !this.cells[x][y - 1].isSuggestBomb()) suggest(x, y - 1, false);
+            if (y + 1 < sumColumn() && !this.cells[x][y + 1].isSuggestBomb()) suggest(x, y + 1, false);
+            if (x > 0 && !this.cells[x - 1][y].isSuggestBomb()) suggest(x - 1, y, false);
+            if (x + 1 < sumRow() && !this.cells[x + 1][y].isSuggestBomb()) suggest(x + 1, y, false);
+            if (x > 0 && y > 0 && !this.cells[x - 1][y - 1].isSuggestBomb()) suggest(x - 1, y - 1, false);
+            if (x + 1 < sumRow() && y + 1 < sumColumn() && !this.cells[x + 1][y + 1].isSuggestBomb()) suggest(x + 1, y + 1, false);
+            if (x > 0 && y + 1 < sumColumn() && !this.cells[x - 1][y + 1].isSuggestBomb()) suggest(x - 1, y + 1, false);
+            if (x + 1 < sumRow() && y > 0 && !this.cells[x + 1][y - 1].isSuggestBomb()) suggest(x + 1, y - 1, false);
         }
     }
 
@@ -175,14 +172,14 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
     public int checkingAroundCell(int x, int y) {
         int checking = 0;
 
-        if (y > 0 && cells[x][y - 1].isBomb()) checking++;
-        if (x > 0 && cells[x - 1][y].isBomb()) checking++;
-        if (y > 0 && x > 0 && cells[x - 1][y - 1].isBomb()) checking++;
-        if (y + 1 < sumColumn() && cells[x][y + 1].isBomb()) checking++;
-        if (x + 1 < sumRow() && cells[x + 1][y].isBomb()) checking++;
-        if (x + 1 < sumRow() && y + 1 < sumColumn() && cells[x + 1][y + 1].isBomb()) checking++;
-        if (x + 1 < sumRow() && y > 0 && cells[x + 1][y - 1].isBomb()) checking++;
-        if (x > 0 && y + 1 < sumColumn() && cells[x - 1][y + 1].isBomb()) checking++;
+        if (y > 0 && this.cells[x][y - 1].isBomb()) checking++;
+        if (x > 0 && this.cells[x - 1][y].isBomb()) checking++;
+        if (y > 0 && x > 0 && this.cells[x - 1][y - 1].isBomb()) checking++;
+        if (y + 1 < sumColumn() && this.cells[x][y + 1].isBomb()) checking++;
+        if (x + 1 < sumRow() && this.cells[x + 1][y].isBomb()) checking++;
+        if (x + 1 < sumRow() && y + 1 < sumColumn() && this.cells[x + 1][y + 1].isBomb()) checking++;
+        if (x + 1 < sumRow() && y > 0 && this.cells[x + 1][y - 1].isBomb()) checking++;
+        if (x > 0 && y + 1 < sumColumn() && this.cells[x - 1][y + 1].isBomb()) checking++;
 
         return checking;
     }
@@ -228,14 +225,14 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
             for (int i = 0; i < sumRow(); i++)
                 for (int j = 0; j < sumColumn(); j++) {
                     // Если ячейка пустая и мы её ещё не проверяли
-                    if (cells[i][j].isSuggestEmpty() && !cells[i][j].isChecked()) {
+                    if (this.cells[i][j].isSuggestEmpty() && !this.cells[i][j].isChecked()) {
                         // Если возле ячейки нет бомб
                         if (checkingAroundCell(i, j) == 0) {
                             sumEmpty++;
                             // Открываем рядом стоящие ячейки
                             clearAroundCell(i, j);
                             // Помечаем данную ячейку как просмотренную
-                            cells[i][j].checked();
+                            this.cells[i][j].checked();
                         }
                     }
                 }
