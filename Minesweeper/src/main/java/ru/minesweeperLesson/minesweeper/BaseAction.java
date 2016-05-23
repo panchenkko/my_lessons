@@ -1,6 +1,5 @@
 package ru.minesweeperLesson.minesweeper;
 
-import ru.minesweeperLesson.minesweeper.gui.Main;
 import ru.minesweeperLesson.minesweeper.interfaces.*;
 
 /**
@@ -21,7 +20,7 @@ public class BaseAction implements IUserAction {
 
 	@Override
 	public void initGame() {
-		final ICell[][] cells = generator.generate();
+		final ICell[][] cells = this.generator.generate();
 		this.board.drawBoard(cells);
 		this.logic.loadBoard(cells);
 	}

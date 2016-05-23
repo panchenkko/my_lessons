@@ -1,6 +1,6 @@
 package ru.minesweeperLesson.minesweeper.gui;
 
-import ru.minesweeperLesson.minesweeper.StandardLogicGUI;
+import ru.minesweeperLesson.minesweeper.StandardLogic;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
 
@@ -37,7 +37,7 @@ public class Main {
 
 				controlPanel.setLayout(new FlowLayout());
 				final JButton generate = new JButton("Начать");
-				StandardLogicGUI level = new StandardLogicGUI();
+				StandardLogic level = new StandardLogic();
 				level.easy();
 				/**
 				 * ПЕРЕКЛЮЧЕНИЕ УРОВНЕЙ.

@@ -1,9 +1,9 @@
 package ru.minesweeperLesson.minesweeper.console;
 
 import ru.minesweeperLesson.minesweeper.BaseAction;
+import ru.minesweeperLesson.minesweeper.StandardLogic;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
-import ru.minesweeperLesson.minesweeper.StandardLogicConsole;
 
 import java.util.InputMismatchException;
 import java.util.Objects;
@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Runner {
 
     // Генерация поля
-    public void generateField(Scanner sc, StandardLogicConsole logic, ICell[][] cells) {
+    public void generateField(Scanner sc, StandardLogic logic, ICell[][] cells) {
         final BaseAction action = new BaseAction(logic, new ConsoleBoard(), new IGeneratorBoard() {
             @Override
             public ICell[][] generate() {
@@ -31,14 +31,14 @@ public class Runner {
     }
 
     // При первом ходе делаем все клетки пустыми
-    public void generateEmptyCells(StandardLogicConsole logic, ICell[][] cells) {
+    public void generateEmptyCells(StandardLogic logic, ICell[][] cells) {
         for (int i = 0; i < logic.sumRow(); i++)
             for (int j = 0; j < logic.sumColumn(); j++)
                 cells[i][j] = new ConsoleCell(false);
     }
 
     // Вводим ряд и столбец. Работает до тех пор, пока пользователь не выиграет или не проиграет
-    public void cycleInput(Scanner sc, BaseAction action, StandardLogicConsole logic) {
+    public void cycleInput(Scanner sc, BaseAction action, StandardLogic logic) {
         int row = 0, column = 0;
         try {
             do {
@@ -71,7 +71,7 @@ public class Runner {
      */
     public static void main(String[] args) {
         Runner runner = new Runner();
-        StandardLogicConsole logic = new StandardLogicConsole();
+        StandardLogic logic = new StandardLogic();
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println(
                     "\n<-- ВВЕДИТЕ ЦИФРУ -->\n\n"

@@ -32,6 +32,11 @@ public interface ICell<T> {
     /**
      * Помечаем данную ячейку как бомбу
      */
+    void thisBomb();
+
+    /**
+     * Помечаем данную ячейку помеченную как бомба
+     */
 	void suggestBomb();
 
     /**

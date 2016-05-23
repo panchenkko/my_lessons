@@ -46,6 +46,11 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 		this.suggestEmpty = true;
 	}
 
+    @Override
+    public void thisBomb() {
+        this.bomb = true;
+    }
+
 	@Override
 	public void suggestBomb() {
 		this.suggestBomb = true;
@@ -155,8 +160,10 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 		paint.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
 
 		paint.setColor(new Color(187,187,187));
-		paint.drawRect(x * GUIBoard.getPADDING(), y * GUIBoard.getPADDING(),
-				           GUIBoard.getPADDING(), GUIBoard.getPADDING());
+		paint.drawRect(x * GUIBoard.getPADDING(),
+					   y * GUIBoard.getPADDING(),
+				           GUIBoard.getPADDING(),
+						   GUIBoard.getPADDING());
 
 		x = x * GUIBoard.getPADDING() + 16;
 		y = y * GUIBoard.getPADDING() + 25;

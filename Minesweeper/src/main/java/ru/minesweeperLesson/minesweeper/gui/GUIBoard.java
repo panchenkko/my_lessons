@@ -90,6 +90,6 @@ public class GUIBoard extends JPanel implements IBoard {
 	public void drawLosing() {
 		this.repaint();
 		this.isFinish = true;
-		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " К сожалению Вы проиграли");
+		Main.setLosing("Нажмите 'OK', чтобы закрыть окно.", " К сожалению Вы проиграли.");
 	}
 }

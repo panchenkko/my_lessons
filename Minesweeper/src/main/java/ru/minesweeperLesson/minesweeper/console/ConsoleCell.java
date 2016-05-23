@@ -36,6 +36,11 @@ public class ConsoleCell implements ICell<PrintStream> {
 	}
 
 	@Override
+	public void thisBomb() {
+		this.bomb = true;
+	}
+
+	@Override
 	public boolean isSuggestBomb() {
 		return this.suggestBomb;
 	}

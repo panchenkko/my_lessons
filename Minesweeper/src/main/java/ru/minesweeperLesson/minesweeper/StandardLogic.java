@@ -1,6 +1,5 @@
 package ru.minesweeperLesson.minesweeper;
 
-import ru.minesweeperLesson.minesweeper.gui.GUICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ICell;
 import ru.minesweeperLesson.minesweeper.interfaces.ILogic;
 import ru.minesweeperLesson.minesweeper.interfaces.ISelectLevel;
@@ -26,7 +25,7 @@ import java.util.Random;
  *    (в каком уже изменена логика), иначе запускаем стандартную логику находящуюся в этом классе
  */
 
-public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField {
+public class StandardLogic implements ISelectLevel, ILogic, ITheNumOfTheField {
 
     private Easy easy;
     private Medium medium;
@@ -162,7 +161,7 @@ public class StandardLogicGUI implements ISelectLevel, ILogic, ITheNumOfTheField
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBomb() && !this.cells[row][column].isSuggestEmpty()) {
-                this.cells[row][column] = new GUICell(true);
+                this.cells[row][column].thisBomb();
                 sumBombs--;
             }
         }
