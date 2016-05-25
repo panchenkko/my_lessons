@@ -27,7 +27,7 @@ public class BaseAction implements IUserAction {
 
 	@Override
 	public void select(int x, int y, boolean bomb) {
-        if (!this.logic.finish()) {
+        if (!this.board.isFinish()) {
             this.logic.suggest(x, y, bomb);
             if (this.logic.checkTheFirstMove() && !bomb) {
                 this.logic.clearAroundCell(x, y);
@@ -42,8 +42,7 @@ public class BaseAction implements IUserAction {
                 this.board.drawLosing();
             } else
                 this.board.drawCell(x, y);
-        } else
-
-        if (this.logic.finish() && !this.logic.shouldBang(x, y)) this.board.drawCongratulate();
+            if (this.logic.finish() && !this.logic.shouldBang(x, y)) this.board.drawCongratulate();
+        }
     }
 }
