@@ -11,9 +11,21 @@ public class ConsoleBoard implements IBoard {
 
     private ICell[][] cells;
 
+    private boolean isFinish = false;
+
     @Override
     public int returnSumBomb() {
         return 0;
+    }
+
+    @Override
+    public boolean isFinish() {
+        return isFinish;
+    }
+
+    @Override
+    public void setIsFinish(boolean isFinish) {
+        this.isFinish = isFinish;
     }
 
     @Override

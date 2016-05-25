@@ -13,6 +13,18 @@ public interface IBoard {
 	int returnSumBomb();
 
     /**
+     * Флажок, какой равен true, если игра уже подошла к концу
+     * @return возвращаем значение флажка
+     */
+	boolean isFinish();
+
+    /**
+     * Флажок, какой равен true, если игра уже подошла к концу
+     * @param isFinish меняем значение флажка
+     */
+    void setIsFinish(boolean isFinish);
+
+    /**
      * Отменяем данную ячейку как помеченную
      * @param x координата
      * @param y координата
