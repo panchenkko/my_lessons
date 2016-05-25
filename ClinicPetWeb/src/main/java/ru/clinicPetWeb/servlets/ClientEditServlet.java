@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Objects;
 
 public class ClientEditServlet extends HttpServlet {
 
@@ -29,20 +28,16 @@ public class ClientEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		String petType = request.getParameter("petType");
-		if (Objects.equals(petType, ""))
-			petType = " - ";
-
 		String petSex = request.getParameter("petSex");
-		if (petSex == null)
-			petSex = " - ";
-
 		String petAge = request.getParameter("petAge");
-		if (petAge == null)
-			petAge = " - ";
+
+		if (petType.equals("")) petType = " - ";
+		if (petSex == null) petSex = " - ";
+		if (petAge == null) petAge = " - ";
 
 		this.CLIENT_CACHE.edit(new Client(Integer.valueOf(request.getParameter("id")), request.getParameter("clientName"),
 				               new Pet(petType, request.getParameter("petName"), petSex, petAge)));
-		
+
 		response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
 	}
 }

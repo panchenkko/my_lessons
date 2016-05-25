@@ -88,19 +88,6 @@
                             <td>${client.pet.petType}</td>
                             <td>${client.pet.name}</td>
                             <td>${client.pet.petSex}</td>
-                            <%--<c:if test="${client.pet.age == 0 || client.pet.age == ''}">--%>
-                                <%--<td> - </td>--%>
-                            <%--</c:if>--%>
-                            <%--<c:if test="${client.pet.age.charAt(client.pet.age.length() - 1) == 1}">--%>
-                                <%--<td>${client.pet.age} год</td>--%>
-                            <%--</c:if>--%>
-                            <%--<c:if test="${client.pet.age.charAt(client.pet.age.length() - 1) > 1 &&--%>
-                                          <%--client.pet.age.charAt(client.pet.age.length() - 1) < 5}">--%>
-                                <%--<td>${client.pet.age} года</td>--%>
-                            <%--</c:if>--%>
-                            <%--<c:if test="${client.pet.age.charAt(client.pet.age.length() - 1) >= 5}">--%>
-                                <%--<td>${client.pet.age} лет</td>--%>
-                            <%--</c:if>--%>
                             <c:if test="${client.pet.age == 0 || client.pet.age == ''}">
                                 <td> - </td>
                             </c:if>

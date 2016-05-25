@@ -42,9 +42,11 @@ public class HibernateStorage implements Storage {
 		return found;
 	}
 
+    /**
+     * Лямбда - (имя входного параметра -> {действия с этим параметром});
+     */
 	@Override
 	public Collection<Client> values() {
-        // session - это входной параметр, а дальше после стрелки говорим, что хотим сделать
         return transaction(session -> session.createQuery("from Client").list());
 	}
 
@@ -98,6 +100,11 @@ public class HibernateStorage implements Storage {
     }
 
     public void findIdClient(int idClient) {
+        transaction(session -> {
+            final Query query = session.createQuery("from Client as client where client.id=:id");
+            query.setInteger("id", idClient);
+            return false;
+        });
     }
 
     public boolean findThreeParameters(String clientName, String petName, String petAge) {
@@ -112,20 +119,31 @@ public class HibernateStorage implements Storage {
     }
 
     public boolean findClientName(int id, String clientName) {
-        final Session session = factory.openSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            final Query query = session.createQuery("from Client as client where client.name=:name");
-            query.setString("name", clientName);
-//            return (Client) query.iterate().next();
-        } finally {
-            tx.commit();
-            session.close();
-        }
+//        final Session session = factory.openSession();
+//        Transaction tx = session.beginTransaction();
+//        try {
+//            final Query query = session.createQuery("from Client as client where client.name=:name");
+//            query.setString("name", clientName);
+////            return (Client) query.iterate().next();
+//        } finally {
+//            tx.commit();
+//            session.close();
+//        }
+        transaction(session -> {
+            final Query query = session.createQuery("from Client as client right join Pet where client.id=:id");
+            query.setInteger("id", id);
+            return false;
+        });
         return false;
+
     }
 
     public boolean findPetName(int id, String petName) {
+        transaction(session -> {
+            final Query query = session.createQuery("from Pet as pet left join Client as client where client.id=:id");
+            query.setInteger("id", id);
+            return false;
+        });
         return false;
     }
 
