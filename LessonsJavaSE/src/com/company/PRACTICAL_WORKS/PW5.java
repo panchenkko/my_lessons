@@ -79,18 +79,14 @@ public class PW5 {
         answer = sc.next();
 
         switch(answer) {
-            case "1":
-                addition(true);
-                break;
-            case "2":
-                subtraction(true);
-                break;
-            case "3":
-                multiplication(true);
-                break;
-            case "4":
-                division(true);
-                break;
+            case "1": addition(true);
+                      break;
+            case "2": subtraction(true);
+                      break;
+            case "3": multiplication(true);
+                      break;
+            case "4": division(true);
+                      break;
             default:
                 System.err.println("Вы не выбрали действие! Выберите что-нибудь: ");
                 menu();
