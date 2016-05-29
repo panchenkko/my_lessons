@@ -14,8 +14,10 @@ public class JdbcStorage implements Storage {
 
 	private Connection connection;
 
-	final List<Client> clients = new ArrayList<>();
-	final List<Client> found = new ArrayList<>();
+	private final List<Client> clients = new ArrayList<>();
+	private final List<Client> found = new ArrayList<>();
+
+    private final String SQL_SELECT_ALL = "SELECT * FROM client INNER JOIN pet ON client.pet_id = pet.uid";
 
 	public JdbcStorage() {
 		final Settings settings = Settings.getInstance();
@@ -48,7 +50,7 @@ public class JdbcStorage implements Storage {
         clients.clear();
 		try (final Statement statement = this.connection.createStatement();
 		     final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.pet_id = pet.uid ORDER BY client.uid")) {
+                     (SQL_SELECT_ALL + " " + "ORDER BY client.uid")) {
 			while (rs.next()) {
 				clients.add(new Client(rs.getInt("uid"), rs.getString("name"),
 							new Pet(rs.getString("type"), rs.getString("petName"),
@@ -132,8 +134,7 @@ public class JdbcStorage implements Storage {
         int sum = 0;
         // Записываем id питомца, какого нужно удалить
         try (Statement statement = this.connection.createStatement();
-             final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.pet_id = pet.uid")) {
+             final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (rs.getInt("uid") == id) {
                     sum = rs.getInt("pet_id");
@@ -192,7 +193,7 @@ public class JdbcStorage implements Storage {
 	@Override
 	public Client get(int id) {
 		try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client join pet on client.pet_id = pet.uid where client.uid=(?)")) {
+                (SQL_SELECT_ALL + " " + "where client.uid=(?)")) {
 			statement.setInt(1, id);
 			try (final ResultSet rs = statement.executeQuery()) {
 				while (rs.next()) {
@@ -211,7 +212,7 @@ public class JdbcStorage implements Storage {
     public void find(String idClient, String clientName, String petName, String petAge) {
         this.found.clear();
 
-        if (!Objects.equals(idClient, ""))
+        if (!idClient.equals(""))
             findIdClient(Integer.valueOf(idClient));
         else
         if (!findThreeParameters(clientName, petName, petAge))
@@ -243,8 +244,7 @@ public class JdbcStorage implements Storage {
     public boolean findThreeParameters(String clientName, String petName, String petAge) {
         boolean check = false;
         try (final Statement statement = this.connection.createStatement();
-             final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.pet_id = pet.uid")) {
+             final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName) &&
                         findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
@@ -261,8 +261,7 @@ public class JdbcStorage implements Storage {
     public boolean findTwoParameters(String clientName, String petName, String petAge) {
         boolean check = false;
         try (final Statement statement = this.connection.createStatement();
-             final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.pet_id = pet.uid")) {
+             final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName)) {
                     foundAdd(rs);
@@ -287,8 +286,7 @@ public class JdbcStorage implements Storage {
 
     public void findOneParameters(String clientName, String petName, String petAge) {
         try (final Statement statement = this.connection.createStatement();
-             final ResultSet rs = statement.executeQuery
-                     ("select * from client right join pet on client.pet_id = pet.uid")) {
+             final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName)) {
                     foundAdd(rs);
@@ -296,7 +294,7 @@ public class JdbcStorage implements Storage {
                 if (findPetName(rs.getInt("uid"), petName)) {
                     foundAdd(rs);
                 } else
-                if (findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
+                if (findAge(rs.getInt("uid"), petAge) && !petAge.equals("")) {
                     foundAdd(rs);
                 }
             }
@@ -307,7 +305,7 @@ public class JdbcStorage implements Storage {
 
     public boolean findClientName(int id, String clientName) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from client left join pet on client.pet_id = pet.uid where client.uid = (?)")) {
+                (SQL_SELECT_ALL + " " + "where client.uid = (?)")) {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
@@ -323,7 +321,7 @@ public class JdbcStorage implements Storage {
 
     public boolean findPetName(int id, String petName) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from pet left join client on client.pet_id = pet.uid where client.uid = (?)")) {
+                (SQL_SELECT_ALL + " " + "where client.uid = (?)")) {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
@@ -339,7 +337,7 @@ public class JdbcStorage implements Storage {
 
     public boolean findAge(int id, String age) {
         try (final PreparedStatement statement = this.connection.prepareStatement
-                ("select * from pet left join client on client.pet_id = pet.uid where client.uid = (?)")) {
+                (SQL_SELECT_ALL + " " + "where client.uid = (?)")) {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
