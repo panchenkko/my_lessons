@@ -46,12 +46,12 @@ criteria.add(Restrictions.or(Restrictions.eq("id", 4)));
 int[] arr_id = {1,4,6};
 criteria.add(Restrictions.in("id", arr_id); // Выведем клиентов у каких id равен 1, 4, 6
 
-// Имитация BETWEEN:
+// BETWEEN:
 criteria.add(Restrictions.between("id", 2, 6); // выведем клиентов у каких id от 2 до 6
 
-// Имитация LIKE:
+// LIKE:
 // Есть два метода в классе Restrictions, это "like" и "ilike", в первом по умолчанию проценты с двух сторон,
-// а во втором методе нужно  задавать их вручную
+// а во втором методе нужно задавать их вручную
 
 // NOT (IN, BETWEEN, LIKE, etc.)
 criteria.add(Restrictions.not(Restrictions.in("id", arr_id))); // выведем все id какие не равны 1, 4, 6

@@ -15,9 +15,6 @@
 
 		<property name="hibernate.hbm2ddl.auto">validate</property>
 
-		<!--<property name="hibernate.connection.provider_class">-->
-            <!--org.hibernate.connection.C3P0ConnectionProvider-->
-		<!--</property>-->
 		<property name="hibernate.c3p0.min_size">7</property>
 		<property name="hibernate.c3p0.max_size">53</property>
 		<property name="hibernate.c3p0.timeout">100</property>
