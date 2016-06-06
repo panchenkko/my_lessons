@@ -10,7 +10,7 @@ public class Combination implements ICombination {
             return cartGamer1.getValueNum();
         else
             return cartGamer2.getValueNum();
-    } // Рабочий, проверил
+    }
 
     @Override
     public int onePair(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
@@ -49,7 +49,7 @@ public class Combination implements ICombination {
                 retValue = cartGamer2.getValueNum();
         }
         return retValue;
-    } // Нужно затестить. Если это работает корректно, то комбинации "Трио", "Каре" и "Фулл Хауз" так же работают отлично
+    }
 
     @Override
     public int twoPairs(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
@@ -138,7 +138,7 @@ public class Combination implements ICombination {
             retValue = cartGamer1.getValueNum();
 
         return retValue;
-    } // Метод такой же, как и пара, просто заменены константы "2" на "3" в некоторых местах
+    }
 
     @Override
     public int straight(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
@@ -267,7 +267,7 @@ public class Combination implements ICombination {
             return higtestCart;
         else
             return 0;
-    } // Вот его нужно тестить
+    }
 
     @Override
     public int flush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
@@ -355,7 +355,7 @@ public class Combination implements ICombination {
             retValue = cartGamer1.getValueNum();
 
         return retValue;
-    } // Метод такой же, как и пара, просто заменены константы "2" на "4" в некоторых местах
+    }
 
     @Override
     public int straightFlush(Cart cartGamer1, Cart cartGamer2, Cart one, Cart two, Cart three, Cart four, Cart five) {
@@ -504,5 +504,4 @@ public class Combination implements ICombination {
         else
             return 0;
     }
-
 }

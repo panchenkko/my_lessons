@@ -1,7 +1,6 @@
 package ru.poker.Interfaces;
 
-public interface Progress {
+public interface IProgress {
     void initGame();
-
     void progress();
 }

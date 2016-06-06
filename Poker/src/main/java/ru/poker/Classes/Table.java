@@ -542,18 +542,6 @@ public class Table {
         return true;
     }
 
-    // Дисквалификация игрока, в случае если не хватает денег для резервной ставки
-    public boolean disqualification(Table table, Gamer gamer) {
-        if (gamer.getMoney() < table.getReserveMoney()) {
-            gamer.setInGame(false);
-            table.inscription("\033[1;31m" +
-                    " ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ДИСКВАЛИФИЦИРОВАН " + "\033[0m");
-            ThreadSleep.sleep(1500);
-            return true;
-        }
-        return false;
-    }
-
     public void drawTable() {
         if (this.numCircle <= 2) {
             inscription("===============СТОЛ==============");
