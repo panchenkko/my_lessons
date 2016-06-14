@@ -36,7 +36,7 @@ public class IndexServlet extends HttpServlet {
         if (petAge == null) petAge = " - ";
 
         this.CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), req.getParameter("clientName"),
-                              new Pet(petType, req.getParameter("petName"), petSex, petAge)));
+                              new Pet(CLIENT_CACHE.generateId(), petType, req.getParameter("petName"), petSex, petAge)));
 
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/index"));
     }

@@ -41,7 +41,7 @@ public class Check {
     }
 
     public static void main(String[] args) {
-        Client client = new Client(1, "Vlad", new Pet("cat", "Bars", "male", "12"));
+        Client client = new Client(1, "Vlad", new Pet(1, "cat", "Bars", "male", "12"));
         HibernateStorage storage = new HibernateStorage();
 
         Check check = new Check();

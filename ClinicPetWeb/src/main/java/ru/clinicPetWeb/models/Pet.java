@@ -20,7 +20,8 @@ public class Pet extends Base {
     public Pet() {
     }
 
-    public Pet(final String petType, final String name, final String petSex, final String age) {
+    public Pet(final int id, final String petType, final String name, final String petSex, final String age) {
+        this.id = id;
         this.petType = petType;
         this.name = name;
         this.petSex = petSex;
