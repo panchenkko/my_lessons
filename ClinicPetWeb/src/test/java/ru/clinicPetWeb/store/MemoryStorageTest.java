@@ -36,19 +36,19 @@ public class MemoryStorageTest extends Mockito {
 
     @Test
     public void testAdd() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex", "petAge")));
+        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
     }
 
     @Test
     public void testEdit() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex", "petAge")));
+        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
         memoryStorage.edit(new Client(1, "clientNameNew",
-                new Pet("petTypeNew", "petNameNew", "petSexNew", "petAgeNew")));
+                           new Pet(1, "petTypeNew", "petNameNew", "petSexNew", "petAgeNew")));
     }
 
     @Test
     public void testDelete() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex", "petAge")));
+        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
         memoryStorage.delete(1);
     }
 
@@ -59,14 +59,14 @@ public class MemoryStorageTest extends Mockito {
 
     @Test
     public void testGet() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex", "petAge")));
+        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
         memoryStorage.get(1);
     }
 
     @Test
     public void testFind() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet("petType", "petName", "petSex", "petAge")));
-        memoryStorage.add(new Client(2, "clientName", new Pet("petType", "petName", "petSex", "")));
+        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
+        memoryStorage.add(new Client(2, "clientName", new Pet(1, "petType", "petName", "petSex", "")));
 
         // id
         memoryStorage.find("1", "clientName", "petName", "petAge");

@@ -39,7 +39,7 @@ public class ClientCacheTest extends Mockito {
     @Test
     public void testGet() throws Exception {
         clientCache.add(new Client(rs.getInt("1"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("petAge")))
         );
         clientCache.get(1);

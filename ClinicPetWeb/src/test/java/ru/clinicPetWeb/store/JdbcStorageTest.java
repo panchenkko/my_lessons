@@ -47,7 +47,7 @@ public class JdbcStorageTest extends Mockito {
     @Test
     public void testValues() throws Exception {
         jdbcStorage.add(new Client(rs.getInt("1"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("petAge")))
         );
         jdbcStorage.values();
@@ -56,7 +56,7 @@ public class JdbcStorageTest extends Mockito {
     @Test
     public void testAdd() throws Exception {
         jdbcStorage.add(new Client(rs.getInt("1"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("petAge")))
         );
     }
@@ -64,7 +64,7 @@ public class JdbcStorageTest extends Mockito {
     @Test
     public void testEdit() throws Exception {
         jdbcStorage.edit(new Client(rs.getInt("1"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("petAge")))
         );
     }
@@ -82,7 +82,7 @@ public class JdbcStorageTest extends Mockito {
     @Test
     public void testGet() throws Exception {
         jdbcStorage.add(new Client(rs.getInt("1"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("petAge")))
         );
         jdbcStorage.get(1);
@@ -91,12 +91,12 @@ public class JdbcStorageTest extends Mockito {
     @Test
     public void testFind() throws Exception {
         jdbcStorage.add(new Client(rs.getInt("1"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("petAge")))
         );
 
         jdbcStorage.add(new Client(rs.getInt("2"), rs.getString("clientName"),
-                        new Pet(rs.getString("petType"), rs.getString("petName"),
+                        new Pet(rs.getInt("pet_id"), rs.getString("petType"), rs.getString("petName"),
                                 rs.getString("petSex"), rs.getString("")))
         );
 

@@ -51,9 +51,11 @@
 			</a>
 		<form action="${pageContext.servletContext.contextPath}/client/edit" method="POST">
 			<input type="hidden" name="id" class="form-control input-control" value="${client.id}">
+            <input type="hidden" name="pet_id" class="form-control input-control" value="${client.pet.id}">
 
 			<input type="text" name="clientName" class="form-control input-control" value="${client.name}"
 				   placeholder="Имя клиента" required>
+
 			<br>
 			<input type="text" name="petType" class="form-control input-control" value="${client.pet.petType}"
 				   placeholder="Тип питомца">
