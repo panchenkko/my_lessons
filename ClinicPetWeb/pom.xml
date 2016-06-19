@@ -6,6 +6,7 @@
 	<artifactId>clinicPetWeb</artifactId>
 	<version>1.0</version>
 
+	<!-- В какой формат паковать программу (war или jar) -->
 	<packaging>war</packaging>
 
 	<name>Clinic Pet Web</name>
