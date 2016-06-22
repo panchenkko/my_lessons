@@ -13,8 +13,8 @@ public class ClientDeleteServlet extends HttpServlet {
 	private static final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		CLIENT_CACHE.delete(Integer.valueOf(req.getParameter("id")));
-		resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/client/index"));
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		CLIENT_CACHE.delete(Integer.valueOf(request.getParameter("id")));
+		response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
 	}
 }

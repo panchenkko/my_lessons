@@ -16,7 +16,7 @@ public class Settings {
     private Settings() {
         try {
             properties.load(new FileInputStream(
-                    this.getClass().getClassLoader().getResource("panchenko.properties").getFile()));
+                    this.getClass().getClassLoader().getResource("db.properties").getFile()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,6 +29,4 @@ public class Settings {
     public String value(String key) {
         return this.properties.getProperty(key);
     }
-
-
 }
