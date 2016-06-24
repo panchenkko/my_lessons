@@ -10,9 +10,9 @@
             <generator class="identity" />
         </id>
         <one-to-one name="client" class="ru.clinicPetWeb.models.Client"/>
-        <property name="petType" column="type" type="string"/>
+        <property name="getType" column="type" type="string"/>
         <property name="name" column="petName" type="string"/>
-        <property name="petSex" column="sex" type="string"/>
+        <property name="getSex" column="sex" type="string"/>
         <property name="age" column="age" type="string"/>
 
         <!--

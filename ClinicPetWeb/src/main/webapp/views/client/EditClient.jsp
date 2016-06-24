@@ -57,7 +57,7 @@
 				   placeholder="Имя клиента" required>
 
 			<br>
-			<input type="text" name="petType" class="form-control input-control" value="${client.pet.petType}"
+			<input type="text" name="petType" class="form-control input-control" value="${client.pet.type}"
 				   placeholder="Тип питомца">
 			<br>
 			<input type="text" name="petName" id="petName" class="form-control input-control" value="${client.pet.name}"
@@ -65,15 +65,15 @@
 			<br>
 			<select name="petSex" class="form-control input-control">
 				<option selected="selected" disabled>Пол питомца</option>
-				<c:if test="${client.pet.petSex == 'Мужской'}">
+				<c:if test="${client.pet.sex == 'Мужской'}">
 				<option value="Мужской" selected>Мужской</option>
 				<option value="Женский">Женский</option>
 				</c:if>
-				<c:if test="${client.pet.petSex == 'Женский'}">
+				<c:if test="${client.pet.sex == 'Женский'}">
 				<option value="Мужской">Мужской</option>
 				<option value="Женский" selected>Женский</option>
 				</c:if>
-				<c:if test="${client.pet.petSex != 'Мужской' && client.pet.petSex != 'Женский'}">
+				<c:if test="${client.pet.sex != 'Мужской' && client.pet.sex != 'Женский'}">
 				<option value="Мужской">Мужской</option>
 				<option value="Женский">Женский</option>
 				</c:if>

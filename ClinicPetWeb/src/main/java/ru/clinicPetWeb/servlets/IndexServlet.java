@@ -24,29 +24,39 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        request.setAttribute(ATTRIBUTE_MODEL_TO_VIEW, CLIENT_CACHE.values());
-        logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_VIEW + ");");
-        request.getRequestDispatcher("/" + PAGE_INDEX_JSP).forward(request, response);
-        logger.trace("RequestDispatcher(/" + PAGE_INDEX_JSP + ").forward(request, response);");
+        try {
+            request.setAttribute(ATTRIBUTE_MODEL_TO_VIEW, CLIENT_CACHE.values());
+            logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_VIEW + ");");
+            request.getRequestDispatcher("/" + PAGE_INDEX_JSP).forward(request, response);
+            logger.trace("RequestDispatcher(" + PAGE_INDEX_JSP + ").forward(request, response);");
+        } catch (Exception e) {
+            logger.fatal("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
+        }
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        try {
+            String clientName = request.getParameter("clientName");
+            String petType = request.getParameter("petType");
+            String petName = request.getParameter("petName");
+            String petSex = request.getParameter("petSex");
+            String petAge = request.getParameter("petAge");
 
-        String clientName = request.getParameter("clientName");
-        String petType = request.getParameter("petType");
-        String petName = request.getParameter("petName");
-        String petSex = request.getParameter("petSex");
-        String petAge = request.getParameter("petAge");
+            if (petType.equals("")) petType = " - ";
+            if (petSex == null) petSex = " - ";
+            if (petAge == null) petAge = " - ";
 
-        if (petType.equals("")) petType = " - ";
-        if (petSex == null) petSex = " - ";
-        if (petAge == null) petAge = " - ";
+            CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), clientName,
+                             new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge)));
 
-        CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), clientName,
-                         new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge)));
-        logger.info("New Client[" + clientName + ", " + "pet: " + petName + "]");
+            logger.info("NEW CLIENT [" +
+                        "NAME='" + clientName + '\'' + ", " +
+                        "PET=" +   petType + ", " + '\'' +   petName + '\'' + ", " + petSex + ", " + petAge + "]");
+        } catch (Exception e) {
+            logger.error("ADD CLIENT ERROR! ", e);
+        }
         response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
         logger.trace("Redirect(" + request.getContextPath() + "/client/index);");
     }

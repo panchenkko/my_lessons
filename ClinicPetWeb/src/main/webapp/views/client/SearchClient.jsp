@@ -83,9 +83,9 @@
                         <tr>
                             <td>${client.id}</td>
                             <td class="colNameClient">${client.name}</td>
-                            <td>${client.pet.petType}</td>
+                            <td>${client.pet.type}</td>
                             <td>${client.pet.name}</td>
-                            <td>${client.pet.petSex}</td>
+                            <td>${client.pet.sex}</td>
                             <c:if test="${client.pet.age == 0 || client.pet.age == ''}">
                                 <td> - </td>
                             </c:if>

@@ -178,6 +178,14 @@ form input[type="submit"], input[type="button"] {
 	color: white;
 }
 
+#loggingBtn>button {
+    float: right;
+	margin: 5px 14px 0 0;
+	width: 105px;
+	font-family: Cursive, Comic Sans MS, sans-serif;
+	color: white;
+}
+
 @media (max-width: 1200px) {
 	header {
 		background-size: auto 195px;

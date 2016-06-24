@@ -68,6 +68,9 @@
             <a href="${pageContext.servletContext.contextPath}/client/search" id="searchBtn">
                 <button class="btn btn-primary">Поиск</button>
             </a>
+            <a href="${pageContext.servletContext.contextPath}/Logging/log4j_html_info.html" id="loggingBtn">
+                <button class="btn btn-success">Логи</button>
+            </a>
             <table border="2" class="table">
                 <caption>База данных клиентов</caption>
                 <tbody>
@@ -85,9 +88,9 @@
                         <tr>
                             <td>${client.id}</td>
                             <td class="colNameClient">${client.name}</td>
-                            <td>${client.pet.petType}</td>
+                            <td>${client.pet.type}</td>
                             <td>${client.pet.name}</td>
-                            <td>${client.pet.petSex}</td>
+                            <td>${client.pet.sex}</td>
                             <c:if test="${client.pet.age == 0 || client.pet.age == ''}">
                                 <td> - </td>
                             </c:if>

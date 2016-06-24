@@ -7,53 +7,53 @@ import javax.persistence.*;
 public class Pet extends Base {
 
     @Column(name = "type")
-    private String petType;
+    private String type;
 
     @Column(name = "petname")
     private String name;
 
     @Column(name = "sex")
-    private String petSex;
+    private String sex;
 
     private String age;
 
     public Pet() {
     }
 
-    public Pet(final int id, final String petType, final String name, final String petSex, final String age) {
+    public Pet(final int id, final String type, final String name, final String sex, final String age) {
         this.id = id;
-        this.petType = petType;
+        this.type = type;
         this.name = name;
-        this.petSex = petSex;
+        this.sex = sex;
         this.age = age;
     }
 
-    public String getPetType() {
-        return this.petType;
+    public String getType() {
+        return this.type;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public String getPetSex() {
-        return petSex;
+    public String getSex() {
+        return sex;
     }
 
     public String getAge() {
         return this.age;
     }
 
-    public void setPetType(String petType) {
-        this.petType = petType;
+    public void setType(String petType) {
+        this.type = petType;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPetSex(String petSex) {
-        this.petSex = petSex;
+    public void setSex(String petSex) {
+        this.sex = petSex;
     }
 
     public void setAge(String age) {

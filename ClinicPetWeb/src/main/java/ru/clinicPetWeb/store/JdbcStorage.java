@@ -67,15 +67,14 @@ public class JdbcStorage implements Storage {
 	public void add(Client client) {
         try (final PreparedStatement statement = this.connection.prepareStatement
                 ("insert into pet (type, petName, sex, age) values (?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
-            statement.setString(1, client.getPet().getPetType());
+            statement.setString(1, client.getPet().getType());
             statement.setString(2, client.getPet().getName());
-            statement.setString(3, client.getPet().getPetSex());
+            statement.setString(3, client.getPet().getSex());
             statement.setString(4, client.getPet().getAge());
             statement.executeUpdate();
 
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-//                    client.setId(generatedKeys.getInt(1));
                     client.getPet().setId(generatedKeys.getInt(1));
                 }
             }
@@ -109,9 +108,9 @@ public class JdbcStorage implements Storage {
             editPet = this.connection.prepareStatement(stringEditPet);
             editClient = this.connection.prepareStatement(stringEditClient);
 
-            editPet.setString(1, client.getPet().getPetType());
+            editPet.setString(1, client.getPet().getType());
             editPet.setString(2, client.getPet().getName());
-            editPet.setString(3, client.getPet().getPetSex());
+            editPet.setString(3, client.getPet().getSex());
             editPet.setString(4, client.getPet().getAge());
             editPet.setInt(5, client.getPet().getId());
             editPet.executeUpdate();

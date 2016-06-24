@@ -1,5 +1,7 @@
 package ru.clinicPetWeb.servlets;
 
+import org.apache.log4j.Logger;
+import ru.clinicPetWeb.service.ClassName;
 import ru.clinicPetWeb.store.ClientCache;
 
 import javax.servlet.RequestDispatcher;
@@ -13,24 +15,40 @@ public class ClientSearchServlet extends HttpServlet {
 
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
+    public static final String ATTRIBUTE_MODEL_TO_SEARCH = "found";
+    public static final String PAGE_SEARCH_JSP = "SearchClient.jsp";
+
+    private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        request.setAttribute("found", this.CLIENT_CACHE.valuesFound());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/client/SearchClient.jsp");
-        dispatcher.forward(request, response);
+        try {
+            logger.info("SEARCHING CLIENTS");
+            request.setAttribute(ATTRIBUTE_MODEL_TO_SEARCH, CLIENT_CACHE.valuesFound());
+            logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_SEARCH + ");");
+            request.getRequestDispatcher("/views/client/" + PAGE_SEARCH_JSP).forward(request, response);
+            logger.trace("RequestDispatcher(" + PAGE_SEARCH_JSP + ").forward(request, response);");
+        } catch (Exception e) {
+            logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
+            response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        try {
+            String idClient = request.getParameter("idClient");
+            String clientName = request.getParameter("clientName");
+            String petName = request.getParameter("petName");
+            String petAge = request.getParameter("petAge");
 
-        String idClient = request.getParameter("idClient");
-        String clientName = request.getParameter("clientName");
-        String petName = request.getParameter("petName");
-        String petAge = request.getParameter("petAge");
-
-        this.CLIENT_CACHE.find(idClient, clientName, petName, petAge);
-
+            CLIENT_CACHE.find(idClient, clientName, petName, petAge);
+            logger.info("SEARCH SUCCESSFULLY");
+        } catch (Exception e) {
+            logger.error("SEARCH ERROR! ", e);
+        }
         response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/search"));
+        logger.trace("Redirect(" + request.getContextPath() + "/client/index);");
     }
 
 }
