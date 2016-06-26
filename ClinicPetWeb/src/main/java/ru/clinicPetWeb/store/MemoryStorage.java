@@ -13,21 +13,19 @@ public class MemoryStorage implements Storage {
 
     private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<>();
 
-
     private final AtomicInteger idFound = new AtomicInteger();
 
     private final ConcurrentHashMap<Integer, Client> found = new ConcurrentHashMap<>();
-
-    public Collection<Client> valuesFound() {
-        return this.found.values();
-    }
-
 
     @Override
     public Collection<Client> values() {
         return this.clients.values();
     }
 
+    @Override
+    public Collection<Client> valuesFound() {
+        return this.found.values();
+    }
 
     @Override
     public void add(Client client) {
@@ -121,6 +119,5 @@ public class MemoryStorage implements Storage {
 
     @Override
     public void close() {
-
     }
 }

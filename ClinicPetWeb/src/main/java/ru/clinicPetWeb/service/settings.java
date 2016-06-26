@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Pattern Singleton
+ *
+ *
+ * Реализован с помощью шаблона проектирования "Singleton"
  */
 public class Settings {
 

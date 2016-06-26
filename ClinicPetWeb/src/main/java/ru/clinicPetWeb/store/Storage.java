@@ -6,9 +6,9 @@ import java.util.Collection;
 
 public interface Storage {
 
-	Collection<Client> valuesFound();
-
 	Collection<Client> values();
+
+	Collection<Client> valuesFound();
 
 	void add(final Client client);
 

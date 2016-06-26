@@ -30,7 +30,7 @@ public class IndexServlet extends HttpServlet {
             request.getRequestDispatcher("/" + PAGE_INDEX_JSP).forward(request, response);
             logger.trace("RequestDispatcher(" + PAGE_INDEX_JSP + ").forward(request, response);");
         } catch (Exception e) {
-            logger.fatal("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
+            logger.fatal("PAGE FATAL ERROR! ", e);
         }
     }
 
