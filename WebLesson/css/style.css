@@ -1,17 +1,17 @@
-body { 
-	min-width: 1280px; 
-	max-width: 1920px; 
-	margin: 10px; 
-	padding: 0px; 
+body {
+	min-width: 1280px;
+	max-width: 1920px;
+	margin: 10px;
+	padding: 0px;
 	height: auto;
 	font-family: Trebuchet MS, Verdana, Arial, Arial Black;
 
-/*    background: url("../img/1.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% 0;*/}
+	/*    background: url("../img/1.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;*/}
 
-h1, h2, h3, h4, h5, h6 { 
-font-family: Verdana, Geneva,sans-serif; 
+h1, h2, h3, h4, h5, h6 {
+	font-family: Verdana, Geneva,sans-serif;
 }
 
 #fontFamilySerif {
@@ -52,16 +52,16 @@ font-family: Verdana, Geneva,sans-serif;
 	background-size: 100%, 0%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-/*  background-attachment: fixed; фиксирование картинки 
-    background-repeat: repeat-x;
-	background-repeat: repeat-y;
-    background-position: 50px (горизонталь) 30px (вертикаль);
-	укороченная форма: background: url("../img/3.png") no-repeat fixed 50xp 30px; */
+	/*  background-attachment: fixed; С„РёРєСЃРёСЂРѕРІР°РЅРёРµ РєР°СЂС‚РёРЅРєРё
+        background-repeat: repeat-x;
+        background-repeat: repeat-y;
+        background-position: 50px (РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊ) 30px (РІРµСЂС‚РёРєР°Р»СЊ);
+        СѓРєРѕСЂРѕС‡РµРЅРЅР°СЏ С„РѕСЂРјР°: background: url("../img/3.png") no-repeat fixed 50xp 30px; */
 }
 
 #link:link {
 	text-decoration: none;
-	color: green;	
+	color: green;
 }
 
 #link:visited {
@@ -76,7 +76,7 @@ font-family: Verdana, Geneva,sans-serif;
 }
 
 #link:active {
-	/* Убирает подчеркивание (как обычно под ссылкой) */
+	/* РЈР±РёСЂР°РµС‚ РїРѕРґС‡РµСЂРєРёРІР°РЅРёРµ (РєР°Рє РѕР±С‹С‡РЅРѕ РїРѕРґ СЃСЃС‹Р»РєРѕР№) */
 	text-decoration: none;
 	color: red;
 	font-size: 1.02em;
@@ -84,7 +84,7 @@ font-family: Verdana, Geneva,sans-serif;
 
 #tableStyle {
 	border-color: black;
-	/* Соединяет границы каждой ячейки */
+	/* РЎРѕРµРґРёРЅСЏРµС‚ РіСЂР°РЅРёС†С‹ РєР°Р¶РґРѕР№ СЏС‡РµР№РєРё */
 	border-collapse: collapse;
 }
 
@@ -104,9 +104,9 @@ font-family: Verdana, Geneva,sans-serif;
 #tableStyle td {
 	background-color: #FFC39B;
 	text-align: center;
-/*  vertical-align: top or middle or bottom; 
-    - выравнивание текста 
-	по вертикали */
+	/*  vertical-align: top or middle or bottom;
+        - РІС‹СЂР°РІРЅРёРІР°РЅРёРµ С‚РµРєСЃС‚Р°
+        РїРѕ РІРµСЂС‚РёРєР°Р»Рё */
 }
 
 #borderStyle li {
@@ -114,45 +114,45 @@ font-family: Verdana, Geneva,sans-serif;
 	width: 100px;
 	margin: 5px;
 	padding: 10px;
-	
-/*  visibity: hidden; - сделать 
-    объект невидимым
-	display: none; - прикрыть 
-	объект полностью */
+
+	/*  visibity: hidden; - СЃРґРµР»Р°С‚СЊ
+        РѕР±СЉРµРєС‚ РЅРµРІРёРґРёРјС‹Рј
+        display: none; - РїСЂРёРєСЂС‹С‚СЊ
+        РѕР±СЉРµРєС‚ РїРѕР»РЅРѕСЃС‚СЊСЋ */
 }
 
-/* Псевдо-класс :first-child - оформление 
-первого потомка в родительском элементе */
+/* РџСЃРµРІРґРѕ-РєР»Р°СЃСЃ :first-child - РѕС„РѕСЂРјР»РµРЅРёРµ 
+РїРµСЂРІРѕРіРѕ РїРѕС‚РѕРјРєР° РІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРј СЌР»РµРјРµРЅС‚Рµ */
 #borderStyle li:first-child {
 	border-radius: 5px;
 }
 
-/* Псевдо-класс :first-letter - оформление 
-первого потомка в родительском элементе */
+/* РџСЃРµРІРґРѕ-РєР»Р°СЃСЃ :first-letter - РѕС„РѕСЂРјР»РµРЅРёРµ 
+РїРµСЂРІРѕРіРѕ РїРѕС‚РѕРјРєР° РІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРј СЌР»РµРјРµРЅС‚Рµ */
 #borderStyle li:first-letter {
 	font-size: 20px;
 }
 
-/* Псевдо-класс :focus - активные input 
-элементы формы */
+/* РџСЃРµРІРґРѕ-РєР»Р°СЃСЃ :focus - Р°РєС‚РёРІРЅС‹Рµ input 
+СЌР»РµРјРµРЅС‚С‹ С„РѕСЂРјС‹ */
 #borderStyle li:focus{
 	border: 5px solid black;
 }
 
-/* Псевдо-класс :first-line - оформление 
-первоq строки указанного элемента */
+/* РџСЃРµРІРґРѕ-РєР»Р°СЃСЃ :first-line - РѕС„РѕСЂРјР»РµРЅРёРµ 
+РїРµСЂРІРѕq СЃС‚СЂРѕРєРё СѓРєР°Р·Р°РЅРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° */
 #borderStyle li:first-line {
 	font-style: italic;
 }
 
-/* Псевдо-класс :before - вставка 
-содержимого перед элементом */
+/* РџСЃРµРІРґРѕ-РєР»Р°СЃСЃ :before - РІСЃС‚Р°РІРєР° 
+СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РїРµСЂРµРґ СЌР»РµРјРµРЅС‚РѕРј */
 #borderStyle li:before {
 
 }
 
-/* Псевдо-класс :after - вставка 
-содержимого после элемента */
+/* РџСЃРµРІРґРѕ-РєР»Р°СЃСЃ :after - РІСЃС‚Р°РІРєР° 
+СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РїРѕСЃР»Рµ СЌР»РµРјРµРЅС‚Р° */
 #borderStyle li:after {
 
 }
@@ -161,36 +161,36 @@ font-family: Verdana, Geneva,sans-serif;
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	width: auto; 
-	border: 1px solid black; 
+	width: auto;
+	border: 1px solid black;
 	margin: 10px;
 	padding: 10px;
-/*	
-position: relative - Положение 
-элемента устанавливается относительно 
-его исходного места;
+	/*
+    position: relative - РџРѕР»РѕР¶РµРЅРёРµ
+    СЌР»РµРјРµРЅС‚Р° СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ
+    РµРіРѕ РёСЃС…РѕРґРЅРѕРіРѕ РјРµСЃС‚Р°;
 
-position: absolute; - абсолютное 
-позиционирование, задается с помощью 
-свойств: top, right, bottom, left 
-*/
+    position: absolute; - Р°Р±СЃРѕР»СЋС‚РЅРѕРµ
+    РїРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ, Р·Р°РґР°РµС‚СЃСЏ СЃ РїРѕРјРѕС‰СЊСЋ
+    СЃРІРѕР№СЃС‚РІ: top, right, bottom, left
+    */
 }
 
-#centerBlock { 
+#centerBlock {
 	text-align: center;
-	border: 1px solid black; 
+	border: 1px solid black;
 	padding: 10px;
 	margin: 10px auto 0px auto;
-	width: 50%; 
+	width: 50%;
 }
 
 #float {
-	border: 1px solid black; 
+	border: 1px solid black;
 	padding: 10px;
 	float: right;
 	margin: 10px 0px 10px 0px;
-/*	clear: both; - чтобы из-за float, 
-	элементы не обтекали друг друга*/
+	/*	clear: both; - С‡С‚РѕР±С‹ РёР·-Р·Р° float,
+        СЌР»РµРјРµРЅС‚С‹ РЅРµ РѕР±С‚РµРєР°Р»Рё РґСЂСѓРі РґСЂСѓРіР°*/
 }
 
 #backgroundSize {
@@ -204,77 +204,63 @@ position: absolute; - абсолютное
 	border: 20px solid #fc0;
 	width: 250px;
 	height: 150px;
-    padding: 20px;
-    background: url("../img/1.jpg") no-repeat;
-    background-size: 200px 129px;
+	padding: 20px;
+	background: url("../img/1.jpg") no-repeat;
+	background-size: 200px 129px;
 }
 
-.borderRadius { 
+.borderRadius {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
-	padding: 10px 5px 10px 5px;  
-	-moz-border-radius: 5px;  
-	-webkit-border-radius: 5px; 
+	text-align: center;
+	padding: 10px 5px 10px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-radius: 5px;
 
 	/*
-	Так же можно, например:
+	РўР°Рє Р¶Рµ РјРѕР¶РЅРѕ, РЅР°РїСЂРёРјРµСЂ:
 	border-top-left-radius: ;
 	border-bottom-right-radius: ;
 	*/
 }
 
-.boxShadow { 
+.boxShadow {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
+	text-align: center;
 	padding: 10px 5px 10px 5px;
-	/* Возможные параметры: <сдвиг по x> 
-	<сдвиг по y> <радиус размытия> 
-	<растяжение> <цвет>
+	margin: 10px 0 10px 0;
+	/* Р’РѕР·РјРѕР¶РЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹: <СЃРґРІРёРі РїРѕ x> 
+	<СЃРґРІРёРі РїРѕ y> <СЂР°РґРёСѓСЃ СЂР°Р·РјС‹С‚РёСЏ> 
+	<СЂР°СЃС‚СЏР¶РµРЅРёРµ> <С†РІРµС‚>
 	 */
 	-moz-box-shadow: 3px 4px 5px #000000;
-    -webkit-box-shadow: 3px 4px 5px #000000;
-    box-shadow: 3px 4px 5px #000000;
+	-webkit-box-shadow: 3px 4px 5px #000000;
+	box-shadow: 3px 4px 5px #000000;
 }
 
-.boxShadow { 
+.boxShadowInset {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
+	text-align: center;
 	padding: 10px 5px 10px 5px;
-	margin: 10px 0px 10px 0px;
-	/* Возможные параметры: <сдвиг по x> 
-	<сдвиг по y> <радиус размытия> 
-	<растяжение> <цвет>
-	 */
-	-moz-box-shadow: 3px 4px 5px #000000;
-    -webkit-box-shadow: 3px 4px 5px #000000;
-    box-shadow: 3px 4px 5px #000000;
-}
-
-.boxShadowInset { 
-	width: 100px;
-	border: double 4px #000000;
-	text-align: center; 
-	padding: 10px 5px 10px 5px;
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0 10px 0;
 	-moz-box-shadow: inset 4px 7px 6px #000000;
 	-webkit-box-shadow: inset 4px 7px 6px #000000;
 	box-shadow: inset 4px 7px 6px #000000;
 }
 
-@font-face { 
+@font-face {
 	font-family: 'GoodFootRegular';
 	src: url('goodfoot.eot');
-	src: local('Good Foot'), local('GoodFoot'), 
-	url('goodfoot.woff') format('woff'), 
+	src: local('Good Foot'), local('GoodFoot'),
+	url('goodfoot.woff') format('woff'),
 	url('goodfoot.ttf') format('truetype');
 }
 
-.fontFace { 
-/*  font: size weight style font */
+.fontFace {
+	/*  font: size weight style font */
 	font: 20px bold normal GoodFootRegular;
 	font-family: GoodFootRegular;
 }
@@ -282,8 +268,8 @@ position: absolute; - абсолютное
 #fontShadow {
 	font-family: Cursive, Comic Sans MS;
 	font-size: 20px;
-/*	Возможные параметры: <сдвиг по x> 
-    <сдвиг по y> <радиус размытия> <цвет> */
+	/*	Р’РѕР·РјРѕР¶РЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹: <СЃРґРІРёРі РїРѕ x>
+        <СЃРґРІРёРі РїРѕ y> <СЂР°РґРёСѓСЃ СЂР°Р·РјС‹С‚РёСЏ> <С†РІРµС‚> */
 	text-shadow: 2px 1px 3px #000000;
 }
 
@@ -292,8 +278,8 @@ position: absolute; - абсолютное
 	width: 210px;
 	padding: 10px;
 	margin: 10px 0px 10px 0px;
-	white-space: nowrap; /* Запрещаем перенос строк */
-	text-overflow: ellipsis; /* Добавляем многоточие */
+	white-space: nowrap; /* Р—Р°РїСЂРµС‰Р°РµРј РїРµСЂРµРЅРѕСЃ СЃС‚СЂРѕРє */
+	text-overflow: ellipsis; /* Р”РѕР±Р°РІР»СЏРµРј РјРЅРѕРіРѕС‚РѕС‡РёРµ */
 	overflow: hidden;
 }
 
@@ -362,10 +348,10 @@ position: absolute; - абсолютное
 	margin: 20px 20px 20px 0px;
 
 	transform: skew(-21deg, 1deg) ;
-    -webkit-transform: skew(-21deg, 1deg) ;
-    -moz-transform: skew(-21deg, 1deg) ;
-    -o-transform: skew(-21deg, 1deg) ;
-    -ms-transform: skew(-21deg, 1deg) ;
+	-webkit-transform: skew(-21deg, 1deg) ;
+	-moz-transform: skew(-21deg, 1deg) ;
+	-o-transform: skew(-21deg, 1deg) ;
+	-ms-transform: skew(-21deg, 1deg) ;
 }
 
 #skewY {
@@ -376,10 +362,10 @@ position: absolute; - абсолютное
 	margin: 20px 20px 20px 0px;
 
 	transform: skew(1deg, -11deg) ;
-    -webkit-transform: skew(1deg, -11deg) ;
-    -moz-transform: skew(1deg, -11deg) ;
-    -o-transform: skew(1deg, -11deg) ;
-    -ms-transform: skew(1deg, -11deg) ;
+	-webkit-transform: skew(1deg, -11deg) ;
+	-moz-transform: skew(1deg, -11deg) ;
+	-o-transform: skew(1deg, -11deg) ;
+	-ms-transform: skew(1deg, -11deg) ;
 }
 
 #skewXY {
@@ -390,10 +376,10 @@ position: absolute; - абсолютное
 	margin: 20px 20px 20px 0px;
 
 	transform: skew(-38deg, 9deg) ;
-    -webkit-transform: skew(-38deg, 9deg) ;
-    -moz-transform: skew(-38deg, 9deg) ;
-    -o-transform: skew(-38deg, 9deg) ;
-    -ms-transform: skew(-38deg, 9deg) ;
+	-webkit-transform: skew(-38deg, 9deg) ;
+	-moz-transform: skew(-38deg, 9deg) ;
+	-o-transform: skew(-38deg, 9deg) ;
+	-ms-transform: skew(-38deg, 9deg) ;
 }
 
 #translateX {
@@ -404,10 +390,10 @@ position: absolute; - абсолютное
 	margin: 10px 20px 50px 0px;
 
 	transform: translate(34px, 7px);
-    -webkit-transform: translate(34px, 7px);
-    -moz-transform: translate(34px, 7px);
-    -o-transform: translate(34px, 7px);
-    -ms-transform: translate(34px, 7px);
+	-webkit-transform: translate(34px, 7px);
+	-moz-transform: translate(34px, 7px);
+	-o-transform: translate(34px, 7px);
+	-ms-transform: translate(34px, 7px);
 }
 
 #translateY {
@@ -419,9 +405,9 @@ position: absolute; - абсолютное
 
 	transform: translate(0px, 35px);
 	-webkit-transform: translate(0px, 35px);
-    -moz-transform: translate(0px, 35px);
-    -o-transform: translate(0px, 35px);
-    -ms-transform: translate(0px, 35px);
+	-moz-transform: translate(0px, 35px);
+	-o-transform: translate(0px, 35px);
+	-ms-transform: translate(0px, 35px);
 }
 
 #translateXY {
@@ -432,53 +418,53 @@ position: absolute; - абсолютное
 	margin: 10px 20px 50px 0px;
 
 	transform: translate(35px, 35px);
-    -webkit-transform: translate(35px, 35px);
-    -moz-transform: translate(35px, 35px);
-    -o-transform: translate(35px, 35px);
-    -ms-transform: translate(35px, 35px);
+	-webkit-transform: translate(35px, 35px);
+	-moz-transform: translate(35px, 35px);
+	-o-transform: translate(35px, 35px);
+	-ms-transform: translate(35px, 35px);
 }
 
 .transition {
 	color: #FFFFFF;
 	width: 200px;
-	border:solid 1px #2d2d2d;  
-	text-align:center; 
+	border:solid 1px #2d2d2d;
+	text-align:center;
 	background: url("../img/1.jpg") no-repeat;
 	background-size: 210px 139px;
 	margin: 20px;
-	padding:50px 5px 50px 5px;  
-	-moz-border-radius: 5px;  
-	-webkit-border-radius: 5px; 
+	padding:50px 5px 50px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-radius: 5px;
 
-/* ease-in-out, ease-in, ease-out, easy, linear */
-transition:All 0.8448s ease-in-out;
--webkit-transition:All 0.8448s ease-in-out;
--moz-transition:All 0.8448s ease-in-out;
--o-transition:All 0.8448s ease-in-out;
+	/* ease-in-out, ease-in, ease-out, easy, linear */
+	transition:All 0.8448s ease-in-out;
+	-webkit-transition:All 0.8448s ease-in-out;
+	-moz-transition:All 0.8448s ease-in-out;
+	-o-transition:All 0.8448s ease-in-out;
 
-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+	transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+	-webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+	-moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+	-o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+	-ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
 }
 
 .transition:hover {
-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
--webkit-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
--moz-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
--o-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
--ms-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+	transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+	-webkit-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+	-moz-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+	-o-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+	-ms-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
 }
 
-/* anim - название анимации */
+/* anim - РЅР°Р·РІР°РЅРёРµ Р°РЅРёРјР°С†РёРё */
 @keyframes anim {
 
 	/* 
-	Так же вместо процентов можно использовать:
-	from {любые CSS-свойства}
-	to {любые CSS-свойства} 
+	РўР°Рє Р¶Рµ РІРјРµСЃС‚Рѕ РїСЂРѕС†РµРЅС‚РѕРІ РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ:
+	from {Р»СЋР±С‹Рµ CSS-СЃРІРѕР№СЃС‚РІР°}
+	to {Р»СЋР±С‹Рµ CSS-СЃРІРѕР№СЃС‚РІР°} 
 	*/
 	0% {
 		background-color: #FF3300;
@@ -500,28 +486,28 @@ transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
 #animation {
 	height: 100px;
 	background-color: #FF3300;
-/*  animation: название анимации 
-    время продолжительности 
-    кол-во повторов */
+	/*  animation: РЅР°Р·РІР°РЅРёРµ Р°РЅРёРјР°С†РёРё
+        РІСЂРµРјСЏ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚Рё
+        РєРѕР»-РІРѕ РїРѕРІС‚РѕСЂРѕРІ */
 	animation: anim 4s 1000;
 }
 
 #columnStyle {
-/* Определяет количество колонок в 
-	многоколоночном тексте. */
-    -moz-column-count: 3; /* Для Firefox */
-/* Задаёт оптимальную ширину колонки в 
-    многоколоночном тексте. */
-    -moz-column-width: 200px;
-/* Задаёт расстояние между колонками в 
-    многоколоночном тексте. */
-    -moz-column-gap: 2em;
-    -webkit-column-count: 3; /* Для Safari и Chrome */
-    -webkit-column-width: 200px;
-    -webkit-column-gap: 2em;
-    column-count: 3;
-    column-width: 200px;
-    column-gap: 2em;
+	/* РћРїСЂРµРґРµР»СЏРµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РѕРЅРѕРє РІ
+        РјРЅРѕРіРѕРєРѕР»РѕРЅРѕС‡РЅРѕРј С‚РµРєСЃС‚Рµ. */
+	-moz-column-count: 3; /* Р”Р»СЏ Firefox */
+	/* Р—Р°РґР°С‘С‚ РѕРїС‚РёРјР°Р»СЊРЅСѓСЋ С€РёСЂРёРЅСѓ РєРѕР»РѕРЅРєРё РІ
+        РјРЅРѕРіРѕРєРѕР»РѕРЅРѕС‡РЅРѕРј С‚РµРєСЃС‚Рµ. */
+	-moz-column-width: 200px;
+	/* Р—Р°РґР°С‘С‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РєРѕР»РѕРЅРєР°РјРё РІ
+        РјРЅРѕРіРѕРєРѕР»РѕРЅРѕС‡РЅРѕРј С‚РµРєСЃС‚Рµ. */
+	-moz-column-gap: 2em;
+	-webkit-column-count: 3; /* Р”Р»СЏ Safari Рё Chrome */
+	-webkit-column-width: 200px;
+	-webkit-column-gap: 2em;
+	column-count: 3;
+	column-width: 200px;
+	column-gap: 2em;
 }
 
 #jQueryOpacity {

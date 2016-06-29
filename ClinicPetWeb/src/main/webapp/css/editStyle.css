@@ -84,6 +84,24 @@ form input {
     clear: both;
 }
 
+#btn-style {
+    /* Возможные параметры: <сдвиг по x>
+    <сдвиг по y> <радиус размытия>
+    <растяжение> <цвет>
+    */
+    -moz-box-shadow: 1.5px 3px 1px #1D4568;
+    -webkit-box-shadow: 1.5px 3px 1px #1D4568;
+    box-shadow: 1.5px 3px 1px #1D4568;
+    transition: 0.5s;
+}
+
+#btn-style:hover {
+    -moz-box-shadow: 0 0 0 #1D4568;
+    -webkit-box-shadow: 0 0 0 #1D4568;
+    box-shadow: 0 0 0 #1D4568;
+    transition: 1s;
+}
+
 form input:first-child {
     margin: 0 0 11px 156px;
 }

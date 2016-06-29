@@ -82,7 +82,7 @@
 			<input type="number" name="petAge" class="form-control input-control" value="${client.pet.age}"
 				   min="0" max="300" placeholder="Возраст питомца">
 			<br>
-			<input type="submit" align="center" class="btn btn-primary input-control" value="Готово"/>
+			<input type="submit" align="center" class="btn btn-primary input-control" id="btn-style" value="Готово"/>
 		</form>
 	</header>
 	</div>
