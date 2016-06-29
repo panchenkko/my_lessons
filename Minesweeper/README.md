@@ -1,12 +1,14 @@
 Игра "Сапёр"
-===================================
+============
 
 Графическая версия игры
------------------------------------
-___________________________________
+-----------------------
+_______________________
 
 Легкий уровень (9x9)
------------------------------------
+--------------------
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/selectEasy.png)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy1.png)
 
@@ -23,18 +25,18 @@ ___________________________________
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy5.png)
 
 Средний уровень (16x16)
------------------------------------
+-----------------------
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/medium1.png)
 
 Сложный уровень (30x16)
------------------------------------
+-----------------------
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/expert1.png)
 
 Консольная версия игры
------------------------------------
-___________________________________
+----------------------
+______________________
 
 Выбор уровня:
 
