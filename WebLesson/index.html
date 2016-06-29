@@ -80,6 +80,20 @@
 	});
 </script>
 
+ <script type="text/javascript">
+ // Делаем плавный якорь
+ 	$(document).ready(function() {
+ 		$('a[href*=#]').bind("click", function(e) {
+ 			var anchor = $(this);
+ 			$('html, body').stop().animate({
+ 			scrollTop: $(anchor.attr('href')).offset().top
+ 		}, 1000);
+ 		e.preventDefault();
+ 	});
+ 	return false;
+ 	});
+ </script>
+
 </head>
 <body>
 <!-- Фиксированный блок -->
@@ -306,7 +320,7 @@
 
 <hr style="clear: both;" />
 
-<h1><strong><em>CSS 3</em></strong></h1>
+<h1 id="anchor"><strong><em>CSS 3</em></strong></h1>
 <hr />
 <hr />
 
@@ -436,5 +450,18 @@ background:-webkit-gradient(radial, 202 -75, 87, 81 -215, 465, from(#529A00), to
 <button id="clickOne">Одинарный клик</button>
 <button id="clickTwo">Двойной клик</button>
 
+<hr />
+
+<h1><strong><em>Полезности</em></strong></h1>
+<hr />
+<hr />
+
+<!-- Якорь. Прокручивает страницу до нужного раздела -->
+<!-- Первый способ: <a name="chapter1"></a> -->
+<!-- Второй способ: <p id="chapter1">бла-бла-бла</p> -->
+<!-- Как сделать ссылку на закладку: -->
+<!-- <a href="#chapter1">Глава1</a> -->
+<!-- <a href="......./somepage.html#chapter1">Глава1 в странице somepage.html</a> -->
+<a href="#anchor"><button>Плавный якорь до раздела "CSS 3"</button></a>
 </body>
 </html>
