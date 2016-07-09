@@ -12,8 +12,8 @@ public class ANSI_CODES {
                         + "\nstrikethrough: \\033[9m \033[9mTEST\033[0m"
                         + "\nstrikethroughOff: \\033[29m \033[29mTEST\033[0m"
                         + "\ndef: \\033[39m \033[39mTEST\033[0m"
-                        + "\nwhite: \\033[30m \033[30mTEST\033[0m"
-                        + "\nblack: \\033[37m \033[37mTEST\033[0m"
+                        + "\nwhite: \\033[30m \033[30mTEST\033[0m" // зависимо от расцветки в ide
+                        + "\nblack: \\033[37m \033[37mTEST\033[0m" // зависимо от расцветки в ide
                         + "\nred: \\033[31m \033[31mTEST\033[0m"
                         + "\ngreen: \\033[32m \033[32mTEST\033[0m"
                         + "\nblue: \\033[34m \033[34mTEST\033[0m"
@@ -32,61 +32,3 @@ public class ANSI_CODES {
         );
     }
 }
-
-/*
-reset: \033[0m
-
-bold: \033[1m
-
-italic: \033[3m
-
-blink: \033[5m
-
-underline: \033[4m
-
-underlineOff: \033[24m
-
-inverse: \033[7m
-
-inverseOff: \033[27m
-
-strikethrough: \033[9m
-
-strikethroughOff: \033[29m
-
-def: \033[39m
-
-white: \033[37m
-
-black: \033[30m
-
-red: \033[31m
-
-green: \033[32m
-
-blue: \033[34m
-
-yellow: \033[33m
-
-magenta: \033[35m
-
-cyan: \033[36m
-
-defBg: \033[49m
-
-whiteBg: \033[47m
-
-blackBg: \033[40m
-
-redBg: \033[41m
-
-greenBg: \033[42m
-
-blueBg: \033[44m
-
-yellowBg: \033[43m
-
-magentaBg: \033[45m
-
-cyanBg: \033[46m
-*/
