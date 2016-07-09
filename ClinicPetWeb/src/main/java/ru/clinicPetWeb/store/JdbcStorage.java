@@ -192,6 +192,8 @@ public class JdbcStorage implements Storage {
     @Override
     public void foldCounter() {
         try (final Statement statement = this.connection.createStatement()) {
+            statement.addBatch("DELETE FROM pet");
+            statement.addBatch("DELETE FROM client");
             statement.addBatch("ALTER SEQUENCE client_uid_seq1 RESTART WITH 1");
             statement.addBatch("ALTER SEQUENCE pet_uid_seq RESTART WITH 1");
             statement.executeBatch();
