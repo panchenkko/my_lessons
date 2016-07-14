@@ -15,3 +15,15 @@
   (или даже вместо) вызовов методов компонентов.
 - Компонент может декорироваться любым количеством декораторов.
 - Декораторы обычно прозрачны для клиентов компонента (если клиентский код не зависит от конкретного типа компонента).
+
+Определение паттерна "Декоратор"
+--------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Decorator_3/Screenshots/decorator1.png)
+
+Диаграмма на основе классов "StarBuzz"
+--------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Decorator_3/Screenshots/decorator2.png)
+
+Приблизительная диаграмма на основе классов "io"
+------------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Decorator_3/Screenshots/decoratorIO.png)

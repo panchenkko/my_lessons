@@ -18,3 +18,11 @@ _Observable, это класс, а класс в Java можно наследо�
 - Не бойтесь самостоятельно реализовать Observable при необходимости.
 - Swing, как и многие GUI-инфраструктуры, широко применяет паттерн Наблюдатель.
 - Паттерн также встречается во многих других местах, включая JavaBeans и RMI.
+
+Диаграмма на основе классов "WeatherStation.StandardRealization"
+----------------------------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Observer_2/Screenshots/observer1.png)
+
+Диаграмма на основе классов "WeatherStation.Observable"
+-------------------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Observer_2/Screenshots/observer2.png)

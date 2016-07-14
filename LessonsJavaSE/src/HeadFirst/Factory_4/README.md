@@ -20,3 +20,19 @@
 - Задача Фабричного Метода - перемещение создания экземпляров в субклассы.
 - Задача Абстрактной Фабрики - создание семейств вхаимосвязанных объектов без зависимости 
   от их конкретных классов.
+  
+Диаграмма на основе классов "SimpleFactory"
+-------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4/Screenshots/simpleFactory.png)
+
+Диаграмма на основе классов "FactoryMethod"
+-------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4/Screenshots/factoryMethod.png)
+
+Определение паттерна "Абстрактная фабрика"
+------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4/Screenshots/abstractFactory1.png)
+
+Диаграмма на основе классов "AbstractFactory"
+---------------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4y/Screenshots/abstractFactory2.png)
