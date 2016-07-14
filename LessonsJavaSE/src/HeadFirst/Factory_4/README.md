@@ -35,4 +35,4 @@
 
 Диаграмма на основе классов "AbstractFactory"
 ---------------------------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4y/Screenshots/abstractFactory2.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4/Screenshots/abstractFactory2.png)
