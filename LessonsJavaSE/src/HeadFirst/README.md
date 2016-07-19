@@ -45,4 +45,4 @@
 
 Фасад/Facade
 ------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Adapter_7/Screenshots/21_facade.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Facade_8/Screenshots/21_facade.png)
