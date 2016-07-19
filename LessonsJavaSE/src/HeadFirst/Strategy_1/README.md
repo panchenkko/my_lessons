@@ -13,8 +13,14 @@
 - Паттерны не придумывают - их находят.
 - Большинство паттернов и принципов направлено на решение проблем изменения программных архитектур.
 - Многие паттерны основаны на инкапсуляции переменных аспектов системы.
-- Паттерны образуют единую номеклатуру, которая повышает эффективность вашег общения с другими разработчиками.
+- Паттерны образуют единую номеклатуру, которая повышает эффективность вашего общения с другими разработчиками.
 
 Диаграмма на основе классов "SimUDuck"
 --------------------------------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Strategy_1/Screenshots/strategy.png)
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Strategy_1/Screenshots/strategy2.png)
+
+Диаграмма на основе классов "FightGame"
+---------------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Strategy_1/Screenshots/fightGame.png)
