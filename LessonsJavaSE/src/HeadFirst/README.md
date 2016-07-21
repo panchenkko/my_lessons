@@ -7,6 +7,7 @@
 - Классы должны быть открыты для расширения, но закрыты для изменения.
 - Код должен зависеть от абстракции, а не от конкретных классов.
 - Взаимодействуйте только с "друзьями".
+- Не вызывайте нас - мы вас сами вызовем.
 
 Краткое пояснение каждого паттерна
 ==================================
@@ -46,3 +47,7 @@
 Фасад/Facade
 ------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Facade_8/Screenshots/21_facade.png)
+
+Шаблонный метод/Template Method
+-------------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/TemplateMethod_9/Screenshots/09_templatemethod.png)
