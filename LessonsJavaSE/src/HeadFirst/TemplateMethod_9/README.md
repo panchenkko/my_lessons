@@ -15,8 +15,8 @@
 - Паттерны Стратегия и Шаблонный метод инкапсулируют алгоритмы; один использует наследование, а другой - композицию.
 - Фабричный Метод является специализированной версией Шаблонного Метода.
 
-Определение паттерна "Фасад"
-----------------------------
+Определение паттерна "Шаблонный Метод"
+--------------------------------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/TemplateMethod_9/Screenshots/templateMethod.png)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/TemplateMethod_9/Screenshots/templateMethod2.png)
