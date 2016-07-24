@@ -1,7 +1,9 @@
-package ru.minesweeperLesson.minesweeper.gui;
+package ru.minesweeper.gui;
 
-import ru.minesweeperLesson.minesweeper.interfaces.IBoard;
-import ru.minesweeperLesson.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.IBoard;
+import ru.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.IBoard;
+import ru.minesweeper.interfaces.ICell;
 
 import javax.swing.*;
 import java.awt.*;

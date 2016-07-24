@@ -1,6 +1,6 @@
-package ru.minesweeperLesson.minesweeper.gui;
+package ru.minesweeper.gui;
 
-import ru.minesweeperLesson.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.ICell;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +43,7 @@ public class GUICell extends JPanel implements ICell<Graphics> {
 
 	@Override
 	public void suggestEmpty() {
-		this.suggestEmpty = true;
+        if (!this.suggestBomb) this.suggestEmpty = true;
 	}
 
     @Override

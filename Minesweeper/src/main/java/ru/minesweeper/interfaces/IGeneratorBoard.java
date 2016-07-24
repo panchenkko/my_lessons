@@ -1,4 +1,4 @@
-package ru.minesweeperLesson.minesweeper.interfaces;
+package ru.minesweeper.interfaces;
 
 /**
  * Генерация игрового поля

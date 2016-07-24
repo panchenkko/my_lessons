@@ -1,6 +1,6 @@
-package ru.minesweeperLesson.minesweeper;
+package ru.minesweeper;
 
-import ru.minesweeperLesson.minesweeper.interfaces.*;
+import ru.minesweeper.interfaces.*;
 
 /**
  * Базовые действия пользователя

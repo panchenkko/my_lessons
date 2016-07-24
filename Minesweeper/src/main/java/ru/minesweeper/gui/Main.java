@@ -1,8 +1,8 @@
-package ru.minesweeperLesson.minesweeper.gui;
+package ru.minesweeper.gui;
 
-import ru.minesweeperLesson.minesweeper.StandardLogic;
-import ru.minesweeperLesson.minesweeper.interfaces.ICell;
-import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
+import ru.minesweeper.StandardLogic;
+import ru.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.IGeneratorBoard;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

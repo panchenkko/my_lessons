@@ -1,8 +1,11 @@
-package ru.minesweeperLesson.minesweeper.gui;
+package ru.minesweeper.gui;
 
-import ru.minesweeperLesson.minesweeper.BaseAction;
-import ru.minesweeperLesson.minesweeper.interfaces.IGeneratorBoard;
-import ru.minesweeperLesson.minesweeper.interfaces.ILogic;
+import ru.minesweeper.BaseAction;
+import ru.minesweeper.interfaces.IGeneratorBoard;
+import ru.minesweeper.interfaces.ILogic;
+import ru.minesweeper.BaseAction;
+import ru.minesweeper.interfaces.IGeneratorBoard;
+import ru.minesweeper.interfaces.ILogic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

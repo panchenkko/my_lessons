@@ -1,12 +1,12 @@
-package ru.minesweeperLesson.minesweeper;
+package ru.minesweeper;
 
-import ru.minesweeperLesson.minesweeper.interfaces.ICell;
-import ru.minesweeperLesson.minesweeper.interfaces.ILogic;
-import ru.minesweeperLesson.minesweeper.interfaces.ISelectLevel;
-import ru.minesweeperLesson.minesweeper.interfaces.ITheNumOfTheField;
-import ru.minesweeperLesson.minesweeper.levels.Easy;
-import ru.minesweeperLesson.minesweeper.levels.Expert;
-import ru.minesweeperLesson.minesweeper.levels.Medium;
+import ru.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.ILogic;
+import ru.minesweeper.interfaces.ISelectLevel;
+import ru.minesweeper.interfaces.ITheNumOfTheField;
+import ru.minesweeper.levels.Easy;
+import ru.minesweeper.levels.Expert;
+import ru.minesweeper.levels.Medium;
 
 import java.util.Random;
 
@@ -130,12 +130,14 @@ public class StandardLogic implements ISelectLevel, ILogic, ITheNumOfTheField {
     @Override
     public boolean checkTheFirstMove() {
         boolean check = true;
-        root: for (int i = 0; i < sumRow(); i++)
-            for (int j = 0; j < sumColumn(); j++)
-                if (this.cells[i][j].isBomb()) {
-                    check = false;
-                    break root;
-                }
+        root: for (int i = 0; i < sumRow(); i++) {
+                  for (int j = 0; j < sumColumn(); j++) {
+                      if (this.cells[i][j].isBomb()) {
+                          check = false;
+                          break root;
+                      }
+                  }
+        }
         return check;
     }
 
@@ -170,7 +172,7 @@ public class StandardLogic implements ISelectLevel, ILogic, ITheNumOfTheField {
     @Override
     public int checkingAroundCell(int x, int y) {
         int checking = 0;
-
+        // Подсчитываем сколько бомб возле переданной клетки.
         if (y > 0 && this.cells[x][y - 1].isBomb()) checking++;
         if (x > 0 && this.cells[x - 1][y].isBomb()) checking++;
         if (y > 0 && x > 0 && this.cells[x - 1][y - 1].isBomb()) checking++;
@@ -183,7 +185,7 @@ public class StandardLogic implements ISelectLevel, ILogic, ITheNumOfTheField {
         return checking;
     }
 
-    // Определяем и записываем сколько бомб возле клетки, координаты какой переданы в параметрах метода
+    // Определяем и записываем сколько бомб возле клетки
     public void arrangeValues(int i, int j) {
         switch (checkingAroundCell(i, j)) {
             case 8: this.cells[i][j].suggest8();

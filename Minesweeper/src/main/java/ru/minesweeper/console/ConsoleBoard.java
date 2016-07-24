@@ -1,7 +1,9 @@
-package ru.minesweeperLesson.minesweeper.console;
+package ru.minesweeper.console;
 
-import ru.minesweeperLesson.minesweeper.interfaces.IBoard;
-import ru.minesweeperLesson.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.IBoard;
+import ru.minesweeper.interfaces.ICell;
+import ru.minesweeper.interfaces.IBoard;
+import ru.minesweeper.interfaces.ICell;
 
 /**
  * Реализация поля в консоли

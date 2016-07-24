@@ -1,6 +1,7 @@
-package ru.minesweeperLesson.minesweeper.levels;
+package ru.minesweeper.levels;
 
-import ru.minesweeperLesson.minesweeper.interfaces.ITheNumOfTheField;
+import ru.minesweeper.interfaces.ITheNumOfTheField;
+import ru.minesweeper.interfaces.ITheNumOfTheField;
 
 public class Medium implements ITheNumOfTheField {
 

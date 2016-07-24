@@ -1,4 +1,4 @@
-package ru.minesweeperLesson.minesweeper.interfaces;
+package ru.minesweeper.interfaces;
 
 /**
  * Содержит количество рядов, столбцов и количество бомб на поле
