@@ -143,7 +143,6 @@ public class JdbcStorageTest extends Mockito {
 
     @Test
     public void testFindClientName() throws Exception {
-
     }
 
     @Test

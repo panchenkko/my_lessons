@@ -17,7 +17,8 @@ public class IndexServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_VIEW = "clients";
-    public static final String PAGE_INDEX_JSP = "index.jsp";
+    public static final String PAGE_OK = "index.jsp";
+    public static final String PAGE_ERROR = "/views/notFound.jsp";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -27,8 +28,8 @@ public class IndexServlet extends HttpServlet {
         try {
             request.setAttribute(ATTRIBUTE_MODEL_TO_VIEW, CLIENT_CACHE.values());
             logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_VIEW + ");");
-            request.getRequestDispatcher("/" + PAGE_INDEX_JSP).forward(request, response);
-            logger.trace("RequestDispatcher(" + PAGE_INDEX_JSP + ").forward(request, response);");
+            request.getRequestDispatcher("/" + PAGE_OK).forward(request, response);
+            logger.trace("RequestDispatcher(" + PAGE_OK + ").forward(request, response);");
         } catch (Exception e) {
             logger.fatal("PAGE FATAL ERROR! ", e);
         }

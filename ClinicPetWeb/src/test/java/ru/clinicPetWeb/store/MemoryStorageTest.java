@@ -13,12 +13,6 @@ public class MemoryStorageTest extends Mockito {
 
     private static MemoryStorage memoryStorage = null;
 
-    private final AtomicInteger ids = new AtomicInteger();
-    private final ConcurrentHashMap<Integer, Client> clients = new ConcurrentHashMap<>();
-
-    private final AtomicInteger idFound = new AtomicInteger();
-    private final ConcurrentHashMap<Integer, Client> found = new ConcurrentHashMap<>();
-
     @BeforeClass
     public static void setUp() throws Exception {
         memoryStorage = new MemoryStorage();

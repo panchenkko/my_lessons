@@ -1,0 +1,72 @@
+body {
+    background: url("../img/fons/jpg2.jpg") fixed;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px 10px 20px 10px;
+    width: 400px;
+    height: 255px;
+    margin-top: 12%;
+    margin-bottom: 5%;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 5px;
+    -webkit-box-shadow: -6px 12px 50px black;
+    -moz-box-shadow: -6px 12px 50px black;
+    box-shadow: -6px 12px 50px black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    font-weight: bold;
+}
+
+hr {
+    margin: 15px 15px 40px 15px;
+    border: 0;
+    border-top: 3px solid black;
+}
+
+header {
+    height: 250px;
+    font-family: Cursive, Comic Sans MS, sans-serif;
+}
+
+/*header>img {*/
+    /*width: auto;*/
+    /*height: 238px;*/
+    /*float: right;*/
+    /*margin-top: -12px;*/
+    /*margin-right: 28%;*/
+/*}*/
+
+header div>h1, p {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+header div>h1 {
+    font-size: 28px;
+}
+
+header div>p {
+    margin-top: 20px;
+}
+
+.body {
+    height: auto;
+}
+
+.body h1, td[colspan="5"] {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+#returnBtn>button {
+    margin: 5px 0 0 15px;
+    width: 91%;
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    color: white;
+}
