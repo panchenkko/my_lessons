@@ -112,15 +112,15 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging1.png)
 
-#### Логи уровня WARN и выше:
+#### Логи уровня WARN и выше: (пусто)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging2.png)
 
-#### Логи уровня ERROR и выше:
+#### Логи уровня ERROR и выше: (пусто)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging3.png)
 
-#### Логи уровня FATAL:
+#### Логи уровня FATAL: (пусто)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging4.png)
 
