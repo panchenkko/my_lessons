@@ -1,107 +1,127 @@
-Веб-клиника домашних животных
-=============================
+# Веб-клиника домашних животных
 
-Главная страница
-----------------
+## Главная страница
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/index.png)
 
-Валидация формы
----------------
+## Валидация формы
 
-Обязательные поля для ввода: Имя клиента и имя питомца
+#### Обязательные поля для ввода "_Имя клиента и имя питомца_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/validation1.png)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/validation2.png)
 
-Добавление клиентов
--------------------
+## Добавление клиентов
 
-Вносим данные:
+#### Вносим данные:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/addClients1.png)
 
-Нажимаем "Создать" :
+#### Нажимаем "_Создать_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/addClients2.png)
 
-Добавляем ещё несколько клиентов: 
+#### Добавляем ещё несколько клиентов: 
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/addClients3.png)
 
-Редактирование данных
----------------------
+## Редактирование данных
 
-Выбираем клиента под номером "3" и нажимаем "Редактировать" в столбце "Доп. действия" :
+#### Выбираем клиента под номером "_3_" и нажимаем "_Редактировать_" в столбце "_Доп. действия_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit1.png)
 
-Видим что, в полях ввода высвечиваются все веденные ранние данные пользователем:
+#### Видим что, в полях ввода высвечиваются все веденные ранние данные пользователем:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit2.png)
 
-Изменяем данные и нажимаем на кнопку "Готово" :
+#### Изменяем данные и нажимаем на кнопку "_Готово_" :
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit3.png)
 
-Убеждаемся, что данные изменились:
+#### Убеждаемся, что данные изменились:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit4.png)
 
-Поиск клиентов
---------------
+## Поиск клиентов
 
-Нажимаем слева на кнопку "Поиск" и переходим по ссылке:
+#### Нажимаем слева на кнопку "_Поиск_" и переходим по ссылке:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search1.png)
 
-__________________________________________________________________________________________________
-Заранее скажу, что заполнить нужно хотя бы одно поле из четырёх, иначе кнопка будет заблокирована.
-__________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------------
 
-Введем ID клиента :
+***Заранее скажу, что заполнить нужно хотя бы одно поле из четырёх, иначе кнопка будет заблокирована.***
+
+--------------------------------------------------------------------------------------------------------
+
+#### Введем ID клиента:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search2.png)
 
-Данные нашлись:
+#### Данные нашлись:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search3.png)
 
-Заполним поле "Имя клиента" :
+#### Заполним поле "_Имя клиента_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search4.png)
 
-Данные нашлись:
+#### Данные нашлись:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search5.png)
 
-Заполним два поля: Имя клиента и возраст питомца
+#### Заполним два поля "_Имя клиента и возраст питомца_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search6.png)
 
-Видим, что список отфильтровался:
+#### Видим, что список отфильтровался:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search7.png)
 
-Нажимаем в верхнем левом углу на кнопку "Вернуться"
-___________________________________________________
+-----------------------------------------------------------
 
-Удаление клиентов
------------------
+#### Нажимаем в верхнем левом углу на кнопку "_Вернуться_".
 
-Выбираем клиента под номером "4" и в столбце "Доп. действия" нажимаем "Удалить" :
+-----------------------------------------------------------
+
+## Удаление клиентов
+
+#### Выбираем клиента под номером "_4_" и в столбце "_Доп. действия_" нажимаем "_Удалить_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete1.png)
 
-Видим, что осталось четыре клиента. Сделаем тоже самое для клиента под номером "2" :
+#### Видим, что осталось четыре клиента. Сделаем тоже самое для клиента под номером "_2_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete2.png)
 
-Убеждаемся, что клиентов осталось три:
+#### Убеждаемся, что клиентов осталось три:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete3.png)
 
-____________________________________________________
-Также в проекте частично был использован Bootstrap 3
-____________________________________________________
+----------------------------------------------------------
 
-Логи
-----
+***Также в проекте частично был использован Bootstrap 3***
 
-Ссылка сразу на все логи имеющие уровень INFO и выше:
+----------------------------------------------------------
+
+## Логи
+
+#### Ссылка сразу на все логи имеющие уровень INFO и выше:
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging1.png)
 
-Логи уровня WARN и выше:
+#### Логи уровня WARN и выше: (пусто)
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging2.png)
 
-Логи уровня ERROR и выше:
+#### Логи уровня ERROR и выше: (пусто)
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging3.png)
 
-Логи уровня FATAL:
+#### Логи уровня FATAL: (пусто)
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging4.png)
 
-Конец
-=====
+# Конец

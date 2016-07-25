@@ -1,12 +1,8 @@
-Игра "Сапёр"
-============
+# Игра "Сапёр"
 
-Графическая версия игры
------------------------
-_______________________
+## Графическая версия игры
 
-Легкий уровень (9x9)
---------------------
+### Легкий уровень (9x9)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/selectEasy.png)
 
@@ -14,38 +10,34 @@ _______________________
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy2.png)
 
-Выигрыш:
+***Выигрыш:***
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy3.png)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy4.png)
 
-Проигрыш:
+***Проигрыш:***
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/easy5.png)
 
-Средний уровень (16x16)
------------------------
+### Средний уровень (16x16)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/medium1.png)
 
-Сложный уровень (30x16)
------------------------
+### Сложный уровень (30x16)
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/expert1.png)
 
-Консольная версия игры
-----------------------
-______________________
+## Консольная версия игры
 
-Выбор уровня:
+***Выбор уровня:***
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/console1.png)
 
-Выбор клетки:
+***Выбор клетки:***
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/console2.png)
 
-Генерация открытого поля:
+***Генерация открытого поля:***
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/Minesweeper/src/Screenshots/console3.png)
