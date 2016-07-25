@@ -80,6 +80,8 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search7.png)
 
+-----------------------------------------------------------
+
 #### Нажимаем в верхнем левом углу на кнопку "_Вернуться_".
 
 -----------------------------------------------------------
