@@ -1,4 +1,4 @@
-package HeadFirst.Iterator_10.transition;
+package HeadFirst.Iterator_10.transition_4_here;
 import java.util.*;
   
      
@@ -14,10 +14,11 @@ public class Waitress {
 		while(menuIterator.hasNext()) {
 			Menu menu = (Menu)menuIterator.next();
 			printMenu(menu.createIterator());
-		}
+            System.out.println();
+        }
 	}
    
-	void printMenu(Iterator iterator) {
+	public void printMenu(Iterator iterator) {
 		while (iterator.hasNext()) {
 			MenuItem menuItem = (MenuItem)iterator.next();
 			System.out.print(menuItem.getName() + ", ");

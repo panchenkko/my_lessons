@@ -1,4 +1,4 @@
-package HeadFirst.Iterator_10.transition;
+package HeadFirst.Iterator_10.transition_4_here;
 
 public class MenuItem {
 	String name;

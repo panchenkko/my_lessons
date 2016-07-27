@@ -8,6 +8,7 @@
 - Код должен зависеть от абстракции, а не от конкретных классов.
 - Взаимодействуйте только с "друзьями".
 - Не вызывайте нас - мы вас сами вызовем.
+- Класс должен иметь только одну причину для изменений.
 
 Краткое пояснение каждого паттерна
 ==================================
@@ -51,3 +52,11 @@
 Шаблонный метод/Template Method
 -------------------------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/TemplateMethod_9/Screenshots/09_templatemethod.png)
+
+Итератор/Iterator
+-----------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Iterator_10/Screenshots/08_iterator.png)
+
+Компоновщик/Composite
+---------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Composite_11/Screenshots/16_composite.png)
