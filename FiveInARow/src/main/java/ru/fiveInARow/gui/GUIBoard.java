@@ -77,6 +77,7 @@ public class GUIBoard extends JPanel implements IBoard {
 
 	@Override
 	public void drawSelect() {
+        repaint();
 	}
 
 	@Override

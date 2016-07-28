@@ -31,7 +31,6 @@ public class Runner {
         for (int i = 0; i < logic.sumRow(); i++)
             for (int j = 0; j < logic.sumColumn(); j++) {
                 cells[i][j] = new ConsoleCell();
-                cells[i][j].suggestEmpty();
             }
     }
 
