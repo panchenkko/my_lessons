@@ -294,81 +294,37 @@ public class Logic implements ILogic {
 
         if (_9_00_(x2, y2) + _15_00_(x2, y2) >= sumInARow() - 1) {
             isCreateNewSmallCell = true;
-            pathVerification_9_00_And_15_00(x2, y2);
+            checkCell_9_00_(x2, y2);
+            checkCell_15_00_(x2, y2);
         }
 
         if (_10_30_(x2, y2) + _16_30_(x2, y2) >= sumInARow() - 1) {
             isCreateNewSmallCell = true;
-            pathVerification_10_30_And_16_30(x2, y2);
+            checkCell_10_30_(x2, y2);
+            checkCell_16_30_(x2, y2);
         }
 
         if (_12_00_(x2, y2) + _18_00_(x2, y2) >= sumInARow() - 1) {
             isCreateNewSmallCell = true;
-            pathVerification_12_00_And_18_00(x2, y2);
+            checkCell_12_00_(x2, y2);
+            checkCell_18_00_(x2, y2);
         }
 
         if (_13_30_(x2, y2) + _19_30_(x2, y2) >= sumInARow() - 1) {
             isCreateNewSmallCell = true;
-            pathVerification_13_30_And_19_30(x2, y2);
+            checkCell_13_30_(x2, y2);
+            checkCell_19_30_(x2, y2);
+        }
+
+        if (isCreateNewSmallCell) {
+            cells[x2][y2].checked();
+            clearBalls();
         }
 
         return isCreateNewSmallCell;
     }
 
-    public void pathVerification_9_00_And_15_00(int x2, int y2) {
-        cells[x2][y2].checked();
-
-        checkCell_9_00_(x2, y2);
-        checkCell_15_00_(x2, y2);
-
-        for (int i = 0; i < sumRow(); i++) {
-            for (int j = 0; j < sumColumn(); j++) {
-                if (cells[i][j].isChecked()) {
-                    score();
-                    cells[i][j].cancelBigCellPainting();
-                    cells[i][j].suggestEmpty();
-                }
-            }
-        }
-    }
-    public void pathVerification_10_30_And_16_30(int x2, int y2) {
-        cells[x2][y2].checked();
-
-        checkCell_10_30_(x2, y2);
-        checkCell_16_30_(x2, y2);
-
-        for (int i = 0; i < sumRow(); i++) {
-            for (int j = 0; j < sumColumn(); j++) {
-                if (cells[i][j].isChecked()) {
-                    score();
-                    cells[i][j].cancelBigCellPainting();
-                    cells[i][j].suggestEmpty();
-                }
-            }
-        }
-    }
-    public void pathVerification_12_00_And_18_00(int x2, int y2) {
-        cells[x2][y2].checked();
-
-        checkCell_12_00_(x2, y2);
-        checkCell_18_00_(x2, y2);
-
-        for (int i = 0; i < sumRow(); i++) {
-            for (int j = 0; j < sumColumn(); j++) {
-                if (cells[i][j].isChecked()) {
-                    score();
-                    cells[i][j].cancelBigCellPainting();
-                    cells[i][j].suggestEmpty();
-                }
-            }
-        }
-    }
-    public void pathVerification_13_30_And_19_30(int x2, int y2) {
-        cells[x2][y2].checked();
-
-        checkCell_13_30_(x2, y2);
-        checkCell_19_30_(x2, y2);
-
+    public void clearBalls() {
         for (int i = 0; i < sumRow(); i++) {
             for (int j = 0; j < sumColumn(); j++) {
                 if (cells[i][j].isChecked()) {

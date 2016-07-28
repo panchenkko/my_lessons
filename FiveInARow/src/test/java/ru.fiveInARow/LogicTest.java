@@ -288,30 +288,77 @@ public class LogicTest {
 
     @Test
     public void testClearCells() throws Exception {
+        // Проверяем, что если шар появится на ячейке, где будет совпадение сразу по горизонтали и по вертикали, то
+        // очистит с двух сторон
+        cells[0][2].bigCellPainting();
+        cells[1][2].bigCellPainting();
+        cells[3][2].bigCellPainting();
+        cells[4][2].bigCellPainting();
+
+        cells[2][2].bigCellPainting();
+
+        cells[2][0].bigCellPainting();
+        cells[2][1].bigCellPainting();
+        cells[2][3].bigCellPainting();
+        cells[2][4].bigCellPainting();
+
+
+        cells[0][2].redCell();
+        cells[1][2].redCell();
+        cells[3][2].redCell();
+        cells[4][2].redCell();
+
+        cells[2][2].redCell();
+
+        cells[2][0].redCell();
+        cells[2][1].redCell();
+        cells[2][3].redCell();
+        cells[2][4].redCell();
+
+        assertTrue(logic.clearCells(2, 2));
+
+        assertFalse(cells[0][2].isBigCellPainted());
+        assertFalse(cells[1][2].isBigCellPainted());
+        assertFalse(cells[3][2].isBigCellPainted());
+        assertFalse(cells[4][2].isBigCellPainted());
+
+        assertFalse(cells[2][2].isBigCellPainted());
+
+        assertFalse(cells[2][0].isBigCellPainted());
+        assertFalse(cells[2][1].isBigCellPainted());
+        assertFalse(cells[2][3].isBigCellPainted());
+        assertFalse(cells[2][4].isBigCellPainted());
+
+
+        assertTrue(cells[0][2].isSuggestEmpty());
+        assertTrue(cells[1][2].isSuggestEmpty());
+        assertTrue(cells[3][2].isSuggestEmpty());
+        assertTrue(cells[4][2].isSuggestEmpty());
+
+        assertTrue(cells[2][2].isSuggestEmpty());
+
+        assertTrue(cells[2][0].isSuggestEmpty());
+        assertTrue(cells[2][1].isSuggestEmpty());
+        assertTrue(cells[2][3].isSuggestEmpty());
+        assertTrue(cells[2][4].isSuggestEmpty());
     }
 
     @Test
-    public void testPathVerification_9_00_And_15_00() throws Exception {
-        // Проверяем, что по горизонтали найдет 5 одинаковых шаров, сотрёт их и увеличит счёт игрока
+    public void testClearBalls() throws Exception {
+        // Проверяем, что очистит все "checked" ячейки
         cells[0][0].bigCellPainting();
         cells[0][1].bigCellPainting();
         cells[0][2].bigCellPainting();
         cells[0][3].bigCellPainting();
         cells[0][4].bigCellPainting();
 
-        cells[0][0].redCell();
-        cells[0][1].redCell();
-        cells[0][2].redCell();
-        cells[0][3].redCell();
-        cells[0][4].redCell();
+        cells[0][0].checked();
+        cells[0][1].checked();
+        cells[0][2].checked();
+        cells[0][3].checked();
+        cells[0][4].checked();
 
-        logic.pathVerification_9_00_And_15_00(0, 2);
-
-        assertTrue(cells[0][0].isChecked());
-        assertTrue(cells[0][1].isChecked());
-        assertTrue(cells[0][2].isChecked());
-        assertTrue(cells[0][3].isChecked());
-        assertTrue(cells[0][4].isChecked());
+        logic.clearBalls();
 
         assertFalse(cells[0][0].isBigCellPainted());
         assertFalse(cells[0][1].isBigCellPainted());
@@ -324,122 +371,6 @@ public class LogicTest {
         assertTrue(cells[0][2].isSuggestEmpty());
         assertTrue(cells[0][3].isSuggestEmpty());
         assertTrue(cells[0][4].isSuggestEmpty());
-
-        assertThat(logic.getScore(), is(5));
-    }
-
-    @Test
-    public void testPathVerification_10_30_And_16_30() throws Exception {
-        // Проверяем, что по данным часовым стрелкам, какие указаны в названии метода найдет 5 одинаковых шаров,
-        // сотрёт их и увеличит счёт игрока
-        cells[0][0].bigCellPainting();
-        cells[1][1].bigCellPainting();
-        cells[2][2].bigCellPainting();
-        cells[3][3].bigCellPainting();
-        cells[4][4].bigCellPainting();
-
-        cells[0][0].redCell();
-        cells[1][1].redCell();
-        cells[2][2].redCell();
-        cells[3][3].redCell();
-        cells[4][4].redCell();
-
-        logic.pathVerification_10_30_And_16_30(2, 2);
-
-        assertTrue(cells[0][0].isChecked());
-        assertTrue(cells[1][1].isChecked());
-        assertTrue(cells[2][2].isChecked());
-        assertTrue(cells[3][3].isChecked());
-        assertTrue(cells[4][4].isChecked());
-
-        assertFalse(cells[0][0].isBigCellPainted());
-        assertFalse(cells[1][1].isBigCellPainted());
-        assertFalse(cells[2][2].isBigCellPainted());
-        assertFalse(cells[3][3].isBigCellPainted());
-        assertFalse(cells[4][4].isBigCellPainted());
-
-        assertTrue(cells[0][0].isSuggestEmpty());
-        assertTrue(cells[1][1].isSuggestEmpty());
-        assertTrue(cells[2][2].isSuggestEmpty());
-        assertTrue(cells[3][3].isSuggestEmpty());
-        assertTrue(cells[4][4].isSuggestEmpty());
-
-        assertThat(logic.getScore(), is(5));
-    }
-
-    @Test
-    public void testPathVerification_12_00_And_18_00() throws Exception {
-        // Проверяем, что по вертикали найдет 5 одинаковых шаров, сотрёт их и увеличит счёт игрока
-        cells[0][0].bigCellPainting();
-        cells[1][0].bigCellPainting();
-        cells[2][0].bigCellPainting();
-        cells[3][0].bigCellPainting();
-        cells[4][0].bigCellPainting();
-
-        cells[0][0].redCell();
-        cells[1][0].redCell();
-        cells[2][0].redCell();
-        cells[3][0].redCell();
-        cells[4][0].redCell();
-
-        logic.pathVerification_12_00_And_18_00(2, 0);
-
-        assertTrue(cells[0][0].isChecked());
-        assertTrue(cells[1][0].isChecked());
-        assertTrue(cells[2][0].isChecked());
-        assertTrue(cells[3][0].isChecked());
-        assertTrue(cells[4][0].isChecked());
-
-        assertFalse(cells[0][0].isBigCellPainted());
-        assertFalse(cells[1][0].isBigCellPainted());
-        assertFalse(cells[2][0].isBigCellPainted());
-        assertFalse(cells[3][0].isBigCellPainted());
-        assertFalse(cells[4][0].isBigCellPainted());
-
-        assertTrue(cells[0][0].isSuggestEmpty());
-        assertTrue(cells[1][0].isSuggestEmpty());
-        assertTrue(cells[2][0].isSuggestEmpty());
-        assertTrue(cells[3][0].isSuggestEmpty());
-        assertTrue(cells[4][0].isSuggestEmpty());
-
-        assertThat(logic.getScore(), is(5));
-    }
-
-    @Test
-    public void testPathVerification_13_30_And_19_30() throws Exception {
-        // Проверяем, что по данным часовым стрелкам, какие указаны в названии метода найдет 5 одинаковых шаров,
-        // сотрёт их и увеличит счёт игрока
-        cells[0][8].bigCellPainting();
-        cells[1][7].bigCellPainting();
-        cells[2][6].bigCellPainting();
-        cells[3][5].bigCellPainting();
-        cells[4][4].bigCellPainting();
-
-        cells[0][8].redCell();
-        cells[1][7].redCell();
-        cells[2][6].redCell();
-        cells[3][5].redCell();
-        cells[4][4].redCell();
-
-        logic.pathVerification_13_30_And_19_30(2, 6);
-
-        assertTrue(cells[0][8].isChecked());
-        assertTrue(cells[1][7].isChecked());
-        assertTrue(cells[2][6].isChecked());
-        assertTrue(cells[3][5].isChecked());
-        assertTrue(cells[4][4].isChecked());
-
-        assertFalse(cells[0][8].isBigCellPainted());
-        assertFalse(cells[1][7].isBigCellPainted());
-        assertFalse(cells[2][6].isBigCellPainted());
-        assertFalse(cells[3][5].isBigCellPainted());
-        assertFalse(cells[4][4].isBigCellPainted());
-
-        assertTrue(cells[0][8].isSuggestEmpty());
-        assertTrue(cells[1][7].isSuggestEmpty());
-        assertTrue(cells[2][6].isSuggestEmpty());
-        assertTrue(cells[3][5].isSuggestEmpty());
-        assertTrue(cells[4][4].isSuggestEmpty());
 
         assertThat(logic.getScore(), is(5));
     }
