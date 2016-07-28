@@ -1,5 +1,7 @@
 package ru.fiveInARow.interfaces;
 
+import ru.fiveInARow.exceptions.NotEmptyCellsException;
+
 /**
  * Логика игры
  */
@@ -68,7 +70,12 @@ public interface ILogic {
 	 * Генерация полностью и не полностью закрашенных ячеек
 	 */
 	void createBigCells();
-	void createSmallCells();
+	void createSmallCells() throws NotEmptyCellsException;
+
+    /**
+     * Проверка, что путь к выбранной клетке открыт и шарами не заблокирован
+     */
+    boolean progressCheck(int x, int y, int x2, int y2);
 
 	/**
 	 * Проверка и если пользователь собрал n в ряд, делаем эти ячейки пустые

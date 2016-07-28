@@ -55,8 +55,6 @@ public interface ICell<T> {
 	 */
 	void suggestEmpty();
 
-	void cancelSuggestEmpty();
-
 	/**
 	 * Была ли проверена данная ячейка
      */
@@ -68,6 +66,18 @@ public interface ICell<T> {
 	void checked();
 
 	void cancelChecked();
+
+    /**
+     * Была ли проверена данная ячейка
+     */
+    boolean isProgressChecked();
+
+    /**
+     * Устанавливаем значение, что ячейка была проверена
+     */
+    void progressChecked();
+
+    void cancelProgressChecked();
 
 	void selectColor(T paint, String symbol);
 

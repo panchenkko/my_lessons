@@ -12,6 +12,7 @@ public class GUICell implements ICell<Graphics> {
 	private boolean suggestEmpty = false;
 
 	private boolean checked = false;
+	private boolean progressChecked = false;
 	private boolean checkedClick = false;
 
 	private boolean red = false;
@@ -21,7 +22,11 @@ public class GUICell implements ICell<Graphics> {
 	private boolean magenta = false;
 	private boolean cyan = false;
 
-	@Override
+    public GUICell() {
+        suggestEmpty = true;
+    }
+
+    @Override
 	public boolean isSmallCellPainted() {
 		return this.smallPaint;
 	}
@@ -29,7 +34,8 @@ public class GUICell implements ICell<Graphics> {
 	@Override
 	public void smallCellPainting() {
 		this.smallPaint = true;
-	}
+        this.suggestEmpty = false;
+    }
 
 	@Override
 	public void cancelSmallCellPainting() {
@@ -44,11 +50,19 @@ public class GUICell implements ICell<Graphics> {
 	@Override
 	public void bigCellPainting() {
 		this.bigPaint = true;
-	}
+        this.suggestEmpty = false;
+    }
 
 	@Override
 	public void cancelBigCellPainting() {
 		this.bigPaint = false;
+
+        this.red = false;
+        this.green = false;
+        this.blue = false;
+        this.yellow = false;
+        this.magenta = false;
+        this.cyan = false;
 	}
 
 
@@ -118,11 +132,11 @@ public class GUICell implements ICell<Graphics> {
 	@Override
 	public void cancelAllColor() {
 		this.red = false;
-		this.green = false;
-		this.blue = false;
-		this.yellow = false;
-		this.magenta = false;
-		this.cyan = false;
+        this.green = false;
+        this.blue = false;
+        this.yellow = false;
+        this.magenta = false;
+        this.cyan = false;
 	}
 
 
@@ -134,11 +148,6 @@ public class GUICell implements ICell<Graphics> {
 	@Override
 	public void suggestEmpty() {
 		this.suggestEmpty = true;
-	}
-
-	@Override
-	public void cancelSuggestEmpty() {
-		this.suggestEmpty = false;
 	}
 
 	@Override
@@ -156,59 +165,64 @@ public class GUICell implements ICell<Graphics> {
 		this.checked = false;
 	}
 
-	@Override
+    @Override
+    public boolean isProgressChecked() {
+        return this.progressChecked;
+    }
+
+    @Override
+    public void progressChecked() {
+        this.progressChecked = true;
+    }
+
+    @Override
+    public void cancelProgressChecked() {
+        this.progressChecked = false;
+    }
+
+    @Override
 	public void selectColor(Graphics paint, String symbol) {
-		if (this.isRedCell())
-			paint.setColor(Color.red);
-		else if (this.isGreenCell())
-			paint.setColor(Color.green);
-		else if (this.isBlueCell())
-			paint.setColor(Color.blue);
-		else if (this.isYellowCell())
-			paint.setColor(Color.yellow);
-		else if (this.isMagentaCell())
-			paint.setColor(Color.magenta);
-		else if (this.isCyanCell())
-			paint.setColor(Color.cyan);
-		else
-			paint.setColor(Color.black);
+		     if (isRedCell()) paint.setColor(Color.red);
+		else if (isGreenCell()) paint.setColor(Color.green);
+		else if (isBlueCell()) paint.setColor(Color.blue);
+		else if (isYellowCell()) paint.setColor(Color.yellow);
+		else if (isMagentaCell()) paint.setColor(Color.magenta);
+		else if (isCyanCell()) paint.setColor(Color.cyan);
+
+		else paint.setColor(Color.black);
 	}
 
 	@Override
 	public void generateColor(int numColor) {
 		switch (numColor) {
-			case 0: this.redCell();
-				break;
-			case 1: this.greenCell();
-				break;
-			case 2: this.blueCell();
-				break;
-			case 3: this.yellowCell();
-				break;
-			case 4: this.magentaCell();
-				break;
-			case 5: this.cyanCell();
-				break;
+			case 0: redCell();
+				    break;
+			case 1: greenCell();
+				    break;
+			case 2: blueCell();
+				    break;
+			case 3: yellowCell();
+				    break;
+			case 4: magentaCell();
+				    break;
+			case 5: cyanCell();
+				    break;
 		}
 	}
 
 	@Override
 	public int returnColor() {
 		int color;
-		if (this.isRedCell())
-			color = 0;
-		else if (this.isGreenCell())
-			color = 1;
-		else if (this.isBlueCell())
-			color = 2;
-		else if (this.isYellowCell())
-			color = 3;
-		else if (this.isMagentaCell())
-			color = 4;
-		else if (this.isCyanCell())
-			color = 5;
-		else
-			color = 6;
+
+		     if (isRedCell()) color = 0;
+		else if (isGreenCell()) color = 1;
+		else if (isBlueCell()) color = 2;
+		else if (isYellowCell()) color = 3;
+		else if (isMagentaCell()) color = 4;
+		else if (isCyanCell()) color = 5;
+
+		else color = 6;
+
 		return color;
 	}
 
@@ -225,16 +239,24 @@ public class GUICell implements ICell<Graphics> {
 
 		x = x * GUIBoard.getPADDING() + 16;
 		y = y * GUIBoard.getPADDING() + 25;
-		if (this.isBigCellPainted()) {
+		if (isBigCellPainted()) {
 			selectColor(paint, null);
 			paint.fillOval(x - 9, y - 18, 31, 31);
-		} else if (this.isSmallCellPainted()) {
-			selectColor(paint, null);
-			paint.fillOval(x + 1, y - 8, 12, 12);
-		} else if (this.isSuggestEmpty()) {
+        } else if (isSmallCellPainted()) {
+            selectColor(paint, null);
+            paint.fillOval(x + 1, y - 8, 12, 12);
+        } else if (isChecked()) {
+            selectColor(paint, null);
+            paint.fillOval(x + 3, y - 6, 8, 8);
+        } else if (isSuggestEmpty()) {
 			selectColor(paint, null);
 		}
-	}
+
+        if (isProgressChecked()) {
+            selectColor(paint, null);
+            paint.fillOval(x + 1, y - 8, 8, 8);
+        }
+    }
 
 	@Override
 	public boolean isCheckedClick() {

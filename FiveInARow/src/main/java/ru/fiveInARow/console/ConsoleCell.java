@@ -16,6 +16,7 @@ public class ConsoleCell implements ICell<PrintStream> {
 	private boolean suggestEmpty = false;
 
 	private boolean checked = false;
+	private boolean progressChecked = false;
 
 	private boolean red = false;
 	private boolean green = false;
@@ -24,7 +25,11 @@ public class ConsoleCell implements ICell<PrintStream> {
 	private boolean magenta = false;
 	private boolean cyan = false;
 
-	@Override
+    public ConsoleCell() {
+        suggestEmpty = true;
+    }
+
+    @Override
 	public boolean isSmallCellPainted() {
 		return this.smallPaint;
 	}
@@ -32,6 +37,7 @@ public class ConsoleCell implements ICell<PrintStream> {
 	@Override
 	public void smallCellPainting() {
 		this.smallPaint = true;
+        this.suggestEmpty = false;
 	}
 
 	@Override
@@ -47,6 +53,7 @@ public class ConsoleCell implements ICell<PrintStream> {
 	@Override
 	public void bigCellPainting() {
 		this.bigPaint = true;
+        this.suggestEmpty = false;
 	}
 
 	@Override
@@ -127,7 +134,12 @@ public class ConsoleCell implements ICell<PrintStream> {
 
 	@Override
 	public void cancelAllColor() {
-
+        this.red = false;
+        this.green = false;
+        this.blue = false;
+        this.yellow = false;
+        this.magenta = false;
+        this.cyan = false;
 	}
 
 
@@ -139,11 +151,6 @@ public class ConsoleCell implements ICell<PrintStream> {
 	@Override
 	public void suggestEmpty() {
 		this.suggestEmpty = true;
-	}
-
-	@Override
-	public void cancelSuggestEmpty() {
-		this.suggestEmpty = false;
 	}
 
 	@Override
@@ -161,19 +168,30 @@ public class ConsoleCell implements ICell<PrintStream> {
 		this.checked = false;
 	}
 
-	@Override
+    @Override
+    public boolean isProgressChecked() {
+        return this.progressChecked;
+    }
+
+    @Override
+    public void progressChecked() {
+        this.progressChecked = true;
+    }
+
+    @Override
+    public void cancelProgressChecked() {
+        this.progressChecked = false;
+    }
+
+    @Override
 	public void draw(PrintStream paint) {
-		if (this.isBigCellPainted())
-			selectColor(paint, "O");
-		else if (this.isSmallCellPainted())
-			selectColor(paint, "*");
-		else if (this.isSuggestEmpty())
-			paint.print("[ ] ");
+		     if (isBigCellPainted()) selectColor(paint, "O");
+		else if (isSmallCellPainted()) selectColor(paint, "*");
+		else if (isSuggestEmpty()) paint.print("[ ] ");
 	}
 
 	@Override
 	public void draw(PrintStream graphics, int x, int y) {
-
 	}
 
 	@Override
@@ -183,44 +201,36 @@ public class ConsoleCell implements ICell<PrintStream> {
 
 	@Override
 	public void checkedClick() {
-
 	}
 
 	@Override
 	public void cancelCheckedClick() {
-
 	}
 
 	@Override
 	public void selectColor(PrintStream paint, String symbol) {
-		if (this.isRedCell())
-			paint.printf("[\033[1;31m%s\033[0m] ", symbol);
-		else if (this.isGreenCell())
-			paint.printf("[\033[1;32m%s\033[0m] ", symbol);
-		else if (this.isBlueCell())
-			paint.printf("[\033[1;34m%s\033[0m] ", symbol);
-		else if (this.isYellowCell())
-			paint.printf("[\033[1;33m%s\033[0m] ", symbol);
-		else if (this.isMagentaCell())
-			paint.printf("[\033[1;35m%s\033[0m] ", symbol);
-		else if (this.isCyanCell())
-			paint.printf("[\033[1;36m%s\033[0m] ", symbol);
+		     if (isRedCell()) paint.printf("[\033[1;31m%s\033[0m] ", symbol);
+		else if (isGreenCell()) paint.printf("[\033[1;32m%s\033[0m] ", symbol);
+		else if (isBlueCell()) paint.printf("[\033[1;34m%s\033[0m] ", symbol);
+		else if (isYellowCell()) paint.printf("[\033[1;33m%s\033[0m] ", symbol);
+		else if (isMagentaCell()) paint.printf("[\033[1;35m%s\033[0m] ", symbol);
+		else if (isCyanCell()) paint.printf("[\033[1;36m%s\033[0m] ", symbol);
 	}
 
 	@Override
 	public void generateColor(int numColor) {
 		switch (numColor) {
-			case 0: this.redCell();
+			case 0: redCell();
 					break;
-			case 1: this.greenCell();
+			case 1: greenCell();
 					break;
-			case 2: this.blueCell();
+			case 2: blueCell();
 					break;
-			case 3: this.yellowCell();
+			case 3: yellowCell();
 					break;
-			case 4: this.magentaCell();
+			case 4: magentaCell();
 					break;
-			case 5: this.cyanCell();
+			case 5: cyanCell();
 					break;
 		}
 	}
@@ -228,20 +238,32 @@ public class ConsoleCell implements ICell<PrintStream> {
 	@Override
 	public int returnColor() {
 		int color;
-		if (this.isRedCell())
-			color = 0;
-		else if (this.isGreenCell())
-			color = 1;
-		else if (this.isBlueCell())
-			color = 2;
-		else if (this.isYellowCell())
-			color = 3;
-		else if (this.isMagentaCell())
-			color = 4;
-		else if (this.isCyanCell())
-			color = 5;
-		else
-			color = 6;
+
+		     if (isRedCell()) color = 0;
+		else if (isGreenCell()) color = 1;
+		else if (isBlueCell()) color = 2;
+		else if (isYellowCell()) color = 3;
+		else if (isMagentaCell()) color = 4;
+		else if (isCyanCell()) color = 5;
+
+		else color = 6;
+
 		return color;
 	}
+
+    @Override
+    public String toString() {
+        return "ConsoleCell{" +
+                "smallPaint=" + smallPaint +
+                ", bigPaint=" + bigPaint +
+                ", suggestEmpty=" + suggestEmpty +
+                ", checked=" + checked +
+                ", red=" + red +
+                ", green=" + green +
+                ", blue=" + blue +
+                ", yellow=" + yellow +
+                ", magenta=" + magenta +
+                ", cyan=" + cyan +
+                '}';
+    }
 }

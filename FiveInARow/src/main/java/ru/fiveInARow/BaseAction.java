@@ -1,5 +1,6 @@
 package ru.fiveInARow;
 
+import ru.fiveInARow.exceptions.NotEmptyCellsException;
 import ru.fiveInARow.gui.Main;
 import ru.fiveInARow.interfaces.*;
 
@@ -28,16 +29,26 @@ public class BaseAction implements IUserAction {
 
 	@Override
 	public void select(int x, int y, int x2, int y2) {
-		this.logic.clearCellChecked();
-		this.logic.movePaintedCell(x, y, x2, y2);
-		this.logic.createBigCells();
-		if (this.logic.clearCells(x2, y2))
-			this.logic.createSmallCells();
-		Main.setScore("Ваш счет: " + this.logic.getScore() + " ");
-		System.out.println("Ваш счет: " + this.logic.getScore());
-		if (this.logic.finish())
-			this.board.drawLosing();
-		else
-			this.board.drawSelect();
+		this.logic.clearCellChecked(); // Очищаем флажки клеток
+//        if (this.logic.progressCheck(x, y, x2, y2)) {
+            this.logic.movePaintedCell(x, y, x2, y2);  // Перемещаем большой шарик на выбранную клетку
+            this.logic.createBigCells(); // С маленьким шариков делаем большие
+            if (!this.logic.clearCells(x2, y2)) { // Очищаем поле, если игрок собрал 5 в ряд
+                try {
+                    this.logic.createSmallCells(); // Создаем новые маленькие шарики
+                } catch (NotEmptyCellsException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+            Main.setScore("Ваш счет: " + this.logic.getScore() + " ");
+            System.out.println("Ваш счет: " + this.logic.getScore());
+
+            if (this.logic.finish()) {
+                this.board.drawLosing();
+            } else {
+                this.board.drawSelect();
+            }
+//        }
 	}
 }
