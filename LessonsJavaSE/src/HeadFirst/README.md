@@ -60,3 +60,8 @@
 Компоновщик/Composite
 ---------------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Composite_11/Screenshots/16_composite.png)
+
+Состояние/State
+---------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/State_12/Screenshots/05_state.png)
+
