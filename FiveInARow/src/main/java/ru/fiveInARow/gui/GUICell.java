@@ -252,10 +252,10 @@ public class GUICell implements ICell<Graphics> {
 			selectColor(paint, null);
 		}
 
-        if (isProgressChecked()) {
-            selectColor(paint, null);
-            paint.fillOval(x + 1, y - 8, 8, 8);
-        }
+//        if (isProgressChecked()) {
+//            selectColor(paint, null);
+//            paint.fillOval(x + 1, y - 8, 8, 8);
+//        }
     }
 
 	@Override

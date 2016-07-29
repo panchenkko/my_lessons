@@ -1,6 +1,6 @@
 package ru.fiveInARow.exceptions;
 
-public class NotEmptyCellsException extends Exception {
+public class NotEmptyCellsException extends GameLogicException {
 
     public NotEmptyCellsException() {
         super();

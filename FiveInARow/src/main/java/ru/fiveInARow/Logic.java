@@ -12,6 +12,8 @@ public class Logic implements ILogic {
 
     private int score = 0;
 
+    boolean found = false;
+
     /**
      * Повышение счёта игрока
      */
@@ -59,7 +61,7 @@ public class Logic implements ILogic {
      */
     @Override
     public int sumSmallCellsPainted() {
-        return 5;
+        return 3;
     }
 
     /**
@@ -131,8 +133,21 @@ public class Logic implements ILogic {
     public void clearCellChecked() {
         for (ICell[] row : this.cells) {
             for (ICell cell : row) {
-                if (cell.isChecked()) cell.cancelChecked();
-                if (cell.isProgressChecked()) cell.cancelProgressChecked();
+                if (cell.isChecked())
+                    cell.cancelChecked();
+            }
+        }
+    }
+
+    /**
+     * Очищаем проверенные ячейки, какие были помечены при клике на ячейку
+     */
+    @Override
+    public void clearCellProgressChecked() {
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
+                if (cell.isProgressChecked())
+                    cell.cancelProgressChecked();
             }
         }
     }
@@ -219,6 +234,7 @@ public class Logic implements ILogic {
     @Override
     public void createSmallCells() throws NotEmptyCellsException {
         Random random = new Random(System.currentTimeMillis());
+
         int checking = sumSmallCellsPainted();
 
         while (checking > 0 && !finish() && sumEmptyCells() > 0) {
@@ -238,96 +254,79 @@ public class Logic implements ILogic {
             throw new NotEmptyCellsException("Недостаточно клеток. Вы на грани проигрыша!");
     }
 
-    //TODO Доделать проверку на наличие свободного пути, для перемещения ячейки на желаемое место
-    @Deprecated
-//    @Override
-//    public boolean progressCheck(int x, int y, int x2, int y2) {
-//        boolean checkLeft = checking(x, y - 1, x2, y2);
-//        boolean checkUp = checking(x - 1, y, x2, y2);
-//        boolean checkRight = checking(x, y + 1, x2, y2);
-//        boolean checkDown = checking(x + 1, y, x2, y2);
-//        return checkLeft || checkUp || checkRight || checkDown;
-//    }
-//
-//    private boolean checking(int x, int y, int x2, int y2) {
-//        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-//            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-//                cells[x][y].progressChecked();
-////                try {
-////                    Thread.sleep(100);
-////                } catch (InterruptedException e) {
-////                    e.printStackTrace();
-////                }
-//                if (x == x2 && y == y2) return true;
-//                progressCheck(x, y, x2, y2);
-//            }
-//        }
-//        return false;
-//    }
-
+    /**
+     * Проверка на заграждение пути. Если шару при перемещении будут заграждать путь большие шары, то он не сдвинется.
+     * @param x Координаты первого шара
+     * @param y Координаты первого шара
+     * @param x2 Координаты второго шара
+     * @param y2 Координаты второго шара
+     * @return если шару ничего не зарграждает путь, то возвращаем истину
+     */
     @Override
     public boolean progressCheck(int x, int y, int x2, int y2) {
-        while ((x != x2 && y != y2) || !cells[x][y].isProgressChecked()) {
-            return pathToBall(x, y, x2, y2);
-        }
-        return false;
+        this.found = false;
+        pathToBall(x, y, x2, y2);
+        return this.found;
     }
 
-    private boolean pathToBall(int x, int y, int x2, int y2) {
-        if (checkingUp(x, y, x2, y2) || checkingDown(x, y, x2, y2) ||
-            checkingLeft(x, y, x2, y2) || checkingRight(x, y, x2, y2)) {
-            return true;
-        }
-        return false;
+    private void pathToBall(int x, int y, int x2, int y2) {
+        checkingUp(x, y, x2, y2);
+        checkingDown(x, y, x2, y2);
+        checkingLeft(x, y, x2, y2);
+        checkingRight(x, y, x2, y2);
     }
 
-    private boolean checkingUp(int x, int y, int x2, int y2) {
-        x--;
-        if (x >= 0) {
-            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
-                if (x == x2 && y == y2)
-                    return true;
-                cells[x][y].progressChecked();
-                pathToBall(x, y, x2, y2);
-            }
-        }
-        return false;
-    }
-    private boolean checkingDown(int x, int y, int x2, int y2) {
-        x++;
-        if (x < sumRow()) {
-            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
-                if (x == x2 && y == y2)
-                    return true;
-                cells[x][y].progressChecked();
-                pathToBall(x, y, x2, y2);
-            }
-        }
-        return false;
-    }
-    private boolean checkingLeft(int x, int y, int x2, int y2) {
+    private void checkingUp(int x, int y, int x2, int y2) {
         y--;
         if (y >= 0) {
             if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
-                if (x == x2 && y == y2)
-                    return true;
-                cells[x][y].progressChecked();
-                pathToBall(x, y, x2, y2);
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
             }
         }
-        return false;
     }
-    private boolean checkingRight(int x, int y, int x2, int y2) {
+    private void checkingDown(int x, int y, int x2, int y2) {
         y++;
-        if (y < sumColumn()) {
+        if (y < sumRow()) {
             if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
-                if (x == x2 && y == y2)
-                    return true;
-                cells[x][y].progressChecked();
-                pathToBall(x, y, x2, y2);
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
             }
         }
-        return false;
+    }
+    private void checkingLeft(int x, int y, int x2, int y2) {
+        x--;
+        if (x >= 0) {
+            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
+            }
+        }
+    }
+    private void checkingRight(int x, int y, int x2, int y2) {
+        x++;
+        if (x < sumColumn()) {
+            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
+            }
+        }
     }
 
     /**
@@ -365,7 +364,7 @@ public class Logic implements ILogic {
             checkCell_19_30_(x2, y2);
         }
 
-        if (isCreateNewSmallCell) {
+        if (!isCreateNewSmallCell) {
             cells[x2][y2].checked();
             clearBalls();
         }

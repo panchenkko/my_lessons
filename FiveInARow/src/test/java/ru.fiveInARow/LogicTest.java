@@ -338,7 +338,7 @@ public class LogicTest {
         cells[2][3].redCell();
         cells[2][4].redCell();
 
-        assertTrue(logic.checkingCells(2, 2));
+        assertFalse(logic.checkingCells(2, 2));
 
         assertFalse(cells[0][2].isBigCellPainted());
         assertFalse(cells[1][2].isBigCellPainted());

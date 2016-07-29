@@ -1,6 +1,7 @@
 package ru.fiveInARow;
 
 import ru.fiveInARow.exceptions.NotEmptyCellsException;
+import ru.fiveInARow.exceptions.NullMethodException;
 import ru.fiveInARow.gui.Main;
 import ru.fiveInARow.interfaces.*;
 
@@ -29,6 +30,7 @@ public class BaseAction implements IUserAction {
 
 	@Override
 	public void select(int x, int y, int x2, int y2) {
+        this.logic.clearCellProgressChecked();
         if (this.logic.progressCheck(x, y, x2, y2)) {
             this.logic.clearCellChecked(); // Очищаем флажки клеток
             this.logic.movePaintedCell(x, y, x2, y2);  // Перемещаем большой шарик на выбранную клетку
@@ -43,12 +45,19 @@ public class BaseAction implements IUserAction {
             }
 
             Main.setScore("Ваш счет: " + this.logic.getScore() + " ");
-            System.out.println("Ваш счет: " + this.logic.getScore());
+            System.out.println("Ваш счет: " + this.logic.getScore() + "\n");
 
             if (this.logic.finish()) {
                 this.board.drawLosing();
             } else {
                 this.board.drawSelect();
+            }
+        } else {
+            Main.setScore("Перекрыто!");
+            try {
+                this.board.cancelCheckedClick();
+            } catch (NullMethodException e) {
+                System.out.println(e.getMessage());
             }
         }
 	}

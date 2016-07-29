@@ -1,5 +1,6 @@
 package ru.fiveInARow.console;
 
+import ru.fiveInARow.exceptions.NullMethodException;
 import ru.fiveInARow.interfaces.IBoard;
 import ru.fiveInARow.interfaces.ICell;
 
@@ -10,7 +11,17 @@ public class ConsoleBoard implements IBoard {
 
 	private ICell[][] cells;
 
-	@Override
+    @Override
+    public void checkingClick(int x, int y) throws NullMethodException {
+        throw new NullMethodException("Данный метод в консольной версии не используется!");
+    }
+
+    @Override
+    public void cancelCheckedClick() throws NullMethodException {
+        throw new NullMethodException("Данный метод в консольной версии не используется!");
+    }
+
+    @Override
 	public void drawBoard(ICell[][] cells) {
 		this.cells = cells;
 		this.redraw();
@@ -19,12 +30,6 @@ public class ConsoleBoard implements IBoard {
 	@Override
 	public void drawSelect() {
 		System.out.println("********** SELECT **********");
-		this.redraw();
-	}
-
-	@Override
-	public void drawCongratulate() {
-		System.out.println("********** CONGRATULATE **********");
 		this.redraw();
 	}
 

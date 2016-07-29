@@ -61,6 +61,8 @@ public interface ILogic {
 
 	void clearCellChecked();
 
+	void clearCellProgressChecked();
+
 	/**
 	 * Перемещаем закрашенную клетку, на выбранную позицию пользователем
 	 */
