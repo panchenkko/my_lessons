@@ -4,6 +4,7 @@ import ru.fiveInARow.exceptions.NotEmptyCellsException;
 import ru.fiveInARow.interfaces.ICell;
 import ru.fiveInARow.interfaces.ILogic;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Logic implements ILogic {
@@ -112,17 +113,15 @@ public class Logic implements ILogic {
      */
     @Override
     public void paintingCellsInStartGame() {
-        Random random = new Random();
-        Random randColor = new Random();
+        Random random = new Random(System.currentTimeMillis());
         int checking = sumSmallCellsPainted();
         while (checking > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
+                int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
-
                 this.cells[row][column].bigCellPainting();
 
                 checking--;
@@ -134,11 +133,11 @@ public class Logic implements ILogic {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
+                int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
-
                 this.cells[row][column].smallCellPainting();
+
                 checking--;
             }
         }
@@ -180,18 +179,17 @@ public class Logic implements ILogic {
      */
     @Override
     public void createSmallCells() throws NotEmptyCellsException {
-        Random random = new Random();
-        Random randColor = new Random();
+        Random random = new Random(System.currentTimeMillis());
         int checking = sumSmallCellsPainted();
         while (checking > 0 && !finish() && sumEmptyCells() > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
+                int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
-
                 this.cells[row][column].smallCellPainting();
+
                 checking--;
             }
         }
@@ -227,62 +225,46 @@ public class Logic implements ILogic {
 //    }
     @Override
     public boolean progressCheck(int x, int y, int x2, int y2) {
-        checkingUp(x, y, x2, y2);
-        checkingDown(x, y, x2, y2);
-        checkingLeft(x, y, x2, y2);
-        checkingRight(x, y, x2, y2);
+        if (checkingUp(x, y, x2, y2) || checkingDown(x, y, x2, y2) ||
+            checkingLeft(x, y, x2, y2) || checkingRight(x, y, x2, y2)) {
+            return true;
+        }
         return false;
     }
 
     private boolean checkingUp(int x, int y, int x2, int y2) {
-        if (!cells[x][y].isChecked()) {
-            y--;
-
+        if (!cells[x][y].isChecked() && !cells[x][y].isBigCellPainted()) {
+            x--;
+            if (x == x2 && y == y2)
+                return true;
+            progressCheck(x, y, x2, y2);
         }
         return false;
     }
     private boolean checkingDown(int x, int y, int x2, int y2) {
-        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-                cells[x][y].progressChecked();
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                if (x == x2 && y == y2) return true;
-                progressCheck(x, y, x2, y2);
-            }
+        if (!cells[x][y].isChecked() && !cells[x][y].isBigCellPainted()) {
+            x++;
+            if (x == x2 && y == y2)
+                return true;
+            progressCheck(x, y, x2, y2);
         }
         return false;
     }
     private boolean checkingLeft(int x, int y, int x2, int y2) {
-        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-                cells[x][y].progressChecked();
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                if (x == x2 && y == y2) return true;
-                progressCheck(x, y, x2, y2);
-            }
+        if (!cells[x][y].isChecked() && !cells[x][y].isBigCellPainted()) {
+            y--;
+            if (x == x2 && y == y2)
+                return true;
+            progressCheck(x, y, x2, y2);
         }
         return false;
     }
     private boolean checkingRight(int x, int y, int x2, int y2) {
-        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-                cells[x][y].progressChecked();
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                if (x == x2 && y == y2) return true;
-                progressCheck(x, y, x2, y2);
-            }
+        if (!cells[x][y].isChecked() && !cells[x][y].isBigCellPainted()) {
+            y++;
+            if (x == x2 && y == y2)
+                return true;
+            progressCheck(x, y, x2, y2);
         }
         return false;
     }
