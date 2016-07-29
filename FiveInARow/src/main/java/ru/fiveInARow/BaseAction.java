@@ -29,11 +29,12 @@ public class BaseAction implements IUserAction {
 
 	@Override
 	public void select(int x, int y, int x2, int y2) {
-		this.logic.clearCellChecked(); // Очищаем флажки клеток
-//        if (this.logic.progressCheck(x, y, x2, y2)) {
+        if (this.logic.progressCheck(x, y, x2, y2)) {
+            this.logic.clearCellChecked(); // Очищаем флажки клеток
             this.logic.movePaintedCell(x, y, x2, y2);  // Перемещаем большой шарик на выбранную клетку
-            this.logic.createBigCells(); // С маленьким шариков делаем большие
-            if (!this.logic.clearCells(x2, y2)) { // Очищаем поле, если игрок собрал 5 в ряд
+            this.logic.createBigCells(); // С маленьких шариков делаем большие
+            if (this.logic.checkingCells(x2, y2)) { // Очищаем поле, если игрок собрал n в ряд
+                // Если игрок не собрал n в ряд, то создаём n новых маленьких шаров
                 try {
                     this.logic.createSmallCells(); // Создаем новые маленькие шарики
                 } catch (NotEmptyCellsException e) {
@@ -49,6 +50,6 @@ public class BaseAction implements IUserAction {
             } else {
                 this.board.drawSelect();
             }
-//        }
+        }
 	}
 }

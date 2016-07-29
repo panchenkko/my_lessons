@@ -7,9 +7,12 @@ import ru.fiveInARow.exceptions.NotEmptyCellsException;
  */
 public interface ILogic {
 
-	int score();
+    /**
+     * Повышение счёта игрока
+     */
+	void incScore();
 
-	int getScore();
+    int getScore();
 
 	/**
 	 * Загружаем поле игры
@@ -37,6 +40,8 @@ public interface ILogic {
 	int sumSmallCellsPainted();
 
 	int sumInARow();
+
+    int sumEmptyCells();
 
 	/**
 	 * Если все ячейки полностью закрашенные, то заканчиваем игру
@@ -80,7 +85,12 @@ public interface ILogic {
 	/**
 	 * Проверка и если пользователь собрал n в ряд, делаем эти ячейки пустые
 	 */
-	boolean clearCells(int x2, int y2);
+	boolean checkingCells(int x2, int y2);
+
+    /**
+     * Очистка шаров
+     */
+    void clearBalls();
 
 	int _9_00_(int x, int y);
 	int _10_30_(int x, int y);

@@ -3,6 +3,7 @@ package ru.fiveInARow.console;
 import ru.fiveInARow.interfaces.ICell;
 
 import java.io.PrintStream;
+import java.util.Set;
 
 /**
  * Реализация ячейки в консоли
