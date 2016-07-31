@@ -260,7 +260,7 @@ public class Logic implements ILogic {
      * @param y Координаты первого шара
      * @param x2 Координаты второго шара
      * @param y2 Координаты второго шара
-     * @return если шару ничего не зарграждает путь, то возвращаем истину
+     * @return если шару ничего не заграждает путь, то возвращаем истину
      */
     @Override
     public boolean progressCheck(int x, int y, int x2, int y2) {
