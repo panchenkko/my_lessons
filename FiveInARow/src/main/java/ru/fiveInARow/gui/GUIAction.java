@@ -37,14 +37,15 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
 
 		if (!board.getIsSmallCell(returnX(e), returnY(e))) {
 			if (!board.isCheckClick() || board.getIsBigCell(returnX(e), returnY(e))) {
+                board.cancelCheckedClick();
 				x = returnX(e);
 				y = returnY(e);
 				board.checkingClick(x, y);
 			} else if (this.logic.checkingCells(x, y, returnX(e), returnY(e))) {
 				select(x, y, returnX(e), returnY(e));
 				board.cancelCheckedClick();
-				board.repaint();
 			}
+            board.repaint();
 		} else if (board.isCheckClick()) {
 			select(x, y, returnX(e), returnY(e));
 			board.cancelCheckedClick();

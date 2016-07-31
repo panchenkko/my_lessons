@@ -43,7 +43,6 @@ public class GUIBoard extends JPanel implements IBoard {
 	public void checkingClick(int x, int y) {
 		if (!cells[x][y].isSuggestEmpty() && !cells[x][y].isCheckedClick()) {
             cells[x][y].checkedClick();
-            repaint();
         }
 	}
 
@@ -52,8 +51,9 @@ public class GUIBoard extends JPanel implements IBoard {
 	public void cancelCheckedClick() {
 		for (int i = 0; i != cells.length; i++) {
 			for (int j = 0; j != cells[0].length; j++) {
-				if (cells[i][j].isCheckedClick())
+				if (cells[i][j].isCheckedClick()) {
                     cells[i][j].cancelCheckedClick();
+                }
 			}
 		}
 	}
