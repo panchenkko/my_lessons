@@ -65,3 +65,7 @@
 ---------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/State_12/Screenshots/05_state.png)
 
+Заместитель/Proxy
+-----------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Proxy_13/Screenshots/13_proxy.png)
+
