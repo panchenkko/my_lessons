@@ -1,4 +1,4 @@
-package HeadFirst.Combining.composite_5;
+package HeadFirst.combining.composite_5;
 
 import java.util.Iterator;
 import java.util.ArrayList;

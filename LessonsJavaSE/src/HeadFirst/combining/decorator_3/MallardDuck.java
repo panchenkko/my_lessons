@@ -1,4 +1,4 @@
-package HeadFirst.Combining.decorator_3;
+package HeadFirst.combining.decorator_3;
 
 public class MallardDuck implements Quackable {
  

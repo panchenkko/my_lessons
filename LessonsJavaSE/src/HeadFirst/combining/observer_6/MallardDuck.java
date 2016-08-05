@@ -1,4 +1,4 @@
-package HeadFirst.Combining.observer_6;
+package HeadFirst.combining.observer_6;
 
 public class MallardDuck implements Quackable {
 	Observable observable;

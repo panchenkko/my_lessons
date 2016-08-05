@@ -1,4 +1,4 @@
-package HeadFirst.Combining.ducks_1;
+package HeadFirst.combining.ducks_1;
 
 public class DuckSimulator {
 	public static void main(String[] args) {

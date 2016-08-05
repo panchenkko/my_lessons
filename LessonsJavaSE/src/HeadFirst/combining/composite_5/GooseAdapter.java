@@ -1,4 +1,4 @@
-package HeadFirst.Combining.composite_5;
+package HeadFirst.combining.composite_5;
 
 public class GooseAdapter implements Quackable {
 	Goose goose;

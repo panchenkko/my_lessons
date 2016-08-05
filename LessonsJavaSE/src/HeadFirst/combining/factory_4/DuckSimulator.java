@@ -1,4 +1,4 @@
-package HeadFirst.Combining.factory_4;
+package HeadFirst.combining.factory_4;
 
 public class DuckSimulator {
 	public static void main(String[] args) {

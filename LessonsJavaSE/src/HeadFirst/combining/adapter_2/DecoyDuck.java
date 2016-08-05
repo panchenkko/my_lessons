@@ -1,4 +1,4 @@
-package HeadFirst.Combining.adapter_2;
+package HeadFirst.combining.adapter_2;
 
 public class DecoyDuck implements Quackable {
 	public void quack() {

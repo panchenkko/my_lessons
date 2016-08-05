@@ -1,4 +1,4 @@
-package HeadFirst.Combining.observer_6;
+package HeadFirst.combining.observer_6;
 
 public class GooseAdapter implements Quackable {
 	Goose goose;

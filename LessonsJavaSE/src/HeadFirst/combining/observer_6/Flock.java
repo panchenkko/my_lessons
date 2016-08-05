@@ -1,4 +1,4 @@
-package HeadFirst.Combining.observer_6;
+package HeadFirst.combining.observer_6;
 
 import java.util.Iterator;
 import java.util.ArrayList;
