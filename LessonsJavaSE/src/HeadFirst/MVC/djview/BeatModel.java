@@ -1,4 +1,4 @@
-package HeadFirst.combined.djview;
+package HeadFirst.MVC.djview;
   
 import javax.sound.midi.*;
 import java.util.*;
