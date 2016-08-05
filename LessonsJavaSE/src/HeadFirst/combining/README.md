@@ -1,7 +1,7 @@
 КОМБИНАЦИЯ ПАТТЕРНОВ
 ====================
 
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/combined/Screenshots/combined.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/combining/Screenshots/combining.png)
 
 Диаграмма на основе классов "observer_6"
 ----------------------------------------
