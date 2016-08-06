@@ -10,13 +10,16 @@ public class Logic implements ILogic {
 
     private ICell[][] cells;
 
-    private int check = 0;
-
     private int score = 0;
 
+    boolean found = false;
+
+    /**
+     * Повышение счёта игрока
+     */
     @Override
-    public int score() {
-        return this.score++;
+    public void incScore() {
+        this.score++;
     }
 
     @Override
@@ -28,6 +31,10 @@ public class Logic implements ILogic {
         this.score = score;
     }
 
+    /**
+     * Получаем ссылку на все ячейки
+     * @param cells присваиваем ссылку полю класса
+     */
     @Override
     public void loadBoard(ICell[][] cells) {
         this.cells = cells;
@@ -48,16 +55,44 @@ public class Logic implements ILogic {
         return new ICell[sumRow()][sumColumn()];
     }
 
+    /**
+     * Кол-во создаваемых шариков при каждом ходе игрока
+     * @return получение кол-ва шариков
+     */
     @Override
     public int sumSmallCellsPainted() {
-        return 5;
+        return 3;
     }
 
+    /**
+     * Кол-во одинаковых шариков, какое должен собрать игрок, чтобы они исчезли
+     * @return получение кол-ва
+     */
     @Override
     public int sumInARow() {
         return 5;
     }
 
+    /**
+     * Подсчет кол-ва пустых ячеек на поле
+     * @return получение кол-ва
+     */
+    @Override
+    public int sumEmptyCells() {
+        int emptyCells = 0;
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
+                if (cell.isSuggestEmpty()) emptyCells++;
+            }
+        }
+        return emptyCells;
+    }
+
+    /**
+     * Подсчитываем кол-во больших шаров на поле и после спрашиваем: Если кол-во больших шаров равно всему кол-ву
+     * ячеек в поле минус один, то завершаем игру. Пользователь проиграл.
+     * @return возвращаем истину, если пользователь проиграл
+     */
     @Override
     public boolean finish() {
         boolean finish = false;
@@ -73,29 +108,27 @@ public class Logic implements ILogic {
         return finish;
     }
 
-    public int sumEmptyCells() {
-        int emptyCells = 0;
-        for (ICell[] row : this.cells) {
-            for (ICell cell : row) {
-                if (cell.isSuggestEmpty()) emptyCells++;
-            }
-        }
-        return emptyCells;
-    }
-
     /**
-     * Проверяем, действительно ли первая клетка является закрашенной,
-     * а вторая пустой или неполностью закрашенной
+     * Проверяем, действительно ли первая клетка является большим шаром,
+     * а вторая пустой ячейкой или ячейкой с маленьким шаром.
+     * @param x Координаты первого шара
+     * @param y Координаты первого шара
+     * @param x2 Координаты второго шара
+     * @param y2 Координаты второго шара
+     * @return возвращаем истину, если условия совпадают с правдой
      */
     @Override
     public boolean checkingCells(int x, int y, int x2, int y2) {
         boolean checking = false;
-        if (this.cells[x][y].isBigCellPainted() && this.cells[x2][y2].isSuggestEmpty() ||
-            this.cells[x2][y2].isSmallCellPainted())
+        if (this.cells[x][y].isBigCellPainted() &&
+                (this.cells[x2][y2].isSuggestEmpty() || this.cells[x2][y2].isSmallCellPainted()))
             checking = true;
         return checking;
     }
 
+    /**
+     * Очищаем проверенные ячейки, какие были помечены в прошлом ходе
+     */
     @Override
     public void clearCellChecked() {
         for (ICell[] row : this.cells) {
@@ -107,22 +140,35 @@ public class Logic implements ILogic {
     }
 
     /**
-     * При первом ходе создаем сначала n полностью закрашенных ячеек,
-     * после n не полностью закрашенных
+     * Очищаем проверенные ячейки, какие были помечены при клике на ячейку
+     */
+    @Override
+    public void clearCellProgressChecked() {
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
+                if (cell.isProgressChecked())
+                    cell.cancelProgressChecked();
+            }
+        }
+    }
+
+    /**
+     * При первом ходе создаем сначала sumSmallCellsPainted() больших шаров,
+     * после sumSmallCellsPainted() маленьких шаров
      */
     @Override
     public void paintingCellsInStartGame() {
-        Random random = new Random();
-        Random randColor = new Random();
+        Random random = new Random(System.currentTimeMillis());
+
         int checking = sumSmallCellsPainted();
+
         while (checking > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
+                int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
-
                 this.cells[row][column].bigCellPainting();
 
                 checking--;
@@ -130,15 +176,16 @@ public class Logic implements ILogic {
         }
 
         checking = sumSmallCellsPainted();
+
         while (checking > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
+                int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
-
                 this.cells[row][column].smallCellPainting();
+
                 checking--;
             }
         }
@@ -146,6 +193,10 @@ public class Logic implements ILogic {
 
     /**
      * Второй ячейке присваиваем значение первой, а первую делаем пустую
+     * @param x Координаты первого шара
+     * @param y Координаты первого шара
+     * @param x2 Координаты второго шара
+     * @param y2 Координаты второго шара
      */
     @Override
     public void movePaintedCell(int x, int y, int x2, int y2) {
@@ -161,162 +212,159 @@ public class Logic implements ILogic {
     }
 
     /**
-     * Не полностью закрашенные ячейки, закрашиваем полностью
+     * С маленьких шаров делаем большие
      */
     @Override
     public void createBigCells() {
-        for (int i = 0; i < sumRow(); i++)
-            for (int j = 0; j < sumColumn(); j++)
+        for (int i = 0; i < sumRow(); i++) {
+            for (int j = 0; j < sumColumn(); j++) {
                 if (this.cells[i][j].isSmallCellPainted()) {
                     this.cells[i][j].cancelSmallCellPainting();
                     this.cells[i][j].bigCellPainting();
 
-                    clearCells(i, j);
+                    checkingCells(i, j);
                 }
+            }
+        }
     }
 
     /**
-     * Создаем 3 новых не полностью закрашенных ячейки, если ещё есть пустые ячейки
+     * Создаем 3 новых маленьких шара, если ещё есть пустые ячейки
      */
     @Override
     public void createSmallCells() throws NotEmptyCellsException {
-        Random random = new Random();
-        Random randColor = new Random();
+        Random random = new Random(System.currentTimeMillis());
+
         int checking = sumSmallCellsPainted();
+
         while (checking > 0 && !finish() && sumEmptyCells() > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
-                int color = randColor.nextInt(6);
+                int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
-
                 this.cells[row][column].smallCellPainting();
+
                 checking--;
             }
         }
+
         if (sumEmptyCells() == 0 && checking > 0)
             throw new NotEmptyCellsException("Недостаточно клеток. Вы на грани проигрыша!");
     }
 
-    //TODO Доделать проверку на наличие свободного пути, для перемещения ячейки на желаемое место
-    @Deprecated
-//    @Override
-//    public boolean progressCheck(int x, int y, int x2, int y2) {
-//        boolean checkLeft = checking(x, y - 1, x2, y2);
-//        boolean checkUp = checking(x - 1, y, x2, y2);
-//        boolean checkRight = checking(x, y + 1, x2, y2);
-//        boolean checkDown = checking(x + 1, y, x2, y2);
-//        return checkLeft || checkUp || checkRight || checkDown;
-//    }
-//
-//    private boolean checking(int x, int y, int x2, int y2) {
-//        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-//            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-//                cells[x][y].progressChecked();
-////                try {
-////                    Thread.sleep(100);
-////                } catch (InterruptedException e) {
-////                    e.printStackTrace();
-////                }
-//                if (x == x2 && y == y2) return true;
-//                progressCheck(x, y, x2, y2);
-//            }
-//        }
-//        return false;
-//    }
+    /**
+     * Проверка на заграждение пути. Если шару при перемещении будут заграждать путь большие шары, то он не сдвинется.
+     * @param x Координаты первого шара
+     * @param y Координаты первого шара
+     * @param x2 Координаты второго шара
+     * @param y2 Координаты второго шара
+     * @return если шару ничего не заграждает путь, то возвращаем истину
+     */
     @Override
     public boolean progressCheck(int x, int y, int x2, int y2) {
+        this.found = false;
+        pathToBall(x, y, x2, y2);
+        return this.found;
+    }
+
+    private void pathToBall(int x, int y, int x2, int y2) {
         checkingUp(x, y, x2, y2);
         checkingDown(x, y, x2, y2);
         checkingLeft(x, y, x2, y2);
         checkingRight(x, y, x2, y2);
-        return false;
     }
 
-    private boolean checkingUp(int x, int y, int x2, int y2) {
-        if (!cells[x][y].isChecked()) {
-            y--;
-
-        }
-        return false;
-    }
-    private boolean checkingDown(int x, int y, int x2, int y2) {
-        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-                cells[x][y].progressChecked();
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                if (x == x2 && y == y2) return true;
-                progressCheck(x, y, x2, y2);
+    private void checkingUp(int x, int y, int x2, int y2) {
+        y--;
+        if (y >= 0) {
+            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
             }
         }
-        return false;
     }
-    private boolean checkingLeft(int x, int y, int x2, int y2) {
-        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-                cells[x][y].progressChecked();
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                if (x == x2 && y == y2) return true;
-                progressCheck(x, y, x2, y2);
+    private void checkingDown(int x, int y, int x2, int y2) {
+        y++;
+        if (y < sumRow()) {
+            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
             }
         }
-        return false;
     }
-    private boolean checkingRight(int x, int y, int x2, int y2) {
-        if (x >= 0 && y >= 0 && x < sumRow() && y < sumColumn()) {
-            if (!cells[x][y].isProgressChecked() && (cells[x][y].isSuggestEmpty() || cells[x][y].isSmallCellPainted())) {
-                cells[x][y].progressChecked();
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                if (x == x2 && y == y2) return true;
-                progressCheck(x, y, x2, y2);
+    private void checkingLeft(int x, int y, int x2, int y2) {
+        x--;
+        if (x >= 0) {
+            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
             }
         }
-        return false;
+    }
+    private void checkingRight(int x, int y, int x2, int y2) {
+        x++;
+        if (x < sumColumn()) {
+            if (!cells[x][y].isProgressChecked() && !cells[x][y].isBigCellPainted()) {
+                if (x == x2 && y == y2) {
+                    this.found = true;
+                } else {
+                    cells[x][y].progressChecked();
+                    pathToBall(x, y, x2, y2);
+                }
+            }
+        }
     }
 
-
+    /**
+     * Проверяем со всех сторон, если есть в какой-то из них sumInARow() больших шаров, одинакового цвета,
+     * то вызываются методы, какие их помечают, а в конце этого метода вызываем метод для очистки всех помеченных шаров.
+     * @param x2 Координаты второго шара
+     * @param y2 Координаты второго шара
+     * @return возвращаем истину, если игрок не собрал n в ряд и нужно создавать n новых маленьких шаров
+     */
     @Override
-    public boolean clearCells(int x2, int y2) {
-        boolean isCreateNewSmallCell = false;
+    public boolean checkingCells(int x2, int y2) {
+        boolean isCreateNewSmallCell = true;
 
         if (_9_00_(x2, y2) + _15_00_(x2, y2) >= sumInARow() - 1) {
-            isCreateNewSmallCell = true;
+            isCreateNewSmallCell = false;
             checkCell_9_00_(x2, y2);
             checkCell_15_00_(x2, y2);
         }
 
         if (_10_30_(x2, y2) + _16_30_(x2, y2) >= sumInARow() - 1) {
-            isCreateNewSmallCell = true;
+            isCreateNewSmallCell = false;
             checkCell_10_30_(x2, y2);
             checkCell_16_30_(x2, y2);
         }
 
         if (_12_00_(x2, y2) + _18_00_(x2, y2) >= sumInARow() - 1) {
-            isCreateNewSmallCell = true;
+            isCreateNewSmallCell = false;
             checkCell_12_00_(x2, y2);
             checkCell_18_00_(x2, y2);
         }
 
         if (_13_30_(x2, y2) + _19_30_(x2, y2) >= sumInARow() - 1) {
-            isCreateNewSmallCell = true;
+            isCreateNewSmallCell = false;
             checkCell_13_30_(x2, y2);
             checkCell_19_30_(x2, y2);
         }
 
-        if (isCreateNewSmallCell) {
+        if (!isCreateNewSmallCell) {
             cells[x2][y2].checked();
             clearBalls();
         }
@@ -324,17 +372,27 @@ public class Logic implements ILogic {
         return isCreateNewSmallCell;
     }
 
+    /**
+     * Очищаем помеченные клетки и с каждым шаром повышаем счёт игрока
+     */
+    @Override
     public void clearBalls() {
         for (int i = 0; i < sumRow(); i++) {
             for (int j = 0; j < sumColumn(); j++) {
                 if (cells[i][j].isChecked()) {
-                    score();
+                    incScore();
                     cells[i][j].cancelBigCellPainting();
                     cells[i][j].suggestEmpty();
                 }
             }
         }
     }
+
+    /**
+     * Методы для пометки шаров, какие нужно очистить
+     * @param x Координаты шара, вокруг какого идет проверка
+     * @param y Координаты шара, вокруг какого идет проверка
+     */
 
     @Override
     public void checkCell_9_00_(int x, int y) {
@@ -431,6 +489,15 @@ public class Logic implements ILogic {
             checkCell_19_30_(x, y);
         }
     }
+
+    /**
+     * Методы для проверки. Совпадает ли кол-во одинаковых шаров с указанным кол-вом,
+     * чтобы вызывать методы. Если да, то вызываются методы сверху, они помечают, шары, после метод ещё выше стирает
+     * все помеченные шары.
+     * @param x Координаты шара, вокруг какого идет проверка
+     * @param y Координаты шара, вокруг какого идет проверка
+     * @return возврат кол-ва одинаковых шаров в определенной стороне шара
+     */
 
     @Override
     public int _9_00_(int x, int y) {

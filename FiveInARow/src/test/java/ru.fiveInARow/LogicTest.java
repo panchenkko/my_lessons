@@ -42,12 +42,14 @@ public class LogicTest {
     public void testFinish_AllBig() throws Exception {
         // Проверка, что если в поле все клетки заполнены большими шарами, то пользователь проиграл
         Random rand = new Random();
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 cells[i][j].generateColor(rand.nextInt(6));
                 cells[i][j].bigCellPainting();
             }
         }
+
         assertTrue(logic.finish());
     }
 
@@ -55,6 +57,7 @@ public class LogicTest {
     public void testFinish_OneSmall() throws Exception {
         // Проверка, что если все клетки с большими шарами, а одна с маленьким, то пользователь проиграл
         Random rand = new Random();
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 cells[i][j].generateColor(rand.nextInt(6));
@@ -65,6 +68,7 @@ public class LogicTest {
                     cells[i][j].bigCellPainting();
             }
         }
+
         assertTrue(logic.finish());
     }
 
@@ -72,6 +76,7 @@ public class LogicTest {
     public void testFinish_OneEmpty() throws Exception {
         // Проверка, что если все клетки с большими шарами, а одна пустая, то пользователь проиграл
         Random rand = new Random();
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 if (i >= 0 || j >= 0) {
@@ -80,6 +85,7 @@ public class LogicTest {
                 }
             }
         }
+
         assertTrue(logic.finish());
     }
 
@@ -87,6 +93,7 @@ public class LogicTest {
     public void testFinishFalse_TwoSmall() throws Exception {
         // Проверка, что если все клетки с большими шарами, а две с маленькими, то пользователь не проиграл
         Random rand = new Random();
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 cells[i][j].generateColor(rand.nextInt(6));
@@ -97,6 +104,7 @@ public class LogicTest {
                     cells[i][j].bigCellPainting();
             }
         }
+
         assertFalse(logic.finish());
     }
 
@@ -104,6 +112,7 @@ public class LogicTest {
     public void testSumEmptyCells() throws Exception {
         // Проверяем, что кол-во пустых клеток совпадает с правдой
         cells[0][0].bigCellPainting();
+
         assertThat(logic.sumEmptyCells(), is(logic.sumRow() * logic.sumColumn() - 1));
     }
 
@@ -112,6 +121,7 @@ public class LogicTest {
         // Проверяем, что если пользователь перемещает клетку с большим мячиком на пустую, то всё хорошо
         cells[0][0].bigCellPainting();
         cells[0][1].suggestEmpty();
+
         assertTrue(logic.checkingCells(0, 0, 0, 1));
     }
 
@@ -120,6 +130,7 @@ public class LogicTest {
         // Проверяем, что если пользователь перемещает клетку с большим мячиком на клетку с маленьким, то всё хорошо
         cells[0][0].bigCellPainting();
         cells[0][1].smallCellPainting();
+
         assertTrue(logic.checkingCells(0, 0, 0, 1));
     }
 
@@ -128,6 +139,7 @@ public class LogicTest {
         // Проверяем, что если пользователь перемещает клетку с большим мячиком на клетку с большим, то всё плохо
         cells[0][0].bigCellPainting();
         cells[0][1].bigCellPainting();
+
         assertFalse(logic.checkingCells(0, 0, 0, 1));
     }
 
@@ -135,7 +147,9 @@ public class LogicTest {
     public void testClearCellChecked() throws Exception {
         // Проверяем, что если есть проверенные клетки, то после вызова метода они становятся не проверенными
         Random rand = new Random();
+
         int count = 0;
+
         while (count != 3) {
             int x = rand.nextInt(logic.sumRow());
             int y = rand.nextInt(logic.sumColumn());
@@ -144,7 +158,9 @@ public class LogicTest {
                 count++;
             }
         }
+
         logic.clearCellChecked();
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 assertFalse(cells[i][j].isChecked());
@@ -156,13 +172,16 @@ public class LogicTest {
     public void testPaintingCellsInStartGame() throws Exception {
         // Проверяем, что кол-во созданных вначале игры шариков, совпадает с нужным кол-вом
         logic.paintingCellsInStartGame();
+
         int count = 0;
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 if (cells[i][j].isBigCellPainted() || cells[i][j].isSmallCellPainted())
                     count++;
             }
         }
+
         assertThat(count, is(logic.sumInARow() + logic.sumSmallCellsPainted()));
     }
 
@@ -213,15 +232,13 @@ public class LogicTest {
         logic.createBigCells();
 
         assertTrue(cells[0][0].isBigCellPainted());
-        assertFalse(cells[0][0].isSmallCellPainted());
-
         assertTrue(cells[0][1].isBigCellPainted());
-        assertFalse(cells[0][1].isSmallCellPainted());
-
         assertTrue(cells[1][0].isBigCellPainted());
-        assertFalse(cells[1][0].isSmallCellPainted());
-
         assertTrue(cells[1][1].isBigCellPainted());
+
+        assertFalse(cells[0][0].isSmallCellPainted());
+        assertFalse(cells[0][1].isSmallCellPainted());
+        assertFalse(cells[1][0].isSmallCellPainted());
         assertFalse(cells[1][1].isSmallCellPainted());
     }
 
@@ -229,13 +246,16 @@ public class LogicTest {
     public void testCreateSmallCells() throws Exception {
         // Проверяем, что метод создает указанное кол-во маленьких шаров
         logic.createSmallCells();
+
         int count = 0;
+
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
                 if (cells[i][j].isSmallCellPainted())
                     count++;
             }
         }
+
         assertThat(count, is(logic.sumSmallCellsPainted()));
     }
 
@@ -249,6 +269,7 @@ public class LogicTest {
                     cells[i][j].bigCellPainting();
             }
         }
+
         logic.createSmallCells();
 
         int count = 0;
@@ -271,6 +292,7 @@ public class LogicTest {
                 cells[i][j].bigCellPainting();
             }
         }
+
         logic.createSmallCells();
     }
 
@@ -283,6 +305,7 @@ public class LogicTest {
                     cells[i][j].bigCellPainting();
             }
         }
+
         logic.createSmallCells();
     }
 
@@ -315,7 +338,7 @@ public class LogicTest {
         cells[2][3].redCell();
         cells[2][4].redCell();
 
-        assertTrue(logic.clearCells(2, 2));
+        assertFalse(logic.checkingCells(2, 2));
 
         assertFalse(cells[0][2].isBigCellPainted());
         assertFalse(cells[1][2].isBigCellPainted());

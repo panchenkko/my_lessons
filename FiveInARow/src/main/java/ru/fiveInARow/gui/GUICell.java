@@ -239,9 +239,13 @@ public class GUICell implements ICell<Graphics> {
 
 		x = x * GUIBoard.getPADDING() + 16;
 		y = y * GUIBoard.getPADDING() + 25;
-		if (isBigCellPainted()) {
+
+        if (isBigCellPainted()) {
 			selectColor(paint, null);
-			paint.fillOval(x - 9, y - 18, 31, 31);
+            if (isCheckedClick())
+                paint.fillOval(x - 13, y - 22, 39, 39);
+            else
+                paint.fillOval(x - 9, y - 18, 31, 31);
         } else if (isSmallCellPainted()) {
             selectColor(paint, null);
             paint.fillOval(x + 1, y - 8, 12, 12);
@@ -251,11 +255,6 @@ public class GUICell implements ICell<Graphics> {
         } else if (isSuggestEmpty()) {
 			selectColor(paint, null);
 		}
-
-        if (isProgressChecked()) {
-            selectColor(paint, null);
-            paint.fillOval(x + 1, y - 8, 8, 8);
-        }
     }
 
 	@Override

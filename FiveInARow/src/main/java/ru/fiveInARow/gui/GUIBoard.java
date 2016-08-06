@@ -38,18 +38,22 @@ public class GUIBoard extends JPanel implements IBoard {
 		return false;
 	}
 
-    // Если пользователь не выбрал, помечаем ячейку как выбранную
+    // Если игрок не выбрал для перемещения ни одну ячейку, помечаем ячейку как выбранную
+    @Override
 	public void checkingClick(int x, int y) {
-		if (!cells[x][y].isSuggestEmpty() && !cells[x][y].isCheckedClick())
-			cells[x][y].checkedClick();
+		if (!cells[x][y].isSuggestEmpty() && !cells[x][y].isCheckedClick()) {
+            cells[x][y].checkedClick();
+        }
 	}
 
     // Отменяем все выбранные ячейки
+    @Override
 	public void cancelCheckedClick() {
 		for (int i = 0; i != cells.length; i++) {
 			for (int j = 0; j != cells[0].length; j++) {
-				if (cells[i][j].isCheckedClick())
-					cells[i][j].cancelCheckedClick();
+				if (cells[i][j].isCheckedClick()) {
+                    cells[i][j].cancelCheckedClick();
+                }
 			}
 		}
 	}
@@ -78,12 +82,6 @@ public class GUIBoard extends JPanel implements IBoard {
 	@Override
 	public void drawSelect() {
         repaint();
-	}
-
-	@Override
-	public void drawCongratulate() {
-//		Main.setScore("Плюс пять к счёту!");
-//		this.repaint();
 	}
 
 	public void drawLosing() {
