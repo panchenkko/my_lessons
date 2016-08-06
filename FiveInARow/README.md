@@ -4,15 +4,44 @@
 
 #### Начало игры:
 
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui.png)
+
+#### Нажимаем "_Начать_":
+
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui1.png)
 
-#### Перетащили 3 зеленых круга (в верху) к 4-му, осталось перетащить один:
+#### Кликаем на _синий_ шар (он увеличивается и помечается как шар для перемещения) :
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui2.png)
 
-#### Перетаскиваем пятый и видим, что 5 зеленых кругов исчезло и к счету начислилось 5 балов:
+#### Переместили его в правый верхний угол:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui3.png)
+
+#### Наконец собрали 4 в ряд и остался последний 5-ый. Переместим _зеленый_ шар:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui4.png)
+
+#### Вот и зелёные шары исчезли:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui5.png)
+
+#### Теперь попытаемся переместить _синий_ шар к другим _синим_ шарам:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui6.png)
+
+#### Перемещение не удалось, так как путь перекрыт другими шарами.
+##### (Выдало подсказку, что данный путь перекрыт) :
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui7.png)
+
+#### Пока игроку есть куда ходить, окно с проигрышем не выдается:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui8.png)
+
+#### Попытались походить ещё один раз и выдало окно о проигрыше:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui9.png)
 
 ## Консольная версия игры
 
