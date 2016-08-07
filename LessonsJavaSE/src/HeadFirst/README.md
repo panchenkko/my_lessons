@@ -120,7 +120,7 @@ _Принцип гласит, чтобы зависимость была тол�
 ------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Facade_8/Screenshots/21_facade.png)
 
-Шаблонный метод/Template Method
+Шаблонный Метод/Template Method
 -------------------------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/TemplateMethod_9/Screenshots/09_templatemethod.png)
 
@@ -140,3 +140,38 @@ _Принцип гласит, чтобы зависимость была тол�
 -----------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Proxy_13/Screenshots/13_proxy.png)
 
+Мост/Bridge
+-----------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/15_bridge.png)
+
+Строитель/Builder
+-----------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/17_builder.png)
+
+Цепочка Обязанностей/Chain
+--------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/02_chain.png)
+
+Приспособленец/Flyweight
+------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/22_flyweight.png)
+
+Интерпретатор/Interpreter
+-------------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/06_interpreter.png)
+
+Посредник/Mediator
+------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/11_mediator.png)
+
+Хранитель/Memento
+-----------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/01_memento.png)
+
+Прототип/Prototype
+------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/20_prototype.png)
+
+Посетитель/Visitor
+------------------
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/10_visitor.png)
