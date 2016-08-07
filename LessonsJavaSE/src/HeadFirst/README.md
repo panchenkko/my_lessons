@@ -148,8 +148,8 @@ _Принцип гласит, чтобы зависимость была тол�
 -----------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/17_builder.png)
 
-Цепочка Обязанностей/Chain
---------------------------
+Цепочка Обязанностей/Chain Of Responsibility
+--------------------------------------------
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/02_chain.png)
 
 Приспособленец/Flyweight
