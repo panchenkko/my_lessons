@@ -3,7 +3,6 @@ package HeadFirst.Strategy_1.SimUDuck;
 import HeadFirst.Strategy_1.SimUDuck.Fly.FlyBehavior;
 import HeadFirst.Strategy_1.SimUDuck.Quack.QuackBehavior;
 
-
 public abstract class Duck {
     public FlyBehavior flyBehavior;
     public QuackBehavior quackBehavior;
