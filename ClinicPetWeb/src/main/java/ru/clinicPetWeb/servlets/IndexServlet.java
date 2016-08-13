@@ -25,6 +25,7 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+
         try {
             request.setAttribute(ATTRIBUTE_MODEL_TO_VIEW, CLIENT_CACHE.values());
             logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_VIEW + ");");
@@ -38,17 +39,18 @@ public class IndexServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+
+        String clientName = request.getParameter("clientName");
+        String petType = request.getParameter("petType");
+        String petName = request.getParameter("petName");
+        String petSex = request.getParameter("petSex");
+        String petAge = request.getParameter("petAge");
+
+        if (petType.equals("")) petType = " - ";
+        if (petSex == null) petSex = " - ";
+        if (petAge == null) petAge = " - ";
+
         try {
-            String clientName = request.getParameter("clientName");
-            String petType = request.getParameter("petType");
-            String petName = request.getParameter("petName");
-            String petSex = request.getParameter("petSex");
-            String petAge = request.getParameter("petAge");
-
-            if (petType.equals("")) petType = " - ";
-            if (petSex == null) petSex = " - ";
-            if (petAge == null) petAge = " - ";
-
             CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), clientName,
                              new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge)));
 

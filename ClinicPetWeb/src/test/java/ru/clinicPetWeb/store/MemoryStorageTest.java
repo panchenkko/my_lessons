@@ -1,104 +1,123 @@
 package ru.clinicPetWeb.store;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 import ru.clinicPetWeb.models.Client;
 import ru.clinicPetWeb.models.Pet;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.*;
 
 public class MemoryStorageTest extends Mockito {
 
-    private static MemoryStorage memoryStorage = null;
+    private Storage storage;
 
-    @BeforeClass
-    public static void setUp() throws Exception {
-        memoryStorage = new MemoryStorage();
+    @Before
+    public void setUp() throws Exception {
+        storage = new MemoryStorage();
     }
 
-    @Test
-    public void testValuesFound() throws Exception {
-        memoryStorage.valuesFound();
+    /**
+     * Генерируем нового клиента и уникальные данные для него
+     * @return и возвращаем нового клиента
+     */
+    public Client clientAdd() {
+        int id = storage.generateId();
+        return new Client(id, "clientName" + id,
+               new Pet(id, "petType"  + id, "petName"  + id, "petSex" + id, "petAge" + id));
     }
 
     @Test
     public void testValues() throws Exception {
-        memoryStorage.values();
+        // Проверяем, что метод возвращает коллекцию с нужным размером
+        Client client1 = clientAdd();
+        Client client2 = clientAdd();
+
+        storage.add(client1);
+        storage.add(client2);
+
+        assertThat(storage.values(), hasItems(client1, client2));
     }
 
     @Test
     public void testAdd() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
+        // Проверяем, что при добавлении клиента, он и правда добавляется в список
+        storage.add(clientAdd());
+
+        assertThat(storage.values().size(), is(1));
     }
 
     @Test
     public void testEdit() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
-        memoryStorage.edit(new Client(1, "clientNameNew",
-                           new Pet(1, "petTypeNew", "petNameNew", "petSexNew", "petAgeNew")));
+        // Проверяем, что при редактировании данных клиента, изменяются нужные данные и ничего не происходит лишнего
+        Client oldClient = clientAdd(); // Клиент с данными : id=1, name=clientName1, petId=2, petName=petName1 и т. д.
+        Client newClient = clientAdd(); // Клиент с данными : id=2, name=clientName2, petId=2, petName=petName2 и т. д.
+        // Ниже изменяем id нового клиента на id старого, таким образом у клиента новые данные, а id тот же
+        newClient.setId(1);
+        newClient.getPet().setId(1);
+
+        storage.add(oldClient);
+
+        assertThat(storage.values(), hasItem(oldClient));
+
+        storage.edit(newClient);
+
+        assertThat(storage.values(), hasItem(newClient));
+        assertThat(storage.values(), not(hasItem(oldClient)));
     }
 
     @Test
     public void testDelete() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
-        memoryStorage.delete(1);
+        // Проверяем, что при удалении клиента, он удаляется, а другие клиенты остаются
+        Client client1 = clientAdd();
+        Client client2 = clientAdd();
+
+        storage.add(client1);
+        storage.add(client2);
+
+        storage.delete(1);
+
+        assertThat(storage.values().size(), is(1));
+        assertThat(storage.values(), not(hasItem(client1)));
     }
 
     @Test
     public void testDeleteAll() throws Exception {
-        memoryStorage.foldCounter();
+        // Проверяем, что при очистки списка, он будет пуст
+        Client client1 = clientAdd();
+        Client client2 = clientAdd();
+
+        storage.add(client1);
+        storage.add(client2);
+
+        assertThat(storage.values().size(), is(2));
+
+        storage.foldCounters();
+
+        assertThat(storage.values().size(), is(0));
     }
 
     @Test
     public void testGet() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
-        memoryStorage.get(1);
+        // Проверяем, что при получении определенного клиента из списка мы получаем нужного клиента
+        Client client = clientAdd();
+
+        storage.add(client);
+
+        assertEquals(storage.get(1), client);
     }
-
-    @Test
-    public void testFind() throws Exception {
-        memoryStorage.add(new Client(1, "clientName", new Pet(1, "petType", "petName", "petSex", "petAge")));
-        memoryStorage.add(new Client(2, "clientName", new Pet(1, "petType", "petName", "petSex", "")));
-
-        // id
-        memoryStorage.find("1", "clientName", "petName", "petAge");
-        memoryStorage.find("2", "clientName", "petName", "petAge");
-
-        // Совпадение по трём полям
-        memoryStorage.find("", "clientName", "petName", "petAge");
-
-        // Совпадение по двум полям
-        memoryStorage.find("", "", "petName", "petAge");
-        memoryStorage.find("", "clientName", "", "petAge");
-        memoryStorage.find("", "clientName", "petName", "");
-
-        // Совпадение по одному полю
-        memoryStorage.find("", "clientName", "", "");
-        memoryStorage.find("", "", "petName", "");
-        memoryStorage.find("", "", "", "petAge");
-
-        // Нет совпадений
-        memoryStorage.find("", "", "", "");
-
-        // Доп. проверка для бранчей
-        memoryStorage.find("", "clientName", "petName", "");
-    }
-
-    @Test
-    public void testFindThreeParameters() throws Exception {
-
-    }
-
 
     @Test
     public void testGenerateId() throws Exception {
-        memoryStorage.generateId();
+        // Проверяем, что генератор id для клиента работает исправно
+        assertThat(storage.generateId(), is(1));
+        assertThat(storage.generateId(), is(2));
+        assertThat(storage.generateId(), is(3));
     }
 
     @Test
     public void testClose() throws Exception {
-        memoryStorage.close();
+        storage.close();
     }
 }

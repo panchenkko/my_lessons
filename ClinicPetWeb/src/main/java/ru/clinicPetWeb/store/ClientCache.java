@@ -58,8 +58,8 @@ public class ClientCache implements Storage {
 	}
 
     @Override
-    public void foldCounter() {
-        this.storage.foldCounter();
+    public void foldCounters() {
+        this.storage.foldCounters();
     }
 
     @Override

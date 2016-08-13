@@ -43,7 +43,8 @@ public class MemoryStorage implements Storage {
     }
 
     @Override
-    public void foldCounter() {
+    public void foldCounters() {
+        found.clear();
         clients.clear();
     }
 
@@ -56,14 +57,17 @@ public class MemoryStorage implements Storage {
     public void find(String idClient, String clientName, String petName, String petAge) {
         this.found.clear();
 
-        if (!Objects.equals(idClient, "")) {
+        if (!idClient.equals("")) {
             findIdClient(Integer.valueOf(idClient));
         } else {
             findThreeParameters(clientName, petName, petAge);
+
             if (found.isEmpty()) {
                 findTwoParameters(clientName, petName, petAge);
-                if (found.isEmpty())
+
+                if (found.isEmpty()) {
                     findOneParameters(clientName, petName, petAge);
+                }
             }
         }
     }
@@ -78,8 +82,9 @@ public class MemoryStorage implements Storage {
 
     public void findThreeParameters(String clientName, String petName, String petAge) {
         for (final Client client : this.clients.values()) {
-            if (client.getName().equals(clientName) && client.getPet().getName().equals(petName) &&
-                    client.getPet().getAge().equals(petAge) && !Objects.equals(petAge, "")) {
+            if (client.getName().equals(clientName) &&
+                client.getPet().getName().equals(petName) &&
+                client.getPet().getAge().equals(petAge) && !petAge.equals("")) {
                 this.found.put(this.idFound.incrementAndGet(), client);
             }
         }
@@ -90,10 +95,10 @@ public class MemoryStorage implements Storage {
             if (client.getName().equals(clientName) && client.getPet().getName().equals(petName)) {
                 this.found.put(this.idFound.incrementAndGet(), client);
             } else if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)
-                    && !Objects.equals(petAge, "")) {
+                    && !petAge.equals("")) {
                 this.found.put(this.idFound.incrementAndGet(), client);
             } else if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)
-                    && !Objects.equals(petAge, "")) {
+                    && !petAge.equals("")) {
                 this.found.put(this.idFound.incrementAndGet(), client);
             }
         }
@@ -105,8 +110,7 @@ public class MemoryStorage implements Storage {
                 this.found.put(this.idFound.incrementAndGet(), client);
             } else if (client.getPet().getName().equals(petName)) {
                 this.found.put(this.idFound.incrementAndGet(), client);
-            } else if (client.getPet().getAge().equals(petAge)
-                    && !Objects.equals(petAge, "")) {
+            } else if (client.getPet().getAge().equals(petAge) && !petAge.equals("")) {
                 this.found.put(this.idFound.incrementAndGet(), client);
             }
         }

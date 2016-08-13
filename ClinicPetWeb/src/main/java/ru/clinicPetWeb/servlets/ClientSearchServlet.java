@@ -22,6 +22,7 @@ public class ClientSearchServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+
         try {
             logger.info("SEARCHING CLIENTS");
             request.setAttribute(ATTRIBUTE_MODEL_TO_SEARCH, CLIENT_CACHE.valuesFound());
@@ -36,13 +37,15 @@ public class ClientSearchServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        try {
-            String idClient = request.getParameter("idClient");
-            String clientName = request.getParameter("clientName");
-            String petName = request.getParameter("petName");
-            String petAge = request.getParameter("petAge");
 
+        String idClient = request.getParameter("idClient");
+        String clientName = request.getParameter("clientName");
+        String petName = request.getParameter("petName");
+        String petAge = request.getParameter("petAge");
+
+        try {
             CLIENT_CACHE.find(idClient, clientName, petName, petAge);
+
             logger.info("SEARCH SUCCESSFULLY");
         } catch (Exception e) {
             logger.error("SEARCH ERROR! ", e);
