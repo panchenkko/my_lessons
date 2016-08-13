@@ -21,7 +21,9 @@ public class ClientDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Client client = CLIENT_CACHE.get(Integer.valueOf(request.getParameter("id")));
+
             CLIENT_CACHE.delete(client.getId());
+
             logger.info("DELETED CLIENT [" +
                     "ID=" +    client.getId() + ", " +
                     "NAME='" + client.getName() + '\'' + ", " +

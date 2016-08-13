@@ -2,9 +2,11 @@ package ru.clinicPetWeb.store;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
 import ru.clinicPetWeb.models.Client;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class HibernateStorage implements Storage {
@@ -67,10 +69,27 @@ public class HibernateStorage implements Storage {
             session.delete(get(id));
             return null;
         });
+        checkEmptyTable();
 	}
 
+    // Если таблица пустая скидываем счетчик первичных ключей
+    public boolean checkEmptyTable() {
+        return transaction(session -> {
+            List list = session.createQuery("from Client").list();
+            return list.size() == 0;
+        });
+    }
+
 	@Override
-	public void foldCounter() {
+	public void foldCounters() {
+        this.found.clear();
+
+        transaction(session -> {
+            session.createQuery("delete from Client").executeUpdate();
+            session.createQuery("delete from Pet").executeUpdate();
+            //TODO Выяснить, как можно скинуть счетчик первичных ключей в hibernate
+            return null;
+        });
 	}
 
 	@Override
@@ -82,12 +101,19 @@ public class HibernateStorage implements Storage {
 	public void find(String idClient, String clientName, String petName, String petAge) {
         this.found.clear();
 
-        if (!idClient.equals(""))
+        if (!idClient.equals("")) {
             findIdClient(Integer.valueOf(idClient));
-        else
-        if (!findThreeParameters(clientName, petName, petAge))
-            if (!findTwoParameters(clientName, petName, petAge))
-                findOneParameters(clientName, petName, petAge);
+        } else {
+            findThreeParameters(clientName, petName, petAge);
+
+            if (found.isEmpty()) {
+                findTwoParameters(clientName, petName, petAge);
+
+                if (found.isEmpty()) {
+                    findOneParameters(clientName, petName, petAge);
+                }
+            }
+        }
 	}
 
     public void findIdClient(int idClient) {
@@ -103,8 +129,8 @@ public class HibernateStorage implements Storage {
         });
     }
 
-    public boolean findThreeParameters(String clientName, String petName, String petAge) {
-        return transaction(session -> {
+    public void findThreeParameters(String clientName, String petName, String petAge) {
+        transaction(session -> {
             final Query query = session.createQuery(HQL_SELECT_ALL + " " +
                     "WHERE client.name=:clientName AND pet.name=:petName AND pet.age=:petAge");
             query.setString("clientName", clientName);
@@ -113,34 +139,27 @@ public class HibernateStorage implements Storage {
             this.checkFound = query.list();
             if (!this.checkFound.isEmpty()) {
                 this.found.addAll(this.checkFound);
-                return true;
             }
-            return false;
+            return null;
         });
     }
 
-    public boolean findTwoParameters(String clientName, String petName, String petAge) {
-        return transaction(session -> {
-            boolean check = false;
+    public void findTwoParameters(String clientName, String petName, String petAge) {
+        transaction(session -> {
             final Query query = session.createQuery(HQL_SELECT_ALL);
             this.checkFound = query.list();
             for (Client client : this.checkFound) {
                 if (client.getName().equals(clientName) && client.getPet().getName().equals(petName)) {
                     this.found.add(client);
-                    check = true;
-                } else
-                if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)
+                } else if (client.getName().equals(clientName) && client.getPet().getAge().equals(petAge)
                         && !petAge.equals("")) {
                     this.found.add(client);
-                    check = true;
-                } else
-                if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)
+                } else if (client.getPet().getName().equals(petName) && client.getPet().getAge().equals(petAge)
                         && !petAge.equals("")) {
                     this.found.add(client);
-                    check = true;
                 }
             }
-            return check;
+            return null;
         });
     }
 

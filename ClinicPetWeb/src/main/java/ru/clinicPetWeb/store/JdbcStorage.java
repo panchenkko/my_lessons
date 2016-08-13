@@ -29,8 +29,6 @@ public class JdbcStorage implements Storage {
                     settings.value("jdbc.password")
             );
 
-			if (!connection.isClosed())
-				System.out.println("Соединение с БД установлено!");
             if (connection.isClosed())
                 System.out.println("Соединение с БД закрыто!");
 		} catch (SQLException e) {
@@ -48,13 +46,13 @@ public class JdbcStorage implements Storage {
     @Override
 	public Collection<Client> values() {
         clients.clear();
+
 		try (final Statement statement = this.connection.createStatement();
-		     final ResultSet rs = statement.executeQuery
-                     (SQL_SELECT_ALL + " " + "ORDER BY client.uid")) {
+		     final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL + " " + "ORDER BY client.uid")) {
 			while (rs.next()) {
 				clients.add(new Client(rs.getInt("uid"), rs.getString("name"),
-							new Pet(rs.getInt("pet_id"), rs.getString("type"), rs.getString("petName"),
-                                    rs.getString("sex"), rs.getString("age")))
+							new Pet(rs.getInt("pet_id"), rs.getString("type"),
+                                    rs.getString("petName"), rs.getString("sex"), rs.getString("age")))
 				);
 			}
 		} catch (SQLException e) {
@@ -86,8 +84,8 @@ public class JdbcStorage implements Storage {
 	}
 
 	public void addClient(Client client) {
-        try (final PreparedStatement statement = this.connection.prepareStatement
-                ("insert into client (name, pet_id) values (?,?)")) {
+        try (final PreparedStatement statement =
+                     this.connection.prepareStatement("insert into client (name, pet_id) values (?,?)")) {
             statement.setString(1, client.getName());
             statement.setInt(2, client.getPet().getId());
             statement.executeUpdate();
@@ -100,8 +98,10 @@ public class JdbcStorage implements Storage {
 	public void edit(Client client) {
         PreparedStatement editPet = null;
         PreparedStatement editClient = null;
+
         String stringEditPet = "UPDATE pet SET type = (?), petName = (?), sex = (?), age = (?) WHERE uid = (?)";
         String stringEditClient = "UPDATE client SET name = (?) WHERE uid = (?)";
+
         try {
             this.connection.setAutoCommit(false);
 
@@ -143,7 +143,7 @@ public class JdbcStorage implements Storage {
 	public void delete(int id) {
         int sum = 0;
 
-        try (Statement statement = this.connection.createStatement();
+        try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (rs.getInt("uid") == id) {
@@ -182,7 +182,7 @@ public class JdbcStorage implements Storage {
              final ResultSet rs = statement.executeQuery("select count(*) as count from client")) {
             rs.next();
             int count = rs.getInt("count");
-            if (count == 0) foldCounter();
+            if (count == 0) foldCounters();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -190,10 +190,12 @@ public class JdbcStorage implements Storage {
 
     // Скидываем счётчик
     @Override
-    public void foldCounter() {
+    public void foldCounters() {
+        found.clear();
+
         try (final Statement statement = this.connection.createStatement()) {
-            statement.addBatch("DELETE FROM pet");
             statement.addBatch("DELETE FROM client");
+            statement.addBatch("DELETE FROM pet");
             statement.addBatch("ALTER SEQUENCE client_uid_seq1 RESTART WITH 1");
             statement.addBatch("ALTER SEQUENCE pet_uid_seq RESTART WITH 1");
             statement.executeBatch();
@@ -204,38 +206,46 @@ public class JdbcStorage implements Storage {
 
 	@Override
 	public Client get(int id) {
-		try (final PreparedStatement statement = this.connection.prepareStatement
-                (SQL_SELECT_ALL + " " + "where client.uid = (?)")) {
+		try (final PreparedStatement statement =
+                     this.connection.prepareStatement(SQL_SELECT_ALL + " " + "where client.uid = (?)")) {
 			statement.setInt(1, id);
 			try (final ResultSet rs = statement.executeQuery()) {
 				while (rs.next()) {
 					return new Client(rs.getInt("uid"), rs.getString("name"),
-                           new Pet(rs.getInt("pet_id"), rs.getString("type"), rs.getString("petName"),
-                                   rs.getString("sex"), rs.getString("age")));
+                               new Pet(rs.getInt("pet_id"), rs.getString("type"),
+                                       rs.getString("petName"), rs.getString("sex"), rs.getString("age")));
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		throw new IllegalStateException(String.format("User %s does not exists", id));
+
+		throw new IllegalStateException(String.format("Пользователь под номером %s не найден!", id));
 	}
 
     @Override
     public void find(String idClient, String clientName, String petName, String petAge) {
         this.found.clear();
 
-        if (!idClient.equals(""))
+        if (!idClient.equals("")) {
             findIdClient(Integer.valueOf(idClient));
-        else
-        if (!findThreeParameters(clientName, petName, petAge))
-            if (!findTwoParameters(clientName, petName, petAge))
-                findOneParameters(clientName, petName, petAge);
+        } else {
+            findThreeParameters(clientName, petName, petAge);
+
+            if (found.isEmpty()) {
+                findTwoParameters(clientName, petName, petAge);
+
+                if (found.isEmpty()) {
+                    findOneParameters(clientName, petName, petAge);
+                }
+            }
+        }
     }
 
     public void foundAdd(ResultSet rs) throws SQLException {
         found.add(new Client(rs.getInt("uid"), rs.getString("name"),
-                        new Pet(rs.getInt("pet_id"), rs.getString("type"), rs.getString("petName"),
-                                rs.getString("sex"), rs.getString("age")))
+                        new Pet(rs.getInt("pet_id"), rs.getString("type"),
+                                rs.getString("petName"), rs.getString("sex"), rs.getString("age")))
         );
     }
 
@@ -253,47 +263,37 @@ public class JdbcStorage implements Storage {
         }
     }
 
-    public boolean findThreeParameters(String clientName, String petName, String petAge) {
-        boolean check = false;
+    public void findThreeParameters(String clientName, String petName, String petAge) {
         try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName) &&
-                        findAge(rs.getInt("uid"), petAge) && !Objects.equals(petAge, "")) {
+                        findAge(rs.getInt("uid"), petAge) && !petAge.equals("")) {
                     foundAdd(rs);
-                    check = true;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return check;
     }
 
-    public boolean findTwoParameters(String clientName, String petName, String petAge) {
-        boolean check = false;
+    public void findTwoParameters(String clientName, String petName, String petAge) {
         try (final Statement statement = this.connection.createStatement();
              final ResultSet rs = statement.executeQuery(SQL_SELECT_ALL)) {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName) && findPetName(rs.getInt("uid"), petName)) {
                     foundAdd(rs);
-                    check = true;
-                } else
-                if (findClientName(rs.getInt("uid"), clientName) && findAge(rs.getInt("uid"), petAge)
-                        && !Objects.equals(petAge, "")) {
+                } else if (findClientName(rs.getInt("uid"), clientName) && findAge(rs.getInt("uid"), petAge)
+                        && !petAge.equals("")) {
                     foundAdd(rs);
-                    check = true;
-                } else
-                if (findPetName(rs.getInt("uid"), petName) && findAge(rs.getInt("uid"), petAge)
-                        && !Objects.equals(petAge, "")) {
+                } else if (findPetName(rs.getInt("uid"), petName) && findAge(rs.getInt("uid"), petAge)
+                        && !petAge.equals("")) {
                     foundAdd(rs);
-                    check = true;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return check;
     }
 
     public void findOneParameters(String clientName, String petName, String petAge) {
@@ -302,11 +302,9 @@ public class JdbcStorage implements Storage {
             while (rs.next()) {
                 if (findClientName(rs.getInt("uid"), clientName)) {
                     foundAdd(rs);
-                } else
-                if (findPetName(rs.getInt("uid"), petName)) {
+                } else if (findPetName(rs.getInt("uid"), petName)) {
                     foundAdd(rs);
-                } else
-                if (findAge(rs.getInt("uid"), petAge) && !petAge.equals("")) {
+                } else if (findAge(rs.getInt("uid"), petAge) && !petAge.equals("")) {
                     foundAdd(rs);
                 }
             }
@@ -321,7 +319,7 @@ public class JdbcStorage implements Storage {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
-                    if (Objects.equals(rs.getString("name"), clientName))
+                    if (clientName.equals(rs.getString("name")))
                         return true;
                 }
             }
@@ -337,7 +335,7 @@ public class JdbcStorage implements Storage {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
-                    if (Objects.equals(rs.getString("petName"), petName))
+                    if (petName.equals(rs.getString("petName")))
                         return true;
                 }
             }
@@ -353,7 +351,7 @@ public class JdbcStorage implements Storage {
             statement.setInt(1, id);
             try (final ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
-                    if (Objects.equals(rs.getString("age"), age))
+                    if (age.equals(rs.getString("age")))
                         return true;
                 }
             }

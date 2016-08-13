@@ -16,11 +16,11 @@ public interface Storage {
 
 	void delete(final int id);
 
-	void foldCounter();
+	void foldCounters();
 
 	Client get(final int id);
 
-	void find(final String idClient, final String clientName, final String petName, final String petAge) ;
+	void find(final String idClient, final String clientName, final String petName, final String petAge);
 
 	int generateId();
 

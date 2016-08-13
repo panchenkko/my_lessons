@@ -24,8 +24,10 @@ public class ClientEditServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+
         try {
             Client client = CLIENT_CACHE.get(Integer.valueOf(request.getParameter("id")));
+
             logger.info("EDITING CLIENT [" +
                         "ID=" +    client.getId() + ", " +
                         "NAME='" + client.getName() + '\'' + ", " +
@@ -33,6 +35,7 @@ public class ClientEditServlet extends HttpServlet {
                           '\'' +   client.getPet().getName() + '\'' + ", " +
                                    client.getPet().getSex() + ", " +
                                    client.getPet().getAge() + "]");
+
             request.setAttribute("client", client);
             logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_EDIT + ");");
             request.getRequestDispatcher("/views/client/" + PAGE_EDIT_JSP).forward(request, response);
@@ -46,23 +49,25 @@ public class ClientEditServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+
+        int client_id = Integer.valueOf(request.getParameter("id"));
+        int pet_id = Integer.valueOf(request.getParameter("pet_id"));
+
+        String clientName = request.getParameter("clientName");
+
+        String petType = request.getParameter("petType");
+        String petName = request.getParameter("petName");
+        String petSex = request.getParameter("petSex");
+        String petAge = request.getParameter("petAge");
+
+        if (petType.equals("")) petType = " - ";
+        if (petSex == null) petSex = " - ";
+        if (petAge == null) petAge = " - ";
+
         try {
-            int client_id = Integer.valueOf(request.getParameter("id"));
-            int pet_id = Integer.valueOf(request.getParameter("pet_id"));
-
-            String clientName = request.getParameter("clientName");
-
-            String petType = request.getParameter("petType");
-            String petName = request.getParameter("petName");
-            String petSex = request.getParameter("petSex");
-            String petAge = request.getParameter("petAge");
-
-            if (petType.equals("")) petType = " - ";
-            if (petSex == null) petSex = " - ";
-            if (petAge == null) petAge = " - ";
-
             CLIENT_CACHE.edit(new Client(client_id, clientName,
                               new Pet(pet_id, petType, petName, petSex, petAge)));
+
             logger.info("CLIENT EDITED [" +
                         "ID=" +    client_id + ", " +
                         "NAME='" + clientName + '\'' + ", " +
