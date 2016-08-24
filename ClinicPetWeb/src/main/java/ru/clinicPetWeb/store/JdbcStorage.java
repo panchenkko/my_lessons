@@ -1,5 +1,6 @@
 package ru.clinicPetWeb.store;
 
+import org.springframework.stereotype.Repository;
 import ru.clinicPetWeb.models.Client;
 import ru.clinicPetWeb.models.Pet;
 import ru.clinicPetWeb.service.Settings;
@@ -10,6 +11,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
+@Repository
 public class JdbcStorage implements Storage {
 
 	private Connection connection;

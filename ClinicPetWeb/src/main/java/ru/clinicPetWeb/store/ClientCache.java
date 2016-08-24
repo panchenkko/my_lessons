@@ -15,22 +15,20 @@ public class ClientCache implements Storage {
 
     private Storage storage = new JdbcStorage();
 
-    @Override
-	public Collection<Client> valuesFound() {
-		return this.storage.valuesFound();
-	}
-
-
 	// Возвращаем объект класса
 	public static ClientCache getInstance() {
 		return INSTANCE;
 	}
 
     @Override
+    public Collection<Client> valuesFound() {
+        return this.storage.valuesFound();
+    }
+
+    @Override
 	public Collection<Client> values() {
 		return this.storage.values();
 	}
-
 
     @Override
 	public void add(final Client client) {

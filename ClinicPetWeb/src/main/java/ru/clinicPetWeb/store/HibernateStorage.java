@@ -2,6 +2,7 @@ package ru.clinicPetWeb.store;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Repository;
 import ru.clinicPetWeb.models.Client;
 
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
+@Repository
 public class HibernateStorage implements Storage {
 
     private final SessionFactory factory;
