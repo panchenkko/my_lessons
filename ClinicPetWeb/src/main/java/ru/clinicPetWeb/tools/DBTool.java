@@ -9,32 +9,34 @@ import ru.clinicPetWeb.models.Pet;
 import ru.clinicPetWeb.store.Storage;
 import ru.clinicPetWeb.store.Storages;
 
-import java.util.Collection;
 import java.util.Scanner;
 
 public class DBTool {
 
     private Storages storages;
     private Storage storage;
-    private Scanner sc;
+    private final Scanner sc;
 
-    public DBTool(Storages storages) {
+    public DBTool(final Storages storages, final Scanner sc) {
         this.storages = storages;
-
-        sc = new Scanner(System.in);
+        this.sc = sc;
 
         cycleQuestion();
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         // Передаем конфигурации спринга
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
         // Получаем бин с помощью спринга, для работы со всеми реализованными хранилищами
         Storages storage = context.getBean(Storages.class);
         // Передаем в параметры конструктора бин и в нём же вызываем метод, для выбора хранилища
-        DBTool tool = new DBTool(storage);
+        DBTool tool = new DBTool(storage, sc);
         // Псоле того, как пользователь выбрал хранилище, с каким он будет работать, вызываем меню всевозможных действий
         tool.actions();
+
+        sc.close();
     }
 
     /**
@@ -46,7 +48,8 @@ public class DBTool {
         System.out.println("Выберите с каким хранилищем вы хотите работать: " + "\n");
         System.out.println("1. Memory");
         System.out.println("2. JDBC");
-        System.out.println("3. Hibernate" + "\n");
+        System.out.println("3. Hibernate");
+        System.out.println("4. HibernateTemplate" + "\n");
         System.out.print("Ответ: ");
         return sc.next().toLowerCase();
     }
@@ -60,6 +63,7 @@ public class DBTool {
             case "memory": return storages.memoryStorage;
             case "jdbc": return storages.jdbcStorage;
             case "hibernate": return storages.hibernateStorage;
+            case "hibernatetemplate": return storages.hibernateTemplate;
             default: return null;
         }
     }
@@ -83,7 +87,7 @@ public class DBTool {
      * @param id Передаем id клиента, и проверяем существует ли клиент с данным номером
      * @throws ClientNullException Если клиента с таким id нету, генерируем исключение и говорим пользователю об этом
      */
-    public void checkClientNull(int id) throws ClientNullException {
+    public void checkClientNull(final int id) throws ClientNullException {
         for (Client client : storage.values()) {
             if (client.getId() == id) {
                 return;
@@ -93,8 +97,8 @@ public class DBTool {
     }
 
     /**
-     * Спрашиваем пользователь, какое действие с хранилищем он хочет сделать
-     * @return Передаем ответ в текстовом формате
+     * Спрашиваем пользователя, какое действие с хранилищем он хочет сделать
+     * @return Передаем ответ в текстовом формате и нижнем регистре
      */
     public String questionSelectFromMenu() {
         System.out.println();
@@ -104,7 +108,8 @@ public class DBTool {
         System.out.println("3. Редактировать");
         System.out.println("4. Поиск");
         System.out.println("5. Удалить");
-        System.out.println("6. Удалить всё" + "\n");
+        System.out.println("6. Удалить всё");
+        System.out.println("7. Выход" + "\n");
         System.out.print("Ответ: ");
         return sc.next().toLowerCase();
     }
@@ -117,8 +122,6 @@ public class DBTool {
         while (!exit.toLowerCase().equals("да") && !exit.toLowerCase().equals("yes")) {
 
             String answer = questionSelectFromMenu();
-
-            System.out.println();
 
             try {
                 switch (answer) {
@@ -134,13 +137,13 @@ public class DBTool {
                                           break;
                     case "удалить всё":   foldCounters();
                                           break;
+                    case "выход":         break;
                     default:
                         System.out.println("Подсказка: Введите полное слово пункта меню.");
                         continue;
                 }
 
                 System.out.println();
-
                 System.out.print("Выйти? (да/нет) : ");
                 exit = sc.next();
             } catch (ClientNullException e) {
@@ -251,7 +254,7 @@ public class DBTool {
      * @param id получаем id клиента, какого нужнжо вывести
      * @return возвращаем объект клиента
      */
-    public Client get(int id) {
+    public Client get(final int id) {
         return storage.get(id);
     }
 

@@ -108,7 +108,7 @@ public class HibernateStorage implements Storage {
         } else {
             findThreeParameters(clientName, petName, petAge);
 
-            if (found.isEmpty()) {
+            if (this.found.isEmpty()) {
                 findTwoParameters(clientName, petName, petAge);
 
                 if (found.isEmpty()) {

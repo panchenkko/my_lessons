@@ -12,13 +12,17 @@ public class Storages {
 
     public final HibernateStorage hibernateStorage;
 
+    public final Template hibernateTemplate;
+
     @Autowired
     public Storages(final MemoryStorage memoryStorage,
                     final JdbcStorage jdbcStorage,
-                    final HibernateStorage hibernateStorage) {
+                    final HibernateStorage hibernateStorage,
+                    final Template hibernateTemplate) {
 
         this.memoryStorage = memoryStorage;
         this.jdbcStorage = jdbcStorage;
         this.hibernateStorage = hibernateStorage;
+        this.hibernateTemplate = hibernateTemplate;
     }
 }

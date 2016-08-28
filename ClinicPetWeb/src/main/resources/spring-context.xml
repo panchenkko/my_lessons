@@ -23,25 +23,29 @@
         <!--</property>-->
     <!--</bean>-->
 
+    <!-- Создаём sessionFactory от Spring -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+    </bean>
 
-    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
-        <!--<property name="configLocation">-->
-            <!--<value>classpath:hibernate.cfg.xml</value>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <!-- Создаём бин HibernateTemplate от Spring -->
+    <bean class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <!-- Передаём этому классу sessionFactory, какой объявлен выше -->
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
-    <!--<bean class="org.springframework.orm.hibernate4.HibernateTemplate">-->
-        <!--<property name="sessionFactory" ref="sessionFactory"/>-->
-    <!--</bean>-->
+    <!-- Объявляем Транзакцию для HibernateTemplate от Spring. Если не объявить,
+         то работа будет только в режиме read only -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
-    <!--<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
-        <!--<property name="sessionFactory" ref="sessionFactory" />-->
-    <!--</bean>-->
+    <!-- Для использовании аннотаций, какие отвечают за транзакцию -->
+    <tx:annotation-driven/>
 
     <!-- Чтобы использовать в проекте аннотации -->
     <context:annotation-config/>
     <!-- Задаем путь, с какими классами spring можем взаимодействовать и также откуда считывать аннотации.
     В нашем случае spring взаимодействует со всеми классами. -->
     <context:component-scan base-package="ru.clinicPetWeb" />
-    <tx:annotation-driven/>
 </beans>
