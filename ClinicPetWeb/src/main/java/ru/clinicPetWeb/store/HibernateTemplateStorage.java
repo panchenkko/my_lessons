@@ -41,6 +41,7 @@ public class HibernateTemplateStorage implements Template {
         this.template.save(client);
     }
 
+    @Transactional
     @Override
     public void edit(Client client) {
         this.template.update(client);
@@ -83,13 +84,17 @@ public class HibernateTemplateStorage implements Template {
     }
 
     public void findIdClient(int idClient) {
-        this.found = (List<Client>) this.template.find(HQL_SELECT_ALL + " " + "WHERE client.id=:id", idClient);
+        this.found = (List<Client>) this.template.findByNamedParam(HQL_SELECT_ALL + " " + "WHERE client.id=:id", "id", idClient);
     }
 
     public void findThreeParameters(String clientName, String petName, String petAge) {
-        this.found = (List<Client>) this.template.find(HQL_SELECT_ALL + " " +
-                        "WHERE client.name=:clientName AND pet.name=:petName AND pet.age=:petAge",
-                        clientName, petName, petAge);
+        // Массив имен параметров
+        String[] paramNames = {"clientName", "petName", "petAge"};
+        // Массив значений (в том же порядке)
+        Object[] values = {clientName, petName, petAge};
+
+        this.found = (List<Client>) this.template.findByNamedParam(HQL_SELECT_ALL + " " +
+                        "WHERE client.name=:clientName AND pet.name=:petName AND pet.age=:petAge", paramNames, values);
     }
 
     public void findTwoParameters(String clientName, String petName, String petAge) {

@@ -15,13 +15,19 @@ public class DBTool {
 
     private Storages storages;
     private Storage storage;
-    private final Scanner sc;
+    private Scanner sc;
 
+    // Для консольной версии
     public DBTool(final Storages storages, final Scanner sc) {
         this.storages = storages;
         this.sc = sc;
 
         cycleQuestion();
+    }
+
+    // Для веб версии
+    public DBTool(final Storages storages) {
+        this.storages = storages;
     }
 
     public static void main(String[] args) {
@@ -55,11 +61,11 @@ public class DBTool {
     }
 
     /**
-     * Получаем строку с ответом пользователя о хранилище, и настраиваем данные для работы с ним
+     * Получаем с аргумента ответ пользователя о хранилище, и настраиваем данные для работы с ним
      * @return возвращаем хранилище выбранное пользователем
      */
-    public Storage returnStorage() {
-        switch (questionStorage()) {
+    public Storage returnStorage(String answer) {
+        switch (answer) {
             case "memory": return storages.memoryStorage;
             case "jdbc": return storages.jdbcStorage;
             case "hibernate": return storages.hibernateStorage;
@@ -75,7 +81,7 @@ public class DBTool {
     public void cycleQuestion() {
         Storage storage;
         while (this.storage == null) {
-            storage = returnStorage();
+            storage = returnStorage(questionStorage());
             if (storage != null) {
                 this.storage = storage;
             }
@@ -137,7 +143,7 @@ public class DBTool {
                                           break;
                     case "удалить всё":   foldCounters();
                                           break;
-                    case "выход":         break;
+                    case "выход":         return;
                     default:
                         System.out.println("Подсказка: Введите полное слово пункта меню.");
                         continue;

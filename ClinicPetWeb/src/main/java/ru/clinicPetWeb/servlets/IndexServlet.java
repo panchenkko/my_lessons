@@ -17,7 +17,7 @@ public class IndexServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_VIEW = "clients";
-    public static final String PAGE_OK = "index.jsp";
+    public static final String PAGE_OK = "/views/client/index.jsp";
     public static final String PAGE_ERROR = "/views/notFound.jsp";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
@@ -29,7 +29,7 @@ public class IndexServlet extends HttpServlet {
         try {
             request.setAttribute(ATTRIBUTE_MODEL_TO_VIEW, CLIENT_CACHE.values());
             logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_VIEW + ");");
-            request.getRequestDispatcher("/" + PAGE_OK).forward(request, response);
+            request.getRequestDispatcher(PAGE_OK).forward(request, response);
             logger.trace("RequestDispatcher(" + PAGE_OK + ").forward(request, response);");
         } catch (Exception e) {
             logger.fatal("PAGE FATAL ERROR! ", e);
@@ -50,13 +50,13 @@ public class IndexServlet extends HttpServlet {
         if (petSex == null) petSex = " - ";
         if (petAge == null) petAge = " - ";
 
-        try {
-            CLIENT_CACHE.add(new Client(CLIENT_CACHE.generateId(), clientName,
-                             new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge)));
+        Client client = new Client(CLIENT_CACHE.generateId(), clientName,
+                           new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge));
 
-            logger.info("NEW CLIENT [" +
-                        "NAME='" + clientName + '\'' + ", " +
-                        "PET=" +   petType + ", " + '\'' +   petName + '\'' + ", " + petSex + ", " + petAge + "]");
+        try {
+            CLIENT_CACHE.add(client);
+
+            logger.info("NEW CLIENT [ " + client + " ]");
         } catch (Exception e) {
             logger.error("ADD CLIENT ERROR! ", e);
         }

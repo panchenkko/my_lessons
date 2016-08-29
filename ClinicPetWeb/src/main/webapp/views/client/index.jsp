@@ -20,6 +20,8 @@
     <script src="js/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
     <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.12.1.min.js"></script>
 
     <script type="text/javascript">
@@ -35,6 +37,12 @@
                         $('#petName').css('box-shadow', 'rgba(102, 175, 233, 1) 0px 0px 25px inset');
                     }
                 }
+            });
+        });
+
+        $(document).ready(function() {
+            $("#loggingBtn").mouseover(function() {
+                $("repositoryBtn").css('width', '0px', 100);
             });
         });
     </script>
@@ -70,6 +78,9 @@
             </a>
             <a href="${pageContext.servletContext.contextPath}/Logging/log4j_html_info.html" id="loggingBtn">
                 <button class="btn btn-success">Логи</button>
+            </a>
+            <a href="${pageContext.servletContext.contextPath}/client/selectRepository" id="repositoryBtn">
+                <button class="btn btn-primary">Хранилище</button>
             </a>
             <table border="2" class="table">
                 <caption>База данных клиентов</caption>

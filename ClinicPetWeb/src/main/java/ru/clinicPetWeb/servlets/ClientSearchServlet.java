@@ -16,7 +16,7 @@ public class ClientSearchServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_SEARCH = "found";
-    public static final String PAGE_SEARCH_JSP = "SearchClient.jsp";
+    public static final String PAGE_SEARCH_JSP = "/views/client/SearchClient.jsp";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -27,7 +27,7 @@ public class ClientSearchServlet extends HttpServlet {
             logger.info("SEARCHING CLIENTS");
             request.setAttribute(ATTRIBUTE_MODEL_TO_SEARCH, CLIENT_CACHE.valuesFound());
             logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_SEARCH + ");");
-            request.getRequestDispatcher("/views/client/" + PAGE_SEARCH_JSP).forward(request, response);
+            request.getRequestDispatcher(PAGE_SEARCH_JSP).forward(request, response);
             logger.trace("RequestDispatcher(" + PAGE_SEARCH_JSP + ").forward(request, response);");
         } catch (Exception e) {
             logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
