@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 10px 0px 10px 0px;
 	white-space: nowrap; /* Запрещаем перенос строк */
 	text-overflow: ellipsis; /* Добавляем многоточие */
-	overflow: hidden;
+	overflow: hidden; /* Прячем, то что не вмещается */
 }
 
 #wordWrap {
