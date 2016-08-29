@@ -24,13 +24,7 @@ public class ClientDeleteServlet extends HttpServlet {
 
             CLIENT_CACHE.delete(client.getId());
 
-            logger.info("DELETED CLIENT [" +
-                    "ID=" +    client.getId() + ", " +
-                    "NAME='" + client.getName() + '\'' + ", " +
-                    "PET=" +   client.getPet().getType() + ", " +
-                    '\'' +     client.getPet().getName() + '\'' + ", " +
-                               client.getPet().getSex() + ", " +
-                               client.getPet().getAge() + "]");
+            logger.info("DELETED CLIENT [ " + client + " ]");
         } catch (Exception e) {
             logger.error("DELETE ERROR! ", e);
         }

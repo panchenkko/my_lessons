@@ -1,5 +1,11 @@
 # Веб-клиника домашних животных
 
+## Стартовая страница
+
+#### Перед тем, как зайти на главную страницу, пользователь должен выбрать с каким хранилищем он хочет работать:
+
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/startPage.png)
+
 ## Главная страница
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/index.png)

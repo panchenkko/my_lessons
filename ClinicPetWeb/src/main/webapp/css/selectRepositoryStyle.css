@@ -1,0 +1,61 @@
+body {
+    background: url("../img/fons/jpg2.jpg") fixed;
+
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px 15px 15px 15px;
+    width: 450px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: -6px 12px 50px black;
+    -moz-box-shadow: -6px 12px 50px black;
+    box-shadow: -6px 12px 50px black;
+}
+
+hr {
+    margin: 15px 15px 20px 15px;
+    border: 0;
+    border-top: 3px solid black;
+}
+
+header {
+    height: 45px;
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    padding-bottom: 14px;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+input[type="radio"], input[type="submit"] {
+    margin: 15px 0 0 15px;
+}
+
+input[type="radio"] + label {
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    float: right;
+}
+
+ul {
+    padding: 0;
+}
+
+ul > li {
+    font-size: 20px;
+    list-style-type: none;
+    text-align: center;
+    border: 3px solid black;
+    margin: 0 0 5px 0;
+    padding: 25px 0 25px 0;
+}

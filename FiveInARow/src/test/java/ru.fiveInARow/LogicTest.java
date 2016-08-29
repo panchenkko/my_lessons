@@ -205,7 +205,7 @@ public class LogicTest {
     @Test
     public void testMovePaintedCell_BigInSmall() throws Exception {
         // Проверяем, что если переместить большой шар на клетку с маленьким шаром, то все старые данные о клетках
-        // будут серты, а новые присвоены
+        // будут стерты, а новые присвоены
         cells[0][0].bigCellPainting();
         cells[0][0].redCell();
         cells[0][1].smallCellPainting();

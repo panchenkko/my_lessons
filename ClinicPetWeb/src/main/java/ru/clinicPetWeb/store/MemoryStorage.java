@@ -1,5 +1,6 @@
 package ru.clinicPetWeb.store;
 
+import org.springframework.stereotype.Repository;
 import ru.clinicPetWeb.models.Client;
 
 import java.util.Collection;
@@ -7,6 +8,7 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Repository
 public class MemoryStorage implements Storage {
 
     private final AtomicInteger ids = new AtomicInteger();

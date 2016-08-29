@@ -17,7 +17,7 @@ public class ClientEditServlet extends HttpServlet {
 	private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_EDIT = "clients";
-    public static final String PAGE_EDIT_JSP = "EditClient.jsp";
+    public static final String PAGE_EDIT_JSP = "/views/client/EditClient.jsp";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -28,17 +28,11 @@ public class ClientEditServlet extends HttpServlet {
         try {
             Client client = CLIENT_CACHE.get(Integer.valueOf(request.getParameter("id")));
 
-            logger.info("EDITING CLIENT [" +
-                        "ID=" +    client.getId() + ", " +
-                        "NAME='" + client.getName() + '\'' + ", " +
-                        "PET=" +   client.getPet().getType() + ", " +
-                          '\'' +   client.getPet().getName() + '\'' + ", " +
-                                   client.getPet().getSex() + ", " +
-                                   client.getPet().getAge() + "]");
+            logger.info("EDITING CLIENT [ " + client + " ]");
 
             request.setAttribute("client", client);
             logger.trace("setAttribute(" + ATTRIBUTE_MODEL_TO_EDIT + ");");
-            request.getRequestDispatcher("/views/client/" + PAGE_EDIT_JSP).forward(request, response);
+            request.getRequestDispatcher(PAGE_EDIT_JSP).forward(request, response);
             logger.trace("RequestDispatcher(" + PAGE_EDIT_JSP + ").forward(request, response);");
         } catch (Exception e) {
             logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
@@ -64,14 +58,13 @@ public class ClientEditServlet extends HttpServlet {
         if (petSex == null) petSex = " - ";
         if (petAge == null) petAge = " - ";
 
-        try {
-            CLIENT_CACHE.edit(new Client(client_id, clientName,
-                              new Pet(pet_id, petType, petName, petSex, petAge)));
+        Client client = new Client(client_id, clientName,
+                           new Pet(pet_id, petType, petName, petSex, petAge));
 
-            logger.info("CLIENT EDITED [" +
-                        "ID=" +    client_id + ", " +
-                        "NAME='" + clientName + '\'' + ", " +
-                        "PET=" +   petType + ", " + '\'' +   petName + '\'' + ", " + petSex + ", " + petAge + "]");
+        try {
+            CLIENT_CACHE.edit(client);
+
+            logger.info("CLIENT EDITED [ " + client + " ]");
         } catch (Exception e) {
             logger.error("EDIT ERROR! ", e);
         }

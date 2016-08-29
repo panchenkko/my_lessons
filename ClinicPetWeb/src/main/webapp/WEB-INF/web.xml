@@ -6,9 +6,9 @@
 
 	<display-name>ClinicPet</display-name>
 
-	<!--<welcome-file-list>-->
-		<!--<welcome-file>index.jsp</welcome-file>-->
-	<!--</welcome-file-list>-->
+	<welcome-file-list>
+    <welcome-file>/selectRepository.jsp</welcome-file>
+</welcome-file-list>
 
 	<servlet>
 		<servlet-name>IndexServlet</servlet-name>
@@ -45,8 +45,20 @@
 		<servlet-class>ru.clinicPetWeb.servlets.ClientSearchServlet</servlet-class>
 	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>ClientSearchServlet</servlet-name>
-		<url-pattern>/client/search</url-pattern>
-	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClientSearchServlet</servlet-name>
+        <url-pattern>/client/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SelectRepositoryServlet</servlet-name>
+        <servlet-class>ru.clinicPetWeb.servlets.SelectRepositoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SelectRepositoryServlet</servlet-name>
+        <url-pattern>/client/selectRepository</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>     
