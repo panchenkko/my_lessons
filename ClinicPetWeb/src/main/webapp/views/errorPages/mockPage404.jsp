@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -10,6 +10,6 @@
   <title>Страница не найдена</title>
 </head>
 <body>
-    <img style="margin: 10% 39%" src="${pageContext.servletContext.contextPath}/img/errors/page_not_found.jpg">
+    <img style="margin: 10% 39%" src="${pageContext.servletContext.contextPath}/resources/img/errors/page_not_found.jpg">
 </body>
 </html>

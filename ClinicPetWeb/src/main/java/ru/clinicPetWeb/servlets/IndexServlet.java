@@ -1,6 +1,8 @@
 package ru.clinicPetWeb.servlets;
 
 import org.apache.log4j.Logger;
+import ru.clinicPetWeb.exceptions.CRUDException;
+import ru.clinicPetWeb.exceptions.ClientNullException;
 import ru.clinicPetWeb.models.Client;
 import ru.clinicPetWeb.models.Pet;
 import ru.clinicPetWeb.service.ClassName;
@@ -17,8 +19,10 @@ public class IndexServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_VIEW = "clients";
-    public static final String PAGE_OK = "/views/client/index.jsp";
-    public static final String PAGE_ERROR = "/views/notFound.jsp";
+    public static final String PAGE_OK = "/resources/views/client/index.jsp";
+    public static final String PAGE_ERROR = "/resources/views/notFound.jsp";
+
+    public static final String URL_PAGE_INDEX = "/client/index";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -51,17 +55,27 @@ public class IndexServlet extends HttpServlet {
         if (petAge == null) petAge = " - ";
 
         Client client = new Client(CLIENT_CACHE.generateId(), clientName,
-                           new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge));
+                        new Pet(CLIENT_CACHE.generateId(), petType, petName, petSex, petAge));
 
+        addAndCheck(client);
+
+        response.sendRedirect(String.format("%s%s", request.getContextPath(), URL_PAGE_INDEX));
+        logger.trace("Redirect(" + request.getContextPath() + URL_PAGE_INDEX + ");");
+    }
+
+    public void addAndCheck(Client client) {
+        int oldSize = CLIENT_CACHE.values().size();
         try {
             CLIENT_CACHE.add(client);
 
-            logger.info("NEW CLIENT [ " + client + " ]");
-        } catch (Exception e) {
+            if (oldSize < CLIENT_CACHE.values().size()) {
+                logger.info("NEW CLIENT [ " + client + " ]");
+            } else {
+                throw new CRUDException("Клиент не был добавлен!");
+            }
+        } catch (CRUDException e) {
             logger.error("ADD CLIENT ERROR! ", e);
         }
-        response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
-        logger.trace("Redirect(" + request.getContextPath() + "/client/index);");
     }
 
     @Override

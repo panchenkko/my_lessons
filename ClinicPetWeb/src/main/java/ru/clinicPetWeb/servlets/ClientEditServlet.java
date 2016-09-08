@@ -17,7 +17,9 @@ public class ClientEditServlet extends HttpServlet {
 	private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_EDIT = "clients";
-    public static final String PAGE_EDIT_JSP = "/views/client/EditClient.jsp";
+    public static final String PAGE_EDIT_JSP = "/resources/views/client/edit.jsp";
+
+    public static final String URL_PAGE_INDEX = "/client/index";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -35,8 +37,8 @@ public class ClientEditServlet extends HttpServlet {
             request.getRequestDispatcher(PAGE_EDIT_JSP).forward(request, response);
             logger.trace("RequestDispatcher(" + PAGE_EDIT_JSP + ").forward(request, response);");
         } catch (Exception e) {
-            logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
-            response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
+            logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + URL_PAGE_INDEX + ");", e);
+            response.sendRedirect(String.format("%s%s", request.getContextPath(), URL_PAGE_INDEX));
         }
 	}
 
@@ -59,7 +61,7 @@ public class ClientEditServlet extends HttpServlet {
         if (petAge == null) petAge = " - ";
 
         Client client = new Client(client_id, clientName,
-                           new Pet(pet_id, petType, petName, petSex, petAge));
+                        new Pet(pet_id, petType, petName, petSex, petAge));
 
         try {
             CLIENT_CACHE.edit(client);
@@ -68,7 +70,7 @@ public class ClientEditServlet extends HttpServlet {
         } catch (Exception e) {
             logger.error("EDIT ERROR! ", e);
         }
-		response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
-        logger.trace("Redirect(" + request.getContextPath() + "/client/index);");
+		response.sendRedirect(String.format("%s%s", request.getContextPath(), URL_PAGE_INDEX));
+        logger.trace("Redirect(" + request.getContextPath() + URL_PAGE_INDEX + ");");
 	}
 }

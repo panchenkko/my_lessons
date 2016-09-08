@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@
 
     <title>Клиника домашних животных</title>
 
-    <link href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.servletContext.contextPath}/css/indexStyle.css" rel="stylesheet">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/indexStyle.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +22,7 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
-    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.12.1.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -79,7 +79,7 @@
             <a href="${pageContext.servletContext.contextPath}/Logging/log4j_html_info.html" id="loggingBtn">
                 <button class="btn btn-success">Логи</button>
             </a>
-            <a href="${pageContext.servletContext.contextPath}/client/selectRepository" id="repositoryBtn">
+            <a href="${pageContext.servletContext.contextPath}/selectRepository" id="repositoryBtn">
                 <button class="btn btn-primary">Хранилище</button>
             </a>
             <table border="2" class="table">
@@ -127,6 +127,6 @@
         </div>
         </c:if>
     </div>
-    <script src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

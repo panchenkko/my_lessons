@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@
 
     <title>Поиск клиента</title>
 
-    <link href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.servletContext.contextPath}/css/notFound.css" rel="stylesheet">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/notFound.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,7 +20,7 @@
     <script src="js/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.12.1.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -35,6 +35,6 @@
         <%--<img src="../img/jpg8.jpg" alt="">--%>
     </header>
 </div>
-<script src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
+<script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
