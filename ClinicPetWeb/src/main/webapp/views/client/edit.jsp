@@ -9,8 +9,8 @@
 
 	<title>Редактирование данных клиента</title>
 
-	<link href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${pageContext.servletContext.contextPath}/css/editStyle.css" rel="stylesheet">
+	<link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.servletContext.contextPath}/resources/css/editStyle.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,7 +19,7 @@
 	<script src="js/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.12.1.min.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {

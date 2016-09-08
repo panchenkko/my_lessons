@@ -16,7 +16,10 @@ public class ClientSearchServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_SEARCH = "found";
-    public static final String PAGE_SEARCH_JSP = "/views/client/SearchClient.jsp";
+    public static final String PAGE_SEARCH_JSP = "/resources/views/client/search.jsp";
+
+    public static final String URL_PAGE_INDEX = "/client/index";
+    public static final String URL_PAGE_SEARCH = "/client/search";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -30,8 +33,8 @@ public class ClientSearchServlet extends HttpServlet {
             request.getRequestDispatcher(PAGE_SEARCH_JSP).forward(request, response);
             logger.trace("RequestDispatcher(" + PAGE_SEARCH_JSP + ").forward(request, response);");
         } catch (Exception e) {
-            logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + "/client/index);", e);
-            response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/index"));
+            logger.error("PAGE ERROR! " + "Redirect(" + request.getContextPath() + URL_PAGE_INDEX + ");", e);
+            response.sendRedirect(String.format("%s%s", request.getContextPath(), URL_PAGE_INDEX));
         }
     }
 
@@ -50,8 +53,8 @@ public class ClientSearchServlet extends HttpServlet {
         } catch (Exception e) {
             logger.error("SEARCH ERROR! ", e);
         }
-        response.sendRedirect(String.format("%s%s", request.getContextPath(), "/client/search"));
-        logger.trace("Redirect(" + request.getContextPath() + "/client/index);");
+        response.sendRedirect(String.format("%s%s", request.getContextPath(), URL_PAGE_SEARCH));
+        logger.trace("Redirect(" + request.getContextPath() + URL_PAGE_SEARCH + ");");
     }
 
 }

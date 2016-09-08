@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -6,22 +7,23 @@
 	<artifactId>clinicPetWeb</artifactId>
 	<version>1.0</version>
 
-	<!-- В какой формат паковать программу (war или jar) -->
+	<!-- В какой формат паковать программу -->
 	<packaging>war</packaging>
 
 	<name>Clinic Pet Web</name>
 	<url>http://maven.apache.org</url>
+
     <properties>
-        <spring.version>4.0.5.RELEASE</spring.version>
-        <spring.security.version>4.0.1.RELEASE</spring.security.version>
+        <spring.framework.version>4.3.2.RELEASE</spring.framework.version>
+        <spring.security.version>4.1.3.RELEASE</spring.security.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>JBoss repository</id>
-            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>JBoss repository</id>-->
+            <!--<url>http://repository.jboss.org/nexus/content/groups/public/</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
 	<dependencies>
         <dependency>
@@ -37,27 +39,27 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -67,17 +69,17 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.framework.version}</version>
         </dependency>
 		<!-- Hibernate -->
 		<dependency>

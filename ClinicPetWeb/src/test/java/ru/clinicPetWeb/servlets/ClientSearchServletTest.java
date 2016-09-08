@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 import ru.clinicPetWeb.models.Client;
 import ru.clinicPetWeb.models.Pet;
 import ru.clinicPetWeb.store.ClientCache;
+import ru.clinicPetWeb.store.MemoryStorage;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -52,6 +53,9 @@ public class ClientSearchServletTest extends Mockito {
         request = mock(HttpServletRequest.class);
         response = mock(HttpServletResponse.class);
         dispatcher = mock(RequestDispatcher.class);
+
+        // Устанавливаем тип хранилища
+        clientCache.setStorage(new MemoryStorage());
 
         // Очищаем бд
         clientCache.foldCounters();
