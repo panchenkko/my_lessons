@@ -35,12 +35,81 @@ header > h1 {
     text-align: center;
 }
 
-input[type="radio"], input[type="submit"] {
-    margin: 15px 0 0 15px;
+input[type="submit"] {
+    margin: 0 0 0 15px;
 }
 
 input[type="radio"] + label {
+    margin: 0 0 15px 15px;
+}
+
+input[type="radio"] + label {
+    cursor: pointer; /* Меняем вид курсора при наведении */
     font-size: 20px;
+}
+
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартное радио. */
+input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin: 10px;
+}
+
+/* Прячем оригинальный радио. */
+input[type="radio"]:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+
+input[type="radio"]:not(checked) + label {
+    position: relative; /* будем позиционировать псевдорадио относительно label */
+    padding: 0 0 0 35px; /* оставляем слева от label место под псевдорадио */
+}
+
+/* Оформление первой части радио в выключенном состоянии (фон). */
+input[type="radio"]:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    /*border: 1px solid #CDD1DA;*/
+    border-radius: 50%;
+    background: #FFF;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.5);
+}
+
+/* Оформление второй части радио в выключенном состоянии (переключатель). */
+input[type="radio"]:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: #337AB7;
+    box-shadow: inset 1px 4px 6px rgba(0,0,0,.5);
+    opacity: 0;
+
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+input[type="radio"]:checked + label:after {
+    opacity: 1;
+
+    transition: 0.5s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 input[type="submit"] {

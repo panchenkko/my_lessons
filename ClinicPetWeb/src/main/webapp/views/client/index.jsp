@@ -76,7 +76,7 @@
             <a href="${pageContext.servletContext.contextPath}/client/search" id="searchBtn">
                 <button class="btn btn-primary">Поиск</button>
             </a>
-            <a href="${pageContext.servletContext.contextPath}/Logging/log4j_html_info.html" id="loggingBtn">
+            <a href="${pageContext.servletContext.contextPath}/logging/log4j_html_info.html" id="loggingBtn">
                 <button class="btn btn-success">Логи</button>
             </a>
             <a href="${pageContext.servletContext.contextPath}/selectRepository" id="repositoryBtn">

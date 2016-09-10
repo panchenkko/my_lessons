@@ -33,7 +33,7 @@ public class AdminController {
     public static final String PAGE_EDIT = "/client/edit";
     public static final String PAGE_SEARCH = "/client/search";
 
-    public static final String PAGE_LOGGING = "/Logging/log4j_html_info.html";
+    public static final String PAGE_LOGGING = "/logging/log4j_html_info.html";
 
     public static final String ACTION_DELETE = "/client/delete";
 
