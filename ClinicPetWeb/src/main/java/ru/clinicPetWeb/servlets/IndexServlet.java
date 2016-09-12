@@ -19,8 +19,8 @@ public class IndexServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_VIEW = "clients";
-    public static final String PAGE_OK = "/resources/views/client/index.jsp";
-    public static final String PAGE_ERROR = "/resources/views/notFound.jsp";
+    public static final String PAGE_OK = "/views/client/index.jsp";
+    public static final String PAGE_ERROR = "/views/notFound.jsp";
 
     public static final String URL_PAGE_INDEX = "/client/index";
 

@@ -1,0 +1,73 @@
+body {
+    background: url("../img/fons/jpg2.jpg") fixed;
+
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px 15px 10px 15px;
+    width: 450px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: -6px 12px 50px black;
+    -moz-box-shadow: -6px 12px 50px black;
+    box-shadow: -6px 12px 50px black;
+}
+
+hr {
+    margin: 45px 15px 20px 15px;
+    border: 0;
+    border-top: 3px solid black;
+}
+
+header {
+    height: 45px;
+    font-family: Cursive, Comic Sans MS, sans-serif;
+    padding-bottom: 14px;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+button {
+    width: 100%;
+}
+
+.column {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+
+    column-gap: 20px;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+
+    column-rule: 1px solid #000;
+    -webkit-column-rule: 1px solid #000;
+    -moz-column-rule: 1px solid #000;
+
+    font-size: 30px;
+    text-align: center;
+}
+
+#info {
+    color: green;
+}
+
+#warn {
+    color: darkgoldenrod;
+}
+
+#error {
+    color: red;
+}
+
+#fatal {
+    color: darkred;
+}

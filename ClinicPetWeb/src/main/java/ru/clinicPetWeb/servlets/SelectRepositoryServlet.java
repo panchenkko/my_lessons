@@ -19,11 +19,11 @@ public class SelectRepositoryServlet extends HttpServlet {
 
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
-    private static final String PAGE_OK = "/resources/views/selectRepository.jsp";
+    private static final String PAGE_OK = "/views/selectRepository.jsp";
 
     public static final String URL_PAGE_INDEX = "/client/index";
 
-    public static final String URL_PAGE_REPOSITORY = "/selectRepository";
+    public static final String URL_PAGE_REPOSITORY = "/";
 
     private static final Logger logger = Logger.getLogger(ClassName.getCurrentClassName());
 
@@ -53,7 +53,7 @@ public class SelectRepositoryServlet extends HttpServlet {
 
     public DBTool configurationIoC() {
         // Передаем конфигурации спринга
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/dispatcher-servlet.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("dispatcher-servlet.xml");
         // Получаем бин с помощью спринга, для работы со всеми реализованными хранилищами
         Storages storages = context.getBean(Storages.class);
         // Передаем в параметры конструктора класс со списком всех хранилищ

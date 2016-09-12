@@ -16,7 +16,7 @@ public class ClientSearchServlet extends HttpServlet {
     private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_SEARCH = "found";
-    public static final String PAGE_SEARCH_JSP = "/resources/views/client/search.jsp";
+    public static final String PAGE_SEARCH_JSP = "/views/client/search.jsp";
 
     public static final String URL_PAGE_INDEX = "/client/index";
     public static final String URL_PAGE_SEARCH = "/client/search";

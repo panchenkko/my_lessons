@@ -2,6 +2,8 @@ package ru.clinicPetWeb.controllers;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -33,7 +35,8 @@ public class AdminController {
     public static final String PAGE_EDIT = "/client/edit";
     public static final String PAGE_SEARCH = "/client/search";
 
-    public static final String PAGE_LOGGING = "/logging/log4j_html_info.html";
+    // Полный путь для удобства. Если произойдет переключение со Spring MVC на сервлеты.
+    public static final String PAGE_LOGGING = "/views/selectLevelLogging.jsp";
 
     public static final String ACTION_DELETE = "/client/delete";
 

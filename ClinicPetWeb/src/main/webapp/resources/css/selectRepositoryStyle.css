@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: rgba(255,255,255,1);
     padding: 10px 15px 15px 15px;
     width: 450px;
     margin-top: 5%;
@@ -26,6 +26,7 @@ hr {
 }
 
 header {
+    margin: 0 0 0 0;
     height: 45px;
     font-family: Cursive, Comic Sans MS, sans-serif;
     padding-bottom: 14px;
@@ -89,7 +90,7 @@ input[type="radio"]:not(checked) + label:after {
     left: 0;
     width: 24px;
     height: 24px;
-    background: #337AB7;
+    background: rgba(51,122,183,1);
     box-shadow: inset 1px 4px 6px rgba(0,0,0,.5);
     opacity: 0;
 
@@ -114,17 +115,4 @@ input[type="radio"]:checked + label:after {
 
 input[type="submit"] {
     float: right;
-}
-
-ul {
-    padding: 0;
-}
-
-ul > li {
-    font-size: 20px;
-    list-style-type: none;
-    text-align: center;
-    border: 3px solid black;
-    margin: 0 0 5px 0;
-    padding: 25px 0 25px 0;
 }

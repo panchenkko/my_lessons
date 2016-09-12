@@ -11,8 +11,8 @@
     <title>Клиника домашних животных</title>
 
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.servletContext.contextPath}/resources/css/selectRepositoryStyle.css" rel="stylesheet">
-    <%--<link href="<c:url value="/css/selectRepositoryStyle.css" />" rel="stylesheet">--%>
+    <%--<link href="${pageContext.servletContext.contextPath}/resources/css/selectRepositoryStyle.css" rel="stylesheet">--%>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/selectRepositoryStyle.css"/>">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,16 +35,16 @@
             <div class="form-group">
                 <input id="memory" type="radio" name="storage" value="memory" checked>
                 <label for="memory">Memory Storage</label>
-                <br />
+                    <br />
                 <input id="jdbc" type="radio" name="storage" value="jdbc">
                 <label for="jdbc">JDBC Storage</label>
-                <br />
+                    <br />
                 <input id="hibernate" type="radio" name="storage" value="hibernate">
                 <label for="hibernate">Hibernate Storage</label>
-                <br />
+                    <br />
                 <input id="hibernateTemplate" type="radio" name="storage" value="hibernatetemplate">
                 <label for="hibernateTemplate">Hibernate Template Storage</label>
-                <br />
+                    <br />
                 <input type="submit" id="button" class="btn btn-primary input-control" value="Готово">
             </div>
         </form>

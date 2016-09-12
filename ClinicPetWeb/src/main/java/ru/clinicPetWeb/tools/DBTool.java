@@ -34,7 +34,7 @@ public class DBTool {
         Scanner sc = new Scanner(System.in);
 
         // Передаем конфигурации спринга
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/spring-context.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("dispatcher-servlet.xml");
         // Получаем бин с помощью спринга, для работы со всеми реализованными хранилищами
         Storages storage = context.getBean(Storages.class);
         // Передаем в параметры конструктора бин и в нём же вызываем метод, для выбора хранилища

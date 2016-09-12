@@ -17,7 +17,7 @@ public class ClientEditServlet extends HttpServlet {
 	private final ClientCache CLIENT_CACHE = ClientCache.getInstance();
 
     public static final String ATTRIBUTE_MODEL_TO_EDIT = "clients";
-    public static final String PAGE_EDIT_JSP = "/resources/views/client/edit.jsp";
+    public static final String PAGE_EDIT_JSP = "/views/client/edit.jsp";
 
     public static final String URL_PAGE_INDEX = "/client/index";
 

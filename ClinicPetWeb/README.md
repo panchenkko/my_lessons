@@ -108,26 +108,14 @@
 
 ----------------------------------------------------------
 
-***Также в проекте частично был использован Bootstrap 3***
+***Также в проекте был немного использован Bootstrap 3***
 
 ----------------------------------------------------------
 
 ## Логи
 
-#### Ссылка сразу на все логи имеющие уровень INFO и выше:
+#### Страница с выбором уровня логов:
 
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging1.png)
-
-#### Логи уровня WARN и выше: (пусто)
-
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging2.png)
-
-#### Логи уровня ERROR и выше: (пусто)
-
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging3.png)
-
-#### Логи уровня FATAL: (пусто)
-
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging4.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/logging.png)
 
 # Конец
