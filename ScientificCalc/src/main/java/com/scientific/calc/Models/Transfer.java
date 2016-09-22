@@ -1,6 +1,5 @@
 package com.scientific.calc.Models;
 
-import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,8 +19,8 @@ public class Transfer {
         this.decimal = decimal;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return new SimpleDateFormat("dd.MM.yyyy, HH:mm:ss").format(date);
     }
 
     public String getBinary() {
@@ -34,7 +33,6 @@ public class Transfer {
 
     public static long transfer(String binary) {
         int result = 0;
-
         for (int i = 0; i < binary.length(); i++) {
             result += Math.pow(2, i) * (binary.charAt(i) == '1' ? 1 : 0);
         }
@@ -44,7 +42,7 @@ public class Transfer {
     @Override
     public String toString() {
         return "Transfer{" +
-                "date=" + new SimpleDateFormat("yyyy.MM.dd, HH:mm:ss").format(date) +
+                "date=" + getDate() +
                 ", binary=" + binary +
                 ", decimal=" + decimal +
                 '}';
