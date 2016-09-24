@@ -86,17 +86,17 @@ public class Table {
             }
             switch (i) {
                 case 9:  this.deck[i].setValue("\033[1;31;40m" + "В" + "\033[1;40m");
-                         this.deck[i].setValueNum(11);
-                         break;
+                    this.deck[i].setValueNum(11);
+                    break;
                 case 10: this.deck[i].setValue("\033[1;31;40m" + "Д" + "\033[1;40m");
-                         this.deck[i].setValueNum(12);
-                         break;
+                    this.deck[i].setValueNum(12);
+                    break;
                 case 11: this.deck[i].setValue("\033[1;31;40m" + "К" + "\033[1;40m");
-                         this.deck[i].setValueNum(13);
-                         break;
+                    this.deck[i].setValueNum(13);
+                    break;
                 case 12: this.deck[i].setValue("\033[1;31;40m" + "Т" + "\033[1;40m");
-                         this.deck[i].setValueNum(14);
-                         break;
+                    this.deck[i].setValueNum(14);
+                    break;
             }
         }
     }
@@ -109,17 +109,17 @@ public class Table {
             }
             switch (i) {
                 case 22: this.deck[i].setValue("\033[1;31;40m" + "В" + "\033[1;40m");
-                         this.deck[i].setValueNum(11);
-                         break;
+                    this.deck[i].setValueNum(11);
+                    break;
                 case 23: this.deck[i].setValue("\033[1;31;40m" + "Д" + "\033[1;40m");
-                         this.deck[i].setValueNum(12);
-                         break;
+                    this.deck[i].setValueNum(12);
+                    break;
                 case 24: this.deck[i].setValue("\033[1;31;40m" + "К" + "\033[1;40m");
-                         this.deck[i].setValueNum(13);
-                         break;
+                    this.deck[i].setValueNum(13);
+                    break;
                 case 25: this.deck[i].setValue("\033[1;31;40m" + "Т" + "\033[1;40m");
-                         this.deck[i].setValueNum(14);
-                         break;
+                    this.deck[i].setValueNum(14);
+                    break;
             }
         }
     }
@@ -132,17 +132,17 @@ public class Table {
             }
             switch (i) {
                 case 35: this.deck[i].setValue("\033[1;37;40m" + "В" + "\033[1;40m");
-                         this.deck[i].setValueNum(11);
-                         break;
+                    this.deck[i].setValueNum(11);
+                    break;
                 case 36: this.deck[i].setValue("\033[1;37;40m" + "Д" + "\033[1;40m");
-                         this.deck[i].setValueNum(12);
-                         break;
+                    this.deck[i].setValueNum(12);
+                    break;
                 case 37: this.deck[i].setValue("\033[1;37;40m" + "К" + "\033[1;40m");
-                         this.deck[i].setValueNum(13);
-                         break;
+                    this.deck[i].setValueNum(13);
+                    break;
                 case 38: this.deck[i].setValue("\033[1;37;40m" + "Т" + "\033[1;40m");
-                         this.deck[i].setValueNum(14);
-                         break;
+                    this.deck[i].setValueNum(14);
+                    break;
             }
         }
     }
@@ -155,17 +155,17 @@ public class Table {
             }
             switch (i) {
                 case 48: this.deck[i].setValue("\033[1;37;40m" + "В" + "\033[1;40m");
-                         this.deck[i].setValueNum(11);
-                         break;
+                    this.deck[i].setValueNum(11);
+                    break;
                 case 49: this.deck[i].setValue("\033[1;37;40m" + "Д" + "\033[1;40m");
-                         this.deck[i].setValueNum(12);
-                         break;
+                    this.deck[i].setValueNum(12);
+                    break;
                 case 50: this.deck[i].setValue("\033[1;37;40m" + "К" + "\033[1;40m");
-                         this.deck[i].setValueNum(13);
-                         break;
+                    this.deck[i].setValueNum(13);
+                    break;
                 case 51: this.deck[i].setValue("\033[1;37;40m" + "Т" + "\033[1;40m");
-                         this.deck[i].setValueNum(14);
-                         break;
+                    this.deck[i].setValueNum(14);
+                    break;
             }
         }
     }
@@ -245,65 +245,65 @@ public class Table {
     public void checkCombination(Gamer gamer) {
         final Combination combination = new Combination();
         int royalFlush = combination.royalFlush(gamer.getOneCart(), gamer.getTwoCart(),
-                         this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int straightFlush = combination.straightFlush(gamer.getOneCart(), gamer.getTwoCart(),
-                            this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int fourOfAKind = combination.fourOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
-                          this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int fullHouse = combination.fullHouse(gamer.getOneCart(), gamer.getTwoCart(),
-                        this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int flush = combination.flush(gamer.getOneCart(), gamer.getTwoCart(),
-                    this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int straight = combination.straight(gamer.getOneCart(), gamer.getTwoCart(),
-                       this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int threeOfAKind = combination.threeOfAKind(gamer.getOneCart(), gamer.getTwoCart(),
-                           this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int twoPairs = combination.twoPairs(gamer.getOneCart(), gamer.getTwoCart(),
-                       this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int onePair = combination.onePair(gamer.getOneCart(), gamer.getTwoCart(),
-                      this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
+                this.cart1, this.cart2, this.cart3, this.cart4, this.cart5);
         int highCards = combination.highCards(gamer.getOneCart(), gamer.getTwoCart());
 
-             if (royalFlush > 0) {
-                 gamer.setStore(royalFlush);
-                 gamer.setStoreName("ФЛЕШ РОЯЛЬ");
-             }
+        if (royalFlush > 0) {
+            gamer.setStore(royalFlush);
+            gamer.setStoreName("ФЛЕШ РОЯЛЬ");
+        }
         else if (straightFlush > 0) {
-                 gamer.setStore(straightFlush);
-                 gamer.setStoreName("СТРИТ ФЛЕШ");
-             }
+            gamer.setStore(straightFlush);
+            gamer.setStoreName("СТРИТ ФЛЕШ");
+        }
         else if (fourOfAKind > 0) {
-                 gamer.setStore(fourOfAKind);
-                 gamer.setStoreName("КАРЕ");
-             }
+            gamer.setStore(fourOfAKind);
+            gamer.setStoreName("КАРЕ");
+        }
         else if (fullHouse > 0) {
-                 gamer.setStore(fullHouse);
-                 gamer.setStoreName("ФУЛЛ ХАУС");
-             }
+            gamer.setStore(fullHouse);
+            gamer.setStoreName("ФУЛЛ ХАУС");
+        }
         else if (flush > 0) {
-                 gamer.setStore(flush);
-                 gamer.setStoreName("ФЛЕШ");
-             }
+            gamer.setStore(flush);
+            gamer.setStoreName("ФЛЕШ");
+        }
         else if (straight > 0) {
-                 gamer.setStore(straight);
-                 gamer.setStoreName("СТРИТ");
-             }
+            gamer.setStore(straight);
+            gamer.setStoreName("СТРИТ");
+        }
         else if (threeOfAKind > 0) {
-                 gamer.setStore(threeOfAKind);
-                 gamer.setStoreName("ТРОЙКА");
-             }
+            gamer.setStore(threeOfAKind);
+            gamer.setStoreName("ТРОЙКА");
+        }
         else if (twoPairs > 0) {
-                 gamer.setStore(twoPairs);
-                 gamer.setStoreName("ДВЕ ПАРЫ");
-             }
+            gamer.setStore(twoPairs);
+            gamer.setStoreName("ДВЕ ПАРЫ");
+        }
         else if (onePair > 0) {
-                 gamer.setStore(onePair);
-                 gamer.setStoreName("ПАРА");
-             }
+            gamer.setStore(onePair);
+            gamer.setStoreName("ПАРА");
+        }
         else if (highCards > 0) {
-                 gamer.setStore(highCards);
-                 gamer.setStoreName("КИКЕР");
-             }
+            gamer.setStore(highCards);
+            gamer.setStoreName("КИКЕР");
+        }
     }
 
     // Получаем id игрока, у какого самая высокая комбинация за столом (по getStoreName())
@@ -312,25 +312,25 @@ public class Table {
         for (int i = 1; i < this.gamers.length; i++) {
             switch (this.gamers[i].getStoreName()) {
                 case "ФЛЕШ РОЯЛЬ": id = this.gamers[i].getId() - 1;
-                                   break;
+                    break;
                 case "СТРИТ ФЛЕШ": id = this.gamers[i].getId() - 1;
-                                   break;
+                    break;
                 case "КАРЕ": id = this.gamers[i].getId() - 1;
-                             break;
+                    break;
                 case "ФУЛЛ ХАУС": id = this.gamers[i].getId() - 1;
-                                  break;
+                    break;
                 case "ФЛЕШ": id = this.gamers[i].getId() - 1;
-                             break;
+                    break;
                 case "СТРИТ": id = this.gamers[i].getId() - 1;
-                              break;
+                    break;
                 case "ТРОЙКА": id = this.gamers[i].getId() - 1;
-                               break;
+                    break;
                 case "ДВЕ ПАРЫ": id = this.gamers[i].getId() - 1;
-                                 break;
+                    break;
                 case "ПАРА": id = this.gamers[i].getId() - 1;
-                             break;
+                    break;
                 case "КИКЕР": id = this.gamers[i].getId() - 1;
-                              break;
+                    break;
             }
         }
         return id;
@@ -342,7 +342,7 @@ public class Table {
         int id = gamer.getId() - 1;
         for (int i = 1; i < this.gamers.length; i++) {
             if (this.gamers[i].getStoreName().equals(gamer.getStoreName()) &&
-                this.gamers[i].getStore() > this.gamers[id].getStore()) {
+                    this.gamers[i].getStore() > this.gamers[id].getStore()) {
                 id = this.gamers[i].getId() - 1;
             }
         }
@@ -355,7 +355,7 @@ public class Table {
         int matches = 1;
         for (Gamer gamers : this.gamers) {
             if (gamer.getStoreName().equals(gamers.getStoreName()) &&
-                gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
+                    gamers.getStore() == gamer.getStore() && gamers.getId() != gamer.getId()) {
                 matches++;
             }
         }
@@ -438,21 +438,21 @@ public class Table {
                         System.out.println();
                         System.out.println(this.gamers[counter].drawCartLogic());
                         System.out.println("1. Повысить ставку" + "\n" +
-                                           "2. Пропустить" + "\n" +
-                                           "3. Поддержать" + "\n" +
-                                           "4. Пас" + "\n");
+                                "2. Пропустить" + "\n" +
+                                "3. Поддержать" + "\n" +
+                                "4. Пас" + "\n");
                         System.out.print("Ответ: ");
                         int answer = sc.nextInt();
                         switch (answer) {
                             case 1: raise = raise(sc, this.gamers[counter]);
-                                    id = counter;
-                                    break;
+                                id = counter;
+                                break;
                             case 2: check = returnWinnerId(this.gamers[counter]);
-                                    break;
+                                break;
                             case 3: call = call(this.gamers[counter]);
-                                    break;
+                                break;
                             case 4: fold = fold(this.gamers[counter]);
-                                    break;
+                                break;
                         }
                     }
                 } else {
@@ -542,30 +542,18 @@ public class Table {
         return true;
     }
 
-    // Дисквалификация игрока, в случае если не хватает денег для резервной ставки
-    public boolean disqualification(Table table, Gamer gamer) {
-        if (gamer.getMoney() < table.getReserveMoney()) {
-            gamer.setInGame(false);
-            table.inscription("\033[1;31m" +
-                    " ИГРОК \"" + gamer.getId() + ". " + gamer.getName() + "\" ДИСКВАЛИФИЦИРОВАН " + "\033[0m");
-            ThreadSleep.sleep(1500);
-            return true;
-        }
-        return false;
-    }
-
     public void drawTable() {
         if (this.numCircle <= 2) {
             inscription("===============СТОЛ==============");
             switch (this.numCircle) {
                 case 0: System.out.print(draw3CartLogic());
-                        break;
+                    break;
                 case 1: if (this.cart4 == null) random4CartForTable();
-                        System.out.print(draw4CartLogic());
-                        break;
+                    System.out.print(draw4CartLogic());
+                    break;
                 case 2: if (this.cart5 == null) random5CartForTable();
-                        System.out.print(draw5CartLogic());
-                        break;
+                    System.out.print(draw5CartLogic());
+                    break;
             }
             inscription("===============СТОЛ==============");
             System.out.println("ТЕКУЩИЙ БАНК: " + this.bank);
@@ -633,42 +621,42 @@ public class Table {
     // ЛОГИКА ВЫВОДА ТРЁХ КАРТ
     public String draw3CartLogic() {
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                        this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                        this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3Cart_123_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                        this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3Cart_12_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                        this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3Cart_13_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                        this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw3Cart_23_10();
         else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_1_10();
+                this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_1_10();
         else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_2_10();
+                this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_2_10();
         else if (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_3_10();
+                this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw3Cart_3_10();
         else return draw3CartStandard();
     }
 
     public String draw3Cart_123_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
 
@@ -749,7 +737,7 @@ public class Table {
     }
     public String draw3Cart_23_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
 
@@ -830,7 +818,7 @@ public class Table {
     }
     public String draw3Cart_3_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
 
@@ -857,7 +845,7 @@ public class Table {
     }
     public String draw3CartStandard() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
 
@@ -886,51 +874,51 @@ public class Table {
     // ЛОГИКА ВЫВОДА ЧЕТЫРЁХ КАРТ
     public String draw4CartLogic() {
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_1234_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_123_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_124_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_134_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_234_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_12_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_13_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_14_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_23_10();
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_24_10();
         if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw4Cart_34_10();
         else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw4Cart_1_10();
         else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw4Cart_2_10();
@@ -941,7 +929,7 @@ public class Table {
 
     public String draw4Cart_1234_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -974,7 +962,7 @@ public class Table {
     }
     public String draw4Cart_123_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1007,7 +995,7 @@ public class Table {
     }
     public String draw4Cart_124_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1040,7 +1028,7 @@ public class Table {
     }
     public String draw4Cart_134_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1073,7 +1061,7 @@ public class Table {
     }
     public String draw4Cart_234_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1106,7 +1094,7 @@ public class Table {
     }
     public String draw4Cart_12_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1139,7 +1127,7 @@ public class Table {
     }
     public String draw4Cart_13_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1172,7 +1160,7 @@ public class Table {
     }
     public String draw4Cart_14_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1205,7 +1193,7 @@ public class Table {
     }
     public String draw4Cart_23_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1238,7 +1226,7 @@ public class Table {
     }
     public String draw4Cart_24_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1271,7 +1259,7 @@ public class Table {
     }
     public String draw4Cart_34_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1304,7 +1292,7 @@ public class Table {
     }
     public String draw4Cart_1_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1337,7 +1325,7 @@ public class Table {
     }
     public String draw4Cart_2_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1370,7 +1358,7 @@ public class Table {
     }
     public String draw4Cart_3_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1403,7 +1391,7 @@ public class Table {
     }
     public String draw4Cart_4_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "\n" +
@@ -1436,7 +1424,7 @@ public class Table {
     }
     public String draw4CartStandard() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "\n" +
@@ -1471,118 +1459,118 @@ public class Table {
     // ЛОГИКА ВЫВОДА ПЯТИ КАРТ
     public String draw5CartLogic() {
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_2345_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_1345_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_1245_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_1235_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_1234_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_123_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_124_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_125_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_134_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_135_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_145_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_234_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_235_10();
         else
         if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_345_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_12_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_13_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_14_10();
         else
         if ((this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_15_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_23_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_24_10();
         else
         if ((this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_25_10();
         else
         if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_34_10();
         else
         if ((this.cart3.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart3.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_35_10();
         else
         if ((this.cart4.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart4.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                (this.cart5.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart5.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return draw5Cart_45_10();
         else if (this.cart1.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart1.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_1_10();
         else if (this.cart2.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") || this.cart2.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return draw5Cart_2_10();
@@ -1594,7 +1582,7 @@ public class Table {
 
     public String draw5Cart_2345_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -1633,7 +1621,7 @@ public class Table {
     }
     public String draw5Cart_1345_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -1672,7 +1660,7 @@ public class Table {
     }
     public String draw5Cart_1245_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -1711,7 +1699,7 @@ public class Table {
     }
     public String draw5Cart_1235_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -1750,7 +1738,7 @@ public class Table {
     }
     public String draw5Cart_1234_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -1789,7 +1777,7 @@ public class Table {
     }
     public String draw5Cart_123_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -1828,7 +1816,7 @@ public class Table {
     }
     public String draw5Cart_124_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -1867,7 +1855,7 @@ public class Table {
     }
     public String draw5Cart_125_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -1906,7 +1894,7 @@ public class Table {
     }
     public String draw5Cart_134_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -1945,7 +1933,7 @@ public class Table {
     }
     public String draw5Cart_135_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -1984,7 +1972,7 @@ public class Table {
     }
     public String draw5Cart_145_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2023,7 +2011,7 @@ public class Table {
     }
     public String draw5Cart_234_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2062,7 +2050,7 @@ public class Table {
     }
     public String draw5Cart_235_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2101,7 +2089,7 @@ public class Table {
     }
     public String draw5Cart_345_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2140,7 +2128,7 @@ public class Table {
     }
     public String draw5Cart_12_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2179,7 +2167,7 @@ public class Table {
     }
     public String draw5Cart_13_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2218,7 +2206,7 @@ public class Table {
     }
     public String draw5Cart_14_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2257,7 +2245,7 @@ public class Table {
     }
     public String draw5Cart_15_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2296,7 +2284,7 @@ public class Table {
     }
     public String draw5Cart_23_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2335,7 +2323,7 @@ public class Table {
     }
     public String draw5Cart_24_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2374,7 +2362,7 @@ public class Table {
     }
     public String draw5Cart_25_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2413,7 +2401,7 @@ public class Table {
     }
     public String draw5Cart_34_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2452,7 +2440,7 @@ public class Table {
     }
     public String draw5Cart_35_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2491,7 +2479,7 @@ public class Table {
     }
     public String draw5Cart_45_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2530,7 +2518,7 @@ public class Table {
     }
     public String draw5Cart_1_10() {
         return String.format(
-                        "\033[1;40m" + " %s      " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2569,7 +2557,7 @@ public class Table {
     }
     public String draw5Cart_2_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2608,7 +2596,7 @@ public class Table {
     }
     public String draw5Cart_3_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2647,7 +2635,7 @@ public class Table {
     }
     public String draw5Cart_4_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s      " + "\033[0m" + "    " +
@@ -2686,7 +2674,7 @@ public class Table {
     }
     public String draw5Cart_5_10() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
@@ -2725,7 +2713,7 @@ public class Table {
     }
     public String draw5CartStandard() {
         return String.format(
-                        "\033[1;40m" + " %s       " + "\033[0m" + "    " +
+                "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +
                         "\033[1;40m" + " %s       " + "\033[0m" + "    " +

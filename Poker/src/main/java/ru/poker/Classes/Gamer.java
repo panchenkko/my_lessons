@@ -142,24 +142,24 @@ public class Gamer {
     // Логика вывода карт игрока
     public String drawCartLogic() {
         if ((this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.oneCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
-            (this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-             this.twoCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
+                this.oneCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) &&
+                (this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
+                        this.twoCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")))
             return drawDoubleSpaceCart();
         else if (this.oneCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.oneCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return drawOneCart();
+                this.oneCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return drawOneCart();
         else if (this.twoCart.getValue().equals("\033[1;31;40m" + "10" + "\033[1;40m") ||
-                 this.twoCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return drawTwoCart();
+                this.twoCart.getValue().equals("\033[1;37;40m" + "10" + "\033[1;40m")) return drawTwoCart();
         else return drawCartStandard();
     }
 
     public String drawDoubleSpaceCart() {
         return String.format(
                 "\033[1;40m" + " %s      "  + "\033[0m" + "    " + "\033[1;40m" + " %s      "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "      %s "  + "\033[0m" + "    " + "\033[1;40m" + "      %s "   + "\033[0m" + "\n",
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                        "\033[1;40m" + "      %s "  + "\033[0m" + "    " + "\033[1;40m" + "      %s "   + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
@@ -167,10 +167,10 @@ public class Gamer {
     public String drawOneCart() {
         return String.format(
                 "\033[1;40m" + " %s      "  + "\033[0m" + "    " + "\033[1;40m" + " %s       "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "      %s "  + "\033[0m" + "    " + "\033[1;40m" + "       %s "  + "\033[0m" + "\n",
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                        "\033[1;40m" + "      %s "  + "\033[0m" + "    " + "\033[1;40m" + "       %s "  + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
@@ -178,10 +178,10 @@ public class Gamer {
     public String drawTwoCart() {
         return String.format(
                 "\033[1;40m" + " %s       " + "\033[0m" + "    " + "\033[1;40m" + " %s      "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" + "      %s "  + "\033[0m" + "\n",
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "  + "\033[0m" + "\n" +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  " + "\033[0m" + "\n" +
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "  + "\033[0m" + "\n" +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" + "      %s "  + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
@@ -189,10 +189,10 @@ public class Gamer {
     public String drawCartStandard() {
         return String.format(
                 "\033[1;40m" + " %s       " + "\033[0m" + "    " + "\033[1;40m" + " %s       "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
-                "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
-                "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" + "       %s "  + "\033[0m" + "\n",
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                        "\033[1;40m" + "    %s%s  " + "\033[0m" + "    " + "\033[1;40m" + "    %s%s  "  + "\033[0m" + "\n" +
+                        "\033[1;40m" + "         "  + "\033[0m" + "    " + "\033[1;40m" + "         "   + "\033[0m" + "\n" +
+                        "\033[1;40m" + "       %s " + "\033[0m" + "    " + "\033[1;40m" + "       %s "  + "\033[0m" + "\n",
                 this.oneCart.getValue(), this.twoCart.getValue(),
                 this.oneCart.getSuit(), "\033[1;30;40m♥\033[1;40m", this.twoCart.getSuit(), "\033[1;30;40m♥\033[1;40m",
                 this.oneCart.getValue(), this.twoCart.getValue());
