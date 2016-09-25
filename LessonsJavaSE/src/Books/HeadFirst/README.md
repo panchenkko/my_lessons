@@ -2,7 +2,7 @@
 - **Инкапсулируйте то, что изменяется.**
 _Выделите аспекты приложения, которые могут изменяться, и отделите их от тех, которые всегда остаются постоянными. 
  То что изменяется заменить абстракцией и под него создавать конкретную реализацию. Как показано в паттерне "Стратегия"._
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/principles1.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/principles1.png)
  
 - **Отдавайте предпочтение композиции перед наследованием.**
 _Отношение СОДЕРЖИТ гораздо лучше отношения ЯВЛЯЕТСЯ._
@@ -11,18 +11,18 @@ _Отношение СОДЕРЖИТ гораздо лучше отношени�
 _Принцип гласит, чтобы зависимость была только от интерфейсов и под него уже создавать конкретную реализацию._
 
 - **Стремитесь к слабой связанности взаимодействующих объектов.**
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/principles2.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/principles2.png)
 
 - **Классы должны быть открыты для расширения, но закрыты для изменения.**  ***SOLID***
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/principles3.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/principles3.png)
 
 - **Код должен зависеть от абстракции, а не от конкретных классов.**        ***SOLID***
 
 - **Взаимодействуйте только с "друзьями".**
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/principles4.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/principles4.png)
 
 - **Не вызывайте нас - мы вас сами вызовем.**
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/principles5.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/principles5.png)
 
 - **Класс должен иметь только одну причину для изменений.**                 ***SOLID***
 
@@ -59,7 +59,7 @@ _Принцип гласит, чтобы зависимость была тол�
 **Решением** называется обобщенная архитектура, которая достигает заданной цели при соблюдении набора 
 ограничений.
 
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/manual1.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/manual1.png)
 
 ## Классификация паттернов проектирования
 
@@ -86,92 +86,92 @@ _Принцип гласит, чтобы зависимость была тол�
 
 Стратегия/Strategy
 ------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Strategy_1/Screenshots/07_strategy.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/src/HeadFirst/Strategy_1/Screenshots/07_strategy.png)
 
 Наблюдатель/Observer
 --------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Observer_2/Screenshots/03_observer.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/src/HeadFirst/Observer_2/Screenshots/03_observer.png)
 
 Декоратор/Decorator
 -------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Decorator_3/Screenshots/18_decorator.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Decorator_3/Screenshots/18_decorator.png)
 
 Фабричный Метод/Factory Method
 ------------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4/Screenshots/19_factorymethod.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Factory_4/Screenshots/19_factorymethod.png)
 
 Абстрактная Фабрика/Abstract Factory
 ------------------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Factory_4/Screenshots/14_abstractfactory.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Factory_4/Screenshots/14_abstractfactory.png)
 
 Одиночка/Singleton
 ------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Singleton_5/Screenshots/23_singleton.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Singleton_5/Screenshots/23_singleton.png)
 
 Команда/Command
 ---------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Command_6/Screenshots/04_command.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Command_6/Screenshots/04_command.png)
 
 Адаптер/Adapter
 ---------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Adapter_7/Screenshots/12_adapter.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Adapter_7/Screenshots/12_adapter.png)
 
 Фасад/Facade
 ------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Facade_8/Screenshots/21_facade.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Facade_8/Screenshots/21_facade.png)
 
 Шаблонный Метод/Template Method
 -------------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/TemplateMethod_9/Screenshots/09_templatemethod.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/TemplateMethod_9/Screenshots/09_templatemethod.png)
 
 Итератор/Iterator
 -----------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Iterator_10/Screenshots/08_iterator.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Iterator_10/Screenshots/08_iterator.png)
 
 Компоновщик/Composite
 ---------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Composite_11/Screenshots/16_composite.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Composite_11/Screenshots/16_composite.png)
 
 Состояние/State
 ---------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/State_12/Screenshots/05_state.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/State_12/Screenshots/05_state.png)
 
 Заместитель/Proxy
 -----------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Proxy_13/Screenshots/13_proxy.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Proxy_13/Screenshots/13_proxy.png)
 
 Мост/Bridge
 -----------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/15_bridge.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/15_bridge.png)
 
 Строитель/Builder
 -----------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/17_builder.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/17_builder.png)
 
 Цепочка Обязанностей/Chain Of Responsibility
 --------------------------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/02_chain.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/02_chain.png)
 
 Приспособленец/Flyweight
 ------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/22_flyweight.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/22_flyweight.png)
 
 Интерпретатор/Interpreter
 -------------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/06_interpreter.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/06_interpreter.png)
 
 Посредник/Mediator
 ------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/11_mediator.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/11_mediator.png)
 
 Хранитель/Memento
 -----------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/01_memento.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/01_memento.png)
 
 Прототип/Prototype
 ------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/20_prototype.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/20_prototype.png)
 
 Посетитель/Visitor
 ------------------
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/LessonsJavaSE/src/HeadFirst/Screenshots/10_visitor.png)
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/Books/HeadFirst/Screenshots/10_visitor.png)
