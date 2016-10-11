@@ -6,6 +6,41 @@
 Независимо от внутреннего устройства потоки представляют собой одинаковую модель для программы.
 Поток представляет собой последовательность данных.
 
+## Классы Java IO API
+#### Базовые
+
+- InputStream / OutputStream
+- Reader / Writer
+- InputStreamReader / OutputStreamWriter
+
+#### Массивы
+
+- ByteArrayInputStream / ByteArrayOutputStream
+- CharArrayReader / CharArrayWriter
+
+#### Файлы
+
+- FileInputStream / FileOutputStream
+- RandomAccessFile / RandomAccessFile
+- FileReader / FileWriter
+
+#### Буферизация
+
+- BufferedInputStream / BufferedOutputStream
+- BufferedReader / BufferedWriter
+
+## Диаграмма классов, показывающая иерархию основных дочерних классов для класса `java.io.InputStream`
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/InputStream.png)
+
+## Диаграмма классов, показывающая иерархию основных дочерних классов для класса `java.io.OutputStream`
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/OutputStream.png)
+
+## Диаграмма классов, показывающая иерархию основных дочерних классов для `java.io.Reader`
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/Reader.png)
+
+## Диаграмма классов, показывающая иерархию основных дочерних классов для `java.io.Writer`
+![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/Writer.png)
+
 ## Потоки байт
 Все классы, работающие с потоками байт, наследуются от абстрактных классов `java.io.InputStream` или `java.io.OutputStream`.
 
@@ -110,7 +145,7 @@ InputStream возвращают полное кол-во байт в поток
 весь 1кб будет считан с ОС, внимание будет обращено к более глубокой памяти - к драйверу, у него 4кб,
 и он передаст 1кб ОС, а она в свою очередь 1 байт JVM и всё по новой.
 
-#### java.io.OutputStream - _абстрактный класс, являющийся базовым классов для классов, реализующих выходной поток байт._
+#### java.io.OutputStream - _абстрактный класс, являющийся базовым классом для классов, реализующих выходной поток байт._
 
 ### Основные методы:
 
@@ -156,8 +191,8 @@ InputStream возвращают полное кол-во байт в поток
 #### Работа метода `flush()`
 ##### (Для начала посмотрите раздел "Работа метода `write(byte[] b)`")
 При вызове этого метода происходит некая волна, какая смывает всю набранную информацию во всех уровнях памяти 
-и скидывает её на самый последний уровень - на память винчестера. Так как это очень долгая процедура, это может 
-занимать в миллионы раз больше времени. 
+и скидывает её на самый последний уровень - на память винчестера, то есть записывает всю информацию какая накопилась 
+на всех уровнях памяти. Так как это очень долгая процедура, это может занимать в миллионы раз больше времени. 
 
 Если обычный вызов `write(1)` может работать 1нс, то метод `flush()` может работать 10_000_000нс.
 
