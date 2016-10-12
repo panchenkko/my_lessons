@@ -57,7 +57,7 @@ public class IOExample {
     // создаем экземпляр нашего класса который мы создали в первом шаге
     private static InputOutputStreamExam streamExam;
 
-    public static void main(String... args) throws IOException {
+    public static void main(String[] args) throws IOException {
         // инициализируем наш класс для работы с файлом
         streamExam = new InputOutputStreamExam(PATH);
 

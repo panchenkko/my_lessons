@@ -151,84 +151,33 @@ public class IO {
         input.close();
     }
 
-    public static void filter(InputStream input, OutputStream output, int buffSize) throws IOException {
-        final int ZERO_STATE = 1;
-        final int NUMBERS_STATE = 0;
-        byte[] buffer = new byte[buffSize];
-        int count;
-        while ((count = input.read(buffer)) != -1) {
-            int state = ZERO_STATE;
-            int start = 0, end = 0;
-            for (int index = 0; index < count; index++) {
-                switch (state) {
-                    case ZERO_STATE:
-                        if (buffer[index] == 1) {
-                            start = index; end = index;
-                            state = NUMBERS_STATE;
-                        }
-                        break;
-                    case NUMBERS_STATE:
-                        if (buffer[index] == 0) {
-                            output.write(buffer, start, end);
-                            start = 0; end = 0;
-                            state = ZERO_STATE;
-                        } else {
-                            end = index;
-                        }
-                        break;
-                }
-            }
-            if (state == NUMBERS_STATE)
-                output.write(buffer, start, end);
-        }
-        output.flush();
-    }
-
     public static void main(String[] args) {
         try {
-//            // Инициализируем класс и вводим путь к файлу.
-//            // Если написать только имя файла, то файл будет создан в корневой папке проекта.
-//            IO io = new IO(new File("D://Downloads/Удали меня.txt"));
-//
-//            /**
-//             * Символьные потоки ввода/вывода
-//             */
-////            FileWriter - записывает в файл
-////            FileReader - читает с файла
-//
-////            io.writer();
-////            io.reader();
-//            io.readerSplit();
-//
-//            /**
-//             * Байтовые потоки ввода/вывода
-//             */
-////            OutputStream - записывает в файл
-////            InputStream - читает с файла
-//
-//            IO io1 = new IO(new File("D://Downloads/Удали меня2.txt"));
-//
-//            io1.output();
-//
-//            io1.input();
+            // Инициализируем класс и вводим путь к файлу.
+            // Если написать только имя файла, то файл будет создан в корневой папке проекта.
+            IO io = new IO(new File("D://Downloads/Удали меня.txt"));
 
             /**
-             * Фильтрация данных в байтовом потоке. Происходит запись только единиц.
+             * Символьные потоки ввода/вывода
              */
+//            FileWriter - записывает в файл
+//            FileReader - читает с файла
 
-            final int BUFFER_LENGTH = 4;
-            final byte[] buffer = {0, 1, 1, 0, 0, 1, 1, 1};
-            final byte[] filteredBuffer = new byte[buffer.length];
+//            io.writer();
+//            io.reader();
+            io.readerSplit();
 
-            InputStream input = new ByteArrayInputStream(buffer);
-            OutputStream outputByte = new ByteArrayOutputStream(buffer.length);
-            OutputStream outputFile = new FileOutputStream(new File("D://Downloads/Удали меня3.txt"));
+            /**
+             * Байтовые потоки ввода/вывода
+             */
+//            OutputStream - записывает в файл
+//            InputStream - читает с файла
 
-            IO.filter(input, outputByte, BUFFER_LENGTH);
+            IO io1 = new IO(new File("D://Downloads/Удали меня2.txt"));
 
-            input.close();
-            outputByte.close();
-            outputFile.close();
+            io1.output();
+
+            io1.input();
 
         } catch (IOException e) {
             e.printStackTrace();

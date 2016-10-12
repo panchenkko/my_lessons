@@ -29,17 +29,10 @@
 - BufferedInputStream / BufferedOutputStream
 - BufferedReader / BufferedWriter
 
-## Диаграмма классов, показывающая иерархию основных дочерних классов для класса `java.io.InputStream`
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/InputStream.png)
-
-## Диаграмма классов, показывающая иерархию основных дочерних классов для класса `java.io.OutputStream`
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/OutputStream.png)
-
-## Диаграмма классов, показывающая иерархию основных дочерних классов для `java.io.Reader`
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/Reader.png)
-
-## Диаграмма классов, показывающая иерархию основных дочерних классов для `java.io.Writer`
-![CC0](https://github.com/Panchenko-Vlad/java-lessons/tree/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/Writer.png)
+## Диаграмма классов, показывающая иерархию основных дочерних классов для класса >> [`java.io.InputStream`](https://raw.githubusercontent.com/Panchenko-Vlad/java-lessons/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/InputStream.png "Картинка иерархии классов \"InputStream\" в полном формате")
+## Диаграмма классов, показывающая иерархию основных дочерних классов для класса >> [`java.io.OutputStream`](https://raw.githubusercontent.com/Panchenko-Vlad/java-lessons/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/OutputStream.png "Картинка иерархии классов \"OutputStream\" в полном формате")
+## Диаграмма классов, показывающая иерархию основных дочерних классов для класса >> [`java.io.Reader`](https://raw.githubusercontent.com/Panchenko-Vlad/java-lessons/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/Reader.png "Картинка иерархии классов \"Reader\" в полном формате")
+## Диаграмма классов, показывающая иерархию основных дочерних классов для класса >> [`java.io.Writer`](https://raw.githubusercontent.com/Panchenko-Vlad/java-lessons/master/LessonsJavaSE/src/LessonsJavaCore/IO/Screenshots/Writer.png "Картинка иерархии классов \"Writer\" в полном формате")
 
 ## Потоки байт
 Все классы, работающие с потоками байт, наследуются от абстрактных классов `java.io.InputStream` или `java.io.OutputStream`.
@@ -198,3 +191,9 @@ InputStream возвращают полное кол-во байт в поток
 
 Ему нужно проверить что находится у JVM, всё скинуть на ОС, а вдруг у ОС уже занята память, тогда нужно всё что 
 на ОС скинуть Драйверу, после скинуть то что в JVM на ОС, после с ОС на Драйвер, после это всё уже на Винчестер.
+
+## RandomAccessFile и его возможности
+**RandomAccessFile** - класс пакета Java IO API, он позволяет перемещаться по файлу, читать из него или писать в него, 
+как вам будет угодно. Вы также сможете заменить существующие части файла, речь идет о обновлении содержимого файла, 
+а точней о обновлении фрагмента файла. Это невозможно сделать с помощью FileInputStream или FileOutputStream, но 
+RandomAccessFile даст вам эту возможность.
