@@ -126,58 +126,18 @@ public class IO {
         bufferedReader.close();
     }
 
-    /**
-     * Запись в файл (Байтовый поток)
-     */
-    public void output() throws IOException {
-        OutputStream output = new FileOutputStream(file);
-
-        output.write(5); // Информация, какая пойдет в файл
-        output.flush(); // Запись
-
-        output.close();
-    }
-
-    /**
-     * Чтение с файла (Байтовый поток)
-     */
-    public void input() throws IOException {
-        InputStream input = new FileInputStream(file);
-
-        int num = input.read();
-
-        System.out.println("Num: " + num);
-
-        input.close();
-    }
-
     public static void main(String[] args) {
         try {
             // Инициализируем класс и вводим путь к файлу.
             // Если написать только имя файла, то файл будет создан в корневой папке проекта.
             IO io = new IO(new File("D://Downloads/Удали меня.txt"));
 
-            /**
-             * Символьные потоки ввода/вывода
-             */
 //            FileWriter - записывает в файл
 //            FileReader - читает с файла
 
 //            io.writer();
 //            io.reader();
             io.readerSplit();
-
-            /**
-             * Байтовые потоки ввода/вывода
-             */
-//            OutputStream - записывает в файл
-//            InputStream - читает с файла
-
-            IO io1 = new IO(new File("D://Downloads/Удали меня2.txt"));
-
-            io1.output();
-
-            io1.input();
 
         } catch (IOException e) {
             e.printStackTrace();
