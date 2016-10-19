@@ -37,7 +37,7 @@ public interface ILogic {
 	/**
 	 * Кол-во создаваемых за ход окрашенных клеток
 	 */
-	int sumSmallCellsPainted();
+	int sumCellsPainted();
 
 	int sumInARow();
 
