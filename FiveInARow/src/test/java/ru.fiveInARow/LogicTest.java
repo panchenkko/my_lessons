@@ -182,7 +182,7 @@ public class LogicTest {
             }
         }
 
-        assertThat(count, is(logic.sumInARow() + logic.sumSmallCellsPainted()));
+        assertThat(count, is(logic.sumInARow() + logic.sumCellsPainted()));
     }
 
     @Test
@@ -256,16 +256,16 @@ public class LogicTest {
             }
         }
 
-        assertThat(count, is(logic.sumSmallCellsPainted()));
+        assertThat(count, is(logic.sumCellsPainted()));
     }
 
     @Test
     public void testCreateSmallCells_IfSomeNEmptyCells() throws Exception {
-        // Проверяем, что метод сможет создать новые маленькие шары, если на поле ровно logic.sumSmallCellsPainted()
+        // Проверяем, что метод сможет создать новые маленькие шары, если на поле ровно logic.sumCellsPainted()
         // свободных ячеек
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
-                if (i > 0 || (i == 0 && j >= logic.sumSmallCellsPainted()))
+                if (i > 0 || (i == 0 && j >= logic.sumCellsPainted()))
                     cells[i][j].bigCellPainting();
             }
         }
@@ -281,7 +281,7 @@ public class LogicTest {
             }
         }
 
-        assertThat(count, is(logic.sumSmallCellsPainted()));
+        assertThat(count, is(logic.sumCellsPainted()));
     }
 
     @Test(expected = NotEmptyCellsException.class)
@@ -301,7 +301,7 @@ public class LogicTest {
         // Проверяем, что метод создаст не все шари, так как мест будет половина, от нужного кол-ва
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
-                if (i > 0 || (i == 0 && j >= logic.sumSmallCellsPainted() / 2))
+                if (i > 0 || (i == 0 && j >= logic.sumCellsPainted() / 2))
                     cells[i][j].bigCellPainting();
             }
         }
