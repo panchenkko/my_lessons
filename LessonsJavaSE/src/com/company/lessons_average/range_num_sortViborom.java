@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class diapazon_num_sortViborom {
+public class range_num_sortViborom {
 
     // Метод на рандомные числа
     public static int number(int x, int y){
