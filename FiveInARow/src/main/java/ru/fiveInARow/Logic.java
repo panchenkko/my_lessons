@@ -208,21 +208,28 @@ public class Logic implements ILogic {
         createBalls(true, false);
     }
 
+    /**
+     * Метод, какой создаёт шары. Остается только ввести аргументы, какие шары тебе необходимы.
+     * @param createSmallBalls Вводим true, если нужно создать маленькие шары
+     * @param createBigBalls Вводим true, если нужно создать большие шары
+     * @throws NotEmptyCellsException происходит исключение, если нет места, куда создавать шары
+     */
     public void createBalls(boolean createSmallBalls, boolean createBigBalls) throws NotEmptyCellsException {
         Random random = new Random(System.currentTimeMillis());
 
         int checkingBigBalls = 0, checkingSmallBalls = 0;
 
-        if (createBigBalls) checkingBigBalls = sumCellsPainted();
         if (createSmallBalls) checkingSmallBalls = sumCellsPainted();
+        if (createBigBalls) checkingBigBalls = sumCellsPainted();
 
-        while (checkingBigBalls > 0 && checkingSmallBalls > 0 && !finish() && sumEmptyCells() > 0) {
+        while ((checkingBigBalls > 0 || checkingSmallBalls > 0) && !finish() && sumEmptyCells() > 0) {
             int row = random.nextInt(sumRow());
             int column = random.nextInt(sumColumn());
             if (!this.cells[row][column].isBigCellPainted() && !this.cells[row][column].isSmallCellPainted()) {
                 int color = random.nextInt(6);
 
                 this.cells[row][column].generateColor(color);
+
                 if (checkingSmallBalls > 0) {
                     this.cells[row][column].smallCellPainting();
                     checkingSmallBalls--;
