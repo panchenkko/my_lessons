@@ -21,14 +21,11 @@ public class Runner {
 
     // Генерация поля
     public void generateField(Scanner sc, StandardLogic logic, ICell[][] cells) {
-        final BaseAction action = new BaseAction(logic, new ConsoleBoard(), new IGeneratorBoard() {
-            @Override
-            public ICell[][] generate() {
-                generateEmptyCells(logic, cells);
-                System.out.println("Бомб: " + logic.sumBombs());
-                System.out.println("Пустых клеток: " + ((logic.sumRow() * logic.sumColumn()) - logic.sumBombs()));
-                return cells;
-            }
+        final BaseAction action = new BaseAction(logic, new ConsoleBoard(), () -> {
+            generateEmptyCells(logic, cells);
+            System.out.println("Бомб: " + logic.sumBombs());
+            System.out.println("Пустых клеток: " + ((logic.sumRow() * logic.sumColumn()) - logic.sumBombs()));
+            return cells;
         });
         action.initGame();
         cycleInput(sc, action, logic);

@@ -20,7 +20,7 @@ import ru.clinicPetWeb.store.Storages;
 import ru.clinicPetWeb.tools.DBTool;
 
 @Controller
-//@RequestMapping("/client") // Указываем, по какому запросу будет обрабатываться данный контроллер (URL)
+@RequestMapping("/") // Указываем, по какому запросу будет обрабатываться данный контроллер (URL)
 public class AdminController {
 
     @Autowired

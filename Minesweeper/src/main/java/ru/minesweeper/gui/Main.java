@@ -22,88 +22,76 @@ public class Main {
 	private static final GUIBoard board = new GUIBoard();
 
 	public static void main(String[] arg) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				final JFrame frame = new JFrame();
-				frame.setTitle("Сапер");
-				frame.setLayout(new BorderLayout());
-				frame.setSize(500, 500);
-				frame.add(board, BorderLayout.CENTER);
-				board.setBorder(new EmptyBorder(10, 10, 10, 10));
-				frame.add(controlPanel, BorderLayout.PAGE_END);
+		SwingUtilities.invokeLater(() -> {
+            final JFrame frame = new JFrame();
+            frame.setTitle("Сапер");
+            frame.setLayout(new BorderLayout());
+            frame.setSize(500, 500);
+            frame.add(board, BorderLayout.CENTER);
+            board.setBorder(new EmptyBorder(10, 10, 10, 10));
+            frame.add(controlPanel, BorderLayout.PAGE_END);
 
-				label.setVerticalAlignment(SwingConstants.TOP);
-				frame.add(label, BorderLayout.EAST);
+            label.setVerticalAlignment(SwingConstants.TOP);
+            frame.add(label, BorderLayout.EAST);
 
-				controlPanel.setLayout(new FlowLayout());
-				final JButton generate = new JButton("Начать");
-				StandardLogic level = new StandardLogic();
-				level.easy();
-				/**
-				 * ПЕРЕКЛЮЧЕНИЕ УРОВНЕЙ.
-				 */
-				JMenuBar menuBar = new JMenuBar();  // Верхняя полоска с элементами меню
-				frame.setJMenuBar(menuBar);
-				JMenu menu = new JMenu("Уровень");    // Меню
-				menuBar.add(menu);
+            controlPanel.setLayout(new FlowLayout());
+            final JButton generate = new JButton("Начать");
+            StandardLogic level = new StandardLogic();
+            level.easy();
+            /*
+             * ПЕРЕКЛЮЧЕНИЕ УРОВНЕЙ.
+             */
+            JMenuBar menuBar = new JMenuBar();  // Верхняя полоска с элементами меню
+            frame.setJMenuBar(menuBar);
+            JMenu menu = new JMenu("Уровень");    // Меню
+            menuBar.add(menu);
 
-				JMenuItem easy = new JMenuItem("Легкий"); // Подменю
-				menu.add(easy);
-				easy.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						level.easy();
-						generate.doClick();
-					}
-				});
+            JMenuItem easy = new JMenuItem("Легкий"); // Подменю
+            menu.add(easy);
 
-				JMenuItem medium = new JMenuItem("Средний"); // Подменю
-				menu.add(medium);
-				medium.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						level.medium();
-						generate.doClick();
-					}
-				});
+            easy.addActionListener(e -> {
+                level.easy();
+                generate.doClick();
+            });
 
-				JMenuItem expert = new JMenuItem("Эксперт"); // Подменю
-				menu.add(expert);
-				expert.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						level.expert();
-						generate.doClick();
-					}
-				});
+            JMenuItem medium = new JMenuItem("Средний"); // Подменю
+            menu.add(medium);
 
-				generate.addActionListener(new GUIAction (level, board, new IGeneratorBoard() {
-					@Override
-					public ICell[][] generate() {
-						board.setIsFinish(false);
-						ICell[][] cells = level.sizeField();
-						label.setText("Флажки: 0 ");
-						for (int i = 0; i < level.sumRow(); i++) {
-							for (int j = 0; j < level.sumColumn(); j++) {
-								cells[i][j] = new GUICell(false);
-							}
-						}
-						return cells;
-					}
-				}
-				));
-				controlPanel.add(generate);
-				center(frame);
-				frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-				frame.addWindowListener(new WindowAdapter() {
-					@Override
-					public void windowClosing(WindowEvent e) {
-						closePerform(frame);
-					}
-				});
-				frame.setVisible(true);
-			}
-		});
+            medium.addActionListener(e -> {
+                level.medium();
+                generate.doClick();
+            });
+
+            JMenuItem expert = new JMenuItem("Эксперт"); // Подменю
+            menu.add(expert);
+
+            expert.addActionListener(e -> {
+                level.expert();
+                generate.doClick();
+            });
+
+            generate.addActionListener(new GUIAction (level, board, () -> {
+                board.setIsFinish(false);
+                ICell[][] cells = level.sizeField();
+                label.setText("Флажки: 0 ");
+                for (int i = 0; i < level.sumRow(); i++) {
+                    for (int j = 0; j < level.sumColumn(); j++) {
+                        cells[i][j] = new GUICell(false);
+                    }
+                }
+                return cells;
+            }));
+            controlPanel.add(generate);
+            center(frame);
+            frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            frame.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    closePerform(frame);
+                }
+            });
+            frame.setVisible(true);
+        });
 	}
 
 	public static void center(Window w) {

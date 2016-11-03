@@ -182,7 +182,7 @@ public class LogicTest {
             }
         }
 
-        assertThat(count, is(logic.sumInARow() + logic.sumSmallCellsPainted()));
+        assertThat(count, is(logic.sumCellsPainted() + logic.sumCellsPainted()));
     }
 
     @Test
@@ -256,16 +256,16 @@ public class LogicTest {
             }
         }
 
-        assertThat(count, is(logic.sumSmallCellsPainted()));
+        assertThat(count, is(logic.sumCellsPainted()));
     }
 
     @Test
     public void testCreateSmallCells_IfSomeNEmptyCells() throws Exception {
-        // Проверяем, что метод сможет создать новые маленькие шары, если на поле ровно logic.sumSmallCellsPainted()
+        // Проверяем, что метод сможет создать новые маленькие шары, если на поле ровно logic.sumCellsPainted()
         // свободных ячеек
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
-                if (i > 0 || (i == 0 && j >= logic.sumSmallCellsPainted()))
+                if (i > 0 || (i == 0 && j >= logic.sumCellsPainted()))
                     cells[i][j].bigCellPainting();
             }
         }
@@ -281,7 +281,7 @@ public class LogicTest {
             }
         }
 
-        assertThat(count, is(logic.sumSmallCellsPainted()));
+        assertThat(count, is(logic.sumCellsPainted()));
     }
 
     @Test(expected = NotEmptyCellsException.class)
@@ -298,15 +298,62 @@ public class LogicTest {
 
     @Test(expected = NotEmptyCellsException.class)
     public void testCreateSmallCellsFalse_IfSomeTheRightHalfOfTheCells() throws Exception {
-        // Проверяем, что метод создаст не все шари, так как мест будет половина, от нужного кол-ва
+        // Заполняем всё поле большими шарами, кроме value ячеек, их оставляем пустые.
+        // Проверяем, что если не хватит одного места для создания всех маленьких шаров, то выдаст ошибку.
+        int value = logic.sumCellsPainted() - 1;
         for (int i = 0; i < logic.sumRow(); i++) {
             for (int j = 0; j < logic.sumColumn(); j++) {
-                if (i > 0 || (i == 0 && j >= logic.sumSmallCellsPainted() / 2))
+                if (i < logic.sumRow() - 1 || (i == logic.sumRow() - 1 && j < logic.sumColumn() - value))
                     cells[i][j].bigCellPainting();
             }
         }
 
         logic.createSmallCells();
+    }
+
+    @Test
+    public void testCreateSmallBalls() throws Exception {
+        logic.createBalls(true, false);
+
+        int count = 0;
+        for (int i = 0; i < logic.sumRow(); i++) {
+            for (int j = 0; j < logic.sumColumn(); j++) {
+                if (cells[i][j].isSmallCellPainted()) count++;
+            }
+        }
+
+        assertThat(count, is(logic.sumCellsPainted()));
+    }
+
+    @Test
+    public void testCreateBigBalls() throws Exception {
+        logic.createBalls(false, true);
+
+        int count = 0;
+        for (int i = 0; i < logic.sumRow(); i++) {
+            for (int j = 0; j < logic.sumColumn(); j++) {
+                if (cells[i][j].isBigCellPainted()) count++;
+            }
+        }
+
+        assertThat(count, is(logic.sumCellsPainted()));
+    }
+
+    @Test
+    public void testCreateSmallAndBigBalls() throws Exception {
+        logic.createBalls(true, true);
+
+        int countSmallBalls = 0;
+        int countBigBalls = 0;
+        for (int i = 0; i < logic.sumRow(); i++) {
+            for (int j = 0; j < logic.sumColumn(); j++) {
+                if (cells[i][j].isSmallCellPainted()) countSmallBalls++;
+                if (cells[i][j].isBigCellPainted()) countBigBalls++;
+            }
+        }
+
+        assertThat(countSmallBalls, is(logic.sumCellsPainted()));
+        assertThat(countBigBalls, is(logic.sumCellsPainted()));
     }
 
     @Test
