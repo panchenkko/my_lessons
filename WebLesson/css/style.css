@@ -1,8 +1,8 @@
-body { 
-	min-width: 1280px; 
-	max-width: 1920px; 
-	margin: 10px; 
-	padding: 0px; 
+body {
+	min-width: 1280px;
+	max-width: 1920px;
+	margin: 10px;
+	padding: 0px;
 	height: auto;
 	font-family: Trebuchet MS, Verdana, Arial, Arial Black;
 
@@ -10,8 +10,8 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 0;*/}
 
-h1, h2, h3, h4, h5, h6 { 
-font-family: Verdana, Geneva,sans-serif; 
+h1, h2, h3, h4, h5, h6 {
+font-family: Verdana, Geneva,sans-serif;
 }
 
 #fontFamilySerif {
@@ -52,7 +52,7 @@ font-family: Verdana, Geneva,sans-serif;
 	background-size: 100%, 0%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-/*  background-attachment: fixed; фиксирование картинки 
+/*  background-attachment: fixed; фиксирование картинки
     background-repeat: repeat-x;
 	background-repeat: repeat-y;
     background-position: 50px (горизонталь) 30px (вертикаль);
@@ -61,7 +61,7 @@ font-family: Verdana, Geneva,sans-serif;
 
 #link:link {
 	text-decoration: none;
-	color: green;	
+	color: green;
 }
 
 #link:visited {
@@ -104,8 +104,8 @@ font-family: Verdana, Geneva,sans-serif;
 #tableStyle td {
 	background-color: #FFC39B;
 	text-align: center;
-/*  vertical-align: top or middle or bottom; 
-    - выравнивание текста 
+/*  vertical-align: top or middle or bottom;
+    - выравнивание текста
 	по вертикали */
 }
 
@@ -114,44 +114,44 @@ font-family: Verdana, Geneva,sans-serif;
 	width: 100px;
 	margin: 5px;
 	padding: 10px;
-	
-/*  visibity: hidden; - сделать 
+
+/*  visibity: hidden; - сделать
     объект невидимым
-	display: none; - прикрыть 
+	display: none; - прикрыть
 	объект полностью */
 }
 
-/* Псевдо-класс :first-child - оформление 
+/* Псевдо-класс :first-child - оформление
 первого потомка в родительском элементе */
 #borderStyle li:first-child {
 	border-radius: 5px;
 }
 
-/* Псевдо-класс :first-letter - оформление 
+/* Псевдо-класс :first-letter - оформление
 первого потомка в родительском элементе */
 #borderStyle li:first-letter {
 	font-size: 20px;
 }
 
-/* Псевдо-класс :focus - активные input 
+/* Псевдо-класс :focus - активные input
 элементы формы */
 #borderStyle li:focus{
 	border: 5px solid black;
 }
 
-/* Псевдо-класс :first-line - оформление 
+/* Псевдо-класс :first-line - оформление
 первоq строки указанного элемента */
 #borderStyle li:first-line {
 	font-style: italic;
 }
 
-/* Псевдо-класс :before - вставка 
+/* Псевдо-класс :before - вставка
 содержимого перед элементом */
 #borderStyle li:before {
 
 }
 
-/* Псевдо-класс :after - вставка 
+/* Псевдо-класс :after - вставка
 содержимого после элемента */
 #borderStyle li:after {
 
@@ -161,35 +161,35 @@ font-family: Verdana, Geneva,sans-serif;
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	width: auto; 
-	border: 1px solid black; 
+	width: auto;
+	border: 1px solid black;
 	margin: 10px;
 	padding: 10px;
-/*	
-position: relative - Положение 
-элемента устанавливается относительно 
+/*
+position: relative - Положение
+элемента устанавливается относительно
 его исходного места;
 
-position: absolute; - абсолютное 
-позиционирование, задается с помощью 
-свойств: top, right, bottom, left 
+position: absolute; - абсолютное
+позиционирование, задается с помощью
+свойств: top, right, bottom, left
 */
 }
 
-#centerBlock { 
+#centerBlock {
 	text-align: center;
-	border: 1px solid black; 
+	border: 1px solid black;
 	padding: 10px;
 	margin: 10px auto 0px auto;
-	width: 50%; 
+	width: 50%;
 }
 
 #float {
-	border: 1px solid black; 
+	border: 1px solid black;
 	padding: 10px;
 	float: right;
 	margin: 10px 0px 10px 0px;
-/*	clear: both; - чтобы из-за float, 
+/*	clear: both; - чтобы из-за float,
 	элементы не обтекали друг друга*/
 }
 
@@ -209,13 +209,13 @@ position: absolute; - абсолютное
     background-size: 200px 129px;
 }
 
-.borderRadius { 
+.borderRadius {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
-	padding: 10px 5px 10px 5px;  
-	-moz-border-radius: 5px;  
-	-webkit-border-radius: 5px; 
+	text-align: center;
+	padding: 10px 5px 10px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-radius: 5px;
 
 	/*
@@ -225,13 +225,13 @@ position: absolute; - абсолютное
 	*/
 }
 
-.boxShadow { 
+.boxShadow {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
+	text-align: center;
 	padding: 10px 5px 10px 5px;
-	/* Возможные параметры: <сдвиг по x> 
-	<сдвиг по y> <радиус размытия> 
+	/* Возможные параметры: <сдвиг по x>
+	<сдвиг по y> <радиус размытия>
 	<растяжение> <цвет>
 	 */
 	-moz-box-shadow: 3px 4px 5px #000000;
@@ -239,14 +239,14 @@ position: absolute; - абсолютное
     box-shadow: 3px 4px 5px #000000;
 }
 
-.boxShadow { 
+.boxShadow {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
+	text-align: center;
 	padding: 10px 5px 10px 5px;
 	margin: 10px 0px 10px 0px;
-	/* Возможные параметры: <сдвиг по x> 
-	<сдвиг по y> <радиус размытия> 
+	/* Возможные параметры: <сдвиг по x>
+	<сдвиг по y> <радиус размытия>
 	<растяжение> <цвет>
 	 */
 	-moz-box-shadow: 3px 4px 5px #000000;
@@ -254,10 +254,10 @@ position: absolute; - абсолютное
     box-shadow: 3px 4px 5px #000000;
 }
 
-.boxShadowInset { 
+.boxShadowInset {
 	width: 100px;
 	border: double 4px #000000;
-	text-align: center; 
+	text-align: center;
 	padding: 10px 5px 10px 5px;
 	margin: 10px 0px 10px 0px;
 	-moz-box-shadow: inset 4px 7px 6px #000000;
@@ -265,15 +265,15 @@ position: absolute; - абсолютное
 	box-shadow: inset 4px 7px 6px #000000;
 }
 
-@font-face { 
+@font-face {
 	font-family: 'GoodFootRegular';
 	src: url('goodfoot.eot');
-	src: local('Good Foot'), local('GoodFoot'), 
-	url('goodfoot.woff') format('woff'), 
+	src: local('Good Foot'), local('GoodFoot'),
+	url('goodfoot.woff') format('woff'),
 	url('goodfoot.ttf') format('truetype');
 }
 
-.fontFace { 
+.fontFace {
 /*  font: size weight style font */
 	font: 20px bold normal GoodFootRegular;
 	font-family: GoodFootRegular;
@@ -282,7 +282,7 @@ position: absolute; - абсолютное
 #fontShadow {
 	font-family: Cursive, Comic Sans MS;
 	font-size: 20px;
-/*	Возможные параметры: <сдвиг по x> 
+/*	Возможные параметры: <сдвиг по x>
     <сдвиг по y> <радиус размытия> <цвет> */
 	text-shadow: 2px 1px 3px #000000;
 }
@@ -441,14 +441,14 @@ position: absolute; - абсолютное
 .transition {
 	color: #FFFFFF;
 	width: 200px;
-	border:solid 1px #2d2d2d;  
-	text-align:center; 
+	border:solid 1px #2d2d2d;
+	text-align:center;
 	background: url("../img/1.jpg") no-repeat;
 	background-size: 210px 139px;
 	margin: 20px;
-	padding:50px 5px 50px 5px;  
-	-moz-border-radius: 5px;  
-	-webkit-border-radius: 5px; 
+	padding:50px 5px 50px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-radius: 5px;
 
 /* ease-in-out, ease-in, ease-out, easy, linear */
@@ -475,10 +475,10 @@ transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
 /* anim - название анимации */
 @keyframes anim {
 
-	/* 
+	/*
 	Так же вместо процентов можно использовать:
 	from {любые CSS-свойства}
-	to {любые CSS-свойства} 
+	to {любые CSS-свойства}
 	*/
 	0% {
 		background-color: #FF3300;
@@ -500,20 +500,20 @@ transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
 #animation {
 	height: 100px;
 	background-color: #FF3300;
-/*  animation: название анимации 
-    время продолжительности 
+/*  animation: название анимации
+    время продолжительности
     кол-во повторов */
 	animation: anim 4s 1000;
 }
 
 #columnStyle {
-/* Определяет количество колонок в 
+/* Определяет количество колонок в
 	многоколоночном тексте. */
     -moz-column-count: 3; /* Для Firefox */
-/* Задаёт оптимальную ширину колонки в 
+/* Задаёт оптимальную ширину колонки в
     многоколоночном тексте. */
     -moz-column-width: 200px;
-/* Задаёт расстояние между колонками в 
+/* Задаёт расстояние между колонками в
     многоколоночном тексте. */
     -moz-column-gap: 2em;
     -webkit-column-count: 3; /* Для Safari и Chrome */

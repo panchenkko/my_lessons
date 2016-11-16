@@ -1,0 +1,94 @@
+body {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    /*background: rgba(0, 0, 0, 0.5);*/
+    background: rgba(255, 255, 255, 1);
+    padding: 25px 10px 0px 10px;
+    margin: 15px;
+    border-radius: 10px;
+    /*box-shadow: 3px 4px 5px #000000, -3px -4px 5px #000000, 3px -4px 5px #000000, -3px 4px 5px #000000;*/
+}
+
+.dashboard {
+    width: 20%;
+    flex-direction: column-reverse;
+}
+
+.widget {
+    color: white;
+    text-align: center;
+    margin: 0px 15px 30px 15px;
+    border-radius: 5px;
+
+    font-weight: 700;
+    text-decoration: none;
+    padding: 20px;
+    box-shadow: 3px 4px 5px black, inset 3px 4px 5px black;
+    transition: 0.2s;
+}
+
+.widget:hover {
+    transition: 0.2s;
+    color: white;
+    box-shadow: 3px 4px 5px black, inset 3px 4px 80px black;
+}
+
+.settings {
+    width: 100%;
+    border-left: 3px solid black;
+    margin: 0px 15px 30px 15px;
+}
+
+form {
+    border-radius: 5px;
+    padding: 15px;
+    width: 400px;
+    height: auto;
+    margin: auto;
+}
+
+form>input[type="submit"], form>input[type="button"] {
+    width: 45%;
+}
+
+form>input[id="add"] {
+    float: right;
+}
+
+form>input[id="save"] {
+    float: left;
+}
+
+form>input[type="text"], form>input[type="number"] {
+    height: 50px;
+    border: 1px solid black;
+}
+
+form>input[type="text"], form>input[type="number"], form>input[type="button"], form>input[type="button"]:disabled {
+    box-shadow: 3px 4px 5px black, inset 3px 4px 80px black;
+    transition: 0.2s;
+}
+
+input:required:invalid, input:focus:invalid {
+    background-color: rgba(255, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+input:required:valid {
+    background-color: rgba(0, 255, 0, 0.5);
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+form>input[type="text"]::-webkit-input-placeholder, form>input[type="number"]::-webkit-input-placeholder {
+    text-align: center;
+    font-family: Cursive, Comic Sans MS;
+    font-style: bold;
+    font-size: 15px;
+    color: white;
+    transition: 0.5s;
+}

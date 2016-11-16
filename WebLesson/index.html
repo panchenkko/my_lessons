@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="css/flexbox.css" media="screen" type="text/css" />
 
 <title>Справочник</title>
 
@@ -57,7 +58,7 @@
     			randomBg = 'url(img/' + randomNum + '.png)';
     	}
     	$('div#jQueryOpacity').css('background-image', randomBg);
-    }); 
+    });
 
     // Скрываем картинку по клику
     $(document).ready(function() {
@@ -326,17 +327,17 @@
 
 <hr />
 
-<em>Задаем цвет с помощью HSL Три параметра: (оттенок, насыщенность, яркость)</em>	
+<em>Задаем цвет с помощью HSL Три параметра: (оттенок, насыщенность, яркость)</em>
 <div style="height: 20px; background-color: hsl(0, 30%, 50%);"></div>
 <div style="height: 20px; background-color: hsl(120, 100%, 80%);"></div>
 <div style="height: 20px; background-color: hsl(240, 100%, 50%);"></div>
 
 <em>
 Задаем цвет с помощью RGBA Четыре параметра: (красный, зеленый, голубой, прозрачность)
-</em>	
+</em>
 <div style="height: 20px; background-color: rgba(0, 0, 0, 0.6);"></div>
 
-<em>Задаем цвет с помощью HSLA. Тоже самое, просто добавляем прозрачность</em>	
+<em>Задаем цвет с помощью HSLA. Тоже самое, просто добавляем прозрачность</em>
 <div style="height: 20px; background-color: hsla(0, 100%, 0%, 0.6);"></div>
 
 <hr />
@@ -389,11 +390,11 @@
 <hr style="clear: both;" />
 
 <em>Градиенты</em>
-<div style="height: 50px; 
+<div style="height: 50px;
 /* background:-webkit-gradient(лин. градиент, проц.поглощения  сдвиг, сдвиг конечного цвета  насыщенность, начальный цвет, конечный цвет */
 background:-webkit-gradient(linear, 70% 0%, 10% 21%, from(#6A9E00), to(#FF4E00))">
 </div>
-<div style="height: 50px; 
+<div style="height: 50px;
 background:-webkit-gradient(radial, 202 -75, 87, 81 -215, 465, from(#529A00), to(#FF4E28))">
 </div>
 
@@ -410,10 +411,10 @@ background:-webkit-gradient(radial, 202 -75, 87, 81 -215, 465, from(#529A00), to
 
 <strong>Разбиение текста на столбцы</strong>
 <p id="columnStyle">
-   Контрапункт контрастных фактур дает структурный midi-контроллер, 
-   таким образом объектом имитации является число длительностей в 
-   каждой из относительно автономных ритмогрупп ведущего голоса. 
-   Протяженность, по определению, просветляет флэнжер, хотя это 
+   Контрапункт контрастных фактур дает структурный midi-контроллер,
+   таким образом объектом имитации является число длительностей в
+   каждой из относительно автономных ритмогрупп ведущего голоса.
+   Протяженность, по определению, просветляет флэнжер, хотя это
    довольно часто напоминает песни Джима Моррисона и Патти Смит.</p>
 
 <hr />
@@ -435,6 +436,178 @@ background:-webkit-gradient(radial, 202 -75, 87, 81 -215, 465, from(#529A00), to
 
 <button id="clickOne">Одинарный клик</button>
 <button id="clickTwo">Двойной клик</button>
+
+<hr />
+
+<h1><strong><em>Flexbox</em></strong></h1>
+
+<em>display: flex; /* контейнер занимает всю ширину страницы */</em>
+<br />
+<div class="flex-container display-flex">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+</div>
+
+<em>display: inline-flex; /* контейнер занимает столько же места, сколько элементы внутри него */</em>
+<br />
+<div class="flex-container display-inline-flex">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+</div>
+
+<br />
+
+<em>flex-direction: row; /* значение по умолчанию. Все элементы выстраиваются в ряд. */</em>
+<br />
+<div class="flex-container flex-direction-row">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+</div>
+
+<em>flex-direction: row-reverse; /* Reverse. */</em>
+<br />
+<div class="flex-container flex-direction-row-reverse">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+</div>
+
+<em>flex-direction: column; /* Все элементы выстраиваются в столбик. */</em>
+<br />
+<div class="flex-container flex-direction-column">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+</div>
+
+<em>flex-direction: column-reverse; /* Reverse. */</em>
+<br />
+<div class="flex-container flex-direction-column-reverse">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+</div>
+
+<em>flex-wrap: nowrap; /* По умолчанию. */</em>
+<br />
+<div class="flex-container flex-wrap-nowrap">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+<em>flex-wrap: wrap; /* Все элементы, какие не вмещаются в контейнер, будут в последний ряд или столбик. */</em>
+<br />
+<div class="flex-container flex-wrap-row">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+<div class="flex-container flex-wrap-column">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+
+<em>flex-wrap: wrap-reverse; /* Все элементы, какие не вмещаются в контейнер, будут добавлены в первый ряд
+	или столбик. */</em>
+<br />
+<div class="flex-container flex-wrap-reverse-row">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+<div class="flex-container flex-wrap-reverse-column">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+<em>justify-content: flex-start; /* Все элементы будут находится в самом начале контейнера. */</em>
+<br />
+<div class="flex-container justify-content-flex-start">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+<em>justify-content: flex-end; /* Все элементы будут находится в самом конце контейнера. */</em>
+<br />
+<div class="flex-container justify-content-flex-end">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+<em>justify-content: center; /* Все элементы будут находится по центру контейнера. */</em>
+<br />
+<div class="flex-container justify-content-center">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
 
 </body>
 </html>
