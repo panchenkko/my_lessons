@@ -18,7 +18,7 @@ public class NumberTest {
     }
 
     @Test
-    public void binToDec() throws Exception {
+    public void printList() throws Exception {
         TransferNumber.printList(new BigInteger(number.getDecimal()));
 
         assertThat(number.getBinary(), is("1001101"));
@@ -26,5 +26,4 @@ public class NumberTest {
         assertThat(number.getDecimal(), is("77"));
         assertThat(number.getHexadecimal(), is("4d"));
     }
-
 }

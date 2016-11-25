@@ -48,4 +48,8 @@ public class TransferNumber {
         System.out.println("Decimal: " + number.toString(10));
         System.out.println("Hex: " + number.toString(16));
     }
+
+    public static String calc(TransferNumber num1, TransferNumber num2, String operation, String format) {
+        return null;
+    }
 }

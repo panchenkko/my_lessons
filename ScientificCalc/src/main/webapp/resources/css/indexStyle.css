@@ -2,6 +2,27 @@ body {
     font-family: Cursive, Comic Sans MS, sans-serif;
 }
 
+#calcBtn {
+    position: fixed;
+    right: -3px;
+    top: 20px;
+    width: 5%;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+#calcBtn:hover {
+    width: 6%;
+    right: 5px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+#calcBtn:active {;
+    transition: 0.1s;
+}
+
 input {
     margin-top: 5px;
 }
@@ -69,4 +90,5 @@ caption {
 td {
     margin: 5px;
     text-align: center;
+    word-break: break-all;
 }

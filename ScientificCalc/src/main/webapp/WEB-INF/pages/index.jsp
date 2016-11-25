@@ -1,14 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<!DOCTYPE html>
 <html>
-<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Инженерный калькулятор</title>
+    <title>Scientific Calculator</title>
 
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.servletContext.contextPath}/resources/css/indexStyle.css" rel="stylesheet">
@@ -31,8 +31,6 @@
                 success: function(data) {
                     console.log(data);
 
-                    $("#answerAjax").html(data.binary + ", " + data.decimal + ", " + data.octal + ", " + data.hexadecimal);
-
                     $("input[name='binary']").val(data.binary);
                     $("input[name='octal']").val(data.octal);
                     $("input[name='decimal']").val(data.decimal);
@@ -44,6 +42,11 @@
 </head>
 <body>
 	<div class="container">
+
+        <a href="${pageContext.servletContext.contextPath}/pageCalc" id="calcBtn">
+            <button class="form-control input-control">Calc</button>
+        </a>
+
         <form action="${pageContext.servletContext.contextPath}/" method="post">
             <div class="form-group">
                 <span>Bin: </span><input type="tel" name="binary" onkeyup="transfer(binary)" pattern="^[0-1]+$"
@@ -58,7 +61,7 @@
                        class="form-control input-control transfer" placeholder=" Input octal number"
                        autocomplete="off" required>
 
-                <span>Hex: </span><input type="tel" name="hexadecimal" onkeyup="transfer(hexadecimal)" pattern="[a-fA-F\d]+"
+                <span>Hex: </span><input type="tel" name="hexadecimal" onkeyup="transfer(hexadecimal)" pattern="^[a-fA-F\d]+$"
                        class="form-control input-control transfer" placeholder=" Input hexadecimal number"
                        autocomplete="off" required>
 
