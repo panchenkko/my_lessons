@@ -34,7 +34,7 @@ var Widgets = [
 export default class HandlerWidgets extends React.Component {
 
     state = {
-        widgets: Widgets
+        widgets: Widgets,
     };
 
     constructor(props) {
@@ -45,6 +45,13 @@ export default class HandlerWidgets extends React.Component {
      * Функция отвечает за то, что будет делать кнопка Add
      */
     addWidget = () => {
+        // Снимаем метку у всех виджетов
+        for(let el of Widgets) {
+            el.select = false;
+            // Убираем особый внешний вид для выбранного виджета
+            document.getElementById(el.id).classList.remove('widget-check');
+        }
+
         let name = document.getElementById('name').value;
         let count = document.getElementById('count').value;
         let color = document.getElementById('color').value;
@@ -65,6 +72,8 @@ export default class HandlerWidgets extends React.Component {
             // Выводим добавленный виджет в консоль
             console.log(widgetTemp);
 
+            document.getElementById('color').style.background = document.getElementById('color').value;
+
             // Обновляем состояние
             this.setState({widgets: Widgets}, this.setColor);
 
@@ -81,14 +90,19 @@ export default class HandlerWidgets extends React.Component {
         // Находим выбранный виджет и сохраняем новые данные
         for(let el of Widgets) {
             if (el.select) {
-                console.log("I'm find! It's widget #" + el.id);
+                // Убираем особый внешний вид для выбранного виджета
+                document.getElementById(el.id).classList.remove('widget-check');
 
                 el.name = document.getElementById('name').value;
                 el.count = document.getElementById('count').value;
                 el.color = document.getElementById('color').value;
 
+                document.getElementById('color').style.background = document.getElementById('color').value;
+
                 // Обновляем состояние
                 this.setState({widgets: Widgets}, this.setColor);
+
+                this.disabledOn();
             }
         }
     }
@@ -99,13 +113,21 @@ export default class HandlerWidgets extends React.Component {
      * @param el - получаем объект выбранного виджета
      */
     static handlerSelect(el) {
+
         // Снимаем метку у всех виджетов
         for(let el of Widgets) {
             el.select = false;
+            // Убираем особый внешний вид для выбранного виджета
+            document.getElementById(el.id).classList.remove('widget-check');
         }
 
+        var element = Widgets[el.id -1];
+
         // Ставим метку на виджет, какой выбрал пользователь
-        Widgets[el.id - 1].select = true;
+        element.select = true;
+
+        // Меняем внешний вид выбранного виджета
+        document.getElementById(el.id).classList.add('widget-check');
 
         // Устанавливаем данные в поля ввода
         document.getElementById('name').value = el.name;
@@ -126,12 +148,14 @@ export default class HandlerWidgets extends React.Component {
     }
 
     /*
-     * Функция вызывается перед первым самым первым запуском.
+     * Функция вызывается перед самым первым запуском.
      * Все начальные действия можно вносить сюда.
      */
     componentDidMount() {
-        // Устанавливаем цвет каждого виджета при загрузке сайта (Понадобится в случае исп. бд)
+        // Устанавливаем цвет каждого виджета при загрузке сайта
         this.setColor();
+        // Устанавливаем красным цветом поле ввода цвета
+        document.getElementById('color').style.background = document.getElementById('color').value;
     }
 
     /*
@@ -179,7 +203,24 @@ export default class HandlerWidgets extends React.Component {
 
     render() {
         return (
-            <div className="container2">
+            <div>
+                <div className="container2">
+                    <div className="settings">
+                        <form method="post">
+                            <input type="text" id="name" className="form-control input-control" required placeholder="Input name widget"/>
+                            <br />
+                            <input type="number" id="count" className="form-control input-control" min="0" required placeholder="Input count widget"/>
+                            <br />
+                            <Input id="color" onChange={this.setColorEdit}
+                                className="form-control input-control" pattern="\D [^_]" defaultValue="rgb(255,000,000)"
+                                placeholder="Input color widget in format RGB" mask="rgb(999,999,999)" maskChar="_" />
+                            <br />
+                            <input type="button" id="add" value="Add" onClick={this.addWidget} className="btn btn-primary input-control" />
+                            <input type="button" id="save" value="Save" disabled onClick={this.saveWidget} className="btn btn-success input-control" />
+                        </form>
+                    </div>
+                </div>
+
                 <div className="dashboard">
                     {
                         this.state.widgets.map(function(el) {
@@ -193,20 +234,6 @@ export default class HandlerWidgets extends React.Component {
                             );
                         })
                     }
-                </div>
-                <div className="settings">
-                    <form method="post">
-                        <input type="text" id="name" className="form-control input-control" required placeholder="Input name widget"/>
-                        <br />
-                        <input type="number" id="count" className="form-control input-control" min="0" required placeholder="Input count widget"/>
-                        <br />
-                        <Input id="color" onChange={this.setColorEdit}
-                            className="form-control input-control" pattern="\D [^_]" defaultValue="rgb(255,000,000)"
-                            placeholder="Input color widget in format RGB" mask="rgb(999,999,999)" maskChar="_" />
-                        <br />
-                        <input type="button" id="add" value="Add" onClick={this.addWidget} className="btn btn-primary input-control" />
-                        <input type="button" id="save" value="Save" disabled onClick={this.saveWidget} className="btn btn-success input-control" />
-                    </form>
                 </div>
             </div>
         );
