@@ -609,5 +609,60 @@ background:-webkit-gradient(radial, 202 -75, 87, 81 -215, 465, from(#529A00), to
 	<div class="flex-element">8</div>
 </div>
 
+<em>justify-content: space-between; /* Все элементы располагаются по всему доступному месту. */</em>
+<br />
+<div class="flex-container justify-content-space-between">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+<em>justify-content: space-around; /* Все элементы находятся на одинаковом расстоянии друг от друга. */</em>
+<br />
+<div class="flex-container justify-content-space-around">
+	<div class="flex-element">1</div>
+	<div class="flex-element">2</div>
+	<div class="flex-element">3</div>
+	<div class="flex-element">4</div>
+	<div class="flex-element">5</div>
+	<div class="flex-element">6</div>
+	<div class="flex-element">7</div>
+	<div class="flex-element">8</div>
+</div>
+
+<em>justify-content: space-around; /* Также мы добавили нескольким элементам свойство margin: auto;
+	какое явно повлияло на их расположение среди всех элементов. */</em>
+<br />
+<div class="flex-container justify-content-space-around">
+	<div class="flex-element margin">1</div>
+	<div class="flex-element margin">2</div>
+	<div class="flex-element margin">3</div>
+	<div class="flex-element margin">4</div>
+	<div class="flex-element margin">5</div>
+	<div class="flex-element margin">6</div>
+	<div class="flex-element margin">7</div>
+</div>
+
+<em>order: 1 /* У всех элементов по умолчанию стоит order: 0, чтобы поставить какой-то элемент
+	впереди всех например, то его значение order нужно увеличить. Данное свойство можно изменять
+	в каждом элементе по разному, чтобы поставить их в желаемом порядке.
+	(Также можно использовать "минус" в значении) */</em>
+<br />
+<div class="flex-container">
+	<div class="flex-element element-1">1</div>
+	<div class="flex-element element-2">2</div>
+	<div class="flex-element element-3">3</div>
+	<div class="flex-element element-4">4</div>
+	<div class="flex-element element-5">5</div>
+	<div class="flex-element element-6">6</div>
+	<div class="flex-element element-7">7</div>
+	<div class="flex-element element-8">8</div>
+</div>
+
 </body>
 </html>
