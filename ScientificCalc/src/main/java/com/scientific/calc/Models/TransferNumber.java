@@ -38,18 +38,10 @@ public class TransferNumber {
         return number.toString(16);
     }
 
-    public void setNumber(String number) {
-        this.number = new BigInteger(number);
-    }
-
     public static void printList(BigInteger number) {
         System.out.println("Binary: " + number.toString(2));
         System.out.println("Octal: " + number.toString(8));
         System.out.println("Decimal: " + number.toString(10));
         System.out.println("Hex: " + number.toString(16));
-    }
-
-    public static String calc(TransferNumber num1, TransferNumber num2, String operation, String format) {
-        return null;
     }
 }
