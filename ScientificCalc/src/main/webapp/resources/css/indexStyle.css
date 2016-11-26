@@ -1,0 +1,94 @@
+body {
+    font-family: Cursive, Comic Sans MS, sans-serif;
+}
+
+#calcBtn {
+    position: fixed;
+    right: -3px;
+    top: 20px;
+    width: 5%;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+#calcBtn:hover {
+    width: 6%;
+    right: 5px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+#calcBtn:active {;
+    transition: 0.1s;
+}
+
+input {
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    float: right;
+    width: 97%;
+    box-shadow: 1px 2px 1px black, inset 2px 1px 0px black, inset -1px 2px 0px black;
+    transition: 0.2s;
+}
+
+input[type="submit"]:hover {
+    box-shadow: 1px 2px 1px black, inset 5px 1px 0px black, inset -5px 2px 0px black;
+    transition: 0.2s;
+}
+
+input[type="submit"]:active {
+    box-shadow: 1px 2px 1px black, inset 8px 3px 1px black, inset -8px 3px 1px black;
+    transition: 0.1s;
+}
+
+span {
+    float: left;
+    margin-top: 10px;
+    width: 3%;
+    clear: both;
+}
+
+input[type='tel'] {
+    float: right;
+    width: 97%;
+}
+
+caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.table>tbody>tr>th {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+#date {
+    width: 15%;
+}
+
+#binary {
+    width: 25%;
+}
+
+#octal {
+    width: 20%;
+}
+
+#decimal {
+    width: 20%;
+}
+
+#hexadecimal {
+    width: 20%;
+}
+
+td {
+    margin: 5px;
+    text-align: center;
+    word-break: break-all;
+}

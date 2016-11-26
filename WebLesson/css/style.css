@@ -1,0 +1,534 @@
+body {
+	min-width: 1280px;
+	max-width: 1920px;
+	margin: 10px;
+	padding: 0px;
+	height: auto;
+	font-family: Trebuchet MS, Verdana, Arial, Arial Black;
+
+/*    background: url("../img/1.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;*/}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: Verdana, Geneva,sans-serif;
+}
+
+#fontFamilySerif {
+	font-family: Serif, Times New Roman, Georgia;
+	font-size: 1em;
+	font-style: /* italic */ ;
+	font-weight: /* bold */ ;
+}
+
+#fontFamilySans-Serif {
+	font-family: Trebuchet MS, Verdana, Arial, Arial Black;
+	font-size: 1em;
+}
+
+#fontFamilyMonospace {
+	font-family: Monospace, Courier New;
+	font-size: 1em;
+}
+
+#fontFamilyFantasy {
+	font-family: Fantasy, Impact;
+	font-size: 1em;
+}
+
+#fontFamilyCursive {
+	font-family: Cursive, Comic Sans MS;
+	font-size: 1em;
+}
+
+#backgroundColor {
+	height: 50px;
+	background-color: green;
+}
+
+#backgroundImage {
+	height: 200px;
+	background-image: url("../img/1.jpg");
+	background-size: 100%, 0%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+/*  background-attachment: fixed; фиксирование картинки
+    background-repeat: repeat-x;
+	background-repeat: repeat-y;
+    background-position: 50px (горизонталь) 30px (вертикаль);
+	укороченная форма: background: url("../img/3.png") no-repeat fixed 50xp 30px; */
+}
+
+#link:link {
+	text-decoration: none;
+	color: green;
+}
+
+#link:visited {
+	text-decoration: none;
+	color: green;
+}
+
+#link:hover {
+	text-decoration: underline;
+	color: red;
+	font-size: 1.02em;
+}
+
+#link:active {
+	/* Убирает подчеркивание (как обычно под ссылкой) */
+	text-decoration: none;
+	color: red;
+	font-size: 1.02em;
+}
+
+#tableStyle {
+	border-color: black;
+	/* Соединяет границы каждой ячейки */
+	border-collapse: collapse;
+}
+
+#tableStyle th, td {
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px;
+}
+
+#tableStyle th {
+	padding: 10px;
+	background-color: #FF7755;
+	color: white;
+	border-color: black;
+}
+
+#tableStyle td {
+	background-color: #FFC39B;
+	text-align: center;
+/*  vertical-align: top or middle or bottom;
+    - выравнивание текста
+	по вертикали */
+}
+
+#borderStyle li {
+	list-style-type: none;
+	width: 100px;
+	margin: 5px;
+	padding: 10px;
+
+/*  visibity: hidden; - сделать
+    объект невидимым
+	display: none; - прикрыть
+	объект полностью */
+}
+
+/* Псевдо-класс :first-child - оформление
+первого потомка в родительском элементе */
+#borderStyle li:first-child {
+	border-radius: 5px;
+}
+
+/* Псевдо-класс :first-letter - оформление
+первого потомка в родительском элементе */
+#borderStyle li:first-letter {
+	font-size: 20px;
+}
+
+/* Псевдо-класс :focus - активные input
+элементы формы */
+#borderStyle li:focus{
+	border: 5px solid black;
+}
+
+/* Псевдо-класс :first-line - оформление
+первоq строки указанного элемента */
+#borderStyle li:first-line {
+	font-style: italic;
+}
+
+/* Псевдо-класс :before - вставка
+содержимого перед элементом */
+#borderStyle li:before {
+
+}
+
+/* Псевдо-класс :after - вставка
+содержимого после элемента */
+#borderStyle li:after {
+
+}
+
+#position {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: auto;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+/*
+position: relative - Положение
+элемента устанавливается относительно
+его исходного места;
+
+position: absolute; - абсолютное
+позиционирование, задается с помощью
+свойств: top, right, bottom, left
+*/
+}
+
+#centerBlock {
+	text-align: center;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 10px auto 0px auto;
+	width: 50%;
+}
+
+#float {
+	border: 1px solid black;
+	padding: 10px;
+	float: right;
+	margin: 10px 0px 10px 0px;
+/*	clear: both; - чтобы из-за float,
+	элементы не обтекали друг друга*/
+}
+
+#backgroundSize {
+	height: 200px;
+	background-image: url("../img/1.jpg");
+	background-size: 334px 229px;
+	background-attachment: fixed;
+}
+
+#backgroundOrigin {
+	border: 20px solid #fc0;
+	width: 250px;
+	height: 150px;
+    padding: 20px;
+    background: url("../img/1.jpg") no-repeat;
+    background-size: 200px 129px;
+}
+
+.borderRadius {
+	width: 100px;
+	border: double 4px #000000;
+	text-align: center;
+	padding: 10px 5px 10px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+
+	/*
+	Так же можно, например:
+	border-top-left-radius: ;
+	border-bottom-right-radius: ;
+	*/
+}
+
+.boxShadow {
+	width: 100px;
+	border: double 4px #000000;
+	text-align: center;
+	padding: 10px 5px 10px 5px;
+	/* Возможные параметры: <сдвиг по x>
+	<сдвиг по y> <радиус размытия>
+	<растяжение> <цвет>
+	 */
+	-moz-box-shadow: 3px 4px 5px #000000;
+    -webkit-box-shadow: 3px 4px 5px #000000;
+    box-shadow: 3px 4px 5px #000000;
+}
+
+.boxShadow {
+	width: 100px;
+	border: double 4px #000000;
+	text-align: center;
+	padding: 10px 5px 10px 5px;
+	margin: 10px 0px 10px 0px;
+	/* Возможные параметры: <сдвиг по x>
+	<сдвиг по y> <радиус размытия>
+	<растяжение> <цвет>
+	 */
+	-moz-box-shadow: 3px 4px 5px #000000;
+    -webkit-box-shadow: 3px 4px 5px #000000;
+    box-shadow: 3px 4px 5px #000000;
+}
+
+.boxShadowInset {
+	width: 100px;
+	border: double 4px #000000;
+	text-align: center;
+	padding: 10px 5px 10px 5px;
+	margin: 10px 0px 10px 0px;
+	-moz-box-shadow: inset 4px 7px 6px #000000;
+	-webkit-box-shadow: inset 4px 7px 6px #000000;
+	box-shadow: inset 4px 7px 6px #000000;
+}
+
+@font-face {
+	font-family: 'GoodFootRegular';
+	src: url('goodfoot.eot');
+	src: local('Good Foot'), local('GoodFoot'),
+	url('goodfoot.woff') format('woff'),
+	url('goodfoot.ttf') format('truetype');
+}
+
+.fontFace {
+/*  font: size weight style font */
+	font: 20px bold normal GoodFootRegular;
+	font-family: GoodFootRegular;
+}
+
+#fontShadow {
+	font-family: Cursive, Comic Sans MS;
+	font-size: 20px;
+/*	Возможные параметры: <сдвиг по x>
+    <сдвиг по y> <радиус размытия> <цвет> */
+	text-shadow: 2px 1px 3px #000000;
+}
+
+#overflow {
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 0px 10px 0px;
+	white-space: nowrap; /* Запрещаем перенос строк */
+	text-overflow: ellipsis; /* Добавляем многоточие */
+	overflow: hidden;
+}
+
+#wordWrap {
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 0px 10px 0px;
+	word-wrap: break-word;
+}
+
+#opacity {
+	width: 400px;
+	height: 300px;
+	opacity: 0.6;
+	/* Internet Explorer */
+	filter: alpha(opacity=60);
+}
+
+#rotate {
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 20px 0px 20px 0px;
+
+	transform: rotate(354deg) ;
+	-webkit-transform: rotate(354deg) ;
+	-moz-transform: rotate(354deg) ;
+	-o-transform: rotate(354deg) ;
+	-ms-transform: rotate(354deg) ;
+}
+
+#scaleX {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 20px 10px 0px;
+
+	transform: scale(0.549, 1);
+	-webkit-transform: scale(0.549, 1);
+	-moz-transform: scale(0.549, 1);
+	-o-transform: scale(0.549, 1);
+	-ms-transform: scale(0.549, 1);
+}
+
+#scaleY {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 20px 10px 0px;
+
+	transform: scale(0.69, 1.336);
+	-webkit-transform: scale(0.69, 1.336);
+	-moz-transform: scale(0.69, 1.336);
+	-o-transform: scale(0.69, 1.336);
+	-ms-transform: scale(0.69, 1.336);
+}
+
+#skewX {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 20px 20px 20px 0px;
+
+	transform: skew(-21deg, 1deg) ;
+    -webkit-transform: skew(-21deg, 1deg) ;
+    -moz-transform: skew(-21deg, 1deg) ;
+    -o-transform: skew(-21deg, 1deg) ;
+    -ms-transform: skew(-21deg, 1deg) ;
+}
+
+#skewY {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 20px 20px 20px 0px;
+
+	transform: skew(1deg, -11deg) ;
+    -webkit-transform: skew(1deg, -11deg) ;
+    -moz-transform: skew(1deg, -11deg) ;
+    -o-transform: skew(1deg, -11deg) ;
+    -ms-transform: skew(1deg, -11deg) ;
+}
+
+#skewXY {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 20px 20px 20px 0px;
+
+	transform: skew(-38deg, 9deg) ;
+    -webkit-transform: skew(-38deg, 9deg) ;
+    -moz-transform: skew(-38deg, 9deg) ;
+    -o-transform: skew(-38deg, 9deg) ;
+    -ms-transform: skew(-38deg, 9deg) ;
+}
+
+#translateX {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 20px 50px 0px;
+
+	transform: translate(34px, 7px);
+    -webkit-transform: translate(34px, 7px);
+    -moz-transform: translate(34px, 7px);
+    -o-transform: translate(34px, 7px);
+    -ms-transform: translate(34px, 7px);
+}
+
+#translateY {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 20px 50px 0px;
+
+	transform: translate(0px, 35px);
+	-webkit-transform: translate(0px, 35px);
+    -moz-transform: translate(0px, 35px);
+    -o-transform: translate(0px, 35px);
+    -ms-transform: translate(0px, 35px);
+}
+
+#translateXY {
+	float: left;
+	border: double 3px black;
+	width: 210px;
+	padding: 10px;
+	margin: 10px 20px 50px 0px;
+
+	transform: translate(35px, 35px);
+    -webkit-transform: translate(35px, 35px);
+    -moz-transform: translate(35px, 35px);
+    -o-transform: translate(35px, 35px);
+    -ms-transform: translate(35px, 35px);
+}
+
+.transition {
+	color: #FFFFFF;
+	width: 200px;
+	border:solid 1px #2d2d2d;
+	text-align:center;
+	background: url("../img/1.jpg") no-repeat;
+	background-size: 210px 139px;
+	margin: 20px;
+	padding:50px 5px 50px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+
+/* ease-in-out, ease-in, ease-out, easy, linear */
+transition:All 0.8448s ease-in-out;
+-webkit-transition:All 0.8448s ease-in-out;
+-moz-transition:All 0.8448s ease-in-out;
+-o-transition:All 0.8448s ease-in-out;
+
+transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+-webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+-moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+-o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+-ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+}
+
+.transition:hover {
+transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+-webkit-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+-moz-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+-o-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+-ms-transform: rotate(4deg) scale(0.712) skew(-11deg) translate(62px);
+}
+
+/* anim - название анимации */
+@keyframes anim {
+
+	/*
+	Так же вместо процентов можно использовать:
+	from {любые CSS-свойства}
+	to {любые CSS-свойства}
+	*/
+	0% {
+		background-color: #FF3300;
+	}
+
+	30% {
+		background-color: #8EC76E;
+	}
+
+	60% {
+		background-color: #545FAC;
+	}
+
+	100% {
+		background-color: #FF3300;
+	}
+}
+
+#animation {
+	height: 100px;
+	background-color: #FF3300;
+/*  animation: название анимации
+    время продолжительности
+    кол-во повторов */
+	animation: anim 4s 1000;
+}
+
+#columnStyle {
+/* Определяет количество колонок в
+	многоколоночном тексте. */
+    -moz-column-count: 3; /* Для Firefox */
+/* Задаёт оптимальную ширину колонки в
+    многоколоночном тексте. */
+    -moz-column-width: 200px;
+/* Задаёт расстояние между колонками в
+    многоколоночном тексте. */
+    -moz-column-gap: 2em;
+    -webkit-column-count: 3; /* Для Safari и Chrome */
+    -webkit-column-width: 200px;
+    -webkit-column-gap: 2em;
+    column-count: 3;
+    column-width: 200px;
+    column-gap: 2em;
+}
+
+#jQueryOpacity {
+	width: 400px;
+	height: 300px;
+	opacity: 0.5;
+	margin: 10px 0px 10px 0px;
+	/* Internet Explorer */
+	filter: alpha(opacity=60);
+}
