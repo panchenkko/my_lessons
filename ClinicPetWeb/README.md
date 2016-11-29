@@ -38,7 +38,7 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit1.png)
 
-#### Видим что, в полях ввода высвечиваются все веденные ранние данные пользователем:
+#### В полях ввода высвечиваются все веденные ранее данные:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit2.png)
 
@@ -46,7 +46,7 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit3.png)
 
-#### Убеждаемся, что данные изменились:
+#### Данные изменились:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/edit4.png)
 
@@ -82,7 +82,7 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search6.png)
 
-#### Видим, что список отфильтровался:
+#### Список отфильтровался:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/search7.png)
 
@@ -98,11 +98,11 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete1.png)
 
-#### Видим, что осталось четыре клиента. Сделаем тоже самое для клиента под номером "_2_":
+#### Осталось четыре клиента. Сделаем тоже самое для клиента под номером "_2_":
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete2.png)
 
-#### Убеждаемся, что клиентов осталось три:
+#### Клиентов осталось три:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/ClinicPetWeb/src/main/java/Screenshots/delete3.png)
 
