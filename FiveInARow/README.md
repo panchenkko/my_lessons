@@ -18,15 +18,15 @@
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui3.png)
 
-#### Наконец собрали 4 в ряд и остался последний 5-ый. Переместим _зеленый_ шар:
+#### Наконец собрали 4 зеленых шара в ряд и остался последний 5-й:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui4.png)
 
-#### Вот и зелёные шары исчезли:
+#### Зелёные шары исчезли:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui5.png)
 
-#### Теперь попытаемся переместить _синий_ шар к другим _синим_ шарам:
+#### Переместим _синий_ шар к другим _синим_ шарам:
 
 ![CC0](https://github.com/Panchenko-Vlad/java-lessons/blob/master/FiveInARow/src/main/java/Screenshots/gui6.png)
 
