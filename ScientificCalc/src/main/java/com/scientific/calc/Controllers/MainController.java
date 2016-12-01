@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-public class HelloController {
+public class MainController {
 
     private List<TransferNumber> numbers = new ArrayList<>();
 
@@ -31,7 +31,7 @@ public class HelloController {
 
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/transfer", method = RequestMethod.GET, produces = "application/json")
-    public @ResponseBody TransferNumber indexGetBinary(@RequestParam("number") String number, @RequestParam("name") String name) {
+    public @ResponseBody TransferNumber indexGetNumber(@RequestParam("number") String number, @RequestParam("name") String name) {
         TransferNumber transfer;
 
         switch (name) {

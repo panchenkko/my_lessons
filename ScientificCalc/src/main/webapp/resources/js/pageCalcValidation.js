@@ -7,7 +7,7 @@ function saveFormat(value) {
     var first = $('input[name="first"]');
     var second = $('input[name="second"]');
 
-    // Пользователь поменял формат, соответсвенно мы очищаем поля ввода
+    // Пользователь поменял формат, соответственно мы очищаем поля ввода
     first.val('');
     second.val('');
 

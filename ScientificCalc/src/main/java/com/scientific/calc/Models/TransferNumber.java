@@ -38,7 +38,7 @@ public class TransferNumber {
         return number.toString(16);
     }
 
-    public static void printList(BigInteger number) {
+    public static void printAllFormats(BigInteger number) {
         System.out.println("Binary: " + number.toString(2));
         System.out.println("Octal: " + number.toString(8));
         System.out.println("Decimal: " + number.toString(10));
